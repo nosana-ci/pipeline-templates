@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Oobabooga-webui",
+      "args": {
+        "image": "docker.io/atinoda/text-generation-webui:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 7860,
+        "env": {
+          "EXTRA_LAUNCH_ARGS": "--listen --verbose"
+        }
+      }
+    }
+  ]
+}
