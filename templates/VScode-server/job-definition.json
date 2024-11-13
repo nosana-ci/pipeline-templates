@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "code-server",
+      "args": {
+        "image": "lscr.io/linuxserver/code-server:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 8443,
+        "env": {
+          "PUID": "1000",
+          "PGID": "1000",
+          "TZ": "Etc/UTC",
+          "SUDO_PASSWORD": "password"
+        }
+      }
+    }
+  ]
+}

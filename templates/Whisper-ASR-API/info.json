@@ -1,0 +1,7 @@
+{
+  "id": "whisper-asr-webservice",
+  "name": "Whisper ASR Webservice",
+  "description": "A robust speech recognition service powered by OpenAI's Whisper model, supporting multilingual transcription, translation, and language identification.",
+  "category": ["AI", "Speech Recognition", "GPU", "Service", "Featured"],
+  "icon": "https://miro.medium.com/v2/resize:fit:690/1*PCGbnvnYY9SYIjyXvwOHkw.png"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "rstudio",
+  "name": "RStudio",
+  "description": "Run RStudio Server in a Docker container, providing a powerful and consistent R development environment accessible through your browser.",
+  "category": ["Development", "IDE", "R", "GPU", "Service", "Featured"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png"
+}
