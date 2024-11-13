@@ -1,0 +1,7 @@
+{
+  "id": "axolotl",
+  "name": "Axolotl",
+  "description": "Axolotl streamlines the fine-tuning of various AI models, supporting multiple configurations and architectures for efficient and flexible model training.",
+  "category": ["AI", "Model Fine-Tuning", "GPU", "Service", "Featured"],
+  "icon": "https://avatars.githubusercontent.com/u/132000632?s=280&v=4"
+}
