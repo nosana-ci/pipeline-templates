@@ -1,5 +1,5 @@
 {
-  "id": "jupyter-notebook",
+  "id": "jupyter-notebook-tensorflow",
   "name": "Jupyter Notebook",
   "description": "Jupyter Notebook Service",
   "category": ["GPU", "Featured", "Service"],
