@@ -1,6 +1,6 @@
 # Axolotl
 
-![Axolotl](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/axolotl/axolotl.mp4)
+![Axolotl](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl.mp4)
 
 Axolotl is a powerful tool designed to streamline the fine-tuning of various AI models, offering support for multiple configurations and architectures. It enables efficient training with single or multiple GPUs, making it ideal for both personal and professional projects.
 

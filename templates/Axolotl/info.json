@@ -1,7 +1,7 @@
 {
   "id": "axolotl",
-  "name": "Axolotl",
+  "name": "Axolotl finetuning LLM's",
   "description": "Axolotl streamlines the fine-tuning of various AI models, supporting multiple configurations and architectures for efficient and flexible model training.",
-  "category": ["AI", "Model Fine-Tuning", "GPU", "Service", "Featured"],
-  "icon": "https://avatars.githubusercontent.com/u/132000632?s=280&v=4"
+  "category": ["Model Fine-Tuning"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl-nobackground.png"
 }

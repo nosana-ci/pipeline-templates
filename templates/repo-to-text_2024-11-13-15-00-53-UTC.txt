@@ -1,0 +1,797 @@
+Directory: templates
+
+Directory Structure:
+```
+.
+|-- ./AUTOMATIC1111-stable-diffusion-1.5
+|   |-- ./AUTOMATIC1111-stable-diffusion-1.5/README.md
+|   |-- ./AUTOMATIC1111-stable-diffusion-1.5/info.json
+|   |-- ./AUTOMATIC1111-stable-diffusion-1.5/job-definition.json
+|   `-- ./AUTOMATIC1111-stable-diffusion-1.5/stable_diff.gif
+|-- ./Axolotl
+|   |-- ./Axolotl/README.md
+|   |-- ./Axolotl/axolotl-nobackground.png
+|   |-- ./Axolotl/axolotl.mp4
+|   |-- ./Axolotl/info.json
+|   `-- ./Axolotl/job-definition.json
+|-- ./Hello-world
+|   |-- ./Hello-world/README.md
+|   |-- ./Hello-world/info.json
+|   `-- ./Hello-world/job-definition.json
+|-- ./InvokeAI
+|   |-- ./InvokeAI/README.md
+|   |-- ./InvokeAI/info.json
+|   |-- ./InvokeAI/invoke_ai.gif
+|   `-- ./InvokeAI/job-definition.json
+|-- ./Nosana-RAG-bot-webui
+|   |-- ./Nosana-RAG-bot-webui/README.md
+|   |-- ./Nosana-RAG-bot-webui/info.json
+|   |-- ./Nosana-RAG-bot-webui/job-definition.json
+|   `-- ./Nosana-RAG-bot-webui/nosana_bot.mp4
+|-- ./Oobabooga
+|   |-- ./Oobabooga/README.md
+|   |-- ./Oobabooga/info.json
+|   |-- ./Oobabooga/job-definition.json
+|   |-- ./Oobabooga/oobabooga.gif
+|   |-- ./Oobabooga/oobabooga.mp4
+|   `-- ./Oobabooga/oobabooga.png
+|-- ./Open-webui-ollama
+|   |-- ./Open-webui-ollama/README.md
+|   |-- ./Open-webui-ollama/info.json
+|   |-- ./Open-webui-ollama/job-definition.json
+|   `-- ./Open-webui-ollama/openwebui.gif
+|-- ./Pytorch-jupyter-notebook
+|   |-- ./Pytorch-jupyter-notebook/README.md
+|   |-- ./Pytorch-jupyter-notebook/info.json
+|   |-- ./Pytorch-jupyter-notebook/job-definition.json
+|   `-- ./Pytorch-jupyter-notebook/jupyter.gif
+|-- ./Rstudio
+|   |-- ./Rstudio/README.md
+|   |-- ./Rstudio/info.json
+|   `-- ./Rstudio/job-definition.json
+|-- ./Tensorflow-jupyter-notebook
+|   |-- ./Tensorflow-jupyter-notebook/README.md
+|   |-- ./Tensorflow-jupyter-notebook/info.json
+|   |-- ./Tensorflow-jupyter-notebook/job-definition.json
+|   `-- ./Tensorflow-jupyter-notebook/jupyter.gif
+|-- ./VScode-server
+|   |-- ./VScode-server/README.md
+|   |-- ./VScode-server/info.json
+|   `-- ./VScode-server/job-definition.json
+`-- ./Whisper-ASR-API
+    |-- ./Whisper-ASR-API/README.md
+    |-- ./Whisper-ASR-API/info.json
+    `-- ./Whisper-ASR-API/job-definition.json
+```
+
+Contents of AUTOMATIC1111-stable-diffusion-1.5\info.json:
+```
+{
+  "id": "AUTOMTIC1111-stable-diffusion",
+  "name": "AUTOMTIC1111 Stable Diffusion",
+  "description": "Stable Diffusion is a latent text-to-image diffusion model",
+  "category": ["Image Generation"],
+  "icon": "https://user-images.githubusercontent.com/36368048/196280761-1535f413-a91e-4b6a-af6a-b890f8ae204c.png"
+}
+```
+
+Contents of AUTOMATIC1111-stable-diffusion-1.5\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "auto1111_stablediffusion",
+      "args": {
+        "cmd": [
+          "/bin/sh", "-c", 
+          "python -u launch.py --listen --port 7860 --api"
+        ],
+        "image": "docker.io/nosana/automatic1111:0.0.1",
+        "gpu": true,
+        "expose": 7860,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/stable-diffusion/1.5",
+            "target": "/stable-diffusion-webui/models/Stable-diffusion"
+          }
+        ]
+        
+      }
+    }
+  ]
+}
+```
+
+Contents of AUTOMATIC1111-stable-diffusion-1.5\README.md:
+```
+# Stable Diffusion WebUI
+
+![Stable Diffusion WebUI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/AUTOMATIC1111-stable-diffusion/stable_diff.gif)
+
+[Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) is a web interface for Stable Diffusion, implemented using Gradio library.
+
+Unleash your creativity with Nosana! Effortlessly run a Stable Diffusion instance to generate stunning images.
+Experience the power of advanced AI and GPU-backed nodes, making your image creation process smooth and efficient.
+Whether for personal projects or professional work, Nosana provides the tools you need to bring your artistic visions to life.
+
+
+```
+
+Contents of AUTOMATIC1111-stable-diffusion-1.5\stable_diff.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Axolotl\axolotl-nobackground.png:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Axolotl\axolotl.mp4:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Axolotl\info.json:
+```
+{
+  "id": "axolotl",
+  "name": "Axolotl finetuning LLM's",
+  "description": "Axolotl streamlines the fine-tuning of various AI models, supporting multiple configurations and architectures for efficient and flexible model training.",
+  "category": ["Model Fine-Tuning"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl-nobackground.png"
+}
+
+```
+
+Contents of Axolotl\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "axolotl",
+      "args": {
+        "image": "docker.io/winglian/axolotl-cloud:main-latest",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
+        "expose": 8888,
+        "gpu": true
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Axolotl\README.md:
+```
+# Axolotl
+
+![Axolotl](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl.mp4)
+
+Axolotl is a powerful tool designed to streamline the fine-tuning of various AI models, offering support for multiple configurations and architectures. It enables efficient training with single or multiple GPUs, making it ideal for both personal and professional projects.
+
+Unleash your potential with Nosana! Effortlessly run an Axolotl instance to fine-tune your AI models with ease. Experience the flexibility and power of advanced AI and GPU-backed nodes, ensuring your model training processes are smooth and effective.
+
+Whether you're conducting research, developing applications, or exploring AI capabilities, Nosana provides the essential tools to leverage Axolotl's full potential.
+
+```
+
+Contents of Hello-world\info.json:
+```
+{
+  "id": "hello-world",
+  "name": "Hello World",
+  "description": "Echo hello world in a ubuntu docker container",
+  "category": ["Featured"],
+  "icon": "https://nosana.io/img/Nosana_Logomark_color.png"
+}
+```
+
+Contents of Hello-world\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "job-builder"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "hello-world",
+      "args": {
+        "cmd": "echo hello world",
+        "image": "ubuntu",
+        "gpu": true
+      }
+    }
+  ]
+}
+```
+
+Contents of Hello-world\README.md:
+```
+# Hello World Template
+
+This is a simple template that prints hello world with the 'ubuntu' docker image.
+
+```
+
+Contents of InvokeAI\info.json:
+```
+{
+  "id": "invoke-ai",
+  "name": "Invoke AI",
+  "description": "Invoke is a leading creative engine built to empower professionals and enthusiasts alike. Generate and create stunning visual media using the latest AI-driven technologies.",
+  "category": ["Image Generation"],
+  "icon": "https://d4.alternativeto.net/xsSoWnh09YOroqDfDTYx-QcFdoXjOMcxLtDc7FZleA0/rs:fit:280:280:0/g:ce:0:0/exar:1/YWJzOi8vZGlzdC9pY29ucy9pbnZva2VhaV8yMjc0ODEucG5n.png"
+}
+
+```
+
+Contents of InvokeAI\invoke_ai.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of InvokeAI\job-definition.json:
+```
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "benchmark"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "SD-invoke",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "invokeai-web"
+          ],
+          "image": "docker.io/nosana/sd-invoke-bench:1.0.0",
+          "gpu": true,
+          "expose": 9090
+        }
+      }
+    ]
+  }
+```
+
+Contents of InvokeAI\README.md:
+```
+# Invoke AI
+
+![Invoke AI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/InvokeAI/invoke_ai.gif)
+
+Invoke is a leading creative engine built to empower professionals and enthusiasts alike. Generate and create stunning visual media using the latest AI-driven technologies. Invoke offers an industry-leading web-based UI and serves as the foundation for multiple commercial products.
+
+Unleash your creativity with Nosana! Effortlessly run an Invoke AI instance to generate stunning images. Experience the power of advanced AI and GPU-backed nodes, making your image creation process smooth and efficient. Whether for personal projects or professional work, Nosana provides the tools you need to bring your artistic visions to life.
+
+```
+
+Contents of Nosana-RAG-bot-webui\info.json:
+```
+{
+  "id": "nosana-llm-rag-webui",
+  "name": "Nosana LLM RAG WebUI",
+  "description": "A powerful LLM RAG WebUI running on the LMDeploy framework with LLama3.1 70B quantized, optimized for high-end GPUs.",
+  "category": ["LLM"],
+  "icon": "https://nosana.io/img/Nosana_Logomark_color.png"
+}
+
+```
+
+Contents of Nosana-RAG-bot-webui\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "nosana-chat-bot",
+      "args": {
+        "image": "docker.io/nosana/nosana-chat-bot:0.1.1",
+        "cmd": [
+          "-c",
+          "lmdeploy serve api_server ./models/snapshots/2123003760781134cfc31124aa6560a45b491fdf --model-name llama3.1 --chat-template ./chat_template.json --model-format awq & npm start"
+        ],
+        "gpu": true,
+        "expose": 3000,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "s3://nos-ai-models-qllsn32u/hugging-face/llama3.1/70b/4x/models--hugging-quants--Meta-Llama-3.1-70B-Instruct-AWQ-INT4",
+            "target": "/app/models/"
+          }
+        ]
+      }
+    }
+  ]
+}
+  
+```
+
+Contents of Nosana-RAG-bot-webui\nosana_bot.mp4:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Nosana-RAG-bot-webui\README.md:
+```
+# Nosana LLM RAG WebUI
+
+![Nosana LLM RAG WebUI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Nosana-RAG-bot-webui/nosana_bot.mp4)
+
+Nosana LLM RAG WebUI is a robust interface built on the LMDeploy framework, utilizing the LLama3.1 70B quantized model. Designed for high-performance environments, it leverages NVIDIA A100, H100, or GPUs with at least 40GB VRAM to deliver exceptional AI-driven text generation and retrieval-augmented generation (RAG) capabilities.
+
+Unleash the full potential of advanced AI with Nosana! Effortlessly deploy and manage your LLM RAG WebUI instance on powerful GPU-backed nodes, ensuring seamless and efficient performance for your most demanding projects.
+
+Whether you're engaged in research, development, or deploying commercial solutions, Nosana provides the infrastructure and tools needed to harness the capabilities of Nosana LLM RAG WebUI effectively.
+
+```
+
+Contents of Oobabooga\info.json:
+```
+{
+  "id": "oobabooga",
+  "name": "Oobabooga web UI",
+  "description": "Oobabooga is a versatile text generation web UI supporting multiple backends, offering rich features for generating and managing AI-driven text models.",
+  "category": ["LLM"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.png"
+}
+
+```
+
+Contents of Oobabooga\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Oobabooga-webui",
+      "args": {
+        "image": "docker.io/atinoda/text-generation-webui:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 7860,
+        "env": {
+          "EXTRA_LAUNCH_ARGS": "--listen --verbose"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Oobabooga\oobabooga.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Oobabooga\oobabooga.mp4:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Oobabooga\oobabooga.png:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Oobabooga\README.md:
+```
+# Oobabooga Text Generation WebUI
+
+![Oobabooga](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.gif)
+
+Oobabooga Text Generation WebUI is a powerful and flexible interface for generating text using various AI models. It supports multiple backends, including Transformers, llama.cpp, and ExLlamaV2, providing a seamless experience for both professionals and enthusiasts.
+
+Unleash your creativity with Nosana! Effortlessly run an Oobabooga instance to generate sophisticated text content. Experience the power of advanced AI and GPU-backed nodes, ensuring efficient and high-quality text generation for your projects.
+
+Whether for personal use, research, or professional applications, Nosana provides the tools you need to harness the full potential of Oobabooga's capabilities.
+
+```
+
+Contents of Open-webui-ollama\info.json:
+```
+{
+  "id": "open-webui",
+  "name": "Open WebUI using Ollama",
+  "description": "Open WebUI supports various LLM models",
+  "category": ["LLM"],
+  "icon": "https://openwebui.com/user.png"
+}
+```
+
+Contents of Open-webui-ollama\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "job-builder"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "open-webui",
+      "args": {
+        "cmd": [],
+        "env": {
+          "WEBUI_AUTH": "False",
+          "WEBUI_NAME": "Nosana Chat"
+        },
+        "image": "ghcr.io/open-webui/open-webui:ollama",
+        "gpu": true,
+        "expose": 8080
+      }
+    }
+  ]
+}
+```
+
+Contents of Open-webui-ollama\openwebui.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Open-webui-ollama\README.md:
+```
+# Open WebUI
+
+![Open WebUI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Open-webui-ollama/openwebui.gif)
+
+Open WebUI is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. It supports various LLM runners, including Ollama and OpenAI-compatible APIs. With Nosana we can run an instance of Open WebUI and connect to it via a Nosana Endpoint.
+
+```
+
+Contents of Pytorch-jupyter-notebook\info.json:
+```
+{
+  "id": "jupyter-notebook-pytorch",
+  "name": "Jupyter Notebook with pytorch:2.4.0-cuda12.1-cudnn9-runtime",
+  "description": "Jupyter Notebook Service",
+  "category": ["Featured"],
+  "icon": "https://seeklogo.com/images/J/jupyter-logo-A91705F539-seeklogo.com.png"
+}
+```
+
+Contents of Pytorch-jupyter-notebook\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "pytorch",
+      "args": {
+        "image": "docker.io/nosana/pytorch-jupyter:0.0.0",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
+        "expose": 8888,
+        "gpu": true
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Pytorch-jupyter-notebook\jupyter.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Pytorch-jupyter-notebook\README.md:
+```
+# Jupyter Notebook Template
+
+![Jupyter Notebook](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Tensorflow-jupyter-notebook/jupyter.gif)
+
+Harness the power of Nosana Endpoint to seamlessly run Jupyter Notebooks and connect via a user-friendly web interface. With access to GPU-backed nodes, you can conduct your experiments efficiently and cost-effectively, unlocking new possibilities for your research and data analysis
+
+```
+
+Contents of Rstudio\info.json:
+```
+{
+  "id": "rstudio",
+  "name": "RStudio",
+  "description": "Run RStudio Server in a Docker container, providing a powerful and consistent R development environment accessible through your browser.",
+  "category": ["Featured"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png"
+}
+
+```
+
+Contents of Rstudio\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "rocker-rstudio",
+      "args": {
+        "image": "rocker/rstudio:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 8787,
+        "env": {
+          "USER": "rstudio",
+          "PASSWORD": "password",
+          "RUNROOTLESS": "false"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Rstudio\README.md:
+```
+# RStudio
+
+![RStudio](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/rstudio/rstudio.mp4)
+
+RStudio Server allows you to run RStudio on a remote server and access it through your web browser. This setup provides a consistent and powerful R development environment accessible from anywhere, leveraging GPU-backed nodes for enhanced performance.
+
+**Key Features:**
+
+- **Remote Development:** Access your RStudio IDE from any device with a web browser.
+- **Resource Efficiency:** Utilize powerful cloud servers to handle intensive computations and data processing.
+- **Secure Access:** Configure user and group IDs, timezone, and secure access with passwords.
+- **Scalable:** Deploy on GPU-backed nodes to accelerate your R workflows.
+- **Easy Integration:** Seamlessly integrate with GitHub and other version control systems.
+
+**Unleash the power of R development with Nosana!** Effortlessly deploy and manage your RStudio Server instance on high-performance GPU-backed nodes, ensuring a smooth and efficient coding experience for your projects.
+
+Whether you're conducting data analysis, developing statistical models, or collaborating with a team, Nosana provides the infrastructure and tools you need to leverage RStudio effectively.
+
+## Getting Started
+
+1. **Deploy the Template:**
+   Use the Nosana platform to deploy the RStudio template.
+
+2. **Access the Web Interface:**
+   Navigate to `https://<address>` in your web browser to access the RStudio interface.
+
+3. **Configure RStudio:**
+   - **Username:** `rstudio`
+   - **Password:** Set via the `PASSWORD` environment variable in the job definition.
+
+## Configuration
+
+- **Environment Variables:**
+  - `USER=rstudio`: Sets the RStudio user.
+  - `PASSWORD=password`: Password for RStudio login.
+  - `RUNROOTLESS=false`: Run RStudio as root (set to `false` for security).
+
+- **Ports:**
+  - `8787`: Access the RStudio web interface.
+
+```
+
+Contents of Tensorflow-jupyter-notebook\info.json:
+```
+{
+  "id": "jupyter-notebook-tensorflow",
+  "name": "Jupyter Notebook with Tensorflow",
+  "description": "Jupyter Notebook Service",
+  "category": ["Featured"],
+  "icon": "https://seeklogo.com/images/J/jupyter-logo-A91705F539-seeklogo.com.png"
+}
+```
+
+Contents of Tensorflow-jupyter-notebook\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "job-builder"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "jupyter-notebook",
+      "args": {
+        "cmd": "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''",
+        "expose": 8888,
+        "image": "tensorflow/tensorflow:latest-gpu-jupyter",
+        "gpu": true
+      }
+    }
+  ]
+}
+```
+
+Contents of Tensorflow-jupyter-notebook\jupyter.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Tensorflow-jupyter-notebook\README.md:
+```
+# Jupyter Notebook Template
+
+![Jupyter Notebook](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Tensorflow-jupyter-notebook/jupyter.gif)
+
+Harness the power of Nosana Endpoint to seamlessly run Jupyter Notebooks and connect via a user-friendly web interface. With access to GPU-backed nodes, you can conduct your experiments efficiently and cost-effectively, unlocking new possibilities for your research and data analysis
+
+```
+
+Contents of VScode-server\info.json:
+```
+{
+  "id": "vscode-server",
+  "name": "VSCode Server",
+  "description": "Run Visual Studio Code on a remote server accessible through your browser, enabling a consistent and powerful development environment.",
+  "category": ["Development", "IDE", "GPU", "Service", "Featured"],
+  "icon": "https://avatars.githubusercontent.com/u/12324908?s=280&v=4"
+}
+
+```
+
+Contents of VScode-server\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "code-server",
+      "args": {
+        "image": "lscr.io/linuxserver/code-server:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 8443,
+        "env": {
+          "PUID": "1000",
+          "PGID": "1000",
+          "TZ": "Etc/UTC",
+          "SUDO_PASSWORD": "password"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of VScode-server\README.md:
+```
+# Oobabooga Text Generation WebUI
+
+![Oobabooga](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.mp4)
+
+Oobabooga Text Generation WebUI is a powerful and flexible interface for generating text using various AI models. It supports multiple backends, including Transformers, llama.cpp, and ExLlamaV2, providing a seamless experience for both professionals and enthusiasts.
+
+Unleash your creativity with Nosana! Effortlessly run an Oobabooga instance to generate sophisticated text content. Experience the power of advanced AI and GPU-backed nodes, ensuring efficient and high-quality text generation for your projects.
+
+Whether for personal use, research, or professional applications, Nosana provides the tools you need to harness the full potential of Oobabooga's capabilities.
+
+```
+
+Contents of Whisper-ASR-API\info.json:
+```
+{
+  "id": "whisper-asr-webservice",
+  "name": "Whisper ASR Webservice",
+  "description": "A robust speech recognition service powered by OpenAI's Whisper model, supporting multilingual transcription, translation, and language identification.",
+  "category": ["Featured"],
+  "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png"
+}
+
+```
+
+Contents of Whisper-ASR-API\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "openai-whisper-asr-webservice",
+      "args": {
+        "image": "docker.io/onerahmet/openai-whisper-asr-webservice:latest-gpu",
+        "cmd": [],
+        "gpu": true,
+        "expose": 9000,
+        "env": {
+          "ASR_MODEL": "base",
+          "ASR_ENGINE": "openai_whisper"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Whisper-ASR-API\README.md:
+```
+# Oobabooga Text Generation WebUI
+
+![Oobabooga](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.mp4)
+
+Oobabooga Text Generation WebUI is a powerful and flexible interface for generating text using various AI models. It supports multiple backends, including Transformers, llama.cpp, and ExLlamaV2, providing a seamless experience for both professionals and enthusiasts.
+
+Unleash your creativity with Nosana! Effortlessly run an Oobabooga instance to generate sophisticated text content. Experience the power of advanced AI and GPU-backed nodes, ensuring efficient and high-quality text generation for your projects.
+
+Whether for personal use, research, or professional applications, Nosana provides the tools you need to harness the full potential of Oobabooga's capabilities.
+
+```
+

@@ -1,7 +1,7 @@
 {
-  "id": "stable-diffusion",
-  "name": "Stable Diffusion",
+  "id": "AUTOMTIC1111-stable-diffusion",
+  "name": "AUTOMTIC1111 Stable Diffusion 1.5",
   "description": "Stable Diffusion is a latent text-to-image diffusion model",
-  "category": ["AI", "Image Generation", "GPU", "Service", "Featured"],
-  "icon": "https://res.cloudinary.com/dsht8f3ff/image/upload/v1714833633/stabilityai_fiujad.png"
+  "category": ["Image Generation"],
+  "icon": "https://private-user-images.githubusercontent.com/173618923/361423663-9ebdd0cf-02e2-497d-b87b-f98555396d23.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzE1MTEwOTUsIm5iZiI6MTczMTUxMDc5NSwicGF0aCI6Ii8xNzM2MTg5MjMvMzYxNDIzNjYzLTllYmRkMGNmLTAyZTItNDk3ZC1iODdiLWY5ODU1NTM5NmQyMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTExM1QxNTEzMTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNDI5MzVkM2I4NGY1NDViNzEzZDE5ZjYxNzJmYjdmOTM0MWU0OGI4OTg4OTgyZGY3NTUyZGQwODIwNzQzOGU2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.o4AIHOfkVEEw-Su4HTmAQIzBvnxjcOB1BUiUDzUSZrs"
 }

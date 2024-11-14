@@ -1,0 +1,7 @@
+{
+  "id": "forge-stable-diffusion",
+  "name": "Forge Stable Diffusion 1.5",
+  "description": "An optimized Stable Diffusion web UI with enhanced performance and features.",
+  "category": ["Image Generation"],
+  "icon": "https://private-user-images.githubusercontent.com/173618923/361423583-2dd6f478-e67a-4cc3-9b69-8a1c7728e06a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzE1MTEwOTUsIm5iZiI6MTczMTUxMDc5NSwicGF0aCI6Ii8xNzM2MTg5MjMvMzYxNDIzNTgzLTJkZDZmNDc4LWU2N2EtNGNjMy05YjY5LThhMWM3NzI4ZTA2YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTExM1QxNTEzMTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jY2JlNjg1MDUxM2I4YTZlYzg5MGQyMWE1Y2ViZjI1YTM1ZGViMTgwZDE4ZWY4ZWNmMjQyZDZlNDIyZGQ4NjFlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Ao9S1dPfnQPmzdlBJJjDJ1d0zN8mw8n1_Fp7d0F81pY"
+}
