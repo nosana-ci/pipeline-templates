@@ -1,9 +1,19 @@
-# Oobabooga Text Generation WebUI
+# Whisper ASR API
 
-![Oobabooga](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.mp4)
+![Whisper ASR Webservice](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/whisper-asr-webservice/whisper_asr_webservice.mp4)
 
-Oobabooga Text Generation WebUI is a powerful and flexible interface for generating text using various AI models. It supports multiple backends, including Transformers, llama.cpp, and ExLlamaV2, providing a seamless experience for both professionals and enthusiasts.
+A robust speech recognition service powered by OpenAI's Whisper model.
 
-Unleash your creativity with Nosana! Effortlessly run an Oobabooga instance to generate sophisticated text content. Experience the power of advanced AI and GPU-backed nodes, ensuring efficient and high-quality text generation for your projects.
+Unleash the power of speech recognition with Nosana! Effortlessly run your Whisper ASR instance on high-performance GPU-backed nodes, ensuring optimal transcription for your audio processing needs.
 
-Whether for personal use, research, or professional applications, Nosana provides the tools you need to harness the full potential of Oobabooga's capabilities.
+## Key Features
+- Multilingual transcription
+- Translation support
+- Language identification
+- RESTful API interface
+- GPU acceleration support
+
+## Configuration
+- Port: 9000
+- GPU: Required
+- Model: Whisper Base

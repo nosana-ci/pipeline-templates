@@ -1,10 +1,20 @@
-# Stable Diffusion WebUI
+# AUTOMATIC1111 Stable Diffusion
 
-![Stable Diffusion WebUI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/AUTOMATIC1111-stable-diffusion/stable_diff.gif)
+![AUTOMATIC1111](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/AUTOMATIC1111-stable-diffusion/stable_diff.gif)
 
-[Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) is a web interface for Stable Diffusion, implemented using Gradio library.
+A powerful web interface for Stable Diffusion, offering extensive features for AI image generation and editing.
 
-Unleash your creativity with Nosana! Effortlessly run a Stable Diffusion instance to generate stunning images.
-Experience the power of advanced AI and GPU-backed nodes, making your image creation process smooth and efficient.
-Whether for personal projects or professional work, Nosana provides the tools you need to bring your artistic visions to life.
+Unleash the power of Stable Diffusion with Nosana! Effortlessly run your instance on high-performance GPU-backed nodes, ensuring optimal image generation for your creative projects.
+
+## Key Features
+- Text-to-image generation
+- Image-to-image editing
+- Inpainting and outpainting
+- Custom model support
+- GPU acceleration support
+
+## Configuration
+- Port: 7860
+- GPU: Required
+- Model: Stable Diffusion 1.5
 

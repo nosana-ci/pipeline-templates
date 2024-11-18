@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "forge_stablediffusion",
+      "args": {
+        "cmd": [
+          "/bin/sh", "-c", 
+          "python -u launch.py --api --listen --port 7861"
+        ],
+        "image": "docker.io/nosana/sd-forge-bench:1.0.0",
+        "gpu": true,
+        "expose": 7861,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/stable-diffusion/1.5",
+            "target": "/opt/stable-diffusion-webui-forge/models/Stable-diffusion"
+          }
+        ]
+        
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "id": "oobabooga",
-  "name": "Oobabooga",
+  "name": "Oobabooga web UI",
   "description": "Oobabooga is a versatile text generation web UI supporting multiple backends, offering rich features for generating and managing AI-driven text models.",
-  "category": ["AI", "Text Generation", "GPU", "Service", "Featured"],
-  "icon": "https://archive.org/details/github.com-oobabooga-text-generation-webui_-_2023-08-28_21-02-24"
+  "category": ["Web UI", "LLM"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.png"
 }

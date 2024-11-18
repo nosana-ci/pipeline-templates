@@ -1,0 +1,7 @@
+{
+  "id": "ollama-api",
+  "name": "Ollama API",
+  "description": "Run large language models locally with a simple API interface",
+  "category": ["API Only", "LLM"],
+  "icon": "https://ollama.ai/public/ollama.png"
+} 

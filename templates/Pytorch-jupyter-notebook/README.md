@@ -1,5 +1,19 @@
-# Jupyter Notebook Template
+# PyTorch Jupyter Notebook
 
-![Jupyter Notebook](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Tensorflow-jupyter-notebook/jupyter.gif)
+![PyTorch Jupyter](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Pytorch-jupyter-notebook/jupyter.gif)
 
-Harness the power of Nosana Endpoint to seamlessly run Jupyter Notebooks and connect via a user-friendly web interface. With access to GPU-backed nodes, you can conduct your experiments efficiently and cost-effectively, unlocking new possibilities for your research and data analysis
+A Jupyter Notebook environment with PyTorch pre-installed for deep learning development.
+
+Unleash the power of PyTorch with Nosana! Effortlessly run your Jupyter environment on high-performance GPU-backed nodes, ensuring optimal performance for your deep learning projects.
+
+## Key Features
+- Interactive Python environment
+- Pre-installed PyTorch
+- CUDA support
+- Notebook sharing
+- GPU acceleration support
+
+## Configuration
+- Port: 8888
+- GPU: Required
+- No authentication required
