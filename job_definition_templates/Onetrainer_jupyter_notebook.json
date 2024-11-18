@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Onetrainer-UI",
+      "args": {
+        "image": "nosana/onetrainercomplete:0.0.0",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
+        "expose": 8888,
+        "gpu": true
+      }
+    }
+  ]
+}

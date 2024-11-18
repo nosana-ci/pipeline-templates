@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "tts-generation-webui",
+      "args": {
+        "image": "ghcr.io/rsxdalv/tts-generation-webui:main",
+        "cmd": [],
+        "gpu": true,
+        "expose": 3000
+      }
+    }
+  ]
+}

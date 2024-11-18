@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "lmdepoy",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "lmdeploy serve api_server Qwen/Qwen2.5-7B --model-name Qwen2.5-7B"
+        ],
+        "image": "docker.io/openmmlab/lmdeploy:latest",
+        "gpu": true,
+        "expose": 23333
+      }
+    }
+  ]
+}

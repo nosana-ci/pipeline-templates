@@ -1,0 +1,643 @@
+Directory: job_definition_templates
+
+Directory Structure:
+```
+.
+.
+|-- ./AUTOMATIC1111_stablediffusion.json
+|-- ./Axolotl_jupyter_notebook.json
+|-- ./ComfyUI_stablediffusion.json
+|-- ./Forge_stablediffusion.json
+|-- ./InvokeAI.json
+|-- ./Kohya_GUI.json
+|-- ./LMDeploy_API.json
+|-- ./Llama_factory.json
+|-- ./Nosana_RAG_bot_webui.json
+|-- ./Ollama-open-webui.json
+|-- ./Ollama.json
+|-- ./Onetrainer_jupyter_notebook.json
+|-- ./Oobabooga.json
+|-- ./Pytorch_jupyter_notebook.json
+|-- ./Rstudio.json
+|-- ./TGI_API.json
+|-- ./Tensorflow_jupyter_notebook.json
+|-- ./Text_To_Speech_generation_UI.json
+|-- ./VLLM_API.json
+|-- ./VScode_server.json
+|-- ./Whisper_ASR_API.json
+`-- ./repo-to-text_2024-11-15-11-34-22-UTC.txt
+```
+
+Contents of AUTOMATIC1111_stablediffusion.json:
+```
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "cli"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "auto1111_stablediffusion",
+        "args": {
+          "cmd": [
+            "/bin/sh", "-c", 
+            "python -u launch.py --listen --port 7860 --enable-insecure-extension-access"
+          ],
+          "image": "docker.io/nosana/automatic1111:0.0.1",
+          "gpu": true,
+          "expose": 7860,
+          "resources": [
+            {
+              "type": "S3",
+              "url": "https://models.nosana.io/stable-diffusion/1.5",
+              "target": "/stable-diffusion-webui/models/Stable-diffusion"
+            }
+          ]
+          
+        }
+      }
+    ]
+}
+```
+
+Contents of Axolotl_jupyter_notebook.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "axolotl",
+      "args": {
+        "image": "docker.io/winglian/axolotl-cloud:main-latest",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
+        "expose": 8888,
+        "gpu": true
+      }
+    }
+  ]
+}
+
+```
+
+Contents of ComfyUI_stablediffusion.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "comfy_stablediffusion",
+      "args": {
+        "cmd": [
+          "/bin/sh", "-c", 
+          "python -u main.py --listen --port 7860 --gpu-only"
+        ],
+        "image": "docker.io/nosana/sd-comfy-manager:0.0.1",
+        "gpu": true,
+        "expose": 7860,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/stable-diffusion/1.5",
+            "target": "/comfyui/models/checkpoints"
+          }
+        ]
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Forge_stablediffusion.json:
+```
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "cli"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "forge_stablediffusion",
+        "args": {
+          "cmd": [
+            "/bin/sh", "-c", 
+            "python -u launch.py --api --listen --port 7861"
+          ],
+          "image": "docker.io/nosana/sd-forge-bench:1.0.0",
+          "gpu": true,
+          "expose": 7861,
+          "resources": [
+            {
+              "type": "S3",
+              "url": "https://models.nosana.io/stable-diffusion/1.5",
+              "target": "/opt/stable-diffusion-webui-forge/models/Stable-diffusion"
+            }
+          ]
+          
+        }
+      }
+    ]
+}
+```
+
+Contents of InvokeAI.json:
+```
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "benchmark"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "bench-SD-invoke",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "invokeai-web"
+          ],
+          "image": "docker.io/nosana/sd-invoke-bench:1.0.0",
+          "gpu": true,
+          "expose": 9090
+        }
+      }
+    ]
+  }
+```
+
+Contents of Kohya_GUI.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "kohya-ss-webservice",
+      "args": {
+        "image": "nosana/kohya_ss:1.0.0",
+        "cmd": ["python3", "kohya_gui.py", "--listen", "0.0.0.0", "--server_port", "7860", "--headless"],
+        "gpu": true,
+        "expose": 7860,
+        "env": {
+          "NVIDIA_VISIBLE_DEVICES": "all",
+          "NVIDIA_DRIVER_CAPABILITIES": "compute,utility"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Llama_factory.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "llama-factory",
+      "args": {
+        "image": "docker.io/nosana/llama-factory:0.0.0",
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "llamafactory-cli webui"
+        ],
+        "gpu": true,
+        "expose": 7860
+      }
+    }
+  ]
+}
+
+```
+
+Contents of LMDeploy_API.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "lmdepoy",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "lmdeploy serve api_server Qwen/Qwen2.5-7B --model-name Qwen2.5-7B"
+        ],
+        "image": "docker.io/openmmlab/lmdeploy:latest",
+        "gpu": true,
+        "expose": 23333
+      }
+    }
+  ]
+}
+```
+
+Contents of Nosana_RAG_bot_webui.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "nosana-chat-bot",
+      "args": {
+        "image": "docker.io/nosana/nosana-chat-bot:0.1.1",
+        "cmd": [
+          "-c",
+          "lmdeploy serve api_server ./models/snapshots/2123003760781134cfc31124aa6560a45b491fdf --model-name llama3.1 --chat-template ./chat_template.json --model-format awq & npm start"
+        ],
+        "gpu": true,
+        "expose": 3000,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "s3://nos-ai-models-qllsn32u/hugging-face/llama3.1/70b/4x/models--hugging-quants--Meta-Llama-3.1-70B-Instruct-AWQ-INT4",
+            "target": "/app/models/"
+          }
+        ]
+      }
+    }
+  ]
+}
+  
+```
+
+Contents of Ollama-open-webui.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "job-builder"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "open-webui",
+      "args": {
+        "cmd": [],
+        "env": {
+          "WEBUI_AUTH": "False",
+          "WEBUI_NAME": "Nosana Chat"
+        },
+        "image": "ghcr.io/open-webui/open-webui:ollama",
+        "gpu": true,
+        "expose": 8080
+      }
+    }
+  ]
+}
+```
+
+Contents of Ollama.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "ollama-service",
+      "args": {
+        "image": "docker.io/ollama/ollama",
+        "cmd": [],
+        "gpu": true,
+        "expose": 11434
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Onetrainer_jupyter_notebook.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Onetrainer-UI",
+      "args": {
+        "image": "nosana/onetrainercomplete:0.0.0",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
+        "expose": 8888,
+        "gpu": true
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Oobabooga.json:
+```
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "cli"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "Oobabooga-webui",
+        "args": {
+          "image": "docker.io/atinoda/text-generation-webui:latest",
+          "cmd": [],
+          "gpu": true,
+          "expose": 7860,
+          "env": {
+            "EXTRA_LAUNCH_ARGS": "--listen --verbose"
+          }
+        }
+      }
+    ]
+  }
+  
+```
+
+Contents of Pytorch_jupyter_notebook.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "pytorch",
+      "args": {
+        "image": "docker.io/nosana/pytorch-jupyter:0.0.0",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
+        "expose": 8888,
+        "gpu": true
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Rstudio.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "rocker-rstudio",
+      "args": {
+        "image": "rocker/rstudio:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 8787,
+        "env": {
+          "USER": "rstudio",
+          "PASSWORD": "password",
+          "RUNROOTLESS": "false"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Tensorflow_jupyter_notebook.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "job-builder"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "jupyter-notebook",
+      "args": {
+        "cmd": "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''",
+        "expose": 8888,
+        "image": "tensorflow/tensorflow:latest-gpu-jupyter",
+        "gpu": true
+      }
+    }
+  ]
+}
+```
+
+Contents of Text_To_Speech_generation_UI.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "tts-generation-webui",
+      "args": {
+        "image": "ghcr.io/rsxdalv/tts-generation-webui:main",
+        "cmd": [],
+        "gpu": true,
+        "expose": 3000
+      }
+    }
+  ]
+}
+
+```
+
+Contents of TGI_API.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "tgi",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/bash",
+          "-c",
+          "text-generation-launcher --model-id Qwen/Qwen2.5-7B --port 8080"
+        ],
+        "image": "ghcr.io/huggingface/text-generation-inference:2.3.1",
+        "gpu": true,
+        "expose": 8080
+      }
+    }
+  ]
+}
+```
+
+Contents of VLLM_API.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "vllm",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model Qwen/Qwen2.5-7B --served-model-name Qwen2.5-7B"
+        ],
+        "image": "docker.io/vllm/vllm-openai:v0.5.4",
+        "gpu": true,
+        "expose": 8080
+      }
+    }
+  ]
+}
+```
+
+Contents of VScode_server.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "code-server",
+      "args": {
+        "image": "lscr.io/linuxserver/code-server:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 8443,
+        "env": {
+          "PUID": "1000",
+          "PGID": "1000",
+          "TZ": "Etc/UTC",
+          "SUDO_PASSWORD": "password"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Whisper_ASR_API.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "openai-whisper-asr-webservice",
+      "args": {
+        "image": "docker.io/onerahmet/openai-whisper-asr-webservice:latest-gpu",
+        "cmd": [],
+        "gpu": true,
+        "expose": 9000,
+        "env": {
+          "ASR_MODEL": "base",
+          "ASR_ENGINE": "openai_whisper"
+        }
+      }
+    }
+  ]
+}
+
+```
+

@@ -1,0 +1,23 @@
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "benchmark"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "bench-SD-invoke",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "invokeai-web"
+          ],
+          "image": "docker.io/nosana/sd-invoke-bench:1.0.0",
+          "gpu": true,
+          "expose": 9090
+        }
+      }
+    ]
+  }

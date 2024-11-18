@@ -3,6 +3,7 @@ Directory: templates
 Directory Structure:
 ```
 .
+.
 |-- ./AUTOMATIC1111-stable-diffusion-1.5
 |   |-- ./AUTOMATIC1111-stable-diffusion-1.5/README.md
 |   |-- ./AUTOMATIC1111-stable-diffusion-1.5/info.json
@@ -14,6 +15,14 @@ Directory Structure:
 |   |-- ./Axolotl/axolotl.mp4
 |   |-- ./Axolotl/info.json
 |   `-- ./Axolotl/job-definition.json
+|-- ./ComfyUI-stable-diffusion-1.5
+|   |-- ./ComfyUI-stable-diffusion-1.5/README.md
+|   |-- ./ComfyUI-stable-diffusion-1.5/info.json
+|   `-- ./ComfyUI-stable-diffusion-1.5/job-definition.json
+|-- ./Forge-stable-diffusion-1.5
+|   |-- ./Forge-stable-diffusion-1.5/README.md
+|   |-- ./Forge-stable-diffusion-1.5/info.json
+|   `-- ./Forge-stable-diffusion-1.5/job-definition.json
 |-- ./Hello-world
 |   |-- ./Hello-world/README.md
 |   |-- ./Hello-world/info.json
@@ -23,6 +32,10 @@ Directory Structure:
 |   |-- ./InvokeAI/info.json
 |   |-- ./InvokeAI/invoke_ai.gif
 |   `-- ./InvokeAI/job-definition.json
+|-- ./Kohya-SS
+|   |-- ./Kohya-SS/README.md
+|   |-- ./Kohya-SS/info.json
+|   `-- ./Kohya-SS/job-definition.json
 |-- ./Nosana-RAG-bot-webui
 |   |-- ./Nosana-RAG-bot-webui/README.md
 |   |-- ./Nosana-RAG-bot-webui/info.json
@@ -58,20 +71,21 @@ Directory Structure:
 |   |-- ./VScode-server/README.md
 |   |-- ./VScode-server/info.json
 |   `-- ./VScode-server/job-definition.json
-`-- ./Whisper-ASR-API
-    |-- ./Whisper-ASR-API/README.md
-    |-- ./Whisper-ASR-API/info.json
-    `-- ./Whisper-ASR-API/job-definition.json
+|-- ./Whisper-ASR-API
+|   |-- ./Whisper-ASR-API/README.md
+|   |-- ./Whisper-ASR-API/info.json
+|   `-- ./Whisper-ASR-API/job-definition.json
+`-- ./repo-to-text_2024-11-13-15-00-53-UTC.txt
 ```
 
 Contents of AUTOMATIC1111-stable-diffusion-1.5\info.json:
 ```
 {
   "id": "AUTOMTIC1111-stable-diffusion",
-  "name": "AUTOMTIC1111 Stable Diffusion",
+  "name": "AUTOMATIC1111 Stable Diffusion 1.5",
   "description": "Stable Diffusion is a latent text-to-image diffusion model",
   "category": ["Image Generation"],
-  "icon": "https://user-images.githubusercontent.com/36368048/196280761-1535f413-a91e-4b6a-af6a-b890f8ae204c.png"
+  "icon": "https://private-user-images.githubusercontent.com/173618923/361423663-9ebdd0cf-02e2-497d-b87b-f98555396d23.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzE1MTEwOTUsIm5iZiI6MTczMTUxMDc5NSwicGF0aCI6Ii8xNzM2MTg5MjMvMzYxNDIzNjYzLTllYmRkMGNmLTAyZTItNDk3ZC1iODdiLWY5ODU1NTM5NmQyMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTExM1QxNTEzMTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNDI5MzVkM2I4NGY1NDViNzEzZDE5ZjYxNzJmYjdmOTM0MWU0OGI4OTg4OTgyZGY3NTUyZGQwODIwNzQzOGU2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.o4AIHOfkVEEw-Su4HTmAQIzBvnxjcOB1BUiUDzUSZrs"
 }
 ```
 
@@ -90,7 +104,7 @@ Contents of AUTOMATIC1111-stable-diffusion-1.5\job-definition.json:
       "args": {
         "cmd": [
           "/bin/sh", "-c", 
-          "python -u launch.py --listen --port 7860 --api"
+          "python -u launch.py --listen --port 7860 --enable-insecure-extension-access"
         ],
         "image": "docker.io/nosana/automatic1111:0.0.1",
         "gpu": true,
@@ -201,6 +215,118 @@ Whether you're conducting research, developing applications, or exploring AI cap
 
 ```
 
+Contents of ComfyUI-stable-diffusion-1.5\info.json:
+```
+{
+  "id": "comfyui-stable-diffusion",
+  "name": "ComfyUI Stable Diffusion 1.5",
+  "description": "A powerful and modular Stable Diffusion GUI with a node-based interface.",
+  "category": ["Image Generation"],
+  "icon": "https://private-user-images.githubusercontent.com/75789136/253827723-a9445b86-a979-4467-be0b-750800e655a0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzE1MTA1NTksIm5iZiI6MTczMTUxMDI1OSwicGF0aCI6Ii83NTc4OTEzNi8yNTM4Mjc3MjMtYTk0NDViODYtYTk3OS00NDY3LWJlMGItNzUwODAwZTY1NWEwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDExMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMTEzVDE1MDQxOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg4NDQ2MTU1ODU1NTMzMjg0MThhOTc4YTYwNTdjYWRiNDcwZjVkMTcxYWNjNjk3ODQ5NzUzOGUyYjVkMjA4ZWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.VCLpIwvsIHD_gDZwATVKIyYHp0sfY6yIrpDLXfOdLDk"
+}
+
+```
+
+Contents of ComfyUI-stable-diffusion-1.5\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "comfy_stablediffusion",
+      "args": {
+        "cmd": [
+          "/bin/sh", "-c", 
+          "python -u main.py --listen --port 7860 --gpu-only"
+        ],
+        "image": "docker.io/nosana/sd-comfy-manager:0.0.1",
+        "gpu": true,
+        "expose": 7860,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/stable-diffusion/1.5",
+            "target": "/comfyui/models/checkpoints"
+          }
+        ]
+      }
+    }
+  ]
+}
+
+```
+
+Contents of ComfyUI-stable-diffusion-1.5\README.md:
+```
+# ComfyUI Stable Diffusion
+
+![ComfyUI](https://raw.githubusercontent.com/nosana-ci/templates/main/templates/ComfyUI/comfyui.gif)
+
+ComfyUI is a powerful and modular Stable Diffusion GUI with a node-based interface, providing advanced control and flexibility for image generation.
+
+```
+
+Contents of Forge-stable-diffusion-1.5\info.json:
+```
+{
+  "id": "forge-stable-diffusion",
+  "name": "Forge Stable Diffusion 1.5",
+  "description": "An optimized Stable Diffusion web UI with enhanced performance and features.",
+  "category": ["Image Generation"],
+  "icon": "https://private-user-images.githubusercontent.com/173618923/361423583-2dd6f478-e67a-4cc3-9b69-8a1c7728e06a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzE1MTEwOTUsIm5iZiI6MTczMTUxMDc5NSwicGF0aCI6Ii8xNzM2MTg5MjMvMzYxNDIzNTgzLTJkZDZmNDc4LWU2N2EtNGNjMy05YjY5LThhMWM3NzI4ZTA2YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTExM1QxNTEzMTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jY2JlNjg1MDUxM2I4YTZlYzg5MGQyMWE1Y2ViZjI1YTM1ZGViMTgwZDE4ZWY4ZWNmMjQyZDZlNDIyZGQ4NjFlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Ao9S1dPfnQPmzdlBJJjDJ1d0zN8mw8n1_Fp7d0F81pY"
+}
+
+```
+
+Contents of Forge-stable-diffusion-1.5\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "forge_stablediffusion",
+      "args": {
+        "cmd": [
+          "/bin/sh", "-c", 
+          "python -u launch.py --api --listen --port 7861"
+        ],
+        "image": "docker.io/nosana/sd-forge-bench:1.0.0",
+        "gpu": true,
+        "expose": 7861,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/stable-diffusion/1.5",
+            "target": "/opt/stable-diffusion-webui-forge/models/Stable-diffusion"
+          }
+        ]
+        
+      }
+    }
+  ]
+}
+```
+
+Contents of Forge-stable-diffusion-1.5\README.md:
+```
+# Forge Stable Diffusion
+
+![Forge Stable Diffusion](https://raw.githubusercontent.com/nosana-ci/templates/main/templates/Forge-Stable-Diffusion/forge.gif)
+
+Forge Stable Diffusion is an optimized web UI for Stable Diffusion, offering enhanced performance and additional features for a superior image generation experience.
+
+```
+
 Contents of Hello-world\info.json:
 ```
 {
@@ -296,6 +422,56 @@ Contents of InvokeAI\README.md:
 Invoke is a leading creative engine built to empower professionals and enthusiasts alike. Generate and create stunning visual media using the latest AI-driven technologies. Invoke offers an industry-leading web-based UI and serves as the foundation for multiple commercial products.
 
 Unleash your creativity with Nosana! Effortlessly run an Invoke AI instance to generate stunning images. Experience the power of advanced AI and GPU-backed nodes, making your image creation process smooth and efficient. Whether for personal projects or professional work, Nosana provides the tools you need to bring your artistic visions to life.
+
+```
+
+Contents of Kohya-SS\info.json:
+```
+{
+  "id": "kohya-ss",
+  "name": "Kohya SS GUI",
+  "description": "A user-friendly web interface for training and fine-tuning Stable Diffusion models using Kohya SS scripts.",
+  "category": ["Model Fine-Tuning"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/main/templates/Kohya-ss/kohya-ss.png"
+}
+
+```
+
+Contents of Kohya-SS\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "kohya-ss-webservice",
+      "args": {
+        "image": "nosana/kohya_ss:1.0.0",
+        "cmd": ["python3", "kohya_gui.py", "--listen", "0.0.0.0", "--server_port", "7860", "--headless"],
+        "gpu": true,
+        "expose": 7860,
+        "env": {
+          "NVIDIA_VISIBLE_DEVICES": "all",
+          "NVIDIA_DRIVER_CAPABILITIES": "compute,utility"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Kohya-SS\README.md:
+```
+# Kohya SS GUI
+
+![Kohya SS GUI](https://raw.githubusercontent.com/nosana-ci/templates/main/templates/Kohya-ss/kohya-ss.gif)
+
+Kohya SS GUI provides a user-friendly web interface for training and fine-tuning Stable Diffusion models using the Kohya SS scripts. It supports DreamBooth, LoRA, and fine-tuning, offering advanced features for efficient model training and customization.
 
 ```
 
@@ -729,15 +905,74 @@ Contents of VScode-server\job-definition.json:
 
 Contents of VScode-server\README.md:
 ```
-# Oobabooga Text Generation WebUI
+# VSCode Server
 
-![Oobabooga](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.mp4)
+![VSCode Server](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/vscode-server/vscode_server.mp4)
 
-Oobabooga Text Generation WebUI is a powerful and flexible interface for generating text using various AI models. It supports multiple backends, including Transformers, llama.cpp, and ExLlamaV2, providing a seamless experience for both professionals and enthusiasts.
+VSCode Server allows you to run Visual Studio Code on a remote server and access it through your browser. This setup provides a consistent and powerful development environment accessible from anywhere, whether you're on a Chromebook, tablet, laptop, or desktop.
 
-Unleash your creativity with Nosana! Effortlessly run an Oobabooga instance to generate sophisticated text content. Experience the power of advanced AI and GPU-backed nodes, ensuring efficient and high-quality text generation for your projects.
+**Key Features:**
 
-Whether for personal use, research, or professional applications, Nosana provides the tools you need to harness the full potential of Oobabooga's capabilities.
+- **Remote Development:** Access your development environment from any device with a web browser.
+- **Resource Efficiency:** Leverage powerful cloud servers to handle intensive computations, tests, compilations, and more.
+- **Seamless Integration:** Easily integrate with GitHub by adding your SSH keys.
+- **Customizable Environment:** Configure user and group IDs, timezone, and secure access with passwords.
+- **Scalable:** Utilize GPU-backed nodes for enhanced performance when needed.
+
+**Unleash the power of remote development with Nosana!** Effortlessly deploy and manage your VSCode Server instance on high-performance GPU-backed nodes, ensuring a smooth and efficient coding experience for your projects.
+
+Whether you're developing software, managing repositories, or collaborating with a team, Nosana provides the infrastructure and tools you need to leverage VSCode Server effectively.
+
+## Getting Started
+
+1. **Deploy the Template:**
+   Use the Nosana platform to deploy the VSCode Server template.
+
+2. **Access the Web Interface:**
+   Navigate to `https://<address>` in your web browser to access the VSCode interface.
+
+3. **Configure GitHub Integration (Optional):**
+   - Add your SSH key to `/config/.ssh` for GitHub integration.
+   - Open a terminal within VSCode and set your GitHub username and email:
+     ```bash
+     git config --global user.name "your_username"
+     git config --global user.email "your_email@example.com"
+     ```
+
+4. **Secure Your Instance:**
+   - Set a strong `SUDO_PASSWORD` in the environment variables to secure terminal access.
+
+## Configuration
+
+- **Environment Variables:**
+  - `PUID=1000`: User ID for file permissions.
+  - `PGID=1000`: Group ID for file permissions.
+  - `TZ=Etc/UTC`: Timezone setting.
+  - `SUDO_PASSWORD=password`: Password for sudo access in the terminal.
+
+- **Ports:**
+  - `8443`: Access the VSCode web interface.
+
+- **Volume Mappings:**
+  - `/config`: Contains all relevant configuration files and settings.
+
+## Notes
+
+- **GPU Requirements:**
+  - This container is configured to use GPU resources. Ensure your deployment node has a GPU with sufficient capabilities if needed.
+
+- **Security:**
+  - If `PASSWORD` or `HASHED_PASSWORD` is not set, there will be no authentication for the web interface. It's recommended to set at least one for security.
+
+- **Updating:**
+  - To update the container, pull the latest image and recreate the container using your deployment method (Docker Compose or Docker CLI).
+
+---
+
+### **Directory Structure:**
+
+Ensure you create a new directory named `vscode-server` inside your `templates` directory. The structure should look like this:
+
 
 ```
 
@@ -783,15 +1018,22 @@ Contents of Whisper-ASR-API\job-definition.json:
 
 Contents of Whisper-ASR-API\README.md:
 ```
-# Oobabooga Text Generation WebUI
+# Whisper ASR Webservice
 
-![Oobabooga](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.mp4)
+![Whisper ASR Webservice](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/whisper-asr-webservice/whisper_asr_webservice.mp4)
 
-Oobabooga Text Generation WebUI is a powerful and flexible interface for generating text using various AI models. It supports multiple backends, including Transformers, llama.cpp, and ExLlamaV2, providing a seamless experience for both professionals and enthusiasts.
+Whisper ASR Webservice is a powerful speech recognition API built on OpenAI's Whisper model. It supports multilingual speech recognition, translation, and language identification, making it ideal for a wide range of applications from transcription services to real-time translation tools.
 
-Unleash your creativity with Nosana! Effortlessly run an Oobabooga instance to generate sophisticated text content. Experience the power of advanced AI and GPU-backed nodes, ensuring efficient and high-quality text generation for your projects.
+**Key Features:**
 
-Whether for personal use, research, or professional applications, Nosana provides the tools you need to harness the full potential of Oobabooga's capabilities.
+- **Multilingual Support:** Transcribe and translate audio in multiple languages.
+- **Flexible Deployment:** Easily run on GPU-backed nodes for enhanced performance.
+- **API Integration:** Seamlessly integrate with existing applications using the OpenAI-compatible API.
+- **Scalable:** Designed to handle varying workloads efficiently.
+
+**Unleash the power of advanced speech recognition with Nosana!** Effortlessly deploy and manage your Whisper ASR Webservice instance on high-performance GPU-backed nodes, ensuring accurate and efficient transcription for your projects.
+
+Whether you're developing a transcription service, building real-time translation tools, or integrating speech recognition into your applications, Nosana provides the infrastructure and tools you need to leverage Whisper ASR Webservice effectively.
 
 ```
 

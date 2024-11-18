@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "llama-factory",
+      "args": {
+        "image": "docker.io/nosana/llama-factory:0.0.0",
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "llamafactory-cli webui"
+        ],
+        "gpu": true,
+        "expose": 7860
+      }
+    }
+  ]
+}

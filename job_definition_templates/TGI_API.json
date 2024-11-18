@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "tgi",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/bash",
+          "-c",
+          "text-generation-launcher --model-id Qwen/Qwen2.5-7B --port 8080"
+        ],
+        "image": "ghcr.io/huggingface/text-generation-inference:2.3.1",
+        "gpu": true,
+        "expose": 8080
+      }
+    }
+  ]
+}

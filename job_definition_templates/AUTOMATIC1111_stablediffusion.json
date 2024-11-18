@@ -1,0 +1,30 @@
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "cli"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "auto1111_stablediffusion",
+        "args": {
+          "cmd": [
+            "/bin/sh", "-c", 
+            "python -u launch.py --listen --port 7860 --enable-insecure-extension-access"
+          ],
+          "image": "docker.io/nosana/automatic1111:0.0.1",
+          "gpu": true,
+          "expose": 7860,
+          "resources": [
+            {
+              "type": "S3",
+              "url": "https://models.nosana.io/stable-diffusion/1.5",
+              "target": "/stable-diffusion-webui/models/Stable-diffusion"
+            }
+          ]
+          
+        }
+      }
+    ]
+}
