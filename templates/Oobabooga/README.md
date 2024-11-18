@@ -2,8 +2,18 @@
 
 ![Oobabooga](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.gif)
 
-Oobabooga Text Generation WebUI is a powerful and flexible interface for generating text using various AI models. It supports multiple backends, including Transformers, llama.cpp, and ExLlamaV2, providing a seamless experience for both professionals and enthusiasts.
+A versatile text generation interface supporting multiple LLM backends and models.
 
-Unleash your creativity with Nosana! Effortlessly run an Oobabooga instance to generate sophisticated text content. Experience the power of advanced AI and GPU-backed nodes, ensuring efficient and high-quality text generation for your projects.
+Unleash the power of text generation with Nosana! Effortlessly run your Oobabooga instance on high-performance GPU-backed nodes, ensuring optimal performance for your language tasks.
 
-Whether for personal use, research, or professional applications, Nosana provides the tools you need to harness the full potential of Oobabooga's capabilities.
+## Key Features
+- Multiple model support
+- Interactive chat interface
+- Custom prompt templates
+- Model fine-tuning options
+- GPU acceleration support
+
+## Configuration
+- Port: 7860
+- GPU: Required
+- Launch Arguments: --listen --verbose

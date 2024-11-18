@@ -1,5 +1,19 @@
 # Kohya SS GUI
 
-![Kohya SS GUI](https://raw.githubusercontent.com/nosana-ci/templates/main/templates/Kohya-ss/kohya-ss.gif)
+![Kohya SS](https://raw.githubusercontent.com/nosana-ci/templates/main/templates/Kohya-ss/kohya-ss.gif)
 
-Kohya SS GUI provides a user-friendly web interface for training and fine-tuning Stable Diffusion models using the Kohya SS scripts. It supports DreamBooth, LoRA, and fine-tuning, offering advanced features for efficient model training and customization.
+A user-friendly interface for training and fine-tuning Stable Diffusion models.
+
+Unleash the power of model training with Nosana! Effortlessly run your Kohya SS instance on high-performance GPU-backed nodes, ensuring optimal training for your custom models.
+
+## Key Features
+- Custom model training
+- LoRA support
+- Hyperparameter optimization
+- Dataset management
+- GPU acceleration support
+
+## Configuration
+- Port: 7860
+- GPU: Required
+- Headless mode enabled

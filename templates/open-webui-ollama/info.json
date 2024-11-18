@@ -2,6 +2,6 @@
   "id": "open-webui",
   "name": "Open WebUI using Ollama",
   "description": "Open WebUI supports various LLM models",
-  "category": ["LLM"],
+  "category": ["Web UI", "LLM"],
   "icon": "https://openwebui.com/user.png"
 }

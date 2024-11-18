@@ -1,0 +1,7 @@
+{
+  "id": "comfyui",
+  "name": "ComfyUI",
+  "description": "A powerful and modular image generation interface with a node-based workflow editor",
+  "category": ["Web UI", "Image Generation"],
+  "icon": "https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/web/favicon.ico"
+}

@@ -1,7 +1,0 @@
-{
-  "id": "comfyui-stable-diffusion",
-  "name": "ComfyUI Stable Diffusion 1.5",
-  "description": "A powerful and modular Stable Diffusion GUI with a node-based interface.",
-  "category": ["Image Generation"],
-  "icon": "https://private-user-images.githubusercontent.com/75789136/253827723-a9445b86-a979-4467-be0b-750800e655a0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzE1MTA1NTksIm5iZiI6MTczMTUxMDI1OSwicGF0aCI6Ii83NTc4OTEzNi8yNTM4Mjc3MjMtYTk0NDViODYtYTk3OS00NDY3LWJlMGItNzUwODAwZTY1NWEwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDExMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMTEzVDE1MDQxOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg4NDQ2MTU1ODU1NTMzMjg0MThhOTc4YTYwNTdjYWRiNDcwZjVkMTcxYWNjNjk3ODQ5NzUzOGUyYjVkMjA4ZWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.VCLpIwvsIHD_gDZwATVKIyYHp0sfY6yIrpDLXfOdLDk"
-}

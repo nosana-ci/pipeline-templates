@@ -1,5 +1,19 @@
-# Open WebUI
+# Open WebUI for Ollama
 
 ![Open WebUI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Open-webui-ollama/openwebui.gif)
 
-Open WebUI is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. It supports various LLM runners, including Ollama and OpenAI-compatible APIs. With Nosana we can run an instance of Open WebUI and connect to it via a Nosana Endpoint.
+A user-friendly web interface for interacting with Ollama's language models.
+
+Unleash the power of LLMs with Nosana! Effortlessly run your Open WebUI instance on high-performance GPU-backed nodes, ensuring optimal chat experience for your applications.
+
+## Key Features
+- Multiple model support
+- Chat interface
+- System prompt templates
+- Model management
+- GPU acceleration support
+
+## Configuration
+- Port: 8080
+- GPU: Required
+- No authentication required

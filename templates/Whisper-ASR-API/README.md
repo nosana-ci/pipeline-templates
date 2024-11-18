@@ -1,16 +1,19 @@
-# Whisper ASR Webservice
+# Whisper ASR API
 
 ![Whisper ASR Webservice](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/whisper-asr-webservice/whisper_asr_webservice.mp4)
 
-Whisper ASR Webservice is a powerful speech recognition API built on OpenAI's Whisper model. It supports multilingual speech recognition, translation, and language identification, making it ideal for a wide range of applications from transcription services to real-time translation tools.
+A robust speech recognition service powered by OpenAI's Whisper model.
 
-**Key Features:**
+Unleash the power of speech recognition with Nosana! Effortlessly run your Whisper ASR instance on high-performance GPU-backed nodes, ensuring optimal transcription for your audio processing needs.
 
-- **Multilingual Support:** Transcribe and translate audio in multiple languages.
-- **Flexible Deployment:** Easily run on GPU-backed nodes for enhanced performance.
-- **API Integration:** Seamlessly integrate with existing applications using the OpenAI-compatible API.
-- **Scalable:** Designed to handle varying workloads efficiently.
+## Key Features
+- Multilingual transcription
+- Translation support
+- Language identification
+- RESTful API interface
+- GPU acceleration support
 
-**Unleash the power of advanced speech recognition with Nosana!** Effortlessly deploy and manage your Whisper ASR Webservice instance on high-performance GPU-backed nodes, ensuring accurate and efficient transcription for your projects.
-
-Whether you're developing a transcription service, building real-time translation tools, or integrating speech recognition into your applications, Nosana provides the infrastructure and tools you need to leverage Whisper ASR Webservice effectively.
+## Configuration
+- Port: 9000
+- GPU: Required
+- Model: Whisper Base

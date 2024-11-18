@@ -2,6 +2,6 @@
   "id": "jupyter-notebook-pytorch",
   "name": "Jupyter Notebook with pytorch:2.4.0-cuda12.1-cudnn9-runtime",
   "description": "Jupyter Notebook Service",
-  "category": ["Featured"],
+  "category": ["Web UI", "Featured"],
   "icon": "https://seeklogo.com/images/J/jupyter-logo-A91705F539-seeklogo.com.png"
 }

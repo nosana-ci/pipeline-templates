@@ -1,9 +1,19 @@
-# Axolotl
+# Axolotl LLM Fine-tuning
 
 ![Axolotl](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl.mp4)
 
-Axolotl is a powerful tool designed to streamline the fine-tuning of various AI models, offering support for multiple configurations and architectures. It enables efficient training with single or multiple GPUs, making it ideal for both personal and professional projects.
+A streamlined environment for fine-tuning Large Language Models with multiple training configurations.
 
-Unleash your potential with Nosana! Effortlessly run an Axolotl instance to fine-tune your AI models with ease. Experience the flexibility and power of advanced AI and GPU-backed nodes, ensuring your model training processes are smooth and effective.
+Unleash the power of model fine-tuning with Nosana! Effortlessly run your Axolotl environment on high-performance GPU-backed nodes, ensuring optimal training for your custom models.
 
-Whether you're conducting research, developing applications, or exploring AI capabilities, Nosana provides the essential tools to leverage Axolotl's full potential.
+## Key Features
+- Multiple training methods
+- Configuration flexibility
+- Experiment tracking
+- Jupyter interface
+- GPU acceleration support
+
+## Configuration
+- Port: 8888
+- GPU: Required
+- No authentication required

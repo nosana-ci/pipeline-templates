@@ -1,15 +1,19 @@
 # LMDeploy API
 
-LMDeploy is a high-performance inference engine for Large Language Models (LLMs). It provides quantization, optimization, and serving capabilities to efficiently deploy LLMs in production environments.
+![LMDeploy](link-to-image)
+
+A high-performance inference engine for Large Language Models with advanced optimization features.
+
+Unleash the power of LLMs with Nosana! Effortlessly deploy your models on high-performance GPU-backed nodes, ensuring optimal inference speed for your applications.
 
 ## Key Features
-- Optimized inference engine for LLMs
-- Support for various model architectures
-- Built-in quantization capabilities
+- Optimized model inference
+- Quantization support
 - RESTful API interface
+- Multi-model serving
 - GPU acceleration support
 
 ## Configuration
 - Port: 23333
+- GPU: Required
 - Model: Qwen2.5-7B
-- GPU: Required 

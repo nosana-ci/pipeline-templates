@@ -2,6 +2,6 @@
   "id": "nosana-llm-rag-webui",
   "name": "Nosana LLM RAG WebUI",
   "description": "A powerful LLM RAG WebUI running on the LMDeploy framework with LLama3.1 70B quantized, optimized for high-end GPUs.",
-  "category": ["LLM"],
+  "category": ["Web UI", "Featured"],
   "icon": "https://nosana.io/img/Nosana_Logomark_color.png"
 }

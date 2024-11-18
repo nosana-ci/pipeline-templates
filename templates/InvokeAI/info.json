@@ -2,6 +2,6 @@
   "id": "invoke-ai",
   "name": "Invoke AI",
   "description": "Invoke is a leading creative engine built to empower professionals and enthusiasts alike. Generate and create stunning visual media using the latest AI-driven technologies.",
-  "category": ["Image Generation"],
+  "category": ["Web UI", "Image Generation"],
   "icon": "https://d4.alternativeto.net/xsSoWnh09YOroqDfDTYx-QcFdoXjOMcxLtDc7FZleA0/rs:fit:280:280:0/g:ce:0:0/exar:1/YWJzOi8vZGlzdC9pY29ucy9pbnZva2VhaV8yMjc0ODEucG5n.png"
 }

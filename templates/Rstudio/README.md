@@ -1,39 +1,20 @@
-# RStudio
+# RStudio Server
 
 ![RStudio](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/rstudio/rstudio.mp4)
 
-RStudio Server allows you to run RStudio on a remote server and access it through your web browser. This setup provides a consistent and powerful R development environment accessible from anywhere, leveraging GPU-backed nodes for enhanced performance.
+A professional development environment for R programming accessible through your web browser.
 
-**Key Features:**
+Unleash the power of R development with Nosana! Effortlessly run your RStudio instance on high-performance GPU-backed nodes, ensuring optimal performance for your data science projects.
 
-- **Remote Development:** Access your RStudio IDE from any device with a web browser.
-- **Resource Efficiency:** Utilize powerful cloud servers to handle intensive computations and data processing.
-- **Secure Access:** Configure user and group IDs, timezone, and secure access with passwords.
-- **Scalable:** Deploy on GPU-backed nodes to accelerate your R workflows.
-- **Easy Integration:** Seamlessly integrate with GitHub and other version control systems.
-
-**Unleash the power of R development with Nosana!** Effortlessly deploy and manage your RStudio Server instance on high-performance GPU-backed nodes, ensuring a smooth and efficient coding experience for your projects.
-
-Whether you're conducting data analysis, developing statistical models, or collaborating with a team, Nosana provides the infrastructure and tools you need to leverage RStudio effectively.
-
-## Getting Started
-
-1. **Deploy the Template:**
-   Use the Nosana platform to deploy the RStudio template.
-
-2. **Access the Web Interface:**
-   Navigate to `https://<address>` in your web browser to access the RStudio interface.
-
-3. **Configure RStudio:**
-   - **Username:** `rstudio`
-   - **Password:** Set via the `PASSWORD` environment variable in the job definition.
+## Key Features
+- Interactive R environment
+- Package management
+- Data visualization tools
+- Project organization
+- GPU acceleration support
 
 ## Configuration
-
-- **Environment Variables:**
-  - `USER=rstudio`: Sets the RStudio user.
-  - `PASSWORD=password`: Password for RStudio login.
-  - `RUNROOTLESS=false`: Run RStudio as root (set to `false` for security).
-
-- **Ports:**
-  - `8787`: Access the RStudio web interface.
+- Port: 8787
+- GPU: Required
+- Username: rstudio
+- Password: Configurable via environment
