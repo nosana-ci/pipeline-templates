@@ -1,7 +1,7 @@
 {
-  "id": "whisper-asr-webservice",
-  "name": "Whisper ASR Webservice",
-  "description": "A robust speech recognition service powered by OpenAI's Whisper model, supporting multilingual transcription, translation, and language identification.",
-  "category": ["Featured"],
-  "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png"
+  "id": "kohya-ss",
+  "name": "Kohya SS GUI",
+  "description": "A user-friendly web interface for training and fine-tuning Stable Diffusion models using Kohya SS scripts.",
+  "category": ["Model Fine-Tuning"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/main/templates/Kohya-ss/kohya-ss.png"
 }

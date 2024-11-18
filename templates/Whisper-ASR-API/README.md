@@ -1,9 +1,16 @@
-# Oobabooga Text Generation WebUI
+# Whisper ASR Webservice
 
-![Oobabooga](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.mp4)
+![Whisper ASR Webservice](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/whisper-asr-webservice/whisper_asr_webservice.mp4)
 
-Oobabooga Text Generation WebUI is a powerful and flexible interface for generating text using various AI models. It supports multiple backends, including Transformers, llama.cpp, and ExLlamaV2, providing a seamless experience for both professionals and enthusiasts.
+Whisper ASR Webservice is a powerful speech recognition API built on OpenAI's Whisper model. It supports multilingual speech recognition, translation, and language identification, making it ideal for a wide range of applications from transcription services to real-time translation tools.
 
-Unleash your creativity with Nosana! Effortlessly run an Oobabooga instance to generate sophisticated text content. Experience the power of advanced AI and GPU-backed nodes, ensuring efficient and high-quality text generation for your projects.
+**Key Features:**
 
-Whether for personal use, research, or professional applications, Nosana provides the tools you need to harness the full potential of Oobabooga's capabilities.
+- **Multilingual Support:** Transcribe and translate audio in multiple languages.
+- **Flexible Deployment:** Easily run on GPU-backed nodes for enhanced performance.
+- **API Integration:** Seamlessly integrate with existing applications using the OpenAI-compatible API.
+- **Scalable:** Designed to handle varying workloads efficiently.
+
+**Unleash the power of advanced speech recognition with Nosana!** Effortlessly deploy and manage your Whisper ASR Webservice instance on high-performance GPU-backed nodes, ensuring accurate and efficient transcription for your projects.
+
+Whether you're developing a transcription service, building real-time translation tools, or integrating speech recognition into your applications, Nosana provides the infrastructure and tools you need to leverage Whisper ASR Webservice effectively.
