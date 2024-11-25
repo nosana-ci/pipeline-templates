@@ -1,6 +1,6 @@
 # Ollama API
 
-![Ollama](link-to-image)
+![Ollama](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCnTSM4MHExKgIkfUheyQ04byO32OaUXmQVg&s)
 
 A lightweight API service for running Large Language Models locally.
 

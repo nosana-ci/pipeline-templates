@@ -1,6 +1,6 @@
 # LMDeploy API
 
-![LMDeploy](link-to-image)
+![LMDeploy](https://avatars.githubusercontent.com/u/135356492?s=280&v=4)
 
 A high-performance inference engine for Large Language Models with advanced optimization features.
 

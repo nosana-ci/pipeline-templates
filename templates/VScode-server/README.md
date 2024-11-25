@@ -1,6 +1,6 @@
 # VSCode Server
 
-![VSCode Server](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/vscode-server/vscode_server.mp4)
+![VSCode Server](https://avatars.githubusercontent.com/u/12324908?s=280&v=4)
 
 A full-featured development environment accessible through your web browser.
 

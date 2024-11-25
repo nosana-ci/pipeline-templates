@@ -1,6 +1,6 @@
 # vLLM API
 
-![vLLM](link-to-image)
+![vLLM](https://avatars.githubusercontent.com/u/136984999?v=4)
 
 A high-throughput and memory-efficient inference engine for Large Language Models.
 

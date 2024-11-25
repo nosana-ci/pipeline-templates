@@ -1,6 +1,6 @@
 # Nosana LLM RAG WebUI
 
-![Nosana LLM RAG WebUI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Nosana-RAG-bot-webui/nosana_bot.mp4)
+![Nosana LLM RAG WebUI](https://nosana.io/img/Nosana_Logomark_color.png)
 
 A powerful RAG-enabled chat interface built on LMDeploy framework with LLama3.1 70B quantized.
 

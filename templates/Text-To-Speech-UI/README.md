@@ -1,6 +1,6 @@
 # Text To Speech Generation UI
 
-![TTS UI](link-to-image)
+![TTS UI](https://cdn-icons-png.flaticon.com/512/8984/8984813.png)
 
 A web interface for generating natural-sounding speech from text using various TTS models.
 

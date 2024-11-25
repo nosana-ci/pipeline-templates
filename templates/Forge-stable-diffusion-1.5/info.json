@@ -3,5 +3,5 @@
   "name": "Forge Stable Diffusion",
   "description": "A fork of AUTOMATIC1111's Stable Diffusion web UI with additional features and optimizations",
   "category": ["Web UI", "Image Generation"],
-  "icon": "https://raw.githubusercontent.com/lllyasviel/stable-diffusion-webui-forge/master/favicon.ico"
+  "icon": "https://private-user-images.githubusercontent.com/173618923/361423583-2dd6f478-e67a-4cc3-9b69-8a1c7728e06a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzI1MjA4ODAsIm5iZiI6MTczMjUyMDU4MCwicGF0aCI6Ii8xNzM2MTg5MjMvMzYxNDIzNTgzLTJkZDZmNDc4LWU2N2EtNGNjMy05YjY5LThhMWM3NzI4ZTA2YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMTI1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTEyNVQwNzQzMDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zOTQwN2YyM2Y1MTFjZGE5NDgwYTRkYWM4ODhiYzM0ODhjMjlmMDQ4YTkzZjVhZDNmZDJiY2MzNGVhMTYxMWU0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.JJCVEQkN0aAvauGNd_Tog0NLhY8oKaEJx4DK1CJcsTo"
 }
