@@ -1,6 +1,6 @@
 # Onetrainer Jupyter Notebook
 
-![Onetrainer](link-to-image)
+![Onetrainer](https://avatars.githubusercontent.com/u/3390934?v=4)
 
 A comprehensive Jupyter environment for AI model training with the Onetrainer framework.
 

@@ -3,5 +3,5 @@
   "name": "ComfyUI",
   "description": "A powerful and modular image generation interface with a node-based workflow editor",
   "category": ["Web UI", "Image Generation"],
-  "icon": "https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/web/favicon.ico"
+  "icon": "https://private-user-images.githubusercontent.com/11897485/270180393-8aff6eb9-575f-4fc2-afcf-c6e3cde04d45.svg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzI1MjA5ODQsIm5iZiI6MTczMjUyMDY4NCwicGF0aCI6Ii8xMTg5NzQ4NS8yNzAxODAzOTMtOGFmZjZlYjktNTc1Zi00ZmMyLWFmY2YtYzZlM2NkZTA0ZDQ1LnN2Zz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDExMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMTI1VDA3NDQ0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMxNTM2M2RkMGQ2ZmM5OGJlMjM5OTYxZTVkNDk3YWQzMTU5N2MzYTlkZjQyZjllNjIyMDBjODNjYTRiNDMyOTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.o-1XVDWIhN19Lq_7EOAmjX4YAslstNAJqsbZ-I2EAH0"
 }

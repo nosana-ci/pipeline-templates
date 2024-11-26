@@ -3,5 +3,5 @@
   "name": "Kohya SS GUI",
   "description": "A user-friendly web interface for training and fine-tuning Stable Diffusion models using Kohya SS scripts.",
   "category": ["Web UI", "Image Generation Fine-tuning"],
-  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/main/templates/Kohya-ss/kohya-ss.png"
+  "icon": "https://avatars.githubusercontent.com/u/7474674?v=4"
 }

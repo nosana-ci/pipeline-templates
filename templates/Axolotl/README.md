@@ -1,6 +1,6 @@
 # Axolotl LLM Fine-tuning
 
-![Axolotl](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl.mp4)
+![Axolotl](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl-nobackground.png)
 
 A streamlined environment for fine-tuning Large Language Models with multiple training configurations.
 

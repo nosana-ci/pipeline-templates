@@ -1,6 +1,6 @@
 # RStudio Server
 
-![RStudio](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/rstudio/rstudio.mp4)
+![RStudio](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png)
 
 A professional development environment for R programming accessible through your web browser.
 

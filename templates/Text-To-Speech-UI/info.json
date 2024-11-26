@@ -3,5 +3,5 @@
   "name": "Text to Speech Generation UI",
   "description": "A web interface for generating speech from text using various TTS models",
   "category": ["Web UI", "Featured"],
-  "icon": "https://raw.githubusercontent.com/rsxdalv/tts-generation-webui/main/images/logo.png"
+  "icon": "https://cdn-icons-png.flaticon.com/512/8984/8984813.png"
 } 
