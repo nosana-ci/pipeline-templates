@@ -2,6 +2,7 @@
   "id": "kohya-ss",
   "name": "Kohya SS GUI",
   "description": "A user-friendly web interface for training and fine-tuning Stable Diffusion models using Kohya SS scripts.",
-  "category": ["Web UI", "Image Generation Fine-tuning"],
+  "category": ["Web UI"],
+  "subcategory": ["LLM Fine-tuning"],
   "icon": "https://avatars.githubusercontent.com/u/7474674?v=4"
 }

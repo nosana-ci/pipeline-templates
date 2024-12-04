@@ -2,6 +2,7 @@
   "id": "vscode-server",
   "name": "VSCode Server",
   "description": "Run Visual Studio Code on a remote server accessible through your browser, enabling a consistent and powerful development environment.",
-  "category": ["Web UI", "Featured"],
+  "category": ["Web UI"],
+  "subcategory": ["Featured"],
   "icon": "https://avatars.githubusercontent.com/u/12324908?s=280&v=4"
 }

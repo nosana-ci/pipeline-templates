@@ -2,6 +2,7 @@
   "id": "jupyter-notebook-tensorflow",
   "name": "Jupyter Notebook with Tensorflow",
   "description": "Jupyter Notebook Service",
-  "category": ["Web UI", "Featured"],
+  "category": ["Web UI"],
+  "subcategory": ["Featured"],
   "icon": "https://seeklogo.com/images/J/jupyter-logo-A91705F539-seeklogo.com.png"
 }

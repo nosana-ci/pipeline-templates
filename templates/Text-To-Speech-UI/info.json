@@ -2,6 +2,7 @@
   "id": "tts-generation-webui",
   "name": "Text to Speech Generation UI",
   "description": "A web interface for generating speech from text using various TTS models",
-  "category": ["Web UI", "Featured"],
+  "category": ["Web UI"],
+  "subcategory": ["Featured"],
   "icon": "https://cdn-icons-png.flaticon.com/512/8984/8984813.png"
 } 

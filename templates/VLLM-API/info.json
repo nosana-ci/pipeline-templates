@@ -2,6 +2,7 @@
   "id": "vllm-api",
   "name": "vLLM API",
   "description": "High-throughput and memory-efficient inference engine for LLMs",
-  "category": ["API Only", "LLM"],
+  "category": ["API Only"],
+  "subcategory": ["LLM"],
   "icon": "https://avatars.githubusercontent.com/u/136984999?v=4"
 } 

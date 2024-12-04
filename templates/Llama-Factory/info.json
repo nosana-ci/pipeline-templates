@@ -2,6 +2,7 @@
   "id": "llama-factory",
   "name": "Llama Factory",
   "description": "A unified framework for fine-tuning LLMs, supporting various architectures and training methods",
-  "category": ["Web UI", "LLM Fine-tuning"],
+  "category": ["Web UI"],
+  "subcategory": ["LLM Fine-tuning"],
   "icon": "https://devocean.sk.com/thumnail/2024/6/10/3922058082f048e98d3a63eaa4ab1053020d501b48a69ab8ba4c2fda8883086a.png"
 } 
