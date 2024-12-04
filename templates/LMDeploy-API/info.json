@@ -2,6 +2,7 @@
   "id": "lmdeploy-api",
   "name": "LMDeploy API",
   "description": "A high-performance inference engine for LLMs with quantization and optimization features",
-  "category": ["API Only", "LLM"],
+  "category": ["API Only"],
+  "subcategory": ["LLM"],
   "icon": "https://avatars.githubusercontent.com/u/135356492?s=280&v=4"
 } 

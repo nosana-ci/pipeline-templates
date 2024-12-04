@@ -2,6 +2,7 @@
   "id": "onetrainer-jupyter",
   "name": "Onetrainer Jupyter Notebook",
   "description": "A comprehensive Jupyter environment for AI model training with Onetrainer framework",
-  "category": ["Web UI", "Image Generation Fine-tuning"],
+  "category": ["Web UI"],
+  "subcategory": ["Image Generation Fine-tuning"],
   "icon": "https://avatars.githubusercontent.com/u/3390934?v=4"
 } 

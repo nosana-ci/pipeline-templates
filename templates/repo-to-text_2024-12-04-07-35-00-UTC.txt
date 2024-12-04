@@ -1,0 +1,1599 @@
+Directory: templates
+
+Directory Structure:
+```
+.
+|-- ./AUTOMATIC1111-stable-diffusion-1.5
+|   |-- ./AUTOMATIC1111-stable-diffusion-1.5/AUTOMATIC.png
+|   |-- ./AUTOMATIC1111-stable-diffusion-1.5/README.md
+|   |-- ./AUTOMATIC1111-stable-diffusion-1.5/info.json
+|   |-- ./AUTOMATIC1111-stable-diffusion-1.5/job-definition.json
+|   `-- ./AUTOMATIC1111-stable-diffusion-1.5/stable_diff.gif
+|-- ./Axolotl
+|   |-- ./Axolotl/README.md
+|   |-- ./Axolotl/axolotl-nobackground.png
+|   |-- ./Axolotl/axolotl.mp4
+|   |-- ./Axolotl/info.json
+|   `-- ./Axolotl/job-definition.json
+|-- ./ComfyUI
+|   |-- ./ComfyUI/README.md
+|   |-- ./ComfyUI/comfyui.png
+|   |-- ./ComfyUI/info.json
+|   `-- ./ComfyUI/job-definition.json
+|-- ./Forge-stable-diffusion-1.5
+|   |-- ./Forge-stable-diffusion-1.5/README.md
+|   |-- ./Forge-stable-diffusion-1.5/forge.png
+|   |-- ./Forge-stable-diffusion-1.5/info.json
+|   `-- ./Forge-stable-diffusion-1.5/job-definition.json
+|-- ./InvokeAI
+|   |-- ./InvokeAI/README.md
+|   |-- ./InvokeAI/info.json
+|   |-- ./InvokeAI/invoke_ai.gif
+|   `-- ./InvokeAI/job-definition.json
+|-- ./Kohya-SS
+|   |-- ./Kohya-SS/README.md
+|   |-- ./Kohya-SS/info.json
+|   `-- ./Kohya-SS/job-definition.json
+|-- ./LMDeploy-API
+|   |-- ./LMDeploy-API/README.md
+|   |-- ./LMDeploy-API/info.json
+|   `-- ./LMDeploy-API/job-definition.json
+|-- ./Llama-Factory
+|   |-- ./Llama-Factory/README.md
+|   |-- ./Llama-Factory/info.json
+|   `-- ./Llama-Factory/job-definition.json
+|-- ./Nosana-RAG-bot-webui
+|   |-- ./Nosana-RAG-bot-webui/README.md
+|   |-- ./Nosana-RAG-bot-webui/info.json
+|   |-- ./Nosana-RAG-bot-webui/job-definition.json
+|   `-- ./Nosana-RAG-bot-webui/nosana_bot.mp4
+|-- ./Ollama-API
+|   |-- ./Ollama-API/README.md
+|   |-- ./Ollama-API/info.json
+|   `-- ./Ollama-API/job-definition.json
+|-- ./Onetrainer-jupyter-notebook
+|   |-- ./Onetrainer-jupyter-notebook/README.md
+|   |-- ./Onetrainer-jupyter-notebook/info.json
+|   `-- ./Onetrainer-jupyter-notebook/job-definition.json
+|-- ./Oobabooga
+|   |-- ./Oobabooga/README.md
+|   |-- ./Oobabooga/info.json
+|   |-- ./Oobabooga/job-definition.json
+|   |-- ./Oobabooga/oobabooga.gif
+|   |-- ./Oobabooga/oobabooga.mp4
+|   `-- ./Oobabooga/oobabooga.png
+|-- ./Pytorch-jupyter-notebook
+|   |-- ./Pytorch-jupyter-notebook/README.md
+|   |-- ./Pytorch-jupyter-notebook/info.json
+|   |-- ./Pytorch-jupyter-notebook/job-definition.json
+|   `-- ./Pytorch-jupyter-notebook/jupyter.gif
+|-- ./Rstudio
+|   |-- ./Rstudio/README.md
+|   |-- ./Rstudio/info.json
+|   `-- ./Rstudio/job-definition.json
+|-- ./TGI-API
+|   |-- ./TGI-API/README.md
+|   |-- ./TGI-API/info.json
+|   `-- ./TGI-API/job-definition.json
+|-- ./Tensorflow-jupyter-notebook
+|   |-- ./Tensorflow-jupyter-notebook/README.md
+|   |-- ./Tensorflow-jupyter-notebook/info.json
+|   |-- ./Tensorflow-jupyter-notebook/job-definition.json
+|   `-- ./Tensorflow-jupyter-notebook/jupyter.gif
+|-- ./Text-To-Speech-UI
+|   |-- ./Text-To-Speech-UI/README.md
+|   |-- ./Text-To-Speech-UI/info.json
+|   `-- ./Text-To-Speech-UI/job-definition.json
+|-- ./VLLM-API
+|   |-- ./VLLM-API/README.md
+|   |-- ./VLLM-API/info.json
+|   `-- ./VLLM-API/job-definition.json
+|-- ./VScode-server
+|   |-- ./VScode-server/README.md
+|   |-- ./VScode-server/info.json
+|   `-- ./VScode-server/job-definition.json
+|-- ./Whisper-ASR-API
+|   |-- ./Whisper-ASR-API/README.md
+|   |-- ./Whisper-ASR-API/info.json
+|   `-- ./Whisper-ASR-API/job-definition.json
+|-- ./hello-world
+|   |-- ./hello-world/README.md
+|   |-- ./hello-world/info.json
+|   `-- ./hello-world/job-definition.json
+`-- ./open-webui-ollama
+    |-- ./open-webui-ollama/README.md
+    |-- ./open-webui-ollama/info.json
+    |-- ./open-webui-ollama/job-definition.json
+    `-- ./open-webui-ollama/openwebui.gif
+```
+
+Contents of AUTOMATIC1111-stable-diffusion-1.5\AUTOMATIC.png:
+```
+[Could not decode file contents]
+
+```
+
+Contents of AUTOMATIC1111-stable-diffusion-1.5\info.json:
+```
+{
+  "id": "AUTOMTIC1111-stable-diffusion",
+  "name": "AUTOMATIC1111 Stable Diffusion 1.5",
+  "description": "Stable Diffusion is a latent text-to-image diffusion model",
+  "category": ["Web UI"],
+  "subcategory": ["Image Generation"],
+  "icon": "https://user-images.githubusercontent.com/36368048/196056941-aace0837-473a-4aa5-9067-505b17797aa1.png"
+}
+```
+
+Contents of AUTOMATIC1111-stable-diffusion-1.5\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "auto1111_stablediffusion",
+      "args": {
+        "cmd": [
+          "/bin/sh", "-c", 
+          "python -u launch.py --listen --port 7860 --enable-insecure-extension-access"
+        ],
+        "image": "docker.io/nosana/automatic1111:0.0.1",
+        "gpu": true,
+        "expose": 7860,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/stable-diffusion/1.5",
+            "target": "/stable-diffusion-webui/models/Stable-diffusion"
+          }
+        ]
+        
+      }
+    }
+  ]
+}
+```
+
+Contents of AUTOMATIC1111-stable-diffusion-1.5\README.md:
+```
+# AUTOMATIC1111 Stable Diffusion
+
+![AUTOMATIC1111](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/AUTOMATIC1111-stable-diffusion/stable_diff.gif)
+
+A powerful web interface for Stable Diffusion, offering extensive features for AI image generation and editing.
+
+Unleash the power of Stable Diffusion with Nosana! Effortlessly run your instance on high-performance GPU-backed nodes, ensuring optimal image generation for your creative projects.
+
+## Key Features
+- Text-to-image generation
+- Image-to-image editing
+- Inpainting and outpainting
+- Custom model support
+- GPU acceleration support
+
+## Configuration
+- Port: 7860
+- GPU: Required
+- Model: Stable Diffusion 1.5
+
+
+```
+
+Contents of AUTOMATIC1111-stable-diffusion-1.5\stable_diff.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Axolotl\axolotl-nobackground.png:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Axolotl\axolotl.mp4:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Axolotl\info.json:
+```
+{
+  "id": "axolotl",
+  "name": "Axolotl finetuning LLM's",
+  "description": "Axolotl streamlines the fine-tuning of various AI models, supporting multiple configurations and architectures for efficient and flexible model training.",
+  "category": ["Web UI"],
+  "subcategory": ["LLM Fine-tuning"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl-nobackground.png"
+}
+
+```
+
+Contents of Axolotl\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "axolotl",
+      "args": {
+        "image": "docker.io/winglian/axolotl-cloud:main-latest",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
+        "expose": 8888,
+        "gpu": true
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Axolotl\README.md:
+```
+# Axolotl LLM Fine-tuning
+
+![Axolotl](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl-nobackground.png)
+
+A streamlined environment for fine-tuning Large Language Models with multiple training configurations.
+
+Unleash the power of model fine-tuning with Nosana! Effortlessly run your Axolotl environment on high-performance GPU-backed nodes, ensuring optimal training for your custom models.
+
+## Key Features
+- Multiple training methods
+- Configuration flexibility
+- Experiment tracking
+- Jupyter interface
+- GPU acceleration support
+
+## Configuration
+- Port: 8888
+- GPU: Required
+- No authentication required
+
+```
+
+Contents of ComfyUI\comfyui.png:
+```
+[Could not decode file contents]
+
+```
+
+Contents of ComfyUI\info.json:
+```
+{
+  "id": "comfyui",
+  "name": "ComfyUI",
+  "description": "A powerful and modular image generation interface with a node-based workflow editor",
+  "category": ["Web UI", "Image Generation"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/ComfyUI/comfyui.png"
+}
+
+```
+
+Contents of ComfyUI\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "comfy_stablediffusion",
+      "args": {
+        "cmd": [
+          "/bin/sh", "-c", 
+          "python -u main.py --listen --port 7860 --gpu-only"
+        ],
+        "image": "docker.io/nosana/sd-comfy-manager:0.0.1",
+        "gpu": true,
+        "expose": 7860,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/stable-diffusion/1.5",
+            "target": "/comfyui/models/checkpoints"
+          }
+        ]
+      }
+    }
+  ]
+}
+
+```
+
+Contents of ComfyUI\README.md:
+```
+# ComfyUI
+
+![ComfyUI](https://raw.githubusercontent.com/nosana-ci/templates/main/templates/ComfyUI/comfyui.gif)
+
+A node-based interface for image generation with advanced workflow capabilities.
+
+Unleash the power of visual AI workflows with Nosana! Effortlessly run your ComfyUI instance on high-performance GPU-backed nodes, ensuring optimal performance for your image generation pipelines.
+
+## Key Features
+- Node-based workflow
+- Custom node creation
+- Pipeline automation
+- Advanced queue system
+- GPU acceleration support
+
+## Configuration
+- Port: 8188
+- GPU: Required
+- Model: Stable Diffusion
+
+```
+
+Contents of Forge-stable-diffusion-1.5\forge.png:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Forge-stable-diffusion-1.5\info.json:
+```
+{
+  "id": "forge-stable-diffusion",
+  "name": "Forge Stable Diffusion",
+  "description": "A fork of AUTOMATIC1111's Stable Diffusion web UI with additional features and optimizations",
+  "category": ["Web UI"],
+  "subcategory": ["Image Generation"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Forge-stable-diffusion-1.5/forge.png"
+}
+
+```
+
+Contents of Forge-stable-diffusion-1.5\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "forge_stablediffusion",
+      "args": {
+        "cmd": [
+          "/bin/sh", "-c", 
+          "python -u launch.py --api --listen --port 7861"
+        ],
+        "image": "docker.io/nosana/sd-forge-bench:1.0.0",
+        "gpu": true,
+        "expose": 7861,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/stable-diffusion/1.5",
+            "target": "/opt/stable-diffusion-webui-forge/models/Stable-diffusion"
+          }
+        ]
+        
+      }
+    }
+  ]
+}
+```
+
+Contents of Forge-stable-diffusion-1.5\README.md:
+```
+# Forge Stable Diffusion
+
+![Forge](https://raw.githubusercontent.com/nosana-ci/templates/main/templates/Forge-Stable-Diffusion/forge.gif)
+
+An optimized fork of AUTOMATIC1111's Stable Diffusion web UI with enhanced features.
+
+Unleash the power of optimized image generation with Nosana! Effortlessly run your Forge instance on high-performance GPU-backed nodes, ensuring optimal performance for your creative projects.
+
+## Key Features
+- Enhanced performance
+- Advanced UI features
+- Custom model support
+- API integration
+- GPU acceleration support
+
+## Configuration
+- Port: 7861
+- GPU: Required
+- Model: Stable Diffusion 1.5
+
+```
+
+Contents of hello-world\info.json:
+```
+{
+  "id": "hello-world",
+  "name": "Hello World",
+  "description": "Echo hello world in a ubuntu docker container",
+  "category": ["Featured"],
+  "icon": "https://nosana.io/img/Nosana_Logomark_color.png"
+}
+```
+
+Contents of hello-world\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "job-builder"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "hello-world",
+      "args": {
+        "cmd": "echo hello world",
+        "image": "ubuntu",
+        "gpu": true
+      }
+    }
+  ]
+}
+```
+
+Contents of hello-world\README.md:
+```
+# Hello World Template
+
+This is a simple template that prints hello world with the 'ubuntu' docker image.
+
+```
+
+Contents of InvokeAI\info.json:
+```
+{
+  "id": "invoke-ai",
+  "name": "Invoke AI",
+  "description": "Invoke is a leading creative engine built to empower professionals and enthusiasts alike. Generate and create stunning visual media using the latest AI-driven technologies.",
+  "category": ["Web UI", "Image Generation"],
+  "icon": "https://d4.alternativeto.net/xsSoWnh09YOroqDfDTYx-QcFdoXjOMcxLtDc7FZleA0/rs:fit:280:280:0/g:ce:0:0/exar:1/YWJzOi8vZGlzdC9pY29ucy9pbnZva2VhaV8yMjc0ODEucG5n.png"
+}
+
+```
+
+Contents of InvokeAI\invoke_ai.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of InvokeAI\job-definition.json:
+```
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "benchmark"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "SD-invoke",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "invokeai-web"
+          ],
+          "image": "docker.io/nosana/sd-invoke-bench:1.0.0",
+          "gpu": true,
+          "expose": 9090
+        }
+      }
+    ]
+  }
+```
+
+Contents of InvokeAI\README.md:
+```
+# Invoke AI
+
+![Invoke AI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/InvokeAI/invoke_ai.gif)
+
+A powerful creative engine for AI-driven image generation and editing.
+
+Unleash the power of creative AI with Nosana! Effortlessly run your Invoke AI instance on high-performance GPU-backed nodes, ensuring optimal performance for your artistic projects.
+
+## Key Features
+- Text-to-image generation
+- Image editing tools
+- Workflow automation
+- Custom model support
+- GPU acceleration support
+
+## Configuration
+- Port: 7860
+- GPU: Required
+- Model: Stable Diffusion
+
+```
+
+Contents of Kohya-SS\info.json:
+```
+{
+  "id": "kohya-ss",
+  "name": "Kohya SS GUI",
+  "description": "A user-friendly web interface for training and fine-tuning Stable Diffusion models using Kohya SS scripts.",
+  "category": ["Web UI"],
+  "subcategory": ["LLM Fine-tuning"],
+  "icon": "https://avatars.githubusercontent.com/u/7474674?v=4"
+}
+
+```
+
+Contents of Kohya-SS\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "kohya-ss-webservice",
+      "args": {
+        "image": "nosana/kohya_ss:1.0.0",
+        "cmd": ["python3", "kohya_gui.py", "--listen", "0.0.0.0", "--server_port", "7860", "--headless"],
+        "gpu": true,
+        "expose": 7860,
+        "env": {
+          "NVIDIA_VISIBLE_DEVICES": "all",
+          "NVIDIA_DRIVER_CAPABILITIES": "compute,utility"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Kohya-SS\README.md:
+```
+# Kohya SS GUI
+
+![Kohya SS](https://raw.githubusercontent.com/nosana-ci/templates/main/templates/Kohya-ss/kohya-ss.gif)
+
+A user-friendly interface for training and fine-tuning Stable Diffusion models.
+
+Unleash the power of model training with Nosana! Effortlessly run your Kohya SS instance on high-performance GPU-backed nodes, ensuring optimal training for your custom models.
+
+## Key Features
+- Custom model training
+- LoRA support
+- Hyperparameter optimization
+- Dataset management
+- GPU acceleration support
+
+## Configuration
+- Port: 7860
+- GPU: Required
+- Headless mode enabled
+
+```
+
+Contents of Llama-Factory\info.json:
+```
+{
+  "id": "llama-factory",
+  "name": "Llama Factory",
+  "description": "A unified framework for fine-tuning LLMs, supporting various architectures and training methods",
+  "category": ["Web UI"],
+  "subcategory": ["LLM Fine-tuning"],
+  "icon": "https://devocean.sk.com/thumnail/2024/6/10/3922058082f048e98d3a63eaa4ab1053020d501b48a69ab8ba4c2fda8883086a.png"
+} 
+```
+
+Contents of Llama-Factory\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "llama-factory",
+      "args": {
+        "image": "docker.io/nosana/llama-factory:0.0.0",
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "llamafactory-cli webui"
+        ],
+        "gpu": true,
+        "expose": 7860
+      }
+    }
+  ]
+} 
+```
+
+Contents of Llama-Factory\README.md:
+```
+# Llama Factory
+
+![Llama Factory](https://devocean.sk.com/thumnail/2024/6/10/3922058082f048e98d3a63eaa4ab1053020d501b48a69ab8ba4c2fda8883086a.png)
+
+A unified framework for fine-tuning Large Language Models with various training methods.
+
+Unleash the power of model fine-tuning with Nosana! Effortlessly run your Llama Factory instance on high-performance GPU-backed nodes, ensuring optimal training for your models.
+
+## Key Features
+- Multiple training methods
+- Pre-built training templates
+- Model architecture support
+- Progress monitoring
+- GPU acceleration support
+
+## Configuration
+- Port: 7860
+- GPU: Required
+- WebUI access for training
+```
+
+Contents of LMDeploy-API\info.json:
+```
+{
+  "id": "lmdeploy-api",
+  "name": "LMDeploy API",
+  "description": "A high-performance inference engine for LLMs with quantization and optimization features",
+  "category": ["API Only"],
+  "subcategory": ["LLM"],
+  "icon": "https://avatars.githubusercontent.com/u/135356492?s=280&v=4"
+} 
+```
+
+Contents of LMDeploy-API\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "lmdepoy",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "lmdeploy serve api_server Qwen/Qwen2.5-7B --model-name Qwen2.5-7B"
+        ],
+        "image": "docker.io/openmmlab/lmdeploy:latest",
+        "gpu": true,
+        "expose": 23333
+      }
+    }
+  ]
+} 
+```
+
+Contents of LMDeploy-API\README.md:
+```
+# LMDeploy API
+
+![LMDeploy](https://avatars.githubusercontent.com/u/135356492?s=280&v=4)
+
+A high-performance inference engine for Large Language Models with advanced optimization features.
+
+Unleash the power of LLMs with Nosana! Effortlessly deploy your models on high-performance GPU-backed nodes, ensuring optimal inference speed for your applications.
+
+## Key Features
+- Optimized model inference
+- Quantization support
+- RESTful API interface
+- Multi-model serving
+- GPU acceleration support
+
+## Configuration
+- Port: 23333
+- GPU: Required
+- Model: Qwen2.5-7B
+```
+
+Contents of Nosana-RAG-bot-webui\info.json:
+```
+{
+  "id": "nosana-llm-rag-webui",
+  "name": "Nosana LLM RAG WebUI",
+  "description": "A powerful LLM RAG WebUI running on the LMDeploy framework with LLama3.1 70B quantized, optimized for high-end GPUs.",
+  "category": ["Web UI", "Featured"],
+  "icon": "https://nosana.io/img/Nosana_Logomark_color.png"
+}
+
+```
+
+Contents of Nosana-RAG-bot-webui\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "nosana-chat-bot",
+      "args": {
+        "image": "docker.io/nosana/nosana-chat-bot:0.1.1",
+        "cmd": [
+          "-c",
+          "lmdeploy serve api_server ./models/snapshots/2123003760781134cfc31124aa6560a45b491fdf --model-name llama3.1 --chat-template ./chat_template.json --model-format awq & npm start"
+        ],
+        "gpu": true,
+        "expose": 3000,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "s3://nos-ai-models-qllsn32u/hugging-face/llama3.1/70b/4x/models--hugging-quants--Meta-Llama-3.1-70B-Instruct-AWQ-INT4",
+            "target": "/app/models/"
+          }
+        ]
+      }
+    }
+  ]
+}
+  
+```
+
+Contents of Nosana-RAG-bot-webui\nosana_bot.mp4:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Nosana-RAG-bot-webui\README.md:
+```
+# Nosana LLM RAG WebUI
+
+![Nosana LLM RAG WebUI](https://nosana.io/img/Nosana_Logomark_color.png)
+
+A powerful RAG-enabled chat interface built on LMDeploy framework with LLama3.1 70B quantized.
+
+Unleash the power of RAG-enhanced LLMs with Nosana! Effortlessly run your chat interface on high-performance GPU-backed nodes, ensuring optimal performance for your conversational AI applications.
+
+## Key Features
+- RAG capabilities
+- Chat interface
+- Document processing
+- Knowledge base integration
+- GPU acceleration support
+
+## Configuration
+- Port: 3000
+- GPU: Required (40GB+ VRAM)
+- Model: LLama3.1 70B quantized
+
+```
+
+Contents of Ollama-API\info.json:
+```
+{
+  "id": "ollama-api",
+  "name": "Ollama API",
+  "description": "Run large language models locally with a simple API interface",
+  "category": ["API Only"],
+  "subcategory": ["LLM"],
+  "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCnTSM4MHExKgIkfUheyQ04byO32OaUXmQVg&s"
+} 
+```
+
+Contents of Ollama-API\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "ollama-service",
+      "args": {
+        "image": "docker.io/ollama/ollama",
+        "cmd": [],
+        "gpu": true,
+        "expose": 11434
+      }
+    }
+  ]
+} 
+```
+
+Contents of Ollama-API\README.md:
+```
+# Ollama API
+
+![Ollama](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCnTSM4MHExKgIkfUheyQ04byO32OaUXmQVg&s)
+
+A lightweight API service for running Large Language Models locally.
+
+Unleash the power of local LLMs with Nosana! Effortlessly run your Ollama API instance on high-performance GPU-backed nodes, ensuring optimal inference for your applications.
+
+## Key Features
+- Multiple model support
+- RESTful API
+- Low resource usage
+- Easy model management
+- GPU acceleration support
+
+## Configuration
+- Port: 11434
+- GPU: Required
+- API endpoint access
+```
+
+Contents of Onetrainer-jupyter-notebook\info.json:
+```
+{
+  "id": "onetrainer-jupyter",
+  "name": "Onetrainer Jupyter Notebook",
+  "description": "A comprehensive Jupyter environment for AI model training with Onetrainer framework",
+  "category": ["Web UI"],
+  "subcategory": ["Image Generation Fine-tuning"],
+  "icon": "https://avatars.githubusercontent.com/u/3390934?v=4"
+} 
+```
+
+Contents of Onetrainer-jupyter-notebook\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Onetrainer-UI",
+      "args": {
+        "image": "nosana/onetrainercomplete:0.0.0",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
+        "expose": 8888,
+        "gpu": true
+      }
+    }
+  ]
+} 
+```
+
+Contents of Onetrainer-jupyter-notebook\README.md:
+```
+# Onetrainer Jupyter Notebook
+
+![Onetrainer](https://avatars.githubusercontent.com/u/3390934?v=4)
+
+A comprehensive Jupyter environment for AI model training with the Onetrainer framework.
+
+Unleash the power of model training with Nosana! Effortlessly run your Onetrainer environment on high-performance GPU-backed nodes, ensuring optimal performance for your training workflows.
+
+## Key Features
+- Interactive development
+- Pre-configured frameworks
+- Training templates
+- Experiment tracking
+- GPU acceleration support
+
+## Configuration
+- Port: 8888
+- GPU: Required
+- No authentication required
+```
+
+Contents of Oobabooga\info.json:
+```
+{
+  "id": "oobabooga",
+  "name": "Oobabooga web UI",
+  "description": "Oobabooga is a versatile text generation web UI supporting multiple backends, offering rich features for generating and managing AI-driven text models.",
+  "category": ["Web UI"],
+  "subcategory": ["LLM"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.png"
+}
+
+```
+
+Contents of Oobabooga\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Oobabooga-webui",
+      "args": {
+        "image": "docker.io/atinoda/text-generation-webui:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 7860,
+        "env": {
+          "EXTRA_LAUNCH_ARGS": "--listen --verbose"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Oobabooga\oobabooga.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Oobabooga\oobabooga.mp4:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Oobabooga\oobabooga.png:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Oobabooga\README.md:
+```
+# Oobabooga Text Generation WebUI
+
+![Oobabooga](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.gif)
+
+A versatile text generation interface supporting multiple LLM backends and models.
+
+Unleash the power of text generation with Nosana! Effortlessly run your Oobabooga instance on high-performance GPU-backed nodes, ensuring optimal performance for your language tasks.
+
+## Key Features
+- Multiple model support
+- Interactive chat interface
+- Custom prompt templates
+- Model fine-tuning options
+- GPU acceleration support
+
+## Configuration
+- Port: 7860
+- GPU: Required
+- Launch Arguments: --listen --verbose
+
+```
+
+Contents of open-webui-ollama\info.json:
+```
+{
+  "id": "open-webui",
+  "name": "Open WebUI using Ollama",
+  "description": "Open WebUI supports various LLM models",
+  "category": ["Web UI"],
+  "subcategory": ["LLM"],
+  "icon": "https://openwebui.com/user.png"
+}
+```
+
+Contents of open-webui-ollama\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "job-builder"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "open-webui",
+      "args": {
+        "cmd": [],
+        "env": {
+          "WEBUI_AUTH": "False",
+          "WEBUI_NAME": "Nosana Chat"
+        },
+        "image": "ghcr.io/open-webui/open-webui:ollama",
+        "gpu": true,
+        "expose": 8080
+      }
+    }
+  ]
+}
+```
+
+Contents of open-webui-ollama\openwebui.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of open-webui-ollama\README.md:
+```
+# Open WebUI for Ollama
+
+![Open WebUI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Open-webui-ollama/openwebui.gif)
+
+A user-friendly web interface for interacting with Ollama's language models.
+
+Unleash the power of LLMs with Nosana! Effortlessly run your Open WebUI instance on high-performance GPU-backed nodes, ensuring optimal chat experience for your applications.
+
+## Key Features
+- Multiple model support
+- Chat interface
+- System prompt templates
+- Model management
+- GPU acceleration support
+
+## Configuration
+- Port: 8080
+- GPU: Required
+- No authentication required
+
+```
+
+Contents of Pytorch-jupyter-notebook\info.json:
+```
+{
+  "id": "jupyter-notebook-pytorch",
+  "name": "Jupyter Notebook with pytorch:2.4.0-cuda12.1-cudnn9-runtime",
+  "description": "Jupyter Notebook Service",
+  "category": ["Web UI"],
+  "subcategory": ["Featured"],
+  "icon": "https://seeklogo.com/images/J/jupyter-logo-A91705F539-seeklogo.com.png"
+}
+```
+
+Contents of Pytorch-jupyter-notebook\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "pytorch",
+      "args": {
+        "image": "docker.io/nosana/pytorch-jupyter:0.0.0",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
+        "expose": 8888,
+        "gpu": true
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Pytorch-jupyter-notebook\jupyter.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Pytorch-jupyter-notebook\README.md:
+```
+# PyTorch Jupyter Notebook
+
+![PyTorch Jupyter](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Pytorch-jupyter-notebook/jupyter.gif)
+
+A Jupyter Notebook environment with PyTorch pre-installed for deep learning development.
+
+Unleash the power of PyTorch with Nosana! Effortlessly run your Jupyter environment on high-performance GPU-backed nodes, ensuring optimal performance for your deep learning projects.
+
+## Key Features
+- Interactive Python environment
+- Pre-installed PyTorch
+- CUDA support
+- Notebook sharing
+- GPU acceleration support
+
+## Configuration
+- Port: 8888
+- GPU: Required
+- No authentication required
+
+```
+
+Contents of Rstudio\info.json:
+```
+{
+  "id": "rstudio",
+  "name": "RStudio",
+  "description": "Run RStudio Server in a Docker container, providing a powerful and consistent R development environment accessible through your browser.",
+  "category": ["Web UI", "Featured"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png"
+}
+
+```
+
+Contents of Rstudio\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "rocker-rstudio",
+      "args": {
+        "image": "rocker/rstudio:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 8787,
+        "env": {
+          "USER": "rstudio",
+          "PASSWORD": "password",
+          "RUNROOTLESS": "false"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Rstudio\README.md:
+```
+# RStudio Server
+
+![RStudio](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png)
+
+A professional development environment for R programming accessible through your web browser.
+
+Unleash the power of R development with Nosana! Effortlessly run your RStudio instance on high-performance GPU-backed nodes, ensuring optimal performance for your data science projects.
+
+## Key Features
+- Interactive R environment
+- Package management
+- Data visualization tools
+- Project organization
+- GPU acceleration support
+
+## Configuration
+- Port: 8787
+- GPU: Required
+- Username: rstudio
+- Password: Configurable via environment
+
+```
+
+Contents of Tensorflow-jupyter-notebook\info.json:
+```
+{
+  "id": "jupyter-notebook-tensorflow",
+  "name": "Jupyter Notebook with Tensorflow",
+  "description": "Jupyter Notebook Service",
+  "category": ["Web UI"],
+  "subcategory": ["Featured"],
+  "icon": "https://seeklogo.com/images/J/jupyter-logo-A91705F539-seeklogo.com.png"
+}
+```
+
+Contents of Tensorflow-jupyter-notebook\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "job-builder"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "jupyter-notebook",
+      "args": {
+        "cmd": "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''",
+        "expose": 8888,
+        "image": "tensorflow/tensorflow:latest-gpu-jupyter",
+        "gpu": true
+      }
+    }
+  ]
+}
+```
+
+Contents of Tensorflow-jupyter-notebook\jupyter.gif:
+```
+[Could not decode file contents]
+
+```
+
+Contents of Tensorflow-jupyter-notebook\README.md:
+```
+# TensorFlow Jupyter Notebook
+
+![TensorFlow Jupyter](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Tensorflow-jupyter-notebook/jupyter.gif)
+
+A Jupyter Notebook environment with TensorFlow pre-installed for machine learning development.
+
+Unleash the power of TensorFlow with Nosana! Effortlessly run your Jupyter environment on high-performance GPU-backed nodes, ensuring optimal performance for your ML projects.
+
+## Key Features
+- Interactive Python environment
+- Pre-installed TensorFlow
+- CUDA support
+- Notebook sharing
+- GPU acceleration support
+
+## Configuration
+- Port: 8888
+- GPU: Required
+- No authentication required
+
+```
+
+Contents of Text-To-Speech-UI\info.json:
+```
+{
+  "id": "tts-generation-webui",
+  "name": "Text to Speech Generation UI",
+  "description": "A web interface for generating speech from text using various TTS models",
+  "category": ["Web UI"],
+  "subcategory": ["Featured"],
+  "icon": "https://cdn-icons-png.flaticon.com/512/8984/8984813.png"
+} 
+```
+
+Contents of Text-To-Speech-UI\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "tts-generation-webui",
+      "args": {
+        "image": "ghcr.io/rsxdalv/tts-generation-webui:main",
+        "cmd": [],
+        "gpu": true,
+        "expose": 3000
+      }
+    }
+  ]
+} 
+```
+
+Contents of Text-To-Speech-UI\README.md:
+```
+# Text To Speech Generation UI
+
+![TTS UI](https://cdn-icons-png.flaticon.com/512/8984/8984813.png)
+
+A web interface for generating natural-sounding speech from text using various TTS models.
+
+Unleash the power of speech synthesis with Nosana! Effortlessly run your TTS instance on high-performance GPU-backed nodes, ensuring optimal audio generation for your projects.
+
+## Key Features
+- Multiple voice models
+- Language support
+- Voice customization
+- Batch processing
+- GPU acceleration support
+
+## Configuration
+- Port: 3000
+- GPU: Required
+- Web interface access
+```
+
+Contents of TGI-API\info.json:
+```
+{
+  "id": "tgi-api",
+  "name": "Text Generation Inference API",
+  "description": "Hugging Face's Text Generation Inference (TGI) service for optimized text generation",
+  "category": ["API Only"],
+  "subcategory": ["LLM"],
+  "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+} 
+```
+
+Contents of TGI-API\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "tgi",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/bash",
+          "-c",
+          "text-generation-launcher --model-id Qwen/Qwen2.5-7B --port 8080"
+        ],
+        "image": "ghcr.io/huggingface/text-generation-inference:2.3.1",
+        "gpu": true,
+        "expose": 8080
+      }
+    }
+  ]
+} 
+```
+
+Contents of TGI-API\README.md:
+```
+# Text Generation Inference (TGI) API
+
+Text Generation Inference is Hugging Face's optimized text generation service, designed for production environments.
+
+## Key Features
+- Optimized inference for text generation models
+- Support for various model architectures
+- Built-in batching and caching
+- RESTful API interface
+- GPU acceleration
+
+## Configuration
+- Port: 8080
+- Model: Qwen2.5-7B
+- GPU: Required 
+```
+
+Contents of VLLM-API\info.json:
+```
+{
+  "id": "vllm-api",
+  "name": "vLLM API",
+  "description": "High-throughput and memory-efficient inference engine for LLMs",
+  "category": ["API Only"],
+  "subcategory": ["LLM"],
+  "icon": "https://avatars.githubusercontent.com/u/136984999?v=4"
+} 
+```
+
+Contents of VLLM-API\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "benchmark"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "vllm",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model Qwen/Qwen2.5-7B --served-model-name Qwen2.5-7B"
+        ],
+        "image": "docker.io/vllm/vllm-openai:v0.5.4",
+        "gpu": true,
+        "expose": 8080
+      }
+    }
+  ]
+} 
+```
+
+Contents of VLLM-API\README.md:
+```
+# vLLM API
+
+![vLLM](https://avatars.githubusercontent.com/u/136984999?v=4)
+
+A high-throughput and memory-efficient inference engine for Large Language Models.
+
+Unleash the power of efficient LLM inference with Nosana! Effortlessly run your vLLM instance on high-performance GPU-backed nodes, ensuring optimal serving for your applications.
+
+## Key Features
+- PagedAttention technology
+- Continuous batching
+- OpenAI-compatible API
+- Memory optimization
+- GPU acceleration support
+
+## Configuration
+- Port: 8080
+- GPU: Required
+- Model: Qwen2.5-7B
+```
+
+Contents of VScode-server\info.json:
+```
+{
+  "id": "vscode-server",
+  "name": "VSCode Server",
+  "description": "Run Visual Studio Code on a remote server accessible through your browser, enabling a consistent and powerful development environment.",
+  "category": ["Web UI"],
+  "subcategory": ["Featured"],
+  "icon": "https://avatars.githubusercontent.com/u/12324908?s=280&v=4"
+}
+
+```
+
+Contents of VScode-server\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "code-server",
+      "args": {
+        "image": "lscr.io/linuxserver/code-server:latest",
+        "cmd": [],
+        "gpu": true,
+        "expose": 8443,
+        "env": {
+          "PUID": "1000",
+          "PGID": "1000",
+          "TZ": "Etc/UTC",
+          "SUDO_PASSWORD": "password"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of VScode-server\README.md:
+```
+# VSCode Server
+
+![VSCode Server](https://avatars.githubusercontent.com/u/12324908?s=280&v=4)
+
+A full-featured development environment accessible through your web browser.
+
+Unleash the power of cloud development with Nosana! Effortlessly run your VSCode Server instance on high-performance GPU-backed nodes, ensuring optimal development experience for your projects.
+
+## Key Features
+- Full IDE capabilities
+- Extension support
+- Terminal access
+- Git integration
+- GPU acceleration support
+
+## Configuration
+- Port: 8443
+- GPU: Required
+- Password protection
+
+
+
+
+```
+
+Contents of Whisper-ASR-API\info.json:
+```
+{
+  "id": "whisper-asr-webservice",
+  "name": "Whisper ASR Webservice",
+  "description": "A robust speech recognition service powered by OpenAI's Whisper model, supporting multilingual transcription, translation, and language identification.",
+  "category": ["API Only"],
+  "subcategory": ["Featured"],
+  "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png"
+}
+
+```
+
+Contents of Whisper-ASR-API\job-definition.json:
+```
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "openai-whisper-asr-webservice",
+      "args": {
+        "image": "docker.io/onerahmet/openai-whisper-asr-webservice:latest-gpu",
+        "cmd": [],
+        "gpu": true,
+        "expose": 9000,
+        "env": {
+          "ASR_MODEL": "base",
+          "ASR_ENGINE": "openai_whisper"
+        }
+      }
+    }
+  ]
+}
+
+```
+
+Contents of Whisper-ASR-API\README.md:
+```
+# Whisper ASR API
+
+![Whisper ASR Webservice](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/whisper-asr-webservice/whisper_asr_webservice.mp4)
+
+A robust speech recognition service powered by OpenAI's Whisper model.
+
+Unleash the power of speech recognition with Nosana! Effortlessly run your Whisper ASR instance on high-performance GPU-backed nodes, ensuring optimal transcription for your audio processing needs.
+
+## Key Features
+- Multilingual transcription
+- Translation support
+- Language identification
+- RESTful API interface
+- GPU acceleration support
+
+## Configuration
+- Port: 9000
+- GPU: Required
+- Model: Whisper Base
+
+```
+
