@@ -4,5 +4,6 @@
   "description": "Open WebUI supports various LLM models",
   "category": ["Web UI"],
   "subcategory": ["LLM"],
-  "icon": "https://openwebui.com/user.png"
+  "icon": "https://openwebui.com/user.png",
+  "github_url": "https://github.com/open-webui/open-webui"
 }

@@ -4,5 +4,6 @@
   "description": "A robust speech recognition service powered by OpenAI's Whisper model, supporting multilingual transcription, translation, and language identification.",
   "category": ["API Only"],
   "subcategory": ["Featured"],
-  "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png"
+  "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
+  "github_url": "https://github.com/openai/whisper"
 }

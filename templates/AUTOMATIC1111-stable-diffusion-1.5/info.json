@@ -4,5 +4,6 @@
   "description": "Stable Diffusion is a latent text-to-image diffusion model",
   "category": ["Web UI"],
   "subcategory": ["Image Generation"],
-  "icon": "https://user-images.githubusercontent.com/36368048/196056941-aace0837-473a-4aa5-9067-505b17797aa1.png"
+  "icon": "https://user-images.githubusercontent.com/36368048/196056941-aace0837-473a-4aa5-9067-505b17797aa1.png",
+  "github_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui"
 }

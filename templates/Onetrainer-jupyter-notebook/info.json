@@ -4,5 +4,6 @@
   "description": "A comprehensive Jupyter environment for AI model training with Onetrainer framework",
   "category": ["Web UI"],
   "subcategory": ["Image Generation Fine-tuning"],
-  "icon": "https://avatars.githubusercontent.com/u/3390934?v=4"
+  "icon": "https://avatars.githubusercontent.com/u/3390934?v=4",
+  "github_url": "https://github.com/Nerogar/OneTrainer"
 } 

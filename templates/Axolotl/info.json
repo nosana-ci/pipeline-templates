@@ -4,5 +4,6 @@
   "description": "Axolotl streamlines the fine-tuning of various AI models, supporting multiple configurations and architectures for efficient and flexible model training.",
   "category": ["Web UI"],
   "subcategory": ["LLM Fine-tuning"],
-  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl-nobackground.png"
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl-nobackground.png",
+  "github_url": "https://github.com/OpenAccess-AI-Collective/axolotl"
 }
