@@ -4,5 +4,6 @@
   "description": "A fork of AUTOMATIC1111's Stable Diffusion web UI with additional features and optimizations",
   "category": ["Web UI"],
   "subcategory": ["Image Generation"],
-  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Forge-stable-diffusion-1.5/forge.png"
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Forge-stable-diffusion-1.5/forge.png",
+  "github_url": "https://github.com/lllyasviel/stable-diffusion-webui-forge "
 }

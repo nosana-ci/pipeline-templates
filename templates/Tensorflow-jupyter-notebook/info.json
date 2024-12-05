@@ -4,5 +4,6 @@
   "description": "Jupyter Notebook Service",
   "category": ["Web UI"],
   "subcategory": ["Featured"],
-  "icon": "https://seeklogo.com/images/J/jupyter-logo-A91705F539-seeklogo.com.png"
+  "icon": "https://seeklogo.com/images/J/jupyter-logo-A91705F539-seeklogo.com.png",
+  "github_url": "https://github.com/tensorflow/tensorflow"
 }
