@@ -4,5 +4,6 @@
   "description": "A powerful and modular image generation interface with a node-based workflow editor",
   "category": ["Web UI"],
   "subcategory": ["Image Generation"],
-  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/ComfyUI/comfyui.png"
+  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/ComfyUI/comfyui.png",
+  "github_url": "https://github.com/comfyanonymous/ComfyUI"
 }
