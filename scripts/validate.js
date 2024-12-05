@@ -1,12 +1,16 @@
 import { validateJobDefinition } from '@nosana/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
+import fetch from 'node-fetch';
 
 // Store all IDs to check for uniqueness
 const allIds = new Set();
 
+// Required fields that must be present in info.json
+const REQUIRED_FIELDS = ['id', 'name', 'description', 'category', 'subcategory'];
+
 // Validate a single template directory
-function validateTemplate(folder) {
+async function validateTemplate(folder) {
   const templatePath = path.join('./templates', folder);
 
   // Check if README.md exists
@@ -29,8 +33,7 @@ function validateTemplate(folder) {
   }
 
   // Check required fields in info.json
-  const requiredFields = ['id', 'name', 'description', 'category'];
-  for (const field of requiredFields) {
+  for (const field of REQUIRED_FIELDS) {
     if (!info[field]) {
       throw new Error(`${folder}: Missing required field '${field}' in info.json`);
     }
@@ -40,12 +43,8 @@ function validateTemplate(folder) {
   if (!Array.isArray(info.category) || info.category.length !== 1) {
     throw new Error(`${folder}: 'category' must be an array with exactly one item in info.json`);
   }
-  if (info.subcategory) {
-    if (!Array.isArray(info.subcategory) || info.subcategory.length !== 1) {
-      throw new Error(`${folder}: 'subcategory' must be an array with exactly one item in info.json`);
-    }
-  } else {
-    throw new Error(`${folder}: Missing required field 'subcategory' in info.json`);
+  if (!Array.isArray(info.subcategory) || info.subcategory.length !== 1) {
+    throw new Error(`${folder}: 'subcategory' must be an array with exactly one item in info.json`);
   }
 
   // Skip icon validation if github_url is provided
@@ -64,9 +63,14 @@ function validateTemplate(folder) {
     if (!isValidURL(info.github_url)) {
       throw new Error(`${folder}: 'github_url' is not a valid URL`);
     }
-    checkGitHubURLReachable(info.github_url).catch((err) => {
-      throw new Error(`${folder}: 'github_url' is not reachable`);
-    });
+    try {
+      const response = await fetch(info.github_url);
+      if (!response.ok) {
+        throw new Error(`${folder}: GitHub URL returned status ${response.status}`);
+      }
+    } catch (error) {
+      console.warn(`Warning: Could not verify GitHub URL for ${folder}: ${error.message}`);
+    }
   }
 
   // Validate job definition
@@ -91,26 +95,17 @@ function isValidURL(url) {
   }
 }
 
-// Helper function to check if GitHub URL is reachable
-async function checkGitHubURLReachable(url) {
-  const https = require('https');
-  return new Promise((resolve, reject) => {
-    https
-      .get(url, (res) => {
-        if (res.statusCode === 200) {
-          resolve(true);
-        } else {
-          reject(false);
-        }
-      })
-      .on('error', (e) => {
-        reject(e);
-      });
-  });
+// Process all template directories
+async function validateAllTemplates() {
+  const templateDirs = fs.readdirSync('./templates');
+  
+  try {
+    await Promise.all(templateDirs.map(validateTemplate));
+    console.log('\n✓ All templates validated successfully!');
+  } catch (error) {
+    console.error('\n❌ Validation failed:', error.message);
+    process.exit(1);
+  }
 }
 
-// Process all template directories
-const templateDirs = fs.readdirSync('./templates');
-templateDirs.forEach(validateTemplate);
-
-console.log('\n✓ All templates validated successfully!');
+validateAllTemplates();
