@@ -1,6 +1,6 @@
 {
-  "id": "jupyter-notebook-tensorflow",
-  "name": "Jupyter Notebook with Tensorflow",
+  "id": "tensorflow-jupyter-notebook",
+  "name": "Tensorflow Jupyter Notebook",
   "description": "Jupyter Notebook Service",
   "category": ["Web UI"],
   "subcategory": ["Other"],
