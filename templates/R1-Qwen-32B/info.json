@@ -1,6 +1,6 @@
 {
-  "id": "r1-qwen-32b",
-  "name": "R1-Qwen-32B",
+  "id": "deepseek-r1-qwen-32b",
+  "name": "DeepSeek R1-Qwen-32B",
   "description": "High-throughput and memory-efficient inference engine for DeepSeek R1-Qwen-32B model",
   "category": ["API Only"],
   "subcategory": ["LLM"],
