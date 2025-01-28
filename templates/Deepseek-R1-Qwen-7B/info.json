@@ -1,7 +1,7 @@
 {
-  "id": "r1-llama-8b",
-  "name": "R1-Llama-8B",
-  "description": "High-throughput and memory-efficient inference engine for DeepSeek R1-Llama-8B model",
+  "id": "deepseek-r1-qwen-7b",
+  "name": "DeepSeek R1-Qwen-7B",
+  "description": "High-throughput and memory-efficient inference engine for DeepSeek R1-Qwen-7B model",
   "category": ["API Only"],
   "subcategory": ["LLM"],
   "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
