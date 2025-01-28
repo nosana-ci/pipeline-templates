@@ -1,0 +1,22 @@
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "cli"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "janus_pro_7b",
+        "args": {
+          "cmd": [
+            "/bin/sh", "-c",
+            "python demo/app_januspro.py"
+          ],
+          "image": "docker.io/nosana/janus-pro-7b:0.0.0",
+          "gpu": true,
+          "expose": 7860
+        }
+      }
+    ]
+  } 
