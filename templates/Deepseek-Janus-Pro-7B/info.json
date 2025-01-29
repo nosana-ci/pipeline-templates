@@ -1,0 +1,9 @@
+{
+  "id": "deepseek-janus-pro-7b",
+  "name": "DeepSeek Janus-Pro-7B",
+  "description": "A unified multimodal understanding and generation model that can handle both text-to-image generation and multimodal understanding tasks",
+  "category": ["Web UI"],
+  "subcategory": ["Image Generation"],
+  "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
+  "github_url": "https://github.com/deepseek-ai/Janus"
+} 
