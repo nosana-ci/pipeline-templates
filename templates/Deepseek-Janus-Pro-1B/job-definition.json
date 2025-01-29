@@ -1,20 +1,17 @@
 {
   "ops": [
     {
-      "id": "janus_pro_7b",
+      "id": "janus_pro_1b",
       "args": {
         "cmd": [],
-        "env": {
-          "MODEL_PATH": "deepseek-ai/Janus-Pro-7B"
-        },
         "gpu": true,
         "image": "docker.io/nosana/janus-pro:0.0.0",
         "expose": 7860,
         "resources": [
           {
-            "url": "https://models.nosana.io/hugging-face/deepseek/janus/models-deepseek-ai-Janus-Pro-7B",
+            "url": "https://models.nosana.io/hugging-face/deepseek/janus/models-deepseek-ai-Janus-Pro-1B",
             "type": "S3",
-            "target": "/Janus/models/models--deepseek-ai--Janus-Pro-7B",
+            "target": "/Janus/models/models--deepseek-ai--Janus-Pro-1B",
             "allowWrite": true
           }
         ]

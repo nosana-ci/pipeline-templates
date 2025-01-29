@@ -1,4 +1,4 @@
-# DeepSeek Janus-Pro-7B
+# DeepSeek Janus-Pro-1B
 
 ![DeepSeek](https://avatars.githubusercontent.com/u/148330874?s=48&v=4)
 
@@ -6,7 +6,7 @@ A powerful unified multimodal model that excels at both understanding and genera
 
 ## Description
 
-Janus-Pro-7B is an advanced version of the Janus model series, incorporating optimized training strategies, expanded training data, and scaled model architecture. It offers significant improvements in both multimodal understanding and text-to-image instruction-following capabilities.
+Janus-Pro-1B is an advanced version of the Janus model series, incorporating optimized training strategies, expanded training data, and scaled model architecture. It offers significant improvements in both multimodal understanding and text-to-image instruction-following capabilities.
 
 ## Features
 
@@ -22,9 +22,9 @@ The model is served through a web interface that can be accessed on port 7860.
 
 ## Model Details
 
-- **Name**: Janus-Pro-7B
+- **Name**: Janus-Pro-1B
 - **Architecture**: Unified Transformer with decoupled visual encoding
-- **Size**: 7 billion parameters
+- **Size**: 1 billion parameters
 - **Capabilities**: 
   - Text-to-image generation
   - Multimodal understanding
