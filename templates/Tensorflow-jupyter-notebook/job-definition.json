@@ -9,7 +9,16 @@
       "type": "container/run",
       "id": "jupyter-notebook",
       "args": {
-        "cmd": "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''",
+        "cmd": [
+          "jupyter",
+          "notebook",
+          "--ip=0.0.0.0",
+          "--port=8888",
+          "--no-browser",
+          "--allow-root",
+          "--ServerApp.token=''",
+          "--ServerApp.password=''"
+        ],
         "expose": 8888,
         "image": "tensorflow/tensorflow:latest-gpu-jupyter",
         "gpu": true
