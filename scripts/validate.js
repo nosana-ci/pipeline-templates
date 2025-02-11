@@ -14,6 +14,13 @@ const REQUIRED_META_FIELDS = {
   trigger: 'dashboard'
 };
 
+// Maximum lengths for fields
+const MAX_FIELD_LENGTHS = {
+  id: 256,
+  name: 256,
+  icon: 256
+};
+
 // Validate a single template directory
 async function validateTemplate(folder) {
   const templatePath = path.join('./templates', folder);
