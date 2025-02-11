@@ -9,6 +9,11 @@ const allIds = new Set();
 // Required fields that must be present in info.json
 const REQUIRED_FIELDS = ['id', 'name', 'description', 'category', 'subcategory'];
 
+// Required metadata fields in job-definition.json
+const REQUIRED_META_FIELDS = {
+  trigger: 'dashboard'
+};
+
 // Validate a single template directory
 async function validateTemplate(folder) {
   const templatePath = path.join('./templates', folder);
@@ -75,8 +80,24 @@ async function validateTemplate(folder) {
 
   // Validate job definition
   const template = fs.readFileSync(path.join(templatePath, 'job-definition.json'));
-  const jobDefinition = template.toString();
-  const result = validateJobDefinition(JSON.parse(jobDefinition));
+  const jobDefinition = JSON.parse(template.toString());
+  
+  // Validate metadata structure
+  if (!jobDefinition.meta) {
+    throw new Error(`${folder}: Missing 'meta' field in job-definition.json`);
+  }
+  
+  if (jobDefinition.meta.trigger !== REQUIRED_META_FIELDS.trigger) {
+    throw new Error(`${folder}: 'trigger' must be '${REQUIRED_META_FIELDS.trigger}' in job-definition.json`);
+  }
+  
+  // Validate VRAM requirement if present
+  if (jobDefinition.meta.system_requirements?.required_vram !== undefined && 
+      typeof jobDefinition.meta.system_requirements.required_vram !== 'number') {
+    throw new Error(`${folder}: 'required_vram' must be a number if specified`);
+  }
+
+  const result = validateJobDefinition(jobDefinition);
   if (!result.success) {
     const error = result.errors[0];
     throw new Error(`${folder}: ${error.path} - expected ${error.expected}, but found ${JSON.stringify(error.value)}`);
