@@ -2,7 +2,10 @@
   "version": "0.1",
   "type": "container",
   "meta": {
-    "trigger": "benchmark"
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 60
+    }
   },
   "ops": [
     {

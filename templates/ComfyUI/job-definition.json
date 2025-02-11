@@ -12,7 +12,10 @@
     }
   ],
   "meta": {
-    "trigger": "benchmark"
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 8
+    }
   },
   "type": "container",
   "version": "0.1"
