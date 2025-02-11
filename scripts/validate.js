@@ -75,16 +75,11 @@ async function validateTemplate(folder) {
 
   // Validate job definition
   const template = fs.readFileSync(path.join(templatePath, 'job-definition.json'));
-  const jobDefinition = JSON.parse(template.toString());
-  const result = validateJobDefinition(jobDefinition);
+  const jobDefinition = template.toString();
+  const result = validateJobDefinition(JSON.parse(jobDefinition));
   if (!result.success) {
     const error = result.errors[0];
     throw new Error(`${folder}: ${error.path} - expected ${error.expected}, but found ${JSON.stringify(error.value)}`);
-  }
-
-  // Validate metadata requirements
-  if (!jobDefinition.meta?.trigger === 'dashboard') {
-    throw new Error(`${folder}: 'trigger' must be set to 'dashboard' in job-definition.json`);
   }
 
   console.log(`✓ ${folder} template is valid!`);
