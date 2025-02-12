@@ -20,7 +20,10 @@
     }
   ],
   "meta": {
-    "trigger": "cli"
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 3
+    }
   },
   "type": "container",
   "version": "0.1"

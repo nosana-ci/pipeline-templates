@@ -2,7 +2,7 @@
   "version": "0.1",
   "type": "container",
   "meta": {
-    "trigger": "benchmark"
+    "trigger": "dashboard"
   },
   "ops": [
     {

@@ -1,6 +1,6 @@
 # ComfyUI
 
-![ComfyUI](https://raw.githubusercontent.com/nosana-ci/templates/main/templates/ComfyUI/comfyui.gif)
+![ComfyUI](https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/ComfyUI_Logo.png/899px-ComfyUI_Logo.png?20240610081416)
 
 A node-based interface for image generation with advanced workflow capabilities.
 

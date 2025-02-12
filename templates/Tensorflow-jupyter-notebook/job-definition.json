@@ -2,7 +2,10 @@
   "version": "0.1",
   "type": "container",
   "meta": {
-    "trigger": "job-builder"
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 4
+    }
   },
   "ops": [
     {
