@@ -20,10 +20,7 @@
     }
   ],
   "meta": {
-    "trigger": "dashboard",
-    "system_requirements": {
-      "required_vram": 3
-    }
+    "trigger": "dashboard"
   },
   "type": "container",
   "version": "0.1"
