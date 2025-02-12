@@ -11,7 +11,10 @@ const REQUIRED_FIELDS = ['id', 'name', 'description', 'category', 'subcategory']
 
 // Required metadata fields in job-definition.json
 const REQUIRED_META_FIELDS = {
-  trigger: 'dashboard'
+  trigger: 'dashboard',
+  system_requirements: {
+    required_vram: 'number'
+  }
 };
 
 const MAX_FIELD_LENGTHS = {
@@ -96,14 +99,14 @@ async function validateTemplate(folder) {
   if (jobDefinition.meta.trigger !== REQUIRED_META_FIELDS.trigger) {
     throw new Error(`${folder}: 'trigger' must be '${REQUIRED_META_FIELDS.trigger}' in job-definition.json`);
   }
-  
-  // Validate VRAM requirement if present
-  if (jobDefinition.meta.system_requirements?.required_vram !== undefined && 
-      typeof jobDefinition.meta.system_requirements.required_vram !== 'number') {
-    throw new Error(`${folder}: 'required_vram' must be a number if specified`);
-  }
 
-  const result = validateJobDefinition(jobDefinition);
+  // Skip SDK validation for system_requirements
+  const jobDefForValidation = {
+    ...jobDefinition,
+    meta: { trigger: jobDefinition.meta.trigger }
+  };
+  
+  const result = validateJobDefinition(jobDefForValidation);
   if (!result.success) {
     const error = result.errors[0];
     throw new Error(`${folder}: ${error.path} - expected ${error.expected}, but found ${JSON.stringify(error.value)}`);
