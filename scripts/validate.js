@@ -12,6 +12,12 @@ const REQUIRED_FIELDS = ['id', 'name', 'description', 'category', 'subcategory']
 // Required metadata fields in job-definition.json
 const REQUIRED_META_FIELDS = {
   trigger: 'dashboard'
+
+const MAX_FIELD_LENGTHS = {
+  id: 256,
+  name: 256,
+  icon: 256
+
 };
 
 // Validate a single template directory
@@ -101,6 +107,15 @@ async function validateTemplate(folder) {
   if (!result.success) {
     const error = result.errors[0];
     throw new Error(`${folder}: ${error.path} - expected ${error.expected}, but found ${JSON.stringify(error.value)}`);
+  }
+
+  // Check field lengths
+  for (const [field, maxLength] of Object.entries(MAX_FIELD_LENGTHS)) {
+    if (info[field] && info[field].length > maxLength) {
+      throw new Error(
+        `${folder}: Field '${field}' exceeds maximum length of ${maxLength} characters in info.json`
+      );
+    }
   }
 
   console.log(`✓ ${folder} template is valid!`);
