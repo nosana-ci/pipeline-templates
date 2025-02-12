@@ -12,12 +12,12 @@ const REQUIRED_FIELDS = ['id', 'name', 'description', 'category', 'subcategory']
 // Required metadata fields in job-definition.json
 const REQUIRED_META_FIELDS = {
   trigger: 'dashboard'
+};
 
 const MAX_FIELD_LENGTHS = {
   id: 256,
   name: 256,
   icon: 256
-
 };
 
 // Validate a single template directory
