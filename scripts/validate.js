@@ -9,8 +9,8 @@ const allIds = new Set();
 // Required fields that must be present in info.json
 const REQUIRED_FIELDS = ['id', 'name', 'description', 'category', 'subcategory'];
 
-// Required metadata fields in job-definition.json
-const REQUIRED_META_FIELDS = {
+// Optional metadata fields in job-definition.json
+const META_FIELDS = {
   trigger: 'dashboard',
   system_requirements: {
     required_vram: 'number'
@@ -91,20 +91,19 @@ async function validateTemplate(folder) {
   const template = fs.readFileSync(path.join(templatePath, 'job-definition.json'));
   const jobDefinition = JSON.parse(template.toString());
   
-  // Validate metadata structure
-  if (!jobDefinition.meta) {
-    throw new Error(`${folder}: Missing 'meta' field in job-definition.json`);
-  }
-  
-  if (jobDefinition.meta.trigger !== REQUIRED_META_FIELDS.trigger) {
-    throw new Error(`${folder}: 'trigger' must be '${REQUIRED_META_FIELDS.trigger}' in job-definition.json`);
+  // Validate metadata structure if present
+  if (jobDefinition.meta) {
+    if (jobDefinition.meta.trigger && jobDefinition.meta.trigger !== META_FIELDS.trigger) {
+      throw new Error(`${folder}: If 'trigger' is specified in meta, it must be '${META_FIELDS.trigger}' in job-definition.json`);
+    }
   }
 
-  // Skip SDK validation for system_requirements
+  // Create a copy of job definition without meta for SDK validation
   const jobDefForValidation = {
     ...jobDefinition,
-    meta: { trigger: jobDefinition.meta.trigger }
+    meta: undefined
   };
+  delete jobDefForValidation.meta;
   
   const result = validateJobDefinition(jobDefForValidation);
   if (!result.success) {
