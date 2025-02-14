@@ -1,0 +1,9 @@
+{
+  "id": "comfyui-sdxl",
+  "name": "ComfyUI with Stable Diffusion XL",
+  "description": "A powerful node-based interface for Stable Diffusion XL image generation",
+  "category": ["Web UI"],
+  "subcategory": ["Image Generation"],
+  "icon": "https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/web/favicon.ico",
+  "github_url": "https://github.com/comfyanonymous/ComfyUI"
+} 
