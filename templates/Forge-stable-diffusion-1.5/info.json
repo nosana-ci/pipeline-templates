@@ -1,5 +1,5 @@
 {
-  "id": "forge-stable-diffusion",
+  "id": "forge-sd",
   "name": "Forge Stable Diffusion",
   "description": "An enhanced web interface for Stable Diffusion with additional features",
   "category": ["Web UI"],
