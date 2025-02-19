@@ -1,6 +1,6 @@
 {
-  "id": "pytorch-jupyter-notebook",
-  "name": "Pytorch:2.4.0-cuda12.1-cudnn9-runtime Jupyter Notebook",
+  "id": "pytorch-jupyter",
+  "name": "Pytorch Jupyter Notebook",
   "description": "Jupyter Notebook Service",
   "category": ["Web UI"],
   "subcategory": ["Other"],

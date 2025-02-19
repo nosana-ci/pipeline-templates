@@ -1,7 +1,7 @@
 {
-  "id": "AUTOMTIC1111-stable-diffusion",
+  "id": "auto-sd",
   "name": "AUTOMATIC1111 Stable Diffusion 1.5",
-  "description": "Stable Diffusion is a latent text-to-image diffusion model",
+  "description": "A powerful web interface for generating images using Stable Diffusion models",
   "category": ["Web UI"],
   "subcategory": ["Image Generation"],
   "icon": "https://user-images.githubusercontent.com/36368048/196056941-aace0837-473a-4aa5-9067-505b17797aa1.png",

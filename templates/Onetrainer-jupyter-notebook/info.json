@@ -1,5 +1,5 @@
 {
-  "id": "onetrainer-jupyter",
+  "id": "onetrainer",
   "name": "Onetrainer Jupyter Notebook",
   "description": "A comprehensive Jupyter environment for AI model training with Onetrainer framework",
   "category": ["Web UI"],

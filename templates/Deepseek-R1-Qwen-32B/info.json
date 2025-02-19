@@ -1,7 +1,7 @@
 {
-  "id": "deepseek-r1-qwen-32b",
+  "id": "qwen32b",
   "name": "DeepSeek R1 Qwen 32B",
-  "description": "High-throughput and memory-efficient inference engine for DeepSeek R1-Qwen-32B model",
+  "description": "High-performance inference API for the 32B parameter Qwen language model",
   "category": ["API Only"],
   "subcategory": ["LLM"],
   "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",

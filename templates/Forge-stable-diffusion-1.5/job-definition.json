@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "forge_stablediffusion",
+      "id": "forge",
       "args": {
         "cmd": [
           "/bin/sh", "-c", 

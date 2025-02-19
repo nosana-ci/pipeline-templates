@@ -7,7 +7,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "tts-generation-webui",
+      "id": "tts",
       "args": {
         "image": "ghcr.io/rsxdalv/tts-generation-webui:main",
         "cmd": [],

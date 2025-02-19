@@ -1,7 +1,7 @@
 {
-  "id": "tensorflow-jupyter-notebook",
+  "id": "tf-jupyter",
   "name": "Tensorflow Jupyter Notebook",
-  "description": "Jupyter Notebook Service",
+  "description": "Interactive Python environment with TensorFlow for machine learning development",
   "category": ["Web UI"],
   "subcategory": ["Other"],
   "icon": "https://user-images.githubusercontent.com/40668801/42043955-fbb838a2-7af7-11e8-9795-7f890e871d13.png",

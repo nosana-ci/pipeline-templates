@@ -2,15 +2,12 @@
   "version": "0.1",
   "type": "container",
   "meta": {
-    "trigger": "dashboard",
-    "system_requirements": {
-      "required_vram": 8
-    }
+    "trigger": "dashboard"
   },
   "ops": [
     {
       "type": "container/run",
-      "id": "auto1111_stablediffusion",
+      "id": "sd15",
       "args": {
         "cmd": [
           "/bin/sh", "-c", 

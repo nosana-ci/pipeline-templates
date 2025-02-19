@@ -1,7 +1,7 @@
 {
   "id": "rstudio",
   "name": "RStudio Server",
-  "description": "Run RStudio Server on a remote server accessible through your browser, enabling a consistent and powerful development environment for R.",
+  "description": "Browser-based RStudio environment for statistical computing and data analysis",
   "category": ["Web UI"],
   "subcategory": ["Other"],
   "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png",

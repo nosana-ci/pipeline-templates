@@ -7,7 +7,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "code-server",
+      "id": "vscode",
       "args": {
         "image": "lscr.io/linuxserver/code-server:latest",
         "cmd": [],
