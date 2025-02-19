@@ -1,5 +1,5 @@
 {
-  "id": "deepseek-janus-pro-7b",
+  "id": "janus7b",
   "name": "DeepSeek Janus Pro 7B",
   "description": "A versatile model for text-to-image generation and multimodal understanding tasks",
   "category": ["Web UI"],

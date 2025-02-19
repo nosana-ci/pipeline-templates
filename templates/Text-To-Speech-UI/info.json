@@ -1,6 +1,6 @@
 {
-  "id": "tts-generation-webui",
-  "name": "Text to Speech Generation UI",
+  "id": "tts-webui",
+  "name": "Text-To-Speech UI",
   "description": "A web interface for generating speech from text using various TTS models",
   "category": ["Web UI"],
   "subcategory": ["Other"],

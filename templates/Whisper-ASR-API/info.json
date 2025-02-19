@@ -1,5 +1,5 @@
 {
-  "id": "whisper-asr-webservice",
+  "id": "whisper-asr",
   "name": "Whisper ASR Webservice",
   "description": "A speech recognition service powered by OpenAI's Whisper model for transcription",
   "category": ["API Only"],

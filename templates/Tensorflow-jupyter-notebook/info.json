@@ -1,5 +1,5 @@
 {
-  "id": "tensorflow-jupyter-notebook",
+  "id": "tf-jupyter",
   "name": "Tensorflow Jupyter Notebook",
   "description": "Interactive Python environment with TensorFlow for machine learning development",
   "category": ["Web UI"],

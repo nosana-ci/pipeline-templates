@@ -1,5 +1,5 @@
 {
-  "id": "AUTOMTIC1111-stable-diffusion",
+  "id": "auto-sd",
   "name": "AUTOMATIC1111 Stable Diffusion 1.5",
   "description": "A powerful web interface for generating images using Stable Diffusion models",
   "category": ["Web UI"],
