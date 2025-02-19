@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "vllm",
+      "id": "llama8b",
       "args": {
         "entrypoint": [],
         "cmd": [

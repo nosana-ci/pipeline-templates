@@ -1,7 +1,7 @@
 {
   "ops": [
     {
-      "id": "janus_pro_7b",
+      "id": "janus7b",
       "args": {
         "cmd": [],
         "env": {

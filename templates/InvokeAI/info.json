@@ -1,7 +1,7 @@
 {
   "id": "invoke-ai",
   "name": "InvokeAI",
-  "description": "Invoke is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies.",
+  "description": "A powerful creative engine for generating and editing images with Stable Diffusion",
   "category": ["Web UI"],
   "subcategory": ["Image Generation"],
   "icon": "https://d4.alternativeto.net/xsSoWnh09YOroqDfDTYx-QcFdoXjOMcxLtDc7FZleA0/rs:fit:280:280:0/g:ce:0:0/exar:1/YWJzOi8vZGlzdC9pY29ucy9pbnZva2VhaV8yMjc0ODEucG5n.png",

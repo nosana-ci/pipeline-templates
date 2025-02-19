@@ -18,7 +18,7 @@ const META_FIELDS = {
 };
 
 const MAX_FIELD_LENGTHS = {
-  id: 256,
+  id: 16,
   name: 256,
   icon: 256
 };

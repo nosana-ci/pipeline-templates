@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "vllm",
+      "id": "qwen1.5b",
       "args": {
         "entrypoint": [],
         "cmd": [

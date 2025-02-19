@@ -1,7 +1,7 @@
 {
   "id": "whisper-asr-webservice",
   "name": "Whisper ASR Webservice",
-  "description": "A robust speech recognition service powered by OpenAI's Whisper model, supporting multilingual transcription, translation, and language identification.",
+  "description": "A speech recognition service powered by OpenAI's Whisper model for transcription",
   "category": ["API Only"],
   "subcategory": ["Other"],
   "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
