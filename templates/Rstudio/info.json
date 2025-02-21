@@ -2,8 +2,7 @@
   "id": "rstudio",
   "name": "RStudio Server",
   "description": "Browser-based RStudio environment for statistical computing and data analysis",
-  "category": ["Web UI"],
-  "subcategory": ["Other"],
+  "category": ["Web UI", "API"],
   "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png",
   "github_url": "https://github.com/rocker-org/rocker"
 }

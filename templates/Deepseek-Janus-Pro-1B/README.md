@@ -1,7 +1,3 @@
-# DeepSeek Janus-Pro-1B
-
-![DeepSeek](https://avatars.githubusercontent.com/u/148330874?s=48&v=4)
-
 A powerful unified multimodal model that excels at both understanding and generation tasks, packaged as a containerized service with an easy-to-use web interface.
 
 ## Description

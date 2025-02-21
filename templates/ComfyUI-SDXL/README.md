@@ -1,5 +1,3 @@
-# ComfyUI with Stable Diffusion XL
-
 This template provides a ComfyUI installation with Stable Diffusion XL (SDXL) model pre-downloaded. ComfyUI is a powerful and modular UI for Stable Diffusion, allowing you to create complex image generation workflows through a node-based interface.
 
 

@@ -2,8 +2,7 @@
   "id": "oobabooga",
   "name": "Oobabooga web UI",
   "description": "A versatile web interface for text generation with multiple model backends",
-  "category": ["Web UI"],
-  "subcategory": ["LLM"],
+  "category": ["Web UI", "API", "LLM"],
   "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.png",
   "github_url": "https://github.com/oobabooga/text-generation-webui"
 }

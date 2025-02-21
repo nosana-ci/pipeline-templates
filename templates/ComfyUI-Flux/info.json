@@ -2,8 +2,7 @@
   "id": "comfyui-flux",
   "name": "ComfyUI with Flux Schnel FP8",
   "description": "A powerful node-based interface for Flux Schnel FP8 optimized image generation",
-  "category": ["Web UI"],
-  "subcategory": ["Image Generation"],
+  "category": ["Web UI", "API", "Featured", "Image Generation"],
   "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/ComfyUI_Logo.png/599px-ComfyUI_Logo.png?20240610081416",
   "github_url": "https://github.com/comfyanonymous/ComfyUI"
 } 

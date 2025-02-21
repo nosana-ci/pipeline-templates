@@ -2,8 +2,7 @@
   "id": "vllm-api",
   "name": "vLLM API",
   "description": "High-performance inference engine optimized for large language models",
-  "category": ["API Only"],
-  "subcategory": ["LLM"],
+  "category": ["API", "LLM"],
   "icon": "https://avatars.githubusercontent.com/u/136984999?v=4",
   "github_url": "https://github.com/vllm-project/vllm"
 } 

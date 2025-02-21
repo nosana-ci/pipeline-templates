@@ -1,7 +1,3 @@
-# Nosana LLM RAG WebUI
-
-![Nosana LLM RAG WebUI](https://nosana.io/img/Nosana_Logomark_color.png)
-
 A powerful RAG-enabled chat interface built on LMDeploy framework with LLama3.1 70B quantized.
 
 Unleash the power of RAG-enhanced LLMs with Nosana! Effortlessly run your chat interface on high-performance GPU-backed nodes, ensuring optimal performance for your conversational AI applications.

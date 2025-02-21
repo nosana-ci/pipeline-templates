@@ -2,8 +2,7 @@
   "id": "qwen7b",
   "name": "DeepSeek R1 Qwen 7B",
   "description": "High-performance inference API for the 7B parameter Qwen language model",
-  "category": ["API Only"],
-  "subcategory": ["LLM"],
+  "category": ["API", "New", "Featured", "LLM"],
   "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
   "github_url": "https://github.com/deepseek-ai/DeepSeek-R1"
 } 

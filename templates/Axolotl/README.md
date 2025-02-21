@@ -1,7 +1,3 @@
-# Axolotl LLM Fine-tuning
-
-![Axolotl](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl-nobackground.png)
-
 A streamlined environment for fine-tuning Large Language Models with multiple training configurations.
 
 Unleash the power of model fine-tuning with Nosana! Effortlessly run your Axolotl environment on high-performance GPU-backed nodes, ensuring optimal training for your custom models.

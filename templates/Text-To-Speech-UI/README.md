@@ -1,7 +1,3 @@
-# Text To Speech Generation UI
-
-![TTS UI](https://cdn-icons-png.flaticon.com/512/8984/8984813.png)
-
 A web interface for generating natural-sounding speech from text using various TTS models.
 
 Unleash the power of speech synthesis with Nosana! Effortlessly run your TTS instance on high-performance GPU-backed nodes, ensuring optimal audio generation for your projects.
