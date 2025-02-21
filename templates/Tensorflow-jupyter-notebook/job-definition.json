@@ -23,7 +23,7 @@
           "--ServerApp.password=''"
         ],
         "expose": 8888,
-        "image": "tensorflow/tensorflow:latest-gpu-jupyter",
+        "image": "tensorflow/tensorflow:2.18.0-gpu-jupyter",
         "gpu": true
       }
     }

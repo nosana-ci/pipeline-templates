@@ -12,7 +12,7 @@
       "type": "container/run",
       "id": "whisper",
       "args": {
-        "image": "docker.io/onerahmet/openai-whisper-asr-webservice:latest-gpu",
+        "image": "docker.io/onerahmet/openai-whisper-asr-webservice:v1.8.2-gpu",
         "cmd": [],
         "gpu": true,
         "expose": 9000,
