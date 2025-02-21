@@ -9,7 +9,7 @@
       "type": "container/run",
       "id": "rocker-rstudio",
       "args": {
-        "image": "rocker/rstudio:latest",
+        "image": "rocker/rstudio:4.4",
         "cmd": [],
         "gpu": true,
         "expose": 8787,

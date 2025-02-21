@@ -9,7 +9,7 @@
       "type": "container/run",
       "id": "Oobabooga-webui",
       "args": {
-        "image": "docker.io/atinoda/text-generation-webui:latest",
+        "image": "docker.io/atinoda/text-generation-webui:default-nvidia-v2.4",
         "cmd": [],
         "gpu": true,
         "expose": 7860,

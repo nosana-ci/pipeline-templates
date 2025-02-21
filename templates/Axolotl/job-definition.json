@@ -12,7 +12,7 @@
       "type": "container/run",
       "id": "axo",
       "args": {
-        "image": "docker.io/winglian/axolotl-cloud:main-latest",
+        "image": "docker.io/winglian/axolotl-cloud:main-20250221",
         "cmd": [
           "jupyter",
           "notebook",

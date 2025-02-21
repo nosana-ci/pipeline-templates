@@ -4,7 +4,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_vram": 20
+      "required_vram": 40
     }
   },
   "ops": [
@@ -18,7 +18,7 @@
           "-c",
           "python3 -m vllm.entrypoints.openai.api_server --model Valdemardi/DeepSeek-R1-Distill-Llama-70B-AWQ --served-model-name R1-Llama-70B-AWQ --port 9000 --max-model-len 100000"
         ],
-        "image": "docker.io/vllm/vllm-openai:latest",
+        "image": "docker.io/vllm/vllm-openai:v0.7.2",
         "gpu": true,
         "expose": 9000
       }

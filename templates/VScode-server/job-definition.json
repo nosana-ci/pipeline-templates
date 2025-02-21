@@ -9,7 +9,7 @@
       "type": "container/run",
       "id": "vscode",
       "args": {
-        "image": "lscr.io/linuxserver/code-server:latest",
+        "image": "lscr.io/linuxserver/code-server:4.97.2",
         "cmd": [],
         "gpu": true,
         "expose": 8443,

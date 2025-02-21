@@ -14,7 +14,7 @@
           "-c",
           "lmdeploy serve api_server Qwen/Qwen2.5-7B --model-name Qwen2.5-7B"
         ],
-        "image": "docker.io/openmmlab/lmdeploy:latest",
+        "image": "docker.io/openmmlab/lmdeploy:v0.7.0.post3-cu12",
         "gpu": true,
         "expose": 23333
       }
