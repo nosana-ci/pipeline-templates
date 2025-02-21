@@ -1,7 +1,3 @@
-# PyTorch Jupyter Notebook
-
-![PyTorch Jupyter](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Pytorch-jupyter-notebook/jupyter.gif)
-
 A Jupyter Notebook environment with PyTorch pre-installed for deep learning development.
 
 Unleash the power of PyTorch with Nosana! Effortlessly run your Jupyter environment on high-performance GPU-backed nodes, ensuring optimal performance for your deep learning projects.

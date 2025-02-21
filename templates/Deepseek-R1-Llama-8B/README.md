@@ -1,7 +1,3 @@
-# R1-Llama-8B Model
-
-![DeepSeek](https://avatars.githubusercontent.com/u/148330874?s=48&v=4)
-
 A high-throughput and memory-efficient inference engine for running DeepSeek's R1-Llama-8B model using vLLM.
 
 ## Description

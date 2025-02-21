@@ -1,7 +1,3 @@
-# Ollama API
-
-![Ollama](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCnTSM4MHExKgIkfUheyQ04byO32OaUXmQVg&s)
-
 A lightweight API service for running Large Language Models locally.
 
 Unleash the power of local LLMs with Nosana! Effortlessly run your Ollama API instance on high-performance GPU-backed nodes, ensuring optimal inference for your applications.

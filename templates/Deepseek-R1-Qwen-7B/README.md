@@ -1,7 +1,3 @@
-# R1-Qwen-7B Model
-
-![DeepSeek](https://avatars.githubusercontent.com/u/148330874?s=48&v=4)
-
 A high-throughput and memory-efficient inference engine for running DeepSeek's R1-Qwen-7B model using vLLM.
 
 ## Description

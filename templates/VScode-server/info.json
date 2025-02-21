@@ -2,8 +2,7 @@
   "id": "vscode-server",
   "name": "VSCode Server",
   "description": "Browser-based Visual Studio Code environment for remote development",
-  "category": ["Web UI"],
-  "subcategory": ["Other"],
+  "category": ["Web UI", "API"],
   "icon": "https://avatars.githubusercontent.com/u/12324908?s=280&v=4",
   "github_url": "https://github.com/coder/code-server"
 }

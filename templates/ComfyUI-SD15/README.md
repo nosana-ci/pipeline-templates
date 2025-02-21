@@ -1,5 +1,3 @@
-# ComfyUI with Stable Diffusion 1.5
-
 This template provides a ComfyUI installation with Stable Diffusion 1.5 model pre-downloaded. ComfyUI is a powerful and modular UI for Stable Diffusion, allowing you to create complex image generation workflows through a node-based interface.
 
 

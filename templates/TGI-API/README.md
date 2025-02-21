@@ -1,5 +1,3 @@
-# Text Generation Inference (TGI) API
-
 Text Generation Inference is Hugging Face's optimized text generation service, designed for production environments.
 
 ## Key Features

@@ -7,7 +7,19 @@ import fetch from 'node-fetch';
 const allIds = new Set();
 
 // Required fields that must be present in info.json
-const REQUIRED_FIELDS = ['id', 'name', 'description', 'category', 'subcategory'];
+const REQUIRED_FIELDS = ['id', 'name', 'description', 'category'];
+
+// Valid categories
+const VALID_CATEGORIES = [
+  'API',
+  'Web UI',
+  'Featured',
+  'New',
+  'LLM',
+  'Image Generation',
+  'Image Generation Fine-tuning',
+  'LLM Fine-tuning'
+];
 
 // Optional metadata fields in job-definition.json
 const META_FIELDS = {
@@ -53,12 +65,21 @@ async function validateTemplate(folder) {
     }
   }
 
-  // Ensure only one category and one subcategory
-  if (!Array.isArray(info.category) || info.category.length !== 1) {
-    throw new Error(`${folder}: 'category' must be an array with exactly one item in info.json`);
+  // Validate category array
+  if (!Array.isArray(info.category)) {
+    throw new Error(`${folder}: 'category' must be an array in info.json`);
   }
-  if (!Array.isArray(info.subcategory) || info.subcategory.length !== 1) {
-    throw new Error(`${folder}: 'subcategory' must be an array with exactly one item in info.json`);
+
+  // Validate category values
+  for (const category of info.category) {
+    if (!VALID_CATEGORIES.includes(category)) {
+      throw new Error(`${folder}: Invalid category '${category}' in info.json. Valid categories are: ${VALID_CATEGORIES.join(', ')}`);
+    }
+  }
+
+  // Validate category combinations
+  if (info.category.includes('Web UI') && !info.category.includes('API')) {
+    throw new Error(`${folder}: Templates with 'Web UI' category must also include 'API' category`);
   }
 
   // Skip icon validation if github_url is provided

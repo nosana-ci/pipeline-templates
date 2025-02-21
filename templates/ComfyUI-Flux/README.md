@@ -1,5 +1,3 @@
-# ComfyUI with Flux Schnel FP8
-
 This template provides a ComfyUI installation with the Flux Schnel FP8 model pre-downloaded. ComfyUI is a powerful and modular UI for Stable Diffusion, allowing you to create complex image generation workflows through a node-based interface.
 
 

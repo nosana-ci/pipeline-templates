@@ -1,7 +1,3 @@
-# Open WebUI for Ollama
-
-![Open WebUI](https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Open-webui-ollama/openwebui.gif)
-
 A user-friendly web interface for interacting with Ollama's language models.
 
 Unleash the power of LLMs with Nosana! Effortlessly run your Open WebUI instance on high-performance GPU-backed nodes, ensuring optimal chat experience for your applications.

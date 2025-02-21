@@ -1,7 +1,3 @@
-# vLLM API
-
-![vLLM](https://avatars.githubusercontent.com/u/136984999?v=4)
-
 A high-throughput and memory-efficient inference engine for Large Language Models.
 
 Unleash the power of efficient LLM inference with Nosana! Effortlessly run your vLLM instance on high-performance GPU-backed nodes, ensuring optimal serving for your applications.
