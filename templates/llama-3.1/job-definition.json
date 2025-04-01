@@ -1,0 +1,32 @@
+{
+  "ops": [
+    {
+      "id": "llama-3.1",
+      "args": {
+        "cmd": [
+          "bash -c 'apt update && apt install -y git && pip install vllm && pip install accelerate transformers huggingface_hub && python3 -m vllm.entrypoints.openai.api_server --model meta-llama/Meta-Llama-3-70B-Instruct --port 9000'"
+        ],
+        "gpu": true,
+        "image": "nvidia/cuda:12.2.0-cudnn8-runtime-ubuntu22.04",
+        "expose": 9000,
+        "resources": [
+          {
+            "url": "https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct",
+            "type": "S3",
+            "target": "/models/llama-3.1",
+            "allowWrite": false
+          }
+        ]
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 48
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+}

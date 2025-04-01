@@ -1,0 +1,7 @@
+{
+  "id": "llama-3.1",
+  "name": "Llama 3.1 Deployment",
+  "description": "Deploy Meta's Llama 3.1 model on Nosana.",
+  "category": ["LLM"],
+  "icon": "https://en.wikipedia.org/wiki/Llama_(language_model)#/media/File:Llama_logo.svg"
+}
