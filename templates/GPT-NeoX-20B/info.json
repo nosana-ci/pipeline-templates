@@ -1,0 +1,9 @@
+{
+    "id": "gpt-neox-20b",
+    "name": "GPT-NeoX 20B",
+    "description": "EleutherAI's GPT-NeoX-20B, an open-source autoregressive language model for text generation, served via vLLM with OpenAI-compatible API.",
+    "category": ["API", "LLM", "New"],
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/8/85/EleutherAI_logo.png"
+  }
+  
+
