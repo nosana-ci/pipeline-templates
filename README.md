@@ -8,7 +8,7 @@ This repository contains job definition file templates that can be used to post 
 
 We’re thrilled to launch the **Nosana Builder Challenge**, a developer-focused contest designed to push the boundaries of AI model deployment on the **Nosana Network**. This is your chance to showcase your skills, gain visibility, learn new tools — and compete for over **$3,000 USDC in prizes**!
 
-Read more about at our [Nosana Builder Challenge Blog Post](https://nosana.com/blog/nos_challenge)
+Read more about the [Nosana Builder Challenge](https://nosana.com/blog/nos_challenge?utm_source=github&utm_medium=post&utm_campaign=challenge_1)
 
 ## TL;DR
 
@@ -19,15 +19,15 @@ Read more about at our [Nosana Builder Challenge Blog Post](https://nosana.com/b
 
 ### Submission Requirements
 
-- [ ] Pull Request to the Nosana Template GitHub Repo with the following files:
-- [ ] job-definition.json: Standard Nosana Job Definition JSON File
-- [ ] info.json: JSON file with display information for the dashboard
-- [ ] README.md: README file with a description of the Job Definition, Models, any other relevant information about the job.
+- [ ] Pull Request to the [Nosana Template GitHub](https://github.com/nosana-ci/pipeline-templates/) Repo with the following files:
+  - [ ] `job-definition.json`: Standard Nosana Job Definition JSON File
+  - [ ] `info.json`: JSON file with display information for the dashboard
+  - [ ] `README.md`: README file with a description of the Job Definition, Models, any other relevant information about the job.
 - [ ] Make sure that running `npm run validate` passes without any errors.
-- [ ] Social Media Post: Must briefly describe your template and tag @nosana_ai on <https://x.com>
-- [ ] Starring the Nosana CLI, Nosana SDK, and Nosana Template GitHub repositories.
+- [ ] Social Media Post: Must briefly describe your template and tag [@nosana_ai](https://x.com/nosana_ai) on <https://x.com>
+- [ ] Starring the [Nosana CLI](https://github.com/nosana-ci/nosana-cli), [Nosana SDK](https://github.com/nosana-ci/nosana-sdk), and [Nosana Template](https://github.com/nosana-ci/pipeline-templates/) GitHub repositories.
 - [ ] Do not copy or plagiarize someone else's work.
-- [ ] Multiple Submissions are allowed, but must be done via 1 Pull Request.
+- [ ] Multiple Submissions are allowed, but must be done via `1` Pull Request.
 
 ## Templates
 
