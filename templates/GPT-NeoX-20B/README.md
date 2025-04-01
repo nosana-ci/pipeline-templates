@@ -7,7 +7,6 @@ This template deploys **GPT-NeoX-20B**, a powerful open-source language model, a
 - **Powerful LLM**: GPT-NeoX-20B is an alternative to GPT-3, capable of high-quality text generation.
 - **API-Accessible**: Exposes an OpenAI-compatible API on port **9000**.
 - **Efficient Serving**: Uses vLLM for optimized inference performance.
-- **Hugging Face Model Access**: Requires an **HF API key** for model retrieval.
 - **GPU Acceleration**: Requires a **minimum of 24GB VRAM** for deployment (A100 recommended).
 
 ## Deployment Guide
@@ -15,7 +14,6 @@ This template deploys **GPT-NeoX-20B**, a powerful open-source language model, a
 ### **1. Deploy via Nosana Dashboard**
 1. **Go to Nosana Dashboard**.
 2. **Select the GPT-NeoX-20B template**.
-3. **Set your Hugging Face API key** as an environment variable (`HF_TOKEN`).
 4. **Deploy the container**.
 
 ### **2. Access the API**
