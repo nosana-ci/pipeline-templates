@@ -2,7 +2,7 @@
   "id": "janus1b",
   "name": "DeepSeek Janus Pro 1B",
   "description": "A lightweight model for text-to-image generation and multimodal understanding tasks",
-  "category": ["Web UI", "API", "New", "Featured", "Image Generation"],
+  "category": ["Web UI", "API", "Image Generation"],
   "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
   "github_url": "https://github.com/deepseek-ai/Janus"
 } 
