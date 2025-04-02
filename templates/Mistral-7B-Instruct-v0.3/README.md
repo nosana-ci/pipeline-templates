@@ -7,11 +7,11 @@ This template facilitates the deployment of **Mistral-7B-Instruct-v0.3**, a 7.3-
 ## Features
 
 - **Instruction-Following**: Optimized to effectively follow instructions, enhancing language generation and understanding capabilities.
-- **Extended Vocabulary**: Supports a vocabulary of 32,768 tokens for improved text generation.
-- **Function Calling**: Capable of function calling, allowing for dynamic interactions.
-- **API Accessibility**: Exposes an OpenAI-compatible API on port **9000**.
-- **Efficient Serving**: Utilizes **vLLM** for optimized inference performance.
-- **GPU Acceleration**: Requires a **minimum of 16GB VRAM** for deployment (A100 recommended).
+- **Extended Vocabulary**: Supports a vocabulary of 32,768 tokens for improved text generation.
+- **Function Calling**: Capable of function calling, allowing for dynamic interactions.
+- **API Accessibility**: Exposes an OpenAI-compatible API on port **9000**.
+- **Efficient Serving**: Utilizes **vLLM** for optimized inference performance.
+- **GPU Acceleration**: Requires a **minimum of 16GB VRAM** for deployment (A100 recommended).
 
 ## Deployment Guide
 
@@ -23,7 +23,7 @@ This template facilitates the deployment of **Mistral-7B-Instruct-v0.3**, a 7.3-
 
 ### **2. Access the API**
 
-Once deployed, the model will be accessible via HTTP on port **9000**.
+Once deployed, the model will be accessible via HTTP on port **9000**.
 
 ### **3. Send Requests to the API**
 
@@ -56,12 +56,12 @@ print(response.json())
 
 ### **4. System Requirements**
 
-- **GPU**: At least **16GB VRAM** (for smoother performance, **32GB VRAM** or **A100** or better recommended).
-- **Port**: Ensure that port **9000** is exposed for API access.
+- **GPU**: At least **16GB VRAM** (for smoother performance, **32GB VRAM** or **A100** or better recommended).
+- **Port**: Ensure that port **9000** is exposed for API access.
 
 ## Nosana Job Run Template
 
-Below is the Nosana job run template for deploying Mistral-7B-Instruct-v0.3:
+Below is the Nosana job run template for deploying Mistral-7B-Instruct-v0.3:
 You can copy and paste this in json input at https://dashboard.nosana.com/jobs/create too.
 
 ```json
@@ -99,4 +99,4 @@ You can copy and paste this in json input at https://dashboard.nosana.com/jobs/c
 }
 ```
 
-**Note**: The Mistral-7B-Instruct-v0.3 model does not include moderation mechanisms. Use with caution in environments requiring moderated outputs. citeturn0search1
+**Note**: The Mistral-7B-Instruct-v0.3 model does not include moderation mechanisms. Use with caution in environments requiring moderated outputs.
