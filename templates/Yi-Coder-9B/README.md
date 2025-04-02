@@ -11,7 +11,7 @@ Yi-Coder-9B instruction-tuned model served via vLLM with an OpenAI-compatible AP
 
 ## Configuration
 - Port: 9000
-- GPU: Required (72GB VRAM)
+- GPU: Required (20GB VRAM)
 - Model: 01-ai/Yi-Coder-9B
 - Context Length: 128,000 tokens
 - Hugging Face token: Required
