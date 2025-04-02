@@ -6,7 +6,7 @@ This template facilitates the deployment of **Mistral-7B-Instruct-v0.3**, a 7.3-
 
 ## Features
 
-- **Instruction-Following**: Optimized to effectively follow instructions, enhancing language generation and understanding capabilities.
+- **Instruction-Following**: Optimized to effectively follow instructions, enhancing language generation and understanding capabilities.
 - **Extended Vocabulary**: Supports a vocabulary of 32,768 tokens for improved text generation.
 - **Function Calling**: Capable of function calling, allowing for dynamic interactions.
 - **API Accessibility**: Exposes an OpenAI-compatible API on port **9000**.
