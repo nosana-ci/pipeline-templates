@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "yi-1.5-34b-chat",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model 01-ai/Yi-1.5-34B-Chat --served-model-name Yi-1.5-34B-Chat --port 9000"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "nosana/vllm:0.0.0",
+        "expose": 9000,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 72
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+}

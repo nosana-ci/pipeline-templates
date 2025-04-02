@@ -1,0 +1,7 @@
+{
+  "id": "yi-1.5-34b-chat",
+  "name": "Yi-1.5-34B-Chat",
+  "description": "Yi-1.5-34B-Chat instruction-tuned model served via vLLM with OpenAI-compatible API",
+  "category": ["API", "LLM", "New"],
+  "icon": "https://raw.githubusercontent.com/01-ai/Yi/main/assets/img/Yi_logo_icon_light.svg"
+} 
