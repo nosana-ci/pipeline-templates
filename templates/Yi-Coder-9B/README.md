@@ -1,23 +1,27 @@
-# Yi-Coder-9B
-Yi-Coder-9B instruction-tuned model served via vLLM with an OpenAI-compatible API endpoint. Delivers state-of-the-art coding performance with fewer than 10 billion parameters
+# Description
+This template provides an OpenAI-compatible API server for the Yi-Coder-9B model, optimized for performance using vLLM.
 
 ## Key Features
 - High-performance inference with vLLM
 - OpenAI-compatible API
-- 9B parameter model with 128k context length
 - Supports 52 major programming languages
 - Instruction-tuned for better responses
 - Optimized for GPU acceleration
 
+## Model Details
+
+- **Name**: Yi-Coder-9B
+- **Base Model**: 01-ai/Yi-Coder-9B
+- **Size**: 9 billion parameters
+- **Context Length**: 128,000 tokens
+
 ## Configuration
 - Port: 9000
 - GPU: Required (20GB VRAM)
-- Model: 01-ai/Yi-Coder-9B
-- Context Length: 128,000 tokens
 - Hugging Face token: Required
 
 ## Usage
-You can interact with the model using the OpenAI API format:
+The API follows the OpenAI API format and can be accessed via HTTP requests to port 9000. The model is served with the name "Yi-Coder-9B":
 
 ```python
 import openai

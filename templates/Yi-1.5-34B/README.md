@@ -1,22 +1,26 @@
-# Yi-1.5-34B
-Yi-1.5-34B instruction-tuned model served via vLLM with an OpenAI-compatible API endpoint.
+# Description
+This template provides an OpenAI-compatible API server for the Yi-1.5-34B model, optimized for performance using vLLM.
 
 ## Key Features
 - High-performance inference with vLLM
 - OpenAI-compatible API
-- 34B parameter model with 32k context length
 - Instruction-tuned for better responses
 - Optimized for GPU acceleration
+
+## Model Details
+
+- **Name**: Yi-1.5-34B
+- **Base Model**: 01-ai/Yi-1.5-34B
+- **Size**: 34 billion parameters
+- **Context Length**: 32,000 tokens
 
 ## Configuration
 - Port: 9000
 - GPU: Required (72GB VRAM)
-- Model: 01-ai/Yi-1.5-34B
-- Context Length: 32,000 tokens
 - Hugging Face token: Required
 
 ## Usage
-You can interact with the model using the OpenAI API format:
+The API follows the OpenAI API format and can be accessed via HTTP requests to port 9000. The model is served with the name "Yi-1.5-34B":
 
 ```python
 import openai
