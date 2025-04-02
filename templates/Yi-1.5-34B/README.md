@@ -1,5 +1,5 @@
-# Yi-1.5-34B-Chat
-Yi-1.5-34B-Chat instruction-tuned model served via vLLM with an OpenAI-compatible API endpoint.
+# Yi-1.5-34B
+Yi-1.5-34B instruction-tuned model served via vLLM with an OpenAI-compatible API endpoint.
 
 ## Key Features
 - High-performance inference with vLLM
@@ -11,12 +11,12 @@ Yi-1.5-34B-Chat instruction-tuned model served via vLLM with an OpenAI-compatibl
 ## Configuration
 - Port: 9000
 - GPU: Required (72GB VRAM)
-- Model: 01-ai/Yi-1.5-34B-Chat
+- Model: 01-ai/Yi-1.5-34B
 - Context Length: 32,000 tokens
 - Hugging Face token: Required
 
 ## Usage
-You can interact with the model using either cURL or the OpenAI API format:
+You can interact with the model using the OpenAI API format:
 
 ```python
 import openai
@@ -26,7 +26,7 @@ client = openai.Client(
 )
 
 response = client.chat.completions.create(
-    model="Yi-1.5-34B-Chat",
+    model="Yi-1.5-34B",
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Who won the world series in 2020?"}
