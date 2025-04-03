@@ -1,0 +1,32 @@
+{
+  "ops": [
+    {
+      "id": "GPT-NeoX-20B",
+      "args": {
+        "cmd": [
+          "bash -c 'apt update && apt install -y python3-pip git && pip install transformers torch && python3 -m transformers.cli.serve --model gpt-neox-20b --port 9000'"
+        ],
+        "gpu": true,
+        "image": "docker.io/huggingface/transformers-pytorch:latest",
+        "expose": 9000,
+        "resources": [
+          {
+            "url": "https://huggingface.co/EleutherAI/gpt-neox-20b",
+            "type": "S3",
+            "target": "/models/gpt-neox-20b",
+            "allowWrite": false
+          }
+        ]
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 24
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+}
