@@ -1,0 +1,7 @@
+{
+  "id": "phi3-mini-4k-instruct",
+  "name": "Phi-3-mini-4k-instruct",
+  "description": "Phi-3-mini-4k-instruct instruction-tuned model (3.8B parameters) served via vLLM with OpenAI-compatible API on Nosana. Optimized for instruction-following tasks with a 4k token context length.",
+  "category": ["API", "LLM", "Lightweight"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+}

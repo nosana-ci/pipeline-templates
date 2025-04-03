@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "phi3-mini-4k-instruct",
+      "args": {
+        "entrypoint": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model microsoft/Phi-3-mini-4k-instruct --served-model-name Phi3Mini4k --port 9000 --max-model-len 4096"
+        ],
+        "image": "docker.io/vllm/vllm-openai:latest",
+        "gpu": true,
+        "expose": 9000
+      }
+    }
+  ]
+}
