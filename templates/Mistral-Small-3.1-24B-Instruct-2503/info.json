@@ -1,0 +1,12 @@
+{
+    "id": "mistral-small-3.1-24b-instruct-2503",
+    "name": "Mistral-Small-3.1-24B-Instruct-2503",
+    "description": "Mistral AI's 24B parameter model, fine-tuned for instruction-following tasks, supporting multimodal inputs and an extended context window of up to 128k tokens, served via vLLM with an OpenAI-compatible API.",
+    "category": [
+        "API",
+        "LLM",
+        "New"
+    ],
+    "icon": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
+    "github_url": "https://github.com/deepseek-ai/DeepSeek-R1"
+}
