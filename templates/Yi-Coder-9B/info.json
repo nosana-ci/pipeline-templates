@@ -1,0 +1,7 @@
+{
+  "id": "yi-coder-9b",
+  "name": "Yi-Coder-9B",
+  "description": "Yi-Coder-9B instruction-tuned model served via vLLM with OpenAI-compatible API",
+  "category": ["API", "LLM", "New"],
+  "icon": "https://raw.githubusercontent.com/01-ai/Yi/main/assets/img/Yi_logo_icon_light.svg"
+} 
