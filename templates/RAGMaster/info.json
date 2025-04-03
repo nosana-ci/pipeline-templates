@@ -1,0 +1,11 @@
+{
+    "id": "ragmaster",
+    "name": "RAGMaster: Document Q&A Environment",
+    "description": "Deploy a complete Retrieval-Augmented Generation (RAG) environment that enables document question-answering. This template automates the setup of a vector database (for storing document embeddings), an embedding service using the Sentence Transformers 'all-MiniLM-L6-v2' model, and an LLM powered by 'mistralai/Mistral-7B-Instruct-v0.2' to generate accurate and context‐driven answers.",
+    "category": [
+      "LLM", "Featured",
+       "New"],
+    "icon": "https://i.ibb.co/RpxnvBGb/image-removebg-preview-2.png",
+    "documentation_url": "https://docs.google.com/document/d/1MiIQ1Py7VbgRuOmTxPTQvLlrZq5yTZWX7l1v8mu3YPc/edit?usp=sharing"
+  }
+  
