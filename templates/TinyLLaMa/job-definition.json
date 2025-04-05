@@ -1,0 +1,28 @@
+{
+    "ops": [
+      {
+        "id": "tinyllama",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "python3 -m vllm.entrypoints.openai.api_server --model TinyLlama/TinyLlama-1.1B-Chat-v1.0 --served-model-name tinyllama --port 9000"
+          ],
+          "gpu": true,
+          "image": "docker.io/vllm/vllm-openai:v0.7.2",
+          "expose": 9000,
+          "entrypoint": []
+        },
+        "type": "container/run"
+      }
+    ],
+    "meta": {
+      "trigger": "dashboard",
+      "system_requirements": {
+        "required_vram": 6
+      }
+    },
+    "type": "container",
+    "version": "0.1"
+  }
+  
