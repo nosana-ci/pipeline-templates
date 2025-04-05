@@ -5,13 +5,35 @@ Deployable on lightweight GPUs (as low as 6GB VRAM), making it ideal for edge de
 
 ---
 
+## Usage 
+```bash
+curl http://<nosana-host>:9000/v1/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "tinyllama",
+    "prompt": "Give me a startup idea involving LLMs.",
+    "max_tokens": 60
+  }'
+```
+```python
+http://<nosana-host>:9000/v1/completions
+In body :
+{
+  "model": "tinyllama",
+  "prompt": "Write a short inspirational quote.",
+  "max_tokens": 50,
+  "temperature": 0.7
+}
+```
+
+
 ## Features
 
-- ✅ Runs **TinyLLaMA-1.1B-Chat** with ~1.1B parameters  
-- ✅ **OpenAI-compatible** API (`/v1/completions`)  
-- ✅ Powered by **vLLM** for fast, parallel inference  
-- ✅ No external keys required (fully self-hosted)  
-- ✅ Optimized for deployment via Nosana  
+- Runs **TinyLLaMA-1.1B-Chat** with ~1.1B parameters  
+- **OpenAI-compatible** API (`/v1/completions`)  
+- Powered by **vLLM** for fast, parallel inference  
+- No external keys required (fully self-hosted)  
+- Optimized for deployment via Nosana  
 
 ---
 
