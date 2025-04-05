@@ -1,0 +1,17 @@
+{
+  "job_name": "flux-1-deployment",
+  "description": "Deploys the Flux.1 AI model for inference on Nosana's GPU network.",
+  "model": "flux.1",
+  "resources": {
+    "gpu": 2,
+    "cpu": 4,
+    "memory": "16GB"
+  },
+  "env": {
+    "dependencies": ["python3.8", "flux.1", "torch"]
+  },
+  "commands": [
+    "pip install -r requirements.txt",
+    "python flux_deploy.py"
+  ]
+}
