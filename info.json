@@ -1,0 +1,6 @@
+{
+  "template_name": "Flux.1 AI Deployment",
+  "category": "AI Models",
+  "short_description": "Template for deploying Flux.1 AI model on Nosana's GPU network for AI inference.",
+  "version": "1.0"
+}
