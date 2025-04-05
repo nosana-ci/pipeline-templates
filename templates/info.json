@@ -1,0 +1,7 @@
+{
+  "id": "flux-1-deployment",
+  "name": "Flux.1 AI Deployment",
+  "description": "Deploys the Flux.1 AI model for inference on Nosana's GPU network.",
+  "category": ["AI Models", "Machine Learning"],
+  "icon": "https://link-to-icon.com/flux-1-icon.png"
+}
