@@ -1,0 +1,29 @@
+{
+    "ops": [
+      {
+        "id": "falcon7b",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "python3 -m vllm.entrypoints.api_server --model tiiuae/falcon-7b-instruct --port 9000"
+          ],
+          "env": {},
+          "gpu": true,
+          "image": "docker.io/vllm/vllm-openai:v0.7.2",
+          "expose": 9000,
+          "resources": []
+        },
+        "type": "container/run"
+      }
+    ],
+    "meta": {
+      "trigger": "dashboard",
+      "system_requirements": {
+        "required_vram": 16
+      }
+    },
+    "type": "container",
+    "version": "0.1"
+  }
+  
