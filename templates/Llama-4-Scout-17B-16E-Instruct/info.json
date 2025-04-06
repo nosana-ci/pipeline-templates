@@ -1,7 +1,7 @@
 {
     "id": "llama-4-scout",
     "name": "Llama 4 Scout",
-    "description": "Llama 4 Scout is a compact, multimodal AI model developed by Meta, capable of processing text, video, images, and audio. It features a 10-million-token context window and is designed to operate efficiently on a single Nvidia H100 GPU.",
+    "description": "Llama 4 Scout, a 17 billion parameter model with 16 experts, that use a mixture-of-experts (MoE) architecture and incorporate early fusion for native multimodality. It features a 10-million-token context window and is designed to operate efficiently on a single Nvidia H100 GPU.",
     "category": [
         "API",
         "LLM",
