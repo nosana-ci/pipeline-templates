@@ -1,0 +1,12 @@
+{
+    "id": "llama-4-scout",
+    "name": "Llama 4 Scout",
+    "description": "Llama 4 Scout is a compact, multimodal AI model developed by Meta, capable of processing text, video, images, and audio. It features a 10-million-token context window and is designed to operate efficiently on a single Nvidia H100 GPU.",
+    "category": [
+        "API",
+        "LLM",
+        "New"
+    ],
+    "icon": "https://cdn-avatars.huggingface.co/v1/production/uploads/646cf8084eefb026fb8fd8bc/oCTqufkdTkjyGodsx1vo1.png",
+    "github_repo": "https://github.com/meta-llama/llama-models"
+}

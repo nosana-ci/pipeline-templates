@@ -1,0 +1,35 @@
+{
+    "ops": [
+        {
+            "id": "llama-4-scout",
+            "args": {
+                "cmd": [
+                    "bash -c 'python3 -m vllm.entrypoints.openai.api_server --model meta-llama/Llama-4-Scout-17B-16E-Instruct --port 9000'"
+                ],
+                "gpu": true,
+                "image": "vllm/vllm-openai:latest",
+                "expose": 9000,
+                "env": {
+                    "HF_TOKEN": "<your_huggingface_token>"
+                },
+                "resources": [
+                    {
+                        "url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+                        "type": "S3",
+                        "target": "/models/llama-4-scout",
+                        "allowWrite": false
+                    }
+                ]
+            },
+            "type": "container/run"
+        }
+    ],
+    "meta": {
+        "trigger": "dashboard",
+        "system_requirements": {
+            "required_vram": 48
+        }
+    },
+    "type": "container",
+    "version": "0.1"
+}
