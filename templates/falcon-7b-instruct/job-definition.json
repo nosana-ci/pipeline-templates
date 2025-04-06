@@ -6,7 +6,7 @@
           "cmd": [
             "/bin/sh",
             "-c",
-            "python3 -m vllm.entrypoints.api_server --model tiiuae/falcon-7b-instruct --port 9000"
+            "python3 -m vllm.entrypoints.openai.api_server --model tiiuae/falcon-7b-instruct --port 9000"
           ],
           "env": {},
           "gpu": true,
