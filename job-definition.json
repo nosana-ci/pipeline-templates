@@ -1,0 +1,29 @@
+{
+    "name": "ai-meme-generator",
+    "version": "1.0.0",
+    "description": "GPU-powered AI meme generator using Python",
+    "image": "python:3.9",
+    "command": [
+        "pip", "install", "-r", "requirements.txt",
+        "&&",
+        "python", "meme_generator.py"
+    ],
+    "env": {
+        "MEME_THEME": {
+            "description": "Theme for meme generation (tech, politics, crypto, etc.)",
+            "default": "default"
+        }
+    },
+    "outputs": {
+        "meme": {
+            "type": "file",
+            "path": "generated_meme.jpg",
+            "description": "Generated meme image"
+        }
+    },
+    "resources": {
+        "gpu": true,
+        "memory": "4Gi",
+        "cpu": "2"
+    }
+} 

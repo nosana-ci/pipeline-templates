@@ -1,153 +1,61 @@
-# Nosana Jobs Templates
+# AI Meme Generator for Nosana Network
 
-This repository contains job definition file templates that can be used to post jobs to the Nosana Network.
+A GPU-powered meme generator that uses AI to create funny memes based on different themes. This template is designed to run on the Nosana Network and leverages GPU acceleration for optimal performance.
 
-## Nosana Builder Challenge
+## Features
 
-![nosana_builders_challenge](https://github.com/user-attachments/assets/d239f83c-59db-4203-8f5d-7ff9eebf2203)
+- Generates memes using AI-powered captions
+- Supports multiple themes (tech, politics, crypto)
+- Uses GPU acceleration for faster processing
+- Randomly selects from popular meme templates
+- Outputs high-quality meme images
 
-We’re thrilled to launch the **Nosana Builder Challenge**, a developer-focused contest designed to push the boundaries of AI model deployment on the **Nosana Network**. This is your chance to showcase your skills, gain visibility, learn new tools — and compete for over **$3,000 USDC in prizes**!
+## Requirements
 
-Read more about the [Nosana Builder Challenge](https://nosana.com/blog/nos_challenge?utm_source=github&utm_medium=post&utm_campaign=challenge_1)
+- Python 3.9+
+- GPU-compatible hardware
+- Internet connection (for template fetching)
 
-## TL;DR
+## Usage
 
-- Create reusable Nosana Templates for deploying AI models.
-- Submit via GitHub PR to win USDC prizes.
-- **$3,000+** USDC total rewards for top 10 submissions.
-- Deadline and details: [Builders Challenge Page](https://earn.superteam.fun/listing/nosana-builders-challenge/)
+1. Set the `MEME_THEME` environment variable to your desired theme:
+   - `tech`: For technology-related memes
+   - `politics`: For political memes
+   - `crypto`: For cryptocurrency-related memes
+   - `default`: For general memes
 
-### Submission Requirements
+2. Run the job on Nosana Network:
+   ```bash
+   nosana job run ai-meme-generator
+   ```
 
-- [ ] Pull Request to the [Nosana Template GitHub](https://github.com/nosana-ci/pipeline-templates/) Repo with the following files:
-  - [ ] `job-definition.json`: Standard Nosana Job Definition JSON File
-  - [ ] `info.json`: JSON file with display information for the dashboard
-  - [ ] `README.md`: README file with a description of the Job Definition, Models, any other relevant information about the job.
-- [ ] Make sure that running `npm run validate` passes without any errors.
-- [ ] Social Media Post: Must briefly describe your template and tag [@nosana_ai](https://x.com/nosana_ai) on <https://x.com>
-- [ ] Starring the [Nosana CLI](https://github.com/nosana-ci/nosana-cli), [Nosana SDK](https://github.com/nosana-ci/nosana-sdk), and [Nosana Template](https://github.com/nosana-ci/pipeline-templates/) GitHub repositories.
-- [ ] Do not copy or plagiarize someone else's work.
-- [ ] Multiple Submissions are allowed, but must be done via `1` Pull Request.
+3. The generated meme will be available as an output file named `generated_meme.jpg`
 
-## Templates
+## Output
 
-- [Hello World](/templates/hello-world/)
-- [Jupyter Notebook](/templates/jupyter-notebook/)
-- [Open WebUI](/templates/open-webui/)
-- [Stable Diffusion](/templates/stable-diffusion/)
+The job produces a single output:
+- `generated_meme.jpg`: The final meme image with AI-generated caption
 
-# Contribution Guide
+## Technical Details
 
-Thank you for your interest in contributing to our repository! By adding your own job definition templates, you’re helping to build a valuable resource for the Nosana Network community.
+- Uses GPT-2 for caption generation
+- Leverages the Meme Generator API for template images
+- Implements GPU acceleration through PyTorch
+- Automatically splits captions for top and bottom text
 
-Follow the steps below to submit a Pull Request (PR) with a new template:
+## Extensions
 
-## 1. Fork the Repository
+This template can be extended with additional features:
 
-1. Go to the repository page on GitHub.
-2. Click on the "Fork" button in the upper-right corner to create your own copy of the repository.
+1. **Discord Integration**: Add webhook support to automatically post generated memes to Discord channels
+2. **Stable Diffusion**: Integrate with Stable Diffusion to generate custom meme backgrounds
+3. **Custom Templates**: Add support for local meme templates
+4. **Multi-language Support**: Add support for generating memes in different languages
 
-## 2. Clone the Forked Repository
+## Contributing
 
-After forking, clone your copy to your local machine:
+Feel free to submit issues and enhancement requests!
 
-```bash
-git clone https://github.com/your-username/templates.git
-cd templates
-```
+## License
 
-## 3. Create a New Branch
-
-Create a new branch for your template submission:
-
-```bash
-git checkout -b add-template-your-template-name
-```
-
-## 4. Add Your Template
-
-Create a new folder for your template inside the `templates` directory. Each template folder must contain the following files:
-
-### 4.1 `info.json`
-
-This file should provide basic information about your template using the following structure:
-
-```json
-{
-  "id": "your-template-id",
-  "name": "Your Template Name",
-  "description": "A brief description of what the template does",
-  "category": ["Your Category"], 
-  "icon": "https://link-to-an-icon-for-your-template"
-}
-```
-
-- **id**: A unique identifier for your template.
-- **name**: The name of the template.
-- **description**: A concise description of what the job does.
-- **category**: Relevant categories (can be multiple).
-- **icon**: A URL link to an icon (e.g., a logo or related image).
-
-### 4.2 `job-definition.json`
-
-This file should contain the job definition JSON. Refer to the [Nosana Documentation](https://docs.nosana.io/inference/writing_a_job.html) for details on writing a job definition file.
-
-### 4.3 `README.md`
-
-Include a `README.md` file with the following:
-
-- **Title**: The name of your template.
-- **Description**: A detailed description of the template, how it works, and any requirements.
-- **Screenshot/Video**: Add an image, screenshot, or video showing the result of using your template (optional but encouraged). Make sure to only use absolute URLs.
-
-Example `README.md`:
-
-```markdown
-# Your Template Name
-
-## Description
-A brief explanation of what the template does and how it works.
-
-## Screenshot/Video
-![Screenshot](https://link-to-screenshot)
-```
-
-## 5. Commit Your Changes
-
-After adding your template, run the following command to validate that your template is correctly formatted:
-
-```bash
-npm run validate
-```
-
-Then commit your changes:
-
-```bash
-git add .
-git commit -m "Add new template: your-template-name"
-```
-
-## 6. Push Your Branch
-
-Push the branch to your forked repository:
-
-```bash
-git push origin add-template-your-template-name
-```
-
-## 7. Open a Pull Request
-
-1. Go to your forked repository on GitHub.
-2. Click the "Compare & pull request" button.
-4. Submit the pull request for review.
-
----
-
-## Contribution Guidelines
-
-- Ensure that the `info.json` and `job-definition.json` files are properly formatted and contain all necessary information.
-- Make sure your `README.md` is clear, descriptive, and includes a screenshot or video (if available).
-- Test your job definition to ensure it works as expected.
-- Make sure your PR only contains the necessary files for your template.
-
-We appreciate your contribution! Once your PR passes the validation tests, is reviewed, and approved, it will be merged into the main repository.
+MIT License 
