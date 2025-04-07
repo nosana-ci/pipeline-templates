@@ -26,6 +26,7 @@ Read more about the [Nosana Builder Challenge](https://nosana.com/blog/nos_chall
 - [ ] Make sure that running `npm run validate` passes without any errors.
 - [ ] Social Media Post: Must briefly describe your template and tag [@nosana_ai](https://x.com/nosana_ai) on <https://x.com>
 - [ ] Starring the [Nosana CLI](https://github.com/nosana-ci/nosana-cli), [Nosana SDK](https://github.com/nosana-ci/nosana-sdk), and [Nosana Template](https://github.com/nosana-ci/pipeline-templates/) GitHub repositories.
+- [ ] Include a link to a successful run of your submission Template, for example: [Example succesfull Nosana Job](https://dashboard.nosana.com/jobs/BkKFtUqMi2UmX8RMnsYKiKXHJ9bVYkVyo2vyJz4dBxKc)
 - [ ] Do not copy or plagiarize someone else's work.
 - [ ] Multiple Submissions are allowed, but must be done via `1` Pull Request.
 
