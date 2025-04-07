@@ -1,0 +1,24 @@
+{
+    "ops": [
+      {
+        "id": "phi4",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "python3 -m vllm.entrypoints.openai.api_server --model microsoft/phi-4 --host 0.0.0.0 --port 8000"
+          ],
+          "env": {
+            "HF_TOKEN": "fill_in_your_huggingface_token"
+          },
+          "gpu": true,
+          "image": "huggingface/transformers-pytorch-gpu:latest",
+          "expose": 9000,
+          "entrypoint": []
+        },
+        "type": "container/run"
+      }
+    ],
+    "type": "container",
+    "version": "0.1"
+  }

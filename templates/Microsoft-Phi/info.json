@@ -1,0 +1,8 @@
+{
+    "id": "phi-4",
+    "name": "Microsoft Phi-4",
+    "description": "A 14-billion parameter language model developed by Microsoft Research. It is part of the Phi model family, emphasizing data quality and reasoning capabilities over pure scale.",
+    "category": ["LLM", "API"],
+    "icon": "https://mailmeteor.com/logos/assets/PNG/Microsoft_Logo_512px.png",
+    "github_url": "https://github.com/microsoft/PhiCookBook"
+  }

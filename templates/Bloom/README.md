@@ -1,10 +1,10 @@
 # BLOOM
 
-A powerful multilingual language model with 176 billion parameters supporting 46 languages and 13 programming languages, packaged as a containerized service for deployment on the Nosana decentralized compute network.
+A powerful open-source multilingual language model with 176 billion parameters supporting 46 languages and 13 programming languages, developed specifically for academic institutions, nonprofit organizations, and smaller research labs.
 
 ## Description
 
-BLOOM (BigScience Large Open-science Open-access Multilingual Language Model) is a decoder-only transformer language model developed by the BigScience workshop, featuring exceptional multilingual capabilities. This integration packages BLOOM as a deployable job on Nosana's decentralized compute infrastructure, providing efficient access to this state-of-the-art language model.
+BLOOM (BigScience Large Open-science Open-access Multilingual Language Model) is a decoder-only transformer language model developed by the BigScience workshop, a collaborative effort dedicated to democratizing access to large language model research. As a fully open-source alternative to proprietary commercial models, BLOOM is specifically designed to serve the needs of academia, nonprofits, and smaller research labs.
 
 ## Features
 
