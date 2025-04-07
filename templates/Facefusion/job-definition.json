@@ -1,0 +1,23 @@
+{
+  "ops": [
+    {
+      "id": "facefusion",
+      "args": {
+        "cmd": [ "python",
+          "facefusion.py",
+          "run",
+          "--execution-providers",
+          "cuda" ],
+        "gpu": true,
+        "image": "facefusion/facefusion:master-cuda",
+        "expose": 7860
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard"
+  },
+  "type": "container",
+  "version": "1.0"
+}
