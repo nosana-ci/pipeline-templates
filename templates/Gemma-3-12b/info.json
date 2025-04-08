@@ -1,0 +1,7 @@
+{
+  "id": "gem12b",
+  "name": "Gemma 3 12B",
+  "description": "Google's Gemma 3 12B instruction-tuned model served via vLLM with OpenAI-compatible API",
+  "category": ["API", "LLM", "New"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c12/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png"
+} 

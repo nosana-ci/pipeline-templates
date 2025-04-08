@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 16
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "mistral7b",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model mistralai/Mistral-7B-Instruct-v0.3 --served-model-name Mistral-7B-v3 --port 9000 --max-model-len 32768"
+        ],
+        "image": "docker.io/vllm/vllm-openai:v0.7.2",
+        "gpu": true,
+        "expose": 9000
+      }
+    }
+  ]
+}
