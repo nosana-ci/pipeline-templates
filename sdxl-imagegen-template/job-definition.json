@@ -1,0 +1,25 @@
+{
+    "version": "1.0",
+    "name": "Stable Diffusion XL Image Generation",
+    "description": "Deploys a Stable Diffusion XL (SDXL) model on Nosana for image generation from text prompts.",
+    "image": "python:3.10-slim",
+    "steps": [
+      {
+        "name": "Install dependencies",
+        "run": "apt update && apt install -y git && pip install torch torchvision diffusers transformers accelerate flask"
+      },
+      {
+        "name": "Clone model server repo",
+        "run": "git clone https://github.com/favytann/sdxl-nosana && cd sdxl-nosana"
+      },
+      {
+        "name": "Run model server",
+        "run": "cd sdxl-nosana && python server.py"
+      }
+    ],
+    "resources": {
+      "cpu": 4,
+      "memory": "8gb",
+      "gpu": true
+    }
+  }

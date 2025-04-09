@@ -1,0 +1,7 @@
+{
+    "displayName": "Stable Diffusion XL (SDXL) Image Generator",
+    "description": "Deploy SDXL on Nosana and generate images from text prompts using a simple Flask API.",
+    "category": "AI Model",
+    "tags": ["sdxl", "diffusion", "image-generation", "huggingface", "python"],
+    "icon": "🎨"
+  }
