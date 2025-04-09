@@ -1,29 +1,25 @@
 {
-    "name": "ai-meme-generator",
-    "version": "1.0.0",
-    "description": "GPU-powered AI meme generator using Python",
-    "image": "python:3.9",
-    "command": [
-        "pip", "install", "-r", "requirements.txt",
-        "&&",
-        "python", "meme_generator.py"
-    ],
-    "env": {
-        "MEME_THEME": {
-            "description": "Theme for meme generation (tech, politics, crypto, etc.)",
-            "default": "default"
+    "version": "0.1",
+    "type": "container",
+    "ops": [
+        {
+            "type": "container/run",
+            "id": "meme-generator",
+            "args": {
+                "image": "python:3.9",
+                "gpu": true,
+                "cmd": [
+                    "sh",
+                    "-c",
+                    "pip install torch transformers Pillow requests && python -c \"import os; import random; import requests; from PIL import Image, ImageDraw, ImageFont; from transformers import pipeline; import torch; MEME_TEMPLATES = ['https://api.memegen.link/images/ds/{{top}}/{{bottom}}.png', 'https://api.memegen.link/images/af/{{top}}/{{bottom}}.png', 'https://api.memegen.link/images/grumpycat/{{top}}/{{bottom}}.png']; theme = os.getenv('MEME_THEME', 'default'); generator = pipeline('text-generation', model='gpt2', device=0 if torch.cuda.is_available() else -1); prompt = 'Generate a funny ' + theme + ' meme caption'; result = generator(prompt, max_length=50, num_return_sequences=1); caption = result[0]['generated_text'].strip().replace(prompt, '').strip(); words = caption.split(); mid = len(words) // 2; top_text = ' '.join(words[:mid]); bottom_text = ' '.join(words[mid:]); template_url = random.choice(MEME_TEMPLATES); meme_url = template_url.replace('{{top}}', top_text).replace('{{bottom}}', bottom_text); response = requests.get(meme_url); if response.status_code == 200: open('generated_meme.jpg', 'wb').write(response.content); print('Meme generated successfully!') else: print('Failed to generate meme')\""
+                ],
+                "env": {
+                    "MEME_THEME": {
+                        "description": "Theme for meme generation (tech, politics, crypto, etc.)",
+                        "default": "default"
+                    }
+                }
+            }
         }
-    },
-    "outputs": {
-        "meme": {
-            "type": "file",
-            "path": "generated_meme.jpg",
-            "description": "Generated meme image"
-        }
-    },
-    "resources": {
-        "gpu": true,
-        "memory": "4Gi",
-        "cpu": "2"
-    }
+    ]
 } 
