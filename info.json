@@ -4,8 +4,13 @@
     "category": "AI/ML",
     "tags": ["ai", "meme", "gpu", "python", "nlp"],
     "version": "1.0.0",
-    "author": "Nosana Community",
+    "author": "Dhe_Monarch (0xholydev)",
     "icon": "https://raw.githubusercontent.com/nosana-ci/templates/main/icons/ai-meme-generator.png",
+    "recommended_gpu": "NVIDIA 3060",
+    "gpu_requirements": {
+        "min_vram": "8GB",
+        "cuda_support": true
+    },
     "inputs": {
         "MEME_THEME": {
             "type": "string",
@@ -17,7 +22,8 @@
     "outputs": {
         "meme": {
             "type": "image",
-            "description": "Generated meme image"
+            "description": "Generated meme image in JPG format",
+            "path": "generated_meme.jpg"
         }
     }
 } 
