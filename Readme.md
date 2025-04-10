@@ -10,6 +10,9 @@ This template is ideal for developers, startups, and researchers who need access
 
 ---
 
+![Screenshot 2025-04-11 033920](https://github.com/user-attachments/assets/562093f4-5edc-4eec-b968-d5b0521deb11)
+
+
 ## 🎯 Features
 
 ✅ Real-time text translation between 40+ language pairs  
@@ -27,6 +30,9 @@ This template is ideal for developers, startups, and researchers who need access
 Send a JSON payload to translate text from one language to another.
 
 #### 📥 Request
+
+![Screenshot 2025-04-11 042656](https://github.com/user-attachments/assets/5c4055c0-a284-4beb-a2cf-22f783107a54)
+
 
 ```json
 {
