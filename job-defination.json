@@ -1,0 +1,29 @@
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "manual"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "translation-api",
+        "args": {
+          "image": "ujjwalmittal012/translation-api:latest",
+          "market": "devnet-test-1",
+          "cmd": "python main.py",
+          "ports": [
+            {
+              "container": 5000,
+              "host": 5000
+            }
+          ],
+          "resources": {
+            "gpu": true
+          }
+        }
+      }
+    ]
+  }
+  
+  
