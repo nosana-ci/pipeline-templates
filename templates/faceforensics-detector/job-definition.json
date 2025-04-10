@@ -1,0 +1,28 @@
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": { "trigger": "dashboard" },
+    "ops": [{
+      "type": "container/run",
+      "args": {
+        "image": "ghcr.io/ondyari/faceforensics:latest",
+        "entrypoint": [
+          "python", "detect.py",
+          "--input", "/data/input.mp4",
+          "--output", "/data/results.json"
+        ],
+        "gpu": true,
+        "expose": 8008,
+        "volumes": ["/data"],
+        "env": {
+          "MODEL": "efficientnet-b0",
+          "THRESHOLD": "0.7"
+        },
+        "requirements": {
+          "gpu": "t4",
+          "vram": 8
+        }
+      }
+    }]
+  }
+  
