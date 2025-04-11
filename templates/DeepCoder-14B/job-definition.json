@@ -1,0 +1,34 @@
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 32
+    }
+  },
+    "ops": [
+        {
+            "type": "container/run",
+            "id": "deepcoder-14b",
+            "args": {
+                "image": "ghcr.io/vllm-project/vllm:latest",
+                "cmd": [
+                    "python3",
+                    "-m",
+                    "vllm.entrypoints.openai.api_server",
+                    "--model",
+                    "agentica-org/DeepCoder-14B-Preview",
+                    "--port",
+                    "8000",
+                    "--host",
+                    "0.0.0.0"
+                ],
+                "gpu": true,
+                "ports": [
+                    "8000:8000"
+                ]
+            }
+        }
+    ]
+}
