@@ -1,29 +1,7 @@
 {
+    "id": "ai-meme-generator",
     "name": "AI Meme Generator",
     "description": "A GPU-powered meme generator that uses AI to create funny memes based on different themes",
-    "category": "AI/ML",
-    "tags": ["ai", "meme", "gpu", "python", "nlp"],
-    "version": "1.0.0",
-    "author": "Dhe_Monarch (0xholydev)",
-    "icon": "https://raw.githubusercontent.com/nosana-ci/templates/main/icons/ai-meme-generator.png",
-    "recommended_gpu": "NVIDIA 3060",
-    "gpu_requirements": {
-        "min_vram": "8GB",
-        "cuda_support": true
-    },
-    "inputs": {
-        "MEME_THEME": {
-            "type": "string",
-            "description": "Theme for meme generation (tech, politics, crypto, etc.)",
-            "default": "default",
-            "options": ["tech", "politics", "crypto", "default"]
-        }
-    },
-    "outputs": {
-        "meme": {
-            "type": "image",
-            "description": "Generated meme image in JPG format",
-            "path": "generated_meme.jpg"
-        }
-    }
+    "category": ["AI/ML", "Content Generation"],
+    "icon": "https://drive.google.com/file/d/1J6zSr3KBCjFrEaO48S8JtLuVskTltbyo/view?usp=drivesdk"
 } 
