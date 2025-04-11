@@ -1,0 +1,11 @@
+{
+    "id": "tinyllama",
+    "name": "TinyLLaMA",
+    "description": "TinyLLaMA-1.1B-Chat served via vLLM with an OpenAI-compatible API.",
+    "category": ["API", "LLM", "Lightweight", "Featured"],
+    "icon": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0/resolve/main/logo.png",
+    "system_requirements": {
+      "required_vram": 6
+    }
+  }
+  

@@ -1,0 +1,32 @@
+{
+    "ops": [
+      {
+        "id": "MemeGen-API",
+        "args": {
+          "cmd": [
+            "bash -c 'docker run --gpus all --rm -p 8000:8000 ghcr.io/1uwant/genz-meme:latest'"
+          ],
+          "gpu": true,
+          "image": "ghcr.io/1uwant/genz-meme:latest",
+          "expose": 8000,
+          "resources": [
+            {
+              "url": "https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl",
+              "type": "S3",
+              "target": "/models/stable-diffusion-xl",
+              "allowWrite": false
+            }
+          ]
+        },
+        "type": "container/run"
+      }
+    ],
+    "meta": {
+      "trigger": "dashboard",
+      "system_requirements": {
+        "required_vram": 16
+      }
+    },
+    "type": "container",
+    "version": "0.1"
+  }
