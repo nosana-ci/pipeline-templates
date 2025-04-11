@@ -1,6 +1,6 @@
-# AI Meme Generator for Nosana Network
+# AI Meme Generator
 
-A GPU-powered meme generator that uses AI to create funny memes based on different themes. This template is designed to run on the Nosana Network and leverages GPU acceleration for optimal performance.
+A GPU-powered meme generator that uses AI to create funny memes based on different themes. This template leverages the power of GPT-2 and GPU acceleration to generate context-aware meme captions and combine them with popular meme templates.
 
 ## Features
 
@@ -10,7 +10,20 @@ A GPU-powered meme generator that uses AI to create funny memes based on differe
 - Randomly selects from popular meme templates
 - Outputs high-quality meme images
 
-## Technical Requirements
+## How It Works
+
+1. **Caption Generation**:
+   - Uses GPT-2 model for text generation
+   - Generates context-aware captions based on theme
+   - Optimized for GPU acceleration
+
+2. **Meme Creation**:
+   - Selects from popular meme templates
+   - Splits caption into top and bottom text
+   - Renders text onto template
+   - Saves final image
+
+## Requirements
 
 - **GPU**: NVIDIA 3060 (recommended)
   - Minimum 8GB VRAM
@@ -37,23 +50,11 @@ A GPU-powered meme generator that uses AI to create funny memes based on differe
 
 3. The generated meme will be available as an output file named `generated_meme.jpg`
 
-## How It Works
+## Screenshot of Deployment
 
-1. **Caption Generation**:
-   - Uses GPT-2 model for text generation
-   - Generates context-aware captions based on theme
-   - Optimized for GPU acceleration
+![Deployment Running ]( https://drive.google.com/file/d/1VXlrgrpLSUO_S2if3tFP163YQsyFRlDq/view?usp=drivesdk )
 
-2. **Meme Creation**:
-   - Selects from popular meme templates
-   - Splits caption into top and bottom text
-   - Renders text onto template
-   - Saves final image
 
-3. **Output**:
-   - Generates a JPG image
-   - Saves as `generated_meme.jpg`
-   - Available for download from job outputs
 
 ## Performance
 
@@ -79,7 +80,7 @@ This template can be extended with additional features:
 
 ## Contributing
 
-Feel free to submit issues!
+Feel free to submit issues and enhancement requests!
 
 ## License
 
