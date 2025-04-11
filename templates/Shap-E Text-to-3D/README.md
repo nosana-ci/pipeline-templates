@@ -67,4 +67,7 @@ gif_path = export_to_gif(images[0], "shark_3d.gif")
 
 ## Links
 - [Shap-E Model on Huggingface](https://huggingface.co/openai/shap-e)
-- [Example Successful Nosana Job](insert_link_to_your_successful_job_run)
+
+- Details of  Successful Nosara Run.
+
+ ![Example Successful Nosana Job](https://gcdnb.pbrd.co/images/Gz4dueL9DmbM.png)
