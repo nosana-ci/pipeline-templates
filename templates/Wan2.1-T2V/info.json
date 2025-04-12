@@ -2,6 +2,6 @@
   "id": "wan2.1-t2v",
   "name": "Wan2.1 Text-to-Video 14B",
   "description": "State-of-the-art open-source text-to-video generation model with high-quality visuals and motion dynamics",
-  "category": ["Video Generation", "Text-to-Video", "Diffusion", "Multimodal", "New"],
+  "category": ["Video Generation", "Text to Video","API" , "Multimodal", "New"],
   "icon": "https://huggingface.co/Wan-AI/Wan2.1-T2V-14B/resolve/main/wan_logo.png"
 } 

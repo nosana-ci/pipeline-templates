@@ -2,6 +2,6 @@
   "id": "hidream-i1",
   "name": "HiDream-I1 Full",
   "description": "State-of-the-art 17B parameter text-to-image foundation model with superior image quality and prompt following",
-  "category": ["Image Generation", "Text-to-Image", "Diffusion", "New"],
+  "category": ["Image Generation", "Text-to-Image", "API", "New"],
   "icon": "https://huggingface.co/HiDream-ai/HiDream-I1-Full/resolve/main/hidream_logo.png"
 } 
