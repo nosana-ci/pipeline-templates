@@ -1,0 +1,7 @@
+{
+  "id": "chattts",
+  "name": "2Noise ChatTTS",
+  "description": "Advanced text-to-speech model capable of generating natural-sounding voices with conversational qualities",
+  "category": ["Audio", "Speech", "AI", "TTS", "New"],
+  "icon": "https://huggingface.co/2Noise/ChatTTS/resolve/main/2noise_logo.png"
+} 

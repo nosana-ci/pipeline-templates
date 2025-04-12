@@ -1,0 +1,7 @@
+{
+  "id": "qwq32b",
+  "name": "Qwen QwQ-32B",
+  "description": "Qwen's QwQ-32B reasoning model with enhanced performance on complex tasks, served via vLLM with OpenAI-compatible API",
+  "category": ["API", "LLM", "New", "Reasoning"],
+  "icon": "https://huggingface.co/Qwen/QwQ-32B/resolve/main/qwen-logo.png"
+} 

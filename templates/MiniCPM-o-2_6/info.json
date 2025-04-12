@@ -1,0 +1,7 @@
+{
+  "id": "minicpm-o-2_6",
+  "name": "MiniCPM-o 2.6",
+  "description": "GPT-4o level multimodal model (8B parameters) supporting vision, speech, and live streaming capabilities",
+  "category": ["Multimodal", "Vision", "Speech", "Video", "LLM", "New"],
+  "icon": "https://huggingface.co/openbmb/MiniCPM-o-2_6/resolve/main/minicpm_logo.png"
+} 

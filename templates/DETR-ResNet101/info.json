@@ -1,0 +1,7 @@
+{
+  "id": "detr-resnet101",
+  "name": "DETR ResNet-101 DC5",
+  "description": "End-to-End Object Detection with Transformers using ResNet-101 backbone for detecting objects in images",
+  "category": ["Computer Vision", "Object Detection", "Transformer", "PyTorch"],
+  "icon": "https://huggingface.co/facebook/detr-resnet-101-dc5/resolve/main/meta_logo.png"
+} 

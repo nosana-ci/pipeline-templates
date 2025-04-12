@@ -1,0 +1,7 @@
+{
+  "id": "layoutlm-docqa",
+  "name": "LayoutLM Document QA",
+  "description": "Multi-modal document question answering model for extracting information from PDFs and images",
+  "category": ["Document AI", "Question Answering", "OCR", "NLP"],
+  "icon": "https://huggingface.co/impira/layoutlm-document-qa/resolve/main/impira_logo.png"
+} 
