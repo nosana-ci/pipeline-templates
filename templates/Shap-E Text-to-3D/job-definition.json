@@ -1,22 +1,28 @@
 {
-  "version": "0.1",
-  "type": "container",
-  "meta": {
-    "trigger": "dashboard"
-  },
   "ops": [
     {
-      "type": "container/run",
-      "id": "shap-e-text-to-3d",
+      "id": "shap-E",
       "args": {
-        "image": "diffusers/diffusers-pytorch-cuda",
         "cmd": [
-          "bash",
+          "/bin/sh",
           "-c",
-          "mkdir -p /output  && python -c \"import torch; from diffusers import ShapEPipeline; from diffusers.utils import export_to_gif; ckpt_id = 'openai/shap-e'; pipe = ShapEPipeline.from_pretrained(ckpt_id).to('cuda'); guidance_scale = 15.0; prompt = 'a shark'; images = pipe(prompt, guidance_scale=guidance_scale, num_inference_steps=64).images; gif_path = export_to_gif(images[0], '/output/a_shark_3d.gif'); print('Generated 3D model saved to', gif_path)\" && python -m http.server 80 --directory /output"
+          "apt-get update && apt-get install -y git && git clone https://github.com/eskayML/shap-E-Text-to-3D && cd shap-E-Text-to-3D && pip install -r requirements.txt && python client_app.py --host 0.0.0.0 --port 7860"
         ],
-        "gpu": true
-      }
+        "env": {},
+        "gpu": true,
+        "image": "pytorch/pytorch:2.0.0-cuda11.7-cudnn8-runtime",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
     }
-  ]
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 16
+    }
+  },
+  "type": "container",
+  "version": "0.1"
 }
