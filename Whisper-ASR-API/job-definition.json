@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 16
+    }
+  },
+  "ops": [
+    {
+      "id": "whisper-asr-api",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "pip install transformers==4.40.0 accelerate gradio torch datasets[audio] scipy librosa && python -c \"import gradio as gr; import torch; from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline; device = 'cuda:0' if torch.cuda.is_available() else 'cpu'; torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32; model_id = 'openai/whisper-large-v3'; model = AutoModelForSpeechSeq2Seq.from_pretrained(model_id, torch_dtype=torch_dtype, low_cpu_mem_usage=True, use_safetensors=True); model.to(device); processor = AutoProcessor.from_pretrained(model_id); pipe = pipeline('automatic-speech-recognition', model=model, tokenizer=processor.tokenizer, feature_extractor=processor.feature_extractor, torch_dtype=torch_dtype, device=device); def transcribe(audio, task, language, return_timestamps): generate_kwargs = {}; if language is not None and language != '': generate_kwargs['language'] = language; if task is not None and task != '': generate_kwargs['task'] = task; if return_timestamps: return pipe(audio, generate_kwargs=generate_kwargs, return_timestamps=return_timestamps); else: return pipe(audio, generate_kwargs=generate_kwargs)['text']; demo = gr.Interface(fn=transcribe, inputs=[gr.Audio(sources=['microphone', 'upload'], type='filepath'), gr.Radio(['transcribe', 'translate'], label='Task', value='transcribe'), gr.Dropdown(['', 'english', 'chinese', 'german', 'spanish', 'russian', 'korean', 'french', 'japanese', 'portuguese', 'turkish', 'polish', 'catalan', 'dutch', 'arabic', 'swedish', 'italian', 'indonesian', 'hindi', 'finnish', 'vietnamese', 'hebrew', 'ukrainian', 'greek', 'malay', 'czech', 'romanian', 'danish', 'hungarian', 'tamil', 'norwegian', 'thai', 'urdu', 'croatian', 'bulgarian', 'lithuanian', 'latin', 'maori', 'malayalam', 'welsh', 'slovak', 'telugu', 'persian', 'latvian', 'bengali', 'serbian', 'azerbaijani', 'slovenian', 'kannada', 'estonian', 'macedonian', 'breton', 'basque', 'icelandic', 'armenian', 'nepali', 'mongolian', 'bosnian', 'kazakh', 'albanian', 'swahili', 'galician', 'marathi', 'punjabi', 'sinhala', 'khmer', 'shona', 'yoruba', 'somali', 'afrikaans', 'occitan', 'georgian', 'belarusian', 'tajik', 'sindhi', 'gujarati', 'amharic', 'yiddish', 'lao', 'uzbek', 'faroese', 'haitian creole', 'pashto', 'turkmen', 'nynorsk', 'maltese', 'sanskrit', 'luxembourgish', 'myanmar', 'tibetan', 'tagalog', 'malagasy', 'assamese', 'tatar', 'hawaiian', 'lingala', 'hausa', 'bashkir', 'javanese', 'sundanese', 'cantonese', 'burmese'], label='Language (Optional)'), gr.Checkbox(label='Return Timestamps')], outputs=['text'], title='OpenAI Whisper Large v3 - Multilingual Speech Recognition'); demo.launch(server_name='0.0.0.0', server_port=7860)\" --host 0.0.0.0 --port 7860"
+        ],
+        "env": {
+          "PYTHONUNBUFFERED": "1"
+        },
+        "gpu": true,
+        "image": "pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ]
+}
