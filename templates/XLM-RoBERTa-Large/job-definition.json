@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 6
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "xlm-roberta-large",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python -m text_embeddings_app.app --host 0.0.0.0 --port 8080 --model-name FacebookAI/xlm-roberta-large --pooling mean --normalize False"
+        ],
+        "image": "ghcr.io/huggingface/text-embeddings-inference:1.3",
+        "gpu": true,
+        "expose": 8080,
+        "volumes": [
+          {
+            "type": "cache",
+            "target": "/data"
+          }
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        }
+      }
+    }
+  ]
+} 

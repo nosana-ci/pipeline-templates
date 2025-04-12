@@ -1,0 +1,8 @@
+{
+  "id": "whisper-large-v3",
+  "name": "Whisper Large V3",
+  "description": "OpenAI's Whisper Large V3 state-of-the-art speech recognition model with improved multilingual support",
+  "category": ["API","Text to Speech", "New"],
+  "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
+  "github_url": "https://github.com/openai/whisper"
+} 
