@@ -1,0 +1,19 @@
+{
+    "name": "mistral-7b-inference",
+    "image": "ghcr.io/huggingface/text-generation-inference:latest",
+    "command": [
+      "text-generation-launcher",
+      "--model-id", "mistralai/Mistral-7B-Instruct-v0.1",
+      "--port", "8080",
+      "--quantize", "bitsandbytes"
+    ],
+    "ports": [8080],
+    "resources": {
+      "gpu": 1,
+      "memory": "16Gi"
+    },
+    "env": {
+      "MAX_INPUT_LENGTH": "4096",
+      "MAX_TOTAL_TOKENS": "8192"
+    }
+  }
