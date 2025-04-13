@@ -23,7 +23,4 @@ F5-TTS (Fairytaler that Fakes Fluent and Faithful Speech) is an advanced text-to
 - Web interface on port 7860
 - PyTorch environment with CUDA support
 
-## GitHub Repository
-[https://github.com/SWivid/F5-TTS](https://github.com/SWivid/F5-TTS)
-
 Released under CC-BY-NC-4.0 license by SWivid. 

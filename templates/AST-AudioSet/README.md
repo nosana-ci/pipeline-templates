@@ -26,16 +26,11 @@ The Audio Spectrogram Transformer (AST) is a novel approach to audio classificat
 - GPU: 8GB+ VRAM recommended
 - Web interface on port 7860
 - PyTorch environment with CUDA support
-- Requires audio processing libraries (librosa, torchaudio)
 
 ## GitHub Repository
 [https://github.com/YuanGongND/ast](https://github.com/YuanGongND/ast)
 
 Released under BSD-3-Clause license by MIT.
-
-## Research Paper
-AST was introduced in the paper "AST: Audio Spectrogram Transformer" by Gong et al.
-[Read the paper on arXiv](https://arxiv.org/abs/2104.01778)
 
 ## Use Cases
 - Environmental sound recognition

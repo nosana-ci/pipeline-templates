@@ -29,18 +29,5 @@ BigVGAN v2 is an advanced neural vocoder developed by NVIDIA Research that conve
 - PyTorch environment with CUDA support
 - CUDA 12.1 compatible system for custom inference kernel
 
-## GitHub Repository
-[https://github.com/NVIDIA/BigVGAN](https://github.com/NVIDIA/BigVGAN)
 
 Released under MIT license by NVIDIA Research.
-
-## Research Paper
-BigVGAN was introduced in the paper "BigVGAN: A Universal Neural Vocoder with Large-Scale Training"
-[Read the paper on arXiv](https://arxiv.org/abs/2206.04658)
-
-## Model Variants
-The BigVGAN v2 family includes models with different configurations:
-- 44kHz sampling rate with 128/256/512x upsampling ratios
-- 24kHz sampling rate with 100 mel bands
-- 22kHz sampling rate with 80 mel bands
-- Base models with reduced parameter count (14M) 

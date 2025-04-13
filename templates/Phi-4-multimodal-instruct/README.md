@@ -29,11 +29,4 @@ Phi-4-multimodal-instruct is a versatile AI model that can process and understan
 - PyTorch environment with CUDA support
 - Python 3.10+ with necessary libraries
 
-## GitHub Repository
-[https://github.com/microsoft/Phi-4-examples](https://github.com/microsoft/Phi-4-examples)
-
 Released under MIT license by Microsoft.
-
-## Research Papers
-- [Phi-4 Technical Report](https://arxiv.org/abs/2407.13833)
-- [Phi-4 Multimodal Technical Report](https://arxiv.org/abs/2503.01743) 

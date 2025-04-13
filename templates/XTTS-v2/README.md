@@ -24,12 +24,5 @@ XTTS-v2 is a powerful text-to-speech synthesis model that can clone voices and g
 - Web interface on port 7860
 - PyTorch environment with CUDA support
 
-## GitHub Repository
-[https://github.com/coqui-ai/TTS](https://github.com/coqui-ai/TTS)
 
 Released under Coqui Public Model License by Coqui.ai.
-
-## Community Resources
-- Documentation: [https://tts.readthedocs.io/en/latest/](https://tts.readthedocs.io/en/latest/)
-- Discord: [https://discord.gg/5eXr5seRrv](https://discord.gg/5eXr5seRrv)
-- GitHub Discussions: [https://github.com/coqui-ai/TTS/discussions](https://github.com/coqui-ai/TTS/discussions) 
