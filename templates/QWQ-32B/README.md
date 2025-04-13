@@ -68,6 +68,8 @@ Why don’t skeletons fight each other?
 
 ## Parameters and arguments
 
-There are so many arguments that you can give while making POST request to the endpoint, check that out in docs of minicpm-v and ollama.
+There are so many arguments that you can give while making POST request to the endpoint, check that out in docs of QWQ-32B and ollama.
+
+Check it out: [Github](https://github.com/ollama/ollama/blob/main/docs/api.md)
 
 
