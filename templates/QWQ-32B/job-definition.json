@@ -1,16 +1,17 @@
 {
     "ops": [
       {
-        "id": "tinyllama",
+        "id": "qwq_32b",
         "args": {
           "cmd": [
             "/bin/sh",
             "-c",
-            "python3 -m vllm.entrypoints.openai.api_server --model TinyLlama/TinyLlama-1.1B-Chat-v1.0 --served-model-name tinyllama --port 9000"
+            "curl -fsSL https://ollama.com/install.sh -o ollama-installer.sh && sh ollama-installer.sh && ollama pull qwq && ollama serve & sleep 10 && ollama run qwq"
           ],
+          "env": {},
           "gpu": true,
-          "image": "docker.io/vllm/vllm-openai:v0.7.2",
-          "expose": 9000,
+          "image": "nvidia/cuda:12.1.0-base-ubuntu20.04",
+          "expose": 11434,
           "entrypoint": []
         },
         "type": "container/run"
@@ -19,7 +20,7 @@
     "meta": {
       "trigger": "dashboard",
       "system_requirements": {
-        "required_vram": 6
+        "required_vram": 24
       }
     },
     "type": "container",
