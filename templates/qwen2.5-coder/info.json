@@ -1,0 +1,7 @@
+{
+    "id":"qwen2.5-coder",
+    "name": "qwen2.5-coder-ollama",
+    "description": "The latest series of Code-Specific Qwen models, with significant improvements in code generation, code reasoning, and code fixing.",
+    "tags": ["qwen","ollama", "nlp", "api", "gpu", "nosana"],
+    "repo":"https://ollama.com/library/qwen2.5-coder"
+}
