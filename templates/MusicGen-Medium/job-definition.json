@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "musicgen-medium",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "git clone https://github.com/facebookresearch/audiocraft.git && cd audiocraft && pip install -e . && pip install gradio scipy && python -c \"import gradio as gr; import scipy.io.wavfile as wavfile; from audiocraft.models import MusicGen; from audiocraft.data.audio import audio_write; model = MusicGen.get_pretrained('medium'); def generate_music(prompt, duration): model.set_generation_params(duration=duration); wav = model.generate([prompt]); audio_path = 'output.wav'; audio_write(audio_path, wav[0].cpu(), model.sample_rate, strategy='loudness'); return audio_path; demo = gr.Interface(fn=generate_music, inputs=[gr.Textbox(label='Describe the music', placeholder='Example: 80s pop track with bassy drums and synth'), gr.Slider(minimum=5, maximum=30, value=10, step=5, label='Duration (seconds)')], outputs=gr.Audio(type='filepath', label='Generated Music'), title='Meta MusicGen Medium - Text-to-Music Generation'); demo.launch(server_name='0.0.0.0', server_port=7860)\" --host 0.0.0.0 --port 7860"
+        ],
+        "env": {
+          "PYTHONUNBUFFERED": "1"
+        },
+        "gpu": true,
+        "image": "pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 16
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

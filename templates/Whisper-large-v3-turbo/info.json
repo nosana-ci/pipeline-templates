@@ -1,0 +1,7 @@
+{
+  "id": "whisper-large-v3-turbo",
+  "name": "OpenAI Whisper Large V3 Turbo",
+  "description": "Optimized version of Whisper Large V3 for faster inference with minimal quality degradation, supporting 99 languages for speech recognition and translation",
+  "category": ["Audio Generation","Multimodel", "New", "Speech Generation", "API"],
+  "icon": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/main/openai_logo.png"
+} 

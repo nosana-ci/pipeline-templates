@@ -1,0 +1,7 @@
+{
+  "id": "f5-tts",
+  "name": "F5-TTS",
+  "description": "High-quality text-to-speech model using flow matching for expressive and natural-sounding voice synthesis",
+  "category": ["API","Speech Generation", "New"],
+  "icon": "https://huggingface.co/SWivid/F5-TTS/resolve/main/swivid_logo.png"
+} 
