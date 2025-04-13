@@ -1,6 +1,6 @@
 {
-    "id": "deepcoder-14b",
-    "name": "DeepCoder 14B",
+    "id": "deepcoder-1.5b",
+    "name": "DeepCoder 1.5B",
     "description": "High-performance code generation model with OpenAI-compatible API endpoint",
     "category": [
         "AI",

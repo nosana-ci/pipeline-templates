@@ -4,7 +4,7 @@ A high-performance code generation model served via vLLM with an OpenAI-compatib
 
 ## Description
 
-This template provides an OpenAI-compatible API server for the DeepCoder-1.5B model, optimized for performance using vLLM. The model is specifically trained for code generation and understanding across multiple programming languages.
+This template   The model is specifically trained for code generation and understanding across multiple programming languages.
 
 ## Key Features
 - High-performance inference with vLLM
