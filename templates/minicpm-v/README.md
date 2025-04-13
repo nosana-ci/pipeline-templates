@@ -107,6 +107,7 @@ Sure, here's one for you: Why did the chicken cross the playground? To get to th
 
 There are so many arguments that you can give while making POST request to the endpoint, check that out in docs of minicpm-v and ollama.
 
+Check it out: [Github](https://github.com/ollama/ollama/blob/main/docs/api.md)
 
 
 
