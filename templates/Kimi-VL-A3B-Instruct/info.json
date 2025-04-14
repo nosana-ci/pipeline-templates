@@ -1,0 +1,8 @@
+{
+  "id": "kimivl-a3b-instruct",
+  "name": "Kimi VL A3B Instruct",
+  "description": "High-performance inference API for the 3B parameter Kimi VL model",
+  "category": ["API", "LLM"],
+  "icon": "https://github.com/MoonshotAI/Kimi-VL",
+  "github_url": "https://github.com/MoonshotAI/Kimi-VL/"
+} 
