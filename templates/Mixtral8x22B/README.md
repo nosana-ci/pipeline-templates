@@ -6,7 +6,7 @@ This template deploys **Mixtral8x22B**, a state-of-the-art large language model 
 ## Features
 - 🌐 **API-Based Access**: Ollama API served locally on port **11434**.
 - ⚡ **Ollama Runtime**: Lightweight deployment and fast startup.
-- 🎮 **GPU-Accelerated**: Requires at least **300GB VRAM** (Higher recommended).
+- 🎮 **GPU-Accelerated**: Requires at least **24GB VRAM** (Higher recommended).
 
 ---
 
@@ -24,41 +24,41 @@ Once the deployment is active, the model can be accessed via:
 1. Default it runs on the port 11434 (default port of ollama)
 2. You can change it and tweak a template expose=PORT that you want. 
 
-#### Note 
-Without quantization this model would require 300GB of vram
-but can be used by using bit quantization in 48Gb also.
-This model is the instruct model which will require 300GB of vram but you can tweak this template just a change in name from mixtral:8x22b to quantized model you want to use.
 ---
 
 ## **2. Send Requests to the API**
 
 #### 📝 **Text Prompt via cURL**
-```bash
-curl url:11434/api/generate \
-  -H "Content-Type: application/json" \
-  -d '{
-        "model": "mixtral:8x22b",
-        "prompt": "Write a poem about the beauty of nature.",
-        "stream": false
-      }'
+```python
+import requests
+
+payload= {
+    "model": "mixtral:8x22b",
+    "prompt": "Write a beautiful poem conveying a deep message, it should be short.",
+    "stream": False
+}
+response=requests.post(
+    url="http://127.0.0.1:11434/api/generate",
+    json=payload,
+)
+print(response.json()["response"])
 ```
 Here url is determined by user, how he supposed to use it via port forwarding or host it using ngrok.
 For me I use ssh : so url is http://127.0.0.1
 #### Response that I got
 ```text
-   The sun ascends, a golden hue,
-   Painting the sky a vibrant blue.
-   The wind whispers through the trees,
-   A gentle dance of summer breeze.
+ In the heart of twilight's gentle hush,
+A whisper sings, both soft and lush,
+"Within each dawn, there lies a dusk,
+In every seed, the strength to thrust."
 
-   The river flows, a silver thread,
-   Reflecting clouds above its bed.
-   The flowers bloom, in colors bright,
-   A tapestry of pure delight.
+From fleeting stars and fading bloom,
+The silent truth does sweetly loom,
+Embrace life's dance of light and shade,
+For in its end, your joy is made
 ```
 
-**Not only this it supports much more api endpoints and parameters check out ollama and Mixtral8x7B docs for different endpoints**
-
+**Not only this it supports much more api endpoints and parameters check out ollama and Mixtral8x22B docs for different endpoints**
 
 
 ## Parameters and arguments
