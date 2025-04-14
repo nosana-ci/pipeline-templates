@@ -1,19 +1,11 @@
-# MatLab Studio
+Run MATLAB in a cloud or local environment using a prebuilt Ubuntu-based Docker container. Provides both browser-based and VNC access.
+## ⚙️ Configuration
 
-Run MATLAB® in the cloud or on your local machine using a prebuilt Docker container based on Ubuntu. This setup allows for browser-based interaction or desktop GUI access via VNC, enabling users to work seamlessly in MATLAB environments without needing a full local installation.
+- **Port:** 8888
+- **GPU:** required
+- **Authentication:** required
 
-## 🚀 Features
-
-- Fully interactive MATLAB session via web browser or VNC
-- Support for batch and command-line mode
-- Built on official MathWorks Docker images
-- Easy license integration for different deployment types
-- Supports installation of updates and additional toolboxes
-
-## 🐳 Quick Start
-
-### Pull the Docker Image
+## 🚀 Usage
 
 ```bash
-docker pull mathworks/matlab:r2024b
-
+docker run --rm langchain4j/ollama-hello-world
