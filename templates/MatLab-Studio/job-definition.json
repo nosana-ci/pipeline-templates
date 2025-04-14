@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard"
+  },
+  "global": {
+    "image": "mathworks/matlab:r2024b",
+    "gpu": true,
+    "env": {
+      "PASSWORD": "password"
+    }
+  },
+  "ops": [
+    {
+      "type": "container/create-volume",
+      "id": "matlab-data",
+      "args": {
+        "name": "matlab-data"
+      }
+    },
+    {
+      "type": "container/run",
+      "id": "matlab-browser",
+      "args": {
+        "image": "mathworks/matlab:r2024b",
+        "cmd": ["-browser"],
+        "volumes": [
+            {
+            "name": "matlab-data",
+            "dest": "/home/matlab/data"
+          }
+        ],
+        "expose": 8888
+      } 
+    }
+  ]
+}
