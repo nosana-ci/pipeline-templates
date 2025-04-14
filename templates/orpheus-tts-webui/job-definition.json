@@ -1,0 +1,31 @@
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "dashboard",
+      "system_requirements": {
+        "required_vram": 16
+      }
+    },
+    "ops": [
+      {
+        "id": "orpheus-tts-webui",
+        "type": "container/run",
+        "args": {
+          "image": "nvidia/cuda:12.1.0-base-ubuntu20.04",
+          "gpu": true,
+          "expose": 7860,
+          "env": {
+            "HF_TOKEN": "your_huggingface_token_here"
+          },
+          "cmd": [
+            "/bin/bash",
+            "-c",
+            "apt update && apt install -y git curl build-essential ffmpeg && git clone https://github.com/Saganaki22/OrpheusTTS-WebUI.git && cd OrpheusTTS-WebUI && chmod +x setup_orpheus.sh && ./setup_orpheus.sh && ./launch_orpheus.sh"
+          ],
+          "entrypoint": []
+        }
+      }
+    ]
+  }
+  

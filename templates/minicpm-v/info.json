@@ -3,5 +3,6 @@
     "name": "minicpm-v-ollama",
     "description": "MiniCPM-V is a series of end-side multimodal LLMs (MLLMs) designed for vision-language understanding. The model is built on SigLip-400M and Qwen2-7B with a total of 8B parameters.",
     "tags": ["minicpm-v","ollama", "vision", "nlp", "api", "gpu", "nosana"],
-    "repo":"https://huggingface.co/openbmb/MiniCPM-V"
+    "repo":"https://huggingface.co/openbmb/MiniCPM-V",
+    "icon":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdFqrq99x6n2-qjgTArl0QVDRobT6VtQ2sVA&s"
 }
