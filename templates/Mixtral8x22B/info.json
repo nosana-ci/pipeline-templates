@@ -1,0 +1,9 @@
+{
+    "id":"mixtral8x22b",
+    "name": "mixtral-8x22b-ollama",
+    "description": "Mixtral 8x22B sets a new standard for performance and efficiency within the AI community. It is a sparse Mixture-of-Experts (SMoE) model that uses only 39B active parameters out of 141B, offering unparalleled cost efficiency for its size.",
+    "tags": ["mixtral8x22b","ollama", "vision", "nlp", "api", "gpu", "nosana"],
+    "repo":"https://ollama.com/library/mixtral:8x22b",
+    "icon":"https://github.com/ollama/ollama/assets/251292/59bf76bc-1f6f-4a45-be4f-d6a13d7f0645"
+}
+

@@ -6,7 +6,7 @@
           "cmd": [
             "/bin/sh",
             "-c",
-            "curl -fsSL https://ollama.com/install.sh -o ollama-installer.sh && sh ollama-installer.sh && ollama serve & sleep 10  && ollama pull qwen2.5-coder  && sleep 10 && ollama run qwen2.5-coder"
+            "curl -fsSL https://ollama.com/install.sh -o ollama-installer.sh && sh ollama-installer.sh && (ollama serve &) && sleep 10  && ollama pull qwen2.5-coder  && sleep 10 && ollama run qwen2.5-coder"
           ],
           "env": {},
           "gpu": true,
