@@ -1,0 +1,7 @@
+{
+  "id": "mistral",
+  "name": "Mistral",
+  "description": "Echo hello world in a ubuntu docker container",
+  "category": [],
+  "icon": "https://miro.medium.com/v2/resize:fit:1000/1*aPfdrf5Y14OzFUXgEwB9TA.jpeg"
+} 
