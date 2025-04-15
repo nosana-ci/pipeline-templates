@@ -1,0 +1,8 @@
+{
+  "id": "localai-server",
+  "name": "LocalAI Server",
+  "description": "High-performance LocalAI server with enterprise-grade models for text generation (Mixtral-8x7B), image generation (SDXL-Turbo), text-to-speech (XTTS-v2), and speech recognition (Whisper Large V3)",
+  "category": ["API", "LLM", "Image Generation"],
+  "icon": "https://github.com/go-skynet/LocalAI/assets/2420543/0966aa2a-166e-4f99-a3e5-6c915fc997dd",
+  "github_url": "https://github.com/mudler/LocalAI"
+}

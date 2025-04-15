@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 24
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "localai-server",
+      "args": {
+        "image": "nishbot/localai-gpu",
+        "gpu": true,
+        "expose": 8080,
+        "env": {
+          "DEBUG": "true",
+          "WEBUI_PATH": "/build/public",
+          "LOCALAI_ENABLE_WEBUI": "true",
+          "LOCALAI_MODELS_PATH": "/models",
+          "LOCALAI_CONTEXT_SIZE": "32768",
+          "LOCALAI_F16": "true",
+          "CUDA_VISIBLE_DEVICES": "0"
+        }
+      }
+    }
+  ]
+}
