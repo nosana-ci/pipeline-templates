@@ -16,7 +16,7 @@
         "cmd": [
           "/bin/sh",
           "-c",
-          "python3 -m vllm.entrypoints.openai.api_server --model 'deepcogito/cogito-v1-preview-qwen-14B' --served-model-name  cogito-v1 --port 9000"
+          "python3 -m vllm.entrypoints.openai.api_server --model deepcogito/cogito-v1-preview-qwen-14B --served-model-name  cogito-v1 --port 9000"
         ],
         "image": "docker.io/vllm/vllm-openai:latest",
         "gpu": true,
