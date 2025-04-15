@@ -1,0 +1,7 @@
+{
+  "id": "codestral-22b-v0.1",
+  "name": "Codestral-22B-v0.1",
+  "description": "Codestral-22B-v0.1 instruction-tuned model served via vLLM with OpenAI-compatible API",
+  "category": ["API", "LLM", "Text Generation"],
+  "icon": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png"
+} 
