@@ -1,0 +1,8 @@
+{
+    "id":"wizardcoder",
+    "name": "wizardcoder-ollama",
+    "description": "Wizard Coder is a (33B) code generation model based on Code Llama.",
+    "tags": ["wizardLM","ollama", "nlp", "api", "gpu", "nosana"],
+    "repo":"https://ollama.com/library/wizardcoder",
+    "icon":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1pIGfsShV3-UAf-E-0e3-bDa-bR93GOn18w&s"
+}

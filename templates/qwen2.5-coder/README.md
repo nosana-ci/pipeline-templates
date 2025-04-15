@@ -4,7 +4,7 @@
 This template deploys **Qwen2.5-coder**, using **Ollama** inside a GPU container on **Nosana**. the latest series of Code-Specific Qwen models, with significant improvements in code generation, code reasoning, and code fixing.
 
 ## Features
-- 🌐 **API-Based Access**: OpenAI-like API served locally on port **11434**.
+- 🌐 **API-Based Access**: ollama-like API served locally on port **11434**.
 - ⚡ **Ollama Runtime**: Lightweight deployment and fast startup.
 - 🎮 **GPU-Accelerated**: Requires at least **24GB VRAM** (A100 or higher recommended).
 

@@ -4,7 +4,7 @@
 This template deploys **QWQ-32B**, a powerful reasoning model of the Qwen series, using **Ollama** inside a GPU container on **Nosana**.  Compared with conventional instruction-tuned models, QwQ, which is capable of thinking and reasoning, can achieve significantly enhanced performance in downstream tasks, especially hard problems. QwQ-32B is the medium-sized reasoning model, which is capable of achieving competitive performance against state-of-the-art reasoning models, e.g., DeepSeek-R1, o1-mini.
 
 ## Features
-- 🌐 **API-Based Access**: OpenAI-like API served locally on port **11434**.
+- 🌐 **API-Based Access**: ollama-like API served locally on port **11434**.
 - ⚡ **Ollama Runtime**: Lightweight deployment and fast startup.
 - 🎮 **GPU-Accelerated**: Requires at least **24GB VRAM** (A100 or higher recommended).
 
