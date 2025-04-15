@@ -6,7 +6,7 @@
         "cmd": [
           "/bin/sh",
           "-c",
-          "apt-get update && apt-get install -y git && git clone https://github.com/eskayML/shap-E-Text-to-3D && cd shap-E-Text-to-3D && pip install -r requirements.txt && python client_app.py --host 0.0.0.0 --port 7860"
+          "apt-get update && apt-get install -y git && git clone https://github.com/eskayML/shap-E-Text-to-3D && cd shap-E-Text-to-3D && pip install -r requirements.txt && pip install huggingface-hub && mkdir openai && cd openai && huggingface-cli download openai/shap-e --local-dir . --local-dir-use-symlinks False && cd ../ && python app.py --host 0.0.0.0 --port 7860"
         ],
         "env": {},
         "gpu": true,
