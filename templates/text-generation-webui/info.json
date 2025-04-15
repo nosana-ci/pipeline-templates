@@ -1,0 +1,11 @@
+{
+  "id": "vllm-cogito-v1-preview-qwen-32B",
+  "name": "vLLM cogito-v1-preview-qwen-32B",
+  "description": "Cogito V1 Preview Qwen 32B, Best-in-class open-source LLM trained with IDA for alignment, reasoning, and self-reflective, agentic applications.",
+  "category": [
+    "API",
+    "LLM"
+  ],
+  "icon": "https://avatars.githubusercontent.com/u/136984999?v=4",
+  "github_url": "https://github.com/vllm-project/vllm"
+}

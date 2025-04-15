@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "text-generation-webui-nvidia-tensorrtllm",
+      "args": {
+        "image": "docker.io/atinoda/text-generation-webui:default-nvidia-tensorrtllm",
+        "cmd": [],
+        "gpu": true,
+        "expose": 7860,
+        "env": {
+          "EXTRA_LAUNCH_ARGS": "--listen --verbose"
+        }
+      }
+    }
+  ]
+}
