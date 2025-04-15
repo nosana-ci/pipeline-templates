@@ -10,13 +10,13 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "vllm",
+      "id": "vllm-cogito-v1-preview-qwen-32B",
       "args": {
         "entrypoint": [],
         "cmd": [
           "/bin/sh",
           "-c",
-          "python3 -m vllm.entrypoints.openai.api_server --model mistralai/Pixtral-12B-2409 --served-model-name Pixtral-12B-2409 --tokenizer_mode mistral --limit_mm_per_prompt 'image=4' --port 9000"
+          "python3 -m vllm.entrypoints.openai.api_server --model deepcogito/cogito-v1-preview-qwen-32B --served-model-name deepcogito/cogito-v1-preview-qwen-32B --port 9000"
         ],
         "image": "docker.io/vllm/vllm-openai:v0.8.4",
         "gpu": true,
