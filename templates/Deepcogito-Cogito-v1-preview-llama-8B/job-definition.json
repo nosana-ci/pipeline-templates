@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 8
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "cogito-v1",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model deepcogito/cogito-v1-preview-llama-8B --served-model-name cogito-v1 --port 9000"
+        ],
+        "image": "docker.io/vllm/vllm-openai:v0.7.2",
+        "gpu": true,
+        "expose": 9000
+      }
+    }
+  ]
+}
