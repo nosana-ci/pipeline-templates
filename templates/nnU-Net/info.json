@@ -1,9 +1,4 @@
 
----
-
-### ✅ `info.json`
-
-```json
 {
   "id": "nnunet-segmentation",
   "name": "nnU-Net Medical Image Segmentation",
