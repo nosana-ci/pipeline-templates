@@ -1,0 +1,27 @@
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "dashboard",
+      "system_requirements": {
+        "required_vram": 60
+      }
+    },
+    "ops": [
+      {
+        "id": "qwen2.5",
+        "type": "container/run",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "python3 -m vllm.entrypoints.openai.api_server --model docker.io/docker/qwen2.5 --served-model-name Qwen-2.5 --port 9000 --max-model-len 34000"
+          ],
+          "gpu": true,
+          "image": "docker.io/docker/qwen2.5",
+          "expose": 9000,
+          "entrypoint": []
+        }
+      }
+    ]
+  }

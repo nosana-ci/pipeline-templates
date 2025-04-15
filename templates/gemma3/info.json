@@ -1,0 +1,7 @@
+{
+    "id": "gem3",
+    "name": "Gemma 3",
+    "description": "Google's Gemma 3 instruction-tuned model served via vLLM with OpenAI-compatible API",
+    "category": ["API", "LLM", "New"],
+    "icon": "https://custom.typingmind.com/assets/models/gemma.jpg"
+  } 
