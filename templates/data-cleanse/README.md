@@ -1,7 +1,7 @@
 # Data Cleanse Pro - Nosana Job Definition
 
 ## Overview
-Data Cleanse Pro is a web-based application for data cleaning, preprocessing, and machine learning model training. It provides an intuitive interface for handling both classification and regression tasks, with support for various models and automatic data type detection.
+Data Cleanse Pro is a web-based application for data cleaning, preprocessing, and machine learning model training. It provides users with a platform where they can obtain real performance metrics by utilizing their sample data to train specific machine learning models. This unique feature allows users to test various models—both for classification and regression tasks—using their actual datasets, thereby gaining valuable insights into model performance before committing to any particular approach.
 
 ## Quick Start
 To run the application using Nosana:
@@ -45,9 +45,6 @@ The job is defined in `job-definition.json` with the following key components:
 
 - **Container Image**: `docker.io/acalculus/data_cleanse_app:latest`
 - **Exposed Port**: 5000 (Web Interface)
-- **Volumes**:
-  - `data-volume`: For uploaded data files
-  - `cleaned-volume`: For processed data files
 
 ## Data Requirements
 - Input: CSV files only
