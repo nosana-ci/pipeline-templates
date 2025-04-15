@@ -1,0 +1,7 @@
+{
+    "id": "llama3.3",
+    "name": "LLaMA 3.3 LLM",
+    "description": "Runs the latest LLaMA 3.3 model with improved reasoning and generation.",
+    "category": ["API", "LLM"],
+    "icon": "https://custom.typingmind.com/assets/models/llama.png"
+  }

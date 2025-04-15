@@ -1,0 +1,7 @@
+{
+    "id": "mxbai-lar",
+    "name": "mxbai-embed-large Embeddings",
+    "description": "Runs the mxbai-embed-large model for generating large embeddings.",
+    "category": ["API"],
+    "icon": "https://djeqr6to3dedg.cloudfront.net/repo-logos/ai/mxbai-embed-large/live/logo-1743008530490.png"
+  }

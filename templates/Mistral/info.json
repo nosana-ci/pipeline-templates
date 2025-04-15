@@ -2,6 +2,6 @@
     "id": "mistral",
     "name": "Mistral LLM",
     "description": "Runs the efficient Mistral model with top-tier performance.",
-    "category": ["API", "LLM", "Efficiency"],
+    "category": ["API", "LLM"],
     "icon": "https://mistral.ai/_next/image?url=%2Fimg%2FM-beige.svg&w=1920&q=75"
   }

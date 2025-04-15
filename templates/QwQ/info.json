@@ -2,6 +2,6 @@
     "id": "qwq",
     "name": "QWQ Experimental LLM",
     "description": "Runs an experimental Qwen variant, lean and fast.",
-    "category": ["AI", "LLM", "Experimental"],
+    "category": ["API", "LLM"],
     "icon": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png"
   }
