@@ -1,0 +1,7 @@
+{
+    "id": "smollm2",
+    "name": "SmolLLM 2 LLM",
+    "description": "Runs the SmolLLM 2 model, optimized for speed and edge devices.",
+    "category": ["AI", "LLM", "Edge", "Speed"],
+    "icon": "https://huggingfacetb-smollm2-1-7b-instruct-webgpu.static.hf.space/logo.png"
+  }

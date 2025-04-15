@@ -1,12 +1,12 @@
 {
     "ops": [
       {
-        "id": "dist-llama",
+        "id": "smollm2",
         "args": {
           "cmd": [
             "/bin/sh",
             "-c",
-            "python3 -m vllm.entrypoints.openai.api_server --model docker/ai/deepseek-r1-distill-llama --served-model-name deepseek-r1-distill-llama --port 9000 --max-model-len 8192"
+            "python3 -m vllm.entrypoints.openai.api_server --model docker/ai/smollm2 --served-model-name smollm2 --port 9000 --max-model-len 4096"
           ],
           "gpu": true,
           "image": "docker.io/vllm/vllm-openai:v0.7.2",
@@ -19,7 +19,7 @@
     "meta": {
       "trigger": "dashboard",
       "system_requirements": {
-        "required_vram": 32
+        "required_vram": 8
       }
     },
     "type": "container",

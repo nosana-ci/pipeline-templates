@@ -1,0 +1,7 @@
+{
+    "id": "phi4",
+    "name": "Phi-4 LLM",
+    "description": "Runs Microsoft's Phi-4 model, known for reasoning and code capabilities.",
+    "category": ["API", "LLM"],
+    "icon": "https://hub.continue.dev/sparkles/sparkle4.jpg"
+  }

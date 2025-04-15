@@ -1,5 +1,5 @@
 {
-    "id": "deepseek-r1-distill-llama",
+    "id": "dist-llama",
     "name": "DeepSeek R1 Distill LLaMA",
     "description": "Runs DeepSeek's distilled LLaMA, optimized for real-world tasks.",
     "category": ["API", "LLM"],

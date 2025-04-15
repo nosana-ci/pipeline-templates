@@ -1,12 +1,12 @@
 {
     "ops": [
       {
-        "id": "dist-llama",
+        "id": "phi4",
         "args": {
           "cmd": [
             "/bin/sh",
             "-c",
-            "python3 -m vllm.entrypoints.openai.api_server --model docker/ai/deepseek-r1-distill-llama --served-model-name deepseek-r1-distill-llama --port 9000 --max-model-len 8192"
+            "python3 -m vllm.entrypoints.openai.api_server --model docker/ai/phi4 --served-model-name phi4 --port 9000 --max-model-len 8192"
           ],
           "gpu": true,
           "image": "docker.io/vllm/vllm-openai:v0.7.2",
@@ -19,7 +19,7 @@
     "meta": {
       "trigger": "dashboard",
       "system_requirements": {
-        "required_vram": 32
+        "required_vram": 20
       }
     },
     "type": "container",
