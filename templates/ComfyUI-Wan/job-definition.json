@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "WAN-comfy",
+      "args": {
+        "cmd": [
+          "mkdir -p /root/ComfyUI/models/text_encoders/ /root/ComfyUI/models/vae/ /root/ComfyUI/models/diffusion_models/ /root/ComfyUI/models/clip_vision/ /root/ComfyUI/user/default/workflows && wget -P /root/ComfyUI/models/text_encoders/ https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors && wget -P /root/ComfyUI/models/vae/ https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors && wget -P /root/ComfyUI/models/diffusion_models/ https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors && wget -P /root/ComfyUI/models/diffusion_models/ https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_fp16.safetensors && wget -P /root/ComfyUI/models/clip_vision/ https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors && wget -O /root/ComfyUI/user/default/workflows/text_to_video_wan.json https://comfyanonymous.github.io/ComfyUI_examples/wan/text_to_video_wan.json && wget -O /root/ComfyUI/user/default/workflows/image_to_video_wan.json https://comfyanonymous.github.io/ComfyUI_examples/wan/image_to_video_wan_example.json && python -m http.server 8188 --directory /root/ComfyUI/"
+        ],
+        "image": "docker.io/nosana/comfyui:0.0.0",
+        "gpu": true,
+        "expose": 8188,
+        "resources": []
+      }
+    }
+  ]
+}
