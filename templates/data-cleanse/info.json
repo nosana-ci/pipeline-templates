@@ -3,7 +3,7 @@
   "name": "Data Cleanse Pro",
   "description": "Data Class Pro is an innovative web-based platform designed to empower users in data cleaning and machine learning model evaluation. It provides users with a platform where they can obtain real performance metrics by utilizing their sample data to train specific machine learning models. This unique feature allows users to test various models—both for classification and regression tasks—using their actual datasets, thereby gaining valuable insights into model performance before committing to any particular approach.",
   "category": ["API", "Web UI"],
-  "icon": "https://raw.githubusercontent.com/acalculus/data-clean-pro/main/assets/icon.png",
+  "icon": "https://raw.githubusercontent.com/A-calculus/nosana-pipeline-templates/tree/add-template-data-cleanse/templates/data-cleanse/assets/icon.png",
   "version": "1.0.0",
-  "author": "acalculus"
+  "author": "A-calculus"
 }
