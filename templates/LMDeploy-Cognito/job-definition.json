@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "lmdepoy",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "lmdeploy serve api_server deepcogito/cogito-v1-preview-qwen-32B --model-name cogito-v1"
+        ],
+        "image": "docker.io/openmmlab/lmdeploy:v0.7.0.post3-cu12",
+        "gpu": true,
+        "expose": 23333
+      }
+    }
+  ]
+}
