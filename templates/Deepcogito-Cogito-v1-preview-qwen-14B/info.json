@@ -1,6 +1,6 @@
 {
     "id": "cogito-v1",
-    "name": "cogito-v1-preview-llama-8B",
+    "name": "cogito-v1-preview-qwen-14B",
     "description": "Deepcogito, High-performance inference API for the Cogito 8B parameter Llama language model",
     "category": [
         "API",
