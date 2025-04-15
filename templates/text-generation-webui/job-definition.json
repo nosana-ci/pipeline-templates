@@ -9,7 +9,7 @@
       "type": "container/run",
       "id": "text-generation-webui-nvidia-tensorrtllm",
       "args": {
-        "image": "docker.io/atinoda/text-generation-webui:default-nvidia-tensorrtllm",
+        "image": "docker.io/atinoda/text-generation-webui:default-nvidia-nightly",
         "cmd": [],
         "gpu": true,
         "expose": 7860,

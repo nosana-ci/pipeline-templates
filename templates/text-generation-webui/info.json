@@ -1,7 +1,7 @@
 {
-  "id": "vllm-cogito-v1-preview-qwen-32B",
-  "name": "vLLM cogito-v1-preview-qwen-32B",
-  "description": "Cogito V1 Preview Qwen 32B, Best-in-class open-source LLM trained with IDA for alignment, reasoning, and self-reflective, agentic applications.",
+  "id": "text-generation-webui-nvidia-tensorrtllm",
+  "name": "text-generation-webui-nvidia-tensorrtllm",
+  "description": "Text generation web UI, a Gradio web UI for Large Language Models.",
   "category": [
     "API",
     "LLM"
