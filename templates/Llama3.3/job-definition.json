@@ -1,0 +1,27 @@
+{
+    "ops": [
+      {
+        "id": "llama3.3",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "python3 -m vllm.entrypoints.openai.api_server --model docker/ai/llama3.3 --served-model-name llama3.3 --port 9004 --max-model-len 8192"
+          ],
+          "gpu": true,
+          "image": "docker.io/vllm/vllm-openai:v0.7.2",
+          "expose": 9004,
+          "entrypoint": []
+        },
+        "type": "container/run"
+      }
+    ],
+    "meta": {
+      "trigger": "dashboard",
+      "system_requirements": {
+        "required_vram": 30
+      }
+    },
+    "type": "container",
+    "version": "0.1"
+  }

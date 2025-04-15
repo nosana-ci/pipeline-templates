@@ -1,0 +1,27 @@
+{
+    "ops": [
+      {
+        "id": "gemma3",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "python3 -m vllm.entrypoints.openai.api_server --model docker.io/docker/gemma3 --served-model-name Gemma-3 --port 9000 --max-model-len 34000"
+          ],
+          "gpu": true,
+          "image": "docker.io/docker/gemma3",
+          "expose": 9000,
+          "entrypoint": []
+        },
+        "type": "container/run"
+      }
+    ],
+    "meta": {
+      "trigger": "dashboard",
+      "system_requirements": {
+        "required_vram": 60
+      }
+    },
+    "type": "container",
+    "version": "0.1"
+  }

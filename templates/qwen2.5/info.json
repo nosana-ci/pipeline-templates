@@ -1,0 +1,7 @@
+{
+    "id": "qwen2.5",
+    "name": "Qwen 2.5 Inference API",
+    "description": "Runs Qwen 2.5 as an OpenAI-compatible inference server on port 9001.",
+    "category": ["API", "LLM"],
+    "icon": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png"
+  }

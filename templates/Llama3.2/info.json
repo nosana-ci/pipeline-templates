@@ -1,0 +1,7 @@
+{
+    "id": "llama3.2",
+    "name": "LLaMA 3.2 LLM",
+    "description": "Runs LLaMA 3.2, reliable for coding, chat, and Q&A.",
+    "category": ["API", "LLM"],
+    "icon": "https://custom.typingmind.com/assets/models/llama.png"
+  }

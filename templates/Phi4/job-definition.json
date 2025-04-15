@@ -1,0 +1,27 @@
+{
+    "ops": [
+      {
+        "id": "phi4",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "python3 -m vllm.entrypoints.openai.api_server --model docker/ai/phi4 --served-model-name phi4 --port 9000 --max-model-len 8192"
+          ],
+          "gpu": true,
+          "image": "docker.io/vllm/vllm-openai:v0.7.2",
+          "expose": 9000,
+          "entrypoint": []
+        },
+        "type": "container/run"
+      }
+    ],
+    "meta": {
+      "trigger": "dashboard",
+      "system_requirements": {
+        "required_vram": 20
+      }
+    },
+    "type": "container",
+    "version": "0.1"
+  }
