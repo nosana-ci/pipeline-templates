@@ -1,0 +1,11 @@
+{
+    "id": "tinyllama",
+    "name": "TinyLLaMA",
+    "description": "TinyLlama-1.1B-Chat-v0.3-AWQ served via vLLM with an OpenAI-compatible API.",
+    "category": ["API", "LLM", "Lightweight", "Featured"],
+    "repo": "https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-AWQ",
+    "system_requirements": {
+      "required_vram": 6
+    }
+  }
+  

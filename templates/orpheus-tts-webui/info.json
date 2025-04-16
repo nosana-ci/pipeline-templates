@@ -1,0 +1,8 @@
+{
+    "id":"orpheus-tts",
+    "name": "orpheus-tts-webui",
+    "description": "Orpheus TTS is a SOTA open-source text-to-speech system built on the Llama-3b backbone. Orpheus demonstrates the emergent capabilities of using LLMs for speech synthesis.",
+    "tags": ["tts","webui", "speech", "nlp", "api", "gpu", "nosana"],
+    "repo":"https://github.com/Saganaki22/OrpheusTTS-WebUI",
+    "icon":"https://www.datocms-assets.com/104802/1743462538-chatgpt-image-mar-31-2025-04_08_48-pm.png?auto=compress%2Cformat&fit=crop&w=640"
+}
