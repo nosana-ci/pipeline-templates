@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "gaia",
+      "args": {
+        "cmd": [],
+        "expose": 8080,
+        "image": "thenocodeguyonline/llama-3.2:latest",
+        "gpu": true
+      }
+    }
+  ]
+}
