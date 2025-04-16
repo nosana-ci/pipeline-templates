@@ -1,0 +1,11 @@
+{
+    "id": "whisper-asr",
+    "name": "Whisper ASR Webservice",
+    "description": "Deploy a high-performance speech recognition service using OpenAI's Whisper model for multilingual transcription and translation.",
+    "category": ["AI", "Speech Recognition", "API"],
+    "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
+    "github_url": "https://github.com/openai/whisper",
+    "docs_url": "https://github.com/openai/whisper",
+    "maintainer": "Nosana Community"
+  }
+  
