@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "qwq32b",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model Qwen/QwQ-32B --served-model-name QwQ-32B --port 9000 --max-model-len 131072 --tensor-parallel-size 2 --gpu-memory-utilization 0.9"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "nosana/vllm:0.0.0",
+        "expose": 9000,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 80
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

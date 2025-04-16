@@ -1,0 +1,28 @@
+{
+  "ops": [
+    {
+      "id": "tabtransformer",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "git clone https://github.com/keras-team/keras-io.git && cd keras-io && pip install -r requirements.txt && python examples/structured_data/tabtransformer.py && tensorboard --logdir ./logs --host 0.0.0.0 --port 6006"
+        ],
+        "env": {},
+        "gpu": true,
+        "image": "tensorflow/tensorflow:2.12.0-gpu",
+        "expose": 6006,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 8
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

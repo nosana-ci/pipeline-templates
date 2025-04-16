@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "ghibli-diffusion",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python -c \"from diffusers import StableDiffusionPipeline; import torch; model_id = 'nitrosocke/Ghibli-Diffusion'; pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16); pipe = pipe.to('cuda'); from fastapi import FastAPI, Body; import uvicorn; import base64; from io import BytesIO; app = FastAPI(); @app.post('/generate'); def generate(prompt: str = Body(..., embed=True)): image = pipe(prompt).images[0]; buffered = BytesIO(); image.save(buffered, format='PNG'); img_str = base64.b64encode(buffered.getvalue()); return {'image': img_str.decode('utf-8')}; uvicorn.run(app, host='0.0.0.0', port=8000)\""
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "huggingface/diffusers-pytorch:latest",
+        "expose": 8000,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 8
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

@@ -1,0 +1,7 @@
+{
+  "id": "hunyuan3d2",
+  "name": "Tencent Hunyuan3D-2",
+  "description": "Advanced text-to-3D and image-to-3D model for generating high-resolution textured 3D assets",
+  "category": ["Text to 3D","Image to 3D", "API", "New"],
+  "icon": "https://huggingface.co/tencent/Hunyuan3D-2/resolve/main/hunyuan_logo.png"
+} 
