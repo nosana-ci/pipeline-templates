@@ -1,7 +1,7 @@
 {
   "ops": [
     {
-      "id": "deepseek-openwebui",
+      "id": "deepseek-webui",
       "args": {
         "image": "docker.io/djmbritt/vllm-webui:127.0.0.1",
         "gpu": true,
