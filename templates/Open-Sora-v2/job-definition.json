@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "open-sora-v2",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "cd /app && torchrun --nproc_per_node 1 --standalone scripts/diffusion/inference.py configs/diffusion/inference/t2i2v_256px.py --save-dir /output --port 9000 --host 0.0.0.0"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "hpcaitech/open-sora:latest",
+        "expose": 9000,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 44
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

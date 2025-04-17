@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "clip-vit-large",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m transformers.pipelines --task zero-shot-image-classification --model openai/clip-vit-large-patch14 --device 0 --port 9000 --host 0.0.0.0"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "huggingface/transformers-pytorch:latest",
+        "expose": 9000,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 4
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 
