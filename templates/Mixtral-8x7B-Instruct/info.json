@@ -1,0 +1,7 @@
+{
+  "id": "mixtral-8x7b-instruct",
+  "name": "Mixtral 8x7B Instruct",
+  "description": "Mistral AI's Mixtral-8x7B-Instruct-v0.1 - a powerful 46.7B parameter Sparse Mixture of Experts model with multilingual capabilities",
+  "category": ["API", "LLM", "New"],
+  "icon": "https://aeiljuispo.cloudimg.io/v7/https://s3.amazonaws.com/moonup/production/uploads/1701957260310-634b49287aacc0c2d45b9a0e.jpeg?w=200&h=200&f=face"
+} 

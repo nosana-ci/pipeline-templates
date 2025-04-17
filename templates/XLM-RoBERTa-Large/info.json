@@ -1,0 +1,7 @@
+{
+  "id": "xlm-roberta-large",
+  "name": "XLM-RoBERTa Large",
+  "description": "Facebook AI's XLM-RoBERTa large model - a multilingual transformer pretrained on 2.5TB of data across 100 languages",
+  "category": ["API", "LLM", "New"],
+  "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+} 

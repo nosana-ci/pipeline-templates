@@ -1,0 +1,8 @@
+{
+  "id": "deepcoder-14b-preview",
+  "name": "DeepCoder 14B Preview",
+  "description": "Agentica's DeepCoder-14B-Preview - a state-of-the-art code generation model fine-tuned from DeepSeek-R1-Distilled-Qwen-14B",
+  "category": ["API", "LLM", "Code Generation" , "New"],
+  "icon": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/logos/icon/vscode.svg",
+  "github_url": "https://pretty-radio-b75.notion.site/DeepCoder-A-Fully-Open-Source-14B-Coder-at-O3-mini-Level-1cf81902c14680b3bee5eb349a512a51"
+} 
