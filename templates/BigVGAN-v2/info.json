@@ -1,0 +1,7 @@
+{
+  "id": "bigvgan-v2",
+  "name": "NVIDIA BigVGAN v2",
+  "description": "Universal neural vocoder that generates high-quality audio from mel spectrograms with 44kHz sampling rate",
+  "category": ["API", "New", "Audio Generation"],
+  "icon": "https://huggingface.co/nvidia/bigvgan_v2_44khz_128band_512x/resolve/main/nvidia_logo.png"
+} 
