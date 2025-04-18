@@ -4,6 +4,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@nosana/sdk": "^0.3.42"
+    "@nosana/sdk": "^0.3.100"
   }
 }
