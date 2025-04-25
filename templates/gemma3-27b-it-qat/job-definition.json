@@ -4,7 +4,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_vram": 20
+      "required_vram": 18
     }
   },
   "ops": [
