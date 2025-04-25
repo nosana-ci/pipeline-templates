@@ -1,0 +1,7 @@
+{
+  "id": "gemma3-12b-it-qat",
+  "name": "Gemma3 12B IT QAT",
+  "description": "Run Google's Gemma3 12B Instruct Quantized model via Ollama.",
+  "category": ["API", "LLM"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png"
+} 

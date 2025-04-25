@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 4
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "ollama-service",
+      "args": {
+        "entrypoint": [
+          "/bin/sh"
+        ],
+        "cmd": [
+          "-c",
+          "ollama serve & sleep 5 && ollama pull $MODEL && tail -f /dev/null"
+        ],
+        "env": {
+          "MODEL": "gemma3:4b-it-qat"
+        },
+        "image": "docker.io/ollama/ollama:0.6.6",
+        "gpu": true,
+        "expose": 11434
+      }
+    }
+  ]
+} 
