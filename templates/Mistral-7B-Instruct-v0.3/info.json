@@ -1,0 +1,8 @@
+{
+  "id": "mistral7b",
+  "name": "Mistral-7B Instruct v0.3",
+  "description": "High-performance inference API for the Mistral-7B Instruct language model using vLLM and OpenAI-compatible endpoints.",
+  "category": ["API", "LLM"],
+  "icon": "https://avatars.githubusercontent.com/u/132372032?s=200&v=4",
+  "github_url": "https://github.com/mistralai"
+}
