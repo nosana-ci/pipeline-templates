@@ -12,6 +12,7 @@
       "type": "container/run",
       "id": "ollama-service",
       "args": {
+        "image": "docker.io/ollama/ollama:0.6.6",
         "entrypoint": [
           "/bin/sh"
         ],
@@ -22,7 +23,6 @@
         "env": {
           "MODEL": "gemma3:4b-it-qat"
         },
-        "image": "docker.io/ollama/ollama:0.6.6",
         "gpu": true,
         "expose": 11434
       }
