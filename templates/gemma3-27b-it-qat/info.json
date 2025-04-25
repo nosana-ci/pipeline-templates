@@ -1,5 +1,5 @@
 {
-  "id": "gemma3-27b-it-qat",
+  "id": "gemma3-27b-qat",
   "name": "Gemma3 27B IT QAT",
   "description": "Run Google's Gemma3 27B Instruct Quantized model via Ollama.",
   "category": ["API", "LLM"],
