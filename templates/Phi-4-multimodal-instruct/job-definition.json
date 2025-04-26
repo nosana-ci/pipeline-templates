@@ -1,0 +1,31 @@
+{
+  "ops": [
+    {
+      "id": "phi-4-multimodal",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "git clone https://github.com/microsoft/Phi-4-examples.git && cd Phi-4-examples && pip install torch==2.1.0 transformers==4.41.0 accelerate==0.30.0 gradio==4.19.0 safetensors==0.4.2 soundfile==0.13.1 pillow==11.0.0 scipy==1.12.0 flash-attn==2.5.5 && python -c \"import gradio as gr; from transformers import AutoProcessor, AutoModelForCausalLM; processor = AutoProcessor.from_pretrained('microsoft/Phi-4-multimodal-instruct', trust_remote_code=True); model = AutoModelForCausalLM.from_pretrained('microsoft/Phi-4-multimodal-instruct', torch_dtype='auto', trust_remote_code=True, device_map='auto'); def generate(audio_file, image_file, message, chat_history): inputs = []; if audio_file is not None: inputs.append({'type': 'audio', 'value': audio_file}); if image_file is not None: inputs.append({'type': 'image', 'value': image_file}); inputs.append({'type': 'text', 'value': message}); formatted_prompt = processor.chat_format(inputs); input_ids = processor.encode(formatted_prompt, return_tensors='pt').to(model.device); outputs = model.generate(input_ids, max_new_tokens=512, do_sample=True, temperature=0.7); decoded_text = processor.decode(outputs[0], skip_special_tokens=True); assistant_message = decoded_text.split('<assistant>')[1].strip() if '<assistant>' in decoded_text else decoded_text; chat_history.append((message, assistant_message)); return '', None, None, chat_history; with gr.Blocks(title='Microsoft Phi-4 Multimodal') as demo: chat_history = gr.State([]); with gr.Row(): with gr.Column(scale=1): audio_input = gr.Audio(type='filepath', label='Upload Audio (optional)'); image_input = gr.Image(type='filepath', label='Upload Image (optional)'); with gr.Column(scale=3): chatbot = gr.Chatbot(height=600); with gr.Row(): message = gr.Textbox(placeholder='Type your message here...', scale=8); submit = gr.Button('Send', scale=1); submit.click(generate, inputs=[audio_input, image_input, message, chat_history], outputs=[message, audio_input, image_input, chatbot]); demo.launch(server_name='0.0.0.0', server_port=7860)\""
+        ],
+        "env": {
+          "PYTHONUNBUFFERED": "1",
+          "TRANSFORMERS_CACHE": "/tmp/transformers_cache"
+        },
+        "gpu": true,
+        "image": "pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 32
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

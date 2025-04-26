@@ -1,0 +1,7 @@
+{
+  "id": "xtts-v2",
+  "name": "Coqui XTTS-v2",
+  "description": "Multilingual voice cloning TTS model supporting 17 languages with just a 6-second reference audio",
+  "category": ["Speech Generation", "API", "New"],
+  "icon": "https://huggingface.co/coqui/XTTS-v2/resolve/main/coqui_logo.png"
+} 

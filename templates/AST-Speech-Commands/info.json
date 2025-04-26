@@ -1,0 +1,7 @@
+{
+  "id": "ast-speech-commands",
+  "name": "MIT AST Speech Commands v2",
+  "description": "Audio Spectrogram Transformer fine-tuned on Speech Commands v2 dataset for keyword spotting and audio classification with 98.12% accuracy",
+  "category": ["Audio Classification", "API", "New"],
+  "icon": "https://huggingface.co/MIT/ast-finetuned-speech-commands-v2/resolve/main/mit_logo.png"
+} 
