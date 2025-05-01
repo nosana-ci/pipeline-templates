@@ -1,0 +1,8 @@
+{
+  "id": "minicpm-api",
+  "name": "MiniCPM API",
+  "description": "High-efficiency multilingual LLM from OpenBMB - optimized for performance on smaller GPUs",
+  "category": ["API", "LLM"],
+  "icon": "https://raw.githubusercontent.com/OpenBMB/MiniCPM/master/assets/logo.png",
+  "github_url": "https://github.com/OpenBMB/MiniCPM"
+} 
