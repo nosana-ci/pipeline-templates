@@ -1,0 +1,62 @@
+{
+  "ops": [
+    {
+      "id": "dbinitiliazer",
+      "args": {
+        "cmd": [
+          "sh",
+          "-c",
+          "if [ ! -f /config/client.db ]; then cp -v /temp/client.db /config/ && echo 'Copied: Success'; else echo 'Skipped: /config/client.db exists'; fi; exec >/dev/null 2>&1"
+        ],
+        "image": "ersguteralbaner/db-initiliazer:latest",
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://o9c0.fra201.idrivee2-91.com",
+            "bucket": "fah",
+            "target": "/config/",
+            "IAM": {
+              "REGION": "us-west-1",
+              "ACCESS_KEY_ID": "YTNSI9fGch5K7blypwco",
+              "SECRET_ACCESS_KEY": "L9R393f14B9e7SCxZONZDv0g2ywmoHMelAX6jY5v"
+            },
+            "allowWrite": true
+          }
+        ],
+        "private": true
+      },
+      "type": "container/run"
+    },
+    {
+      "id": "foldingathome",
+      "args": {
+        "env": {
+          "CUDA_VISIBLE_DEVICES": "0",
+          "ACCOUNT_TOKEN": "MPFG1MPF_0TMV_0SaYQpvaYQEcZsMEcaHFOgPHFOWE4",
+          "MACHINE_NAME": "NosanaWorker"
+        },
+        "gpu": true,
+        "image": "ersguteralbaner/foldingathome",
+        "expose": 7396,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://o9c0.fra201.idrivee2-91.com",
+            "bucket": "fah",
+            "target": "/config/",
+            "IAM": {
+              "REGION": "us-west-1",
+              "ACCESS_KEY_ID": "YTNSI9fGch5K7blypwco",
+              "SECRET_ACCESS_KEY": "L9R393f14B9e7SCxZONZDv0g2ywmoHMelAX6jY5v"
+            },
+            "allowWrite": true
+          }
+        ],
+        "private": true
+      },
+      "type": "container/run"
+    }
+  ],
+  "type": "container",
+  "version": "0.1"
+}
