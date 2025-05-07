@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "yi-coder-9b",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model 01-ai/Yi-Coder-9B --served-model-name Yi-Coder-9B --port 9000"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "docker.io/vllm/vllm-openai:latest",
+        "expose": 9000,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 20
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+}
