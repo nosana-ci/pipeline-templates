@@ -1,0 +1,9 @@
+{
+    "id": "dreambooth-trainer",
+    "name": "DreamBooth Trainer for Stable Diffusion",
+    "description": "Fine-tune Stable Diffusion on your own images using DreamBooth. Customize your own image generation model.",
+    "category": ["Training", "Image Generation", "Web UI"],
+    "icon": "https://huggingface.co/front/thumbnails/sd-dreambooth.png",
+    "github_url": "https://github.com/harpal88/pipeline-templates.git/dreambooth"
+  }
+  
