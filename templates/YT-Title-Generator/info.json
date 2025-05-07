@@ -1,0 +1,20 @@
+{
+  "id": "youtube-title-desc-generator",
+  "name": "YouTube Title & Description Generator",
+  "description": "Generates 3 catchy YouTube titles and 1 short description using Google Gemini, based on a user-provided video topic. Ideal for content creators aiming to optimize their videos for SEO, improving visibility and engagement.",
+  "category": ["AI", "YouTube", "Content Creation", "SEO", "Text Generation", "AI Tools"],
+  "difficulty": "Beginner",
+  "author": "SeeGee & ZeroTwo",
+  "tags": [
+    "AI",
+    "YouTube",
+    "Content Creation",
+    "SEO",
+    "Gemini",
+    "Text Generation",
+    "AI Tools",
+    "Content Generation"
+  ],
+  "icon": "https://cdn-icons-png.flaticon.com/512/711/711539.png", 
+  "github_url": "https://github.com/sahilg28/pipeline-templates"
+}
