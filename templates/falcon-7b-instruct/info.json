@@ -1,0 +1,7 @@
+{
+  "id": "tiiuae/falcon-7b-instruct",
+  "name": "falcon-7b-instruct",
+  "description": "Falcon-7B-Instruct is a 7B parameters causal decoder-only model and finetuned on a mixture of chat/instruct datasets. ",
+  "category": ["vllm", "API", "New", "Featured", "decoder-only"],
+  "github_url": "https://huggingface.co/tiiuae/falcon-7b-instruct"
+} 

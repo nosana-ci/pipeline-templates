@@ -1,0 +1,12 @@
+{
+    "id": "phi2",
+    "name": "Phi-2",
+    "description": "Microsoft's Phi-2 model served via vLLM with an OpenAI-compatible API.",
+    "category": ["API", "LLM", "New", "Featured"],
+    "icon": "https://pbs.twimg.com/media/GDajRZuacAAFpbv.jpg",
+    "system_requirements": {
+      "required_vram": 8
+    }
+  }
+  
+  
