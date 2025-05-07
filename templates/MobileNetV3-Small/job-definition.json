@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 1
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "mobilenetv3-small",
+      "args": {
+        "image": "pytorch/torchserve:latest-gpu",
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "pip install -U timm && mkdir -p model-store && echo '{\"handlers\": [{\"methods\": [\"POST\"], \"url_pattern\": \"/predictions/*\"}]}' > config.properties && torchserve --start --model-store model-store --models mobilenet=https://github.com/pytorch/serve/raw/master/examples/image_classifier/mobilenet_v2/mobilenet_v2.mar --ncs --ts-config config.properties"
+        ],
+        "gpu": true,
+        "expose": 8080,
+        "env": {
+          "MODEL_NAME": "mobilenetv3_small_100.lamb_in1k"
+        }
+      }
+    }
+  ]
+} 

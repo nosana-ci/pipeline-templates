@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 10
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "whisper-large-v3",
+      "args": {
+        "image": "onerahmet/openai-whisper-asr-webservice:v1.8.2-gpu",
+        "cmd": [],
+        "gpu": true,
+        "expose": 9000,
+        "env": {
+          "ASR_MODEL": "large-v3",
+          "ASR_ENGINE": "openai_whisper",
+          "ASR_MODEL_PATH": "openai/whisper-large-v3",
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        }
+      }
+    }
+  ]
+} 
