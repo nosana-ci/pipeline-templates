@@ -1,0 +1,9 @@
+{
+  "id": "liquid-v1-7b",
+  "name": "Liquid V1 7B",
+  "description": "Multimodal LLM capable of both image understanding and generation",
+  "category": ["Multimodal", "LLM", "Image Generation","API"],
+  "icon": "https://huggingface.co/front/assets/huggingface_logo.svg",
+  "github_url": "https://github.com/Junfeng5/Liquid",
+  "version": "1.0.0"
+} 
