@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "hunyuan3d2",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "pip install -r requirements.txt && cd hy3dgen/texgen/custom_rasterizer && python3 setup.py install && cd ../../.. && cd hy3dgen/texgen/differentiable_renderer && bash compile_mesh_painter.sh && cd ../../.. && python3 gradio_app.py --host 0.0.0.0 --port 7860"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "hunyuan3d/hunyuan3d-2:latest",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 24
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

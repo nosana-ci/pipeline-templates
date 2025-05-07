@@ -1,0 +1,7 @@
+{
+  "id": "ghibli-diffusion",
+  "name": "Ghibli Diffusion",
+  "description": "Fine-tuned Stable Diffusion model trained on images from Studio Ghibli anime films. Use the token 'ghibli style' in your prompts.",
+  "category": ["API", "Image Generation", "New"],
+  "icon": "https://huggingface.co/nitrosocke/Ghibli-Diffusion/resolve/main/sample_images/magical_princess.png"
+} 
