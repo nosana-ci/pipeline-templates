@@ -1,16 +1,10 @@
 {
   "version": "0.1",
   "type": "container",
-  "meta": {
-    "trigger": "dashboard",
-    "system_requirements": {
-      "required_vram": 9
-    }
-  },
   "ops": [
     {
       "type": "container/run",
-      "id": "ollama-service",
+      "id": "gemma3-12b",
       "args": {
         "image": "docker.io/ollama/ollama:0.6.6",
         "entrypoint": [
@@ -24,8 +18,30 @@
           "MODEL": "gemma3:12b-it-qat"
         },
         "gpu": true,
-        "expose": 11434
+        "expose": [
+          {
+            "port": 11434,
+            "health_checks": [
+              {
+                "body": "{\"model\":\"gemma3:12b-it-qat\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}",
+                "path": "/v1/chat/completions",
+                "type": "http",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "expected_status": 200
+              }
+            ]
+          }
+        ]
       }
     }
-  ]
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 9
+    }
+  }
 } 

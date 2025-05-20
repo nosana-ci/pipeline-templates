@@ -1,8 +1,0 @@
-{
-  "id": "ollama-api",
-  "name": "Ollama API",
-  "description": "Run large language models locally with a simple API interface",
-  "category": ["API", "LLM"],
-  "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCnTSM4MHExKgIkfUheyQ04byO32OaUXmQVg&s",
-  "github_url": "https://github.com/jmorganca/ollama"
-} 
