@@ -7,9 +7,7 @@
       "id": "gemma3-27b",
       "args": {
         "image": "docker.io/ollama/ollama:0.6.6",
-        "entrypoint": [
-          "/bin/sh"
-        ],
+        "entrypoint": ["/bin/sh"],
         "cmd": [
           "-c",
           "ollama serve & sleep 5 && ollama pull $MODEL && tail -f /dev/null"
