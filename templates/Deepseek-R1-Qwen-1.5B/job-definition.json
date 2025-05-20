@@ -9,10 +9,10 @@
         "entrypoint": ["/bin/sh"],
         "cmd": [
           "-c",
-          "python3 -m vllm.entrypoints.openai.api_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --served-model-name R1-Qwen-1.5B --port 9000 --max-model-len 130000"
+          "python3 -m vllm.entrypoints.openai.api_server --model deepseek-ai/$MODEL --served-model-name $MODEL --port 9000 --max-model-len 130000"
         ],
         "env": {
-          "MODEL": "R1-Qwen-1.5B"
+          "MODEL": "DeepSeek-R1-Distill-Qwen-1.5B"
         },
         "gpu": true,
         "image": "docker.io/vllm/vllm-openai:v0.7.2",
@@ -21,7 +21,7 @@
             "port": 9000,
             "health_checks": [
               {
-                "body": "{\"model\":\"R1-Qwen-1.5B\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}",
+                "body": "{\"model\":\"DeepSeek-R1-Distill-Qwen-1.5B\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}",
                 "path": "/v1/chat/completions",
                 "type": "http",
                 "method": "POST",
