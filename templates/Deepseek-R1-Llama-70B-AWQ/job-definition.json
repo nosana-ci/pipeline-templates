@@ -4,7 +4,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "llama70b",
+      "id": "Llama70b",
       "args": {
         "entrypoint": ["/bin/sh"],
         "cmd": [

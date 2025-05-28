@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "tgi",
+      "id": "Tgi",
       "args": {
         "entrypoint": [],
         "cmd": [

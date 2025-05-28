@@ -4,7 +4,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "qwen32b",
+      "id": "Qwen32b",
       "args": {
         "entrypoint": ["/bin/sh"],
         "cmd": [

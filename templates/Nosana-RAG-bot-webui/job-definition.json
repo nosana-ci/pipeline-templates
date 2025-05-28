@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "nosana-chat-bot",
+      "id": "Nosana-chat-bot",
       "args": {
         "image": "docker.io/nosana/nosana-chat-bot:0.1.1",
         "cmd": [

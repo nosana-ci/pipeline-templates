@@ -7,7 +7,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "webui",
+      "id": "Webui",
       "args": {
         "cmd": [],
         "env": {

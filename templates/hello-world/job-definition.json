@@ -7,7 +7,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "hello-world",
+      "id": "Hello-world",
       "args": {
         "cmd": "echo hello world",
         "image": "ubuntu",

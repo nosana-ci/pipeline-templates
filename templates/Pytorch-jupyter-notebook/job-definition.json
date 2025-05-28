@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "pytorch",
+      "id": "Pytorch",
       "args": {
         "image": "docker.io/nosana/pytorch-jupyter:0.0.0",
         "cmd": [

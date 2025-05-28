@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "trainer",
+      "id": "Trainer",
       "args": {
         "image": "nosana/onetrainercomplete:0.0.0",
         "cmd": [

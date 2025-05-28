@@ -4,7 +4,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "gemma3-4b",
+      "id": "Gemma3-4b",
       "args": {
         "image": "docker.io/ollama/ollama:0.6.6",
         "entrypoint": ["/bin/sh"],

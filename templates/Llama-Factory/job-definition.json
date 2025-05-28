@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "factory",
+      "id": "Factory",
       "args": {
         "image": "docker.io/nosana/llama-factory:0.0.0",
         "cmd": [

@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "whisper",
+      "id": "Whisper",
       "args": {
         "image": "docker.io/onerahmet/openai-whisper-asr-webservice:v1.8.2-gpu",
         "cmd": [],
