@@ -7,7 +7,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "rocker-rstudio",
+      "id": "Rocker-rstudio",
       "args": {
         "image": "rocker/rstudio:4.4",
         "cmd": [],

@@ -7,7 +7,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "sd15",
+      "id": "SD15-auto",
       "args": {
         "cmd": [
           "/bin/sh", "-c", 

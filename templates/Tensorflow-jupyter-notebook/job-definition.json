@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "tf",
+      "id": "Tf",
       "args": {
         "cmd": [
           "jupyter",

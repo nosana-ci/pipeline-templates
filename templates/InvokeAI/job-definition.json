@@ -10,7 +10,7 @@
     "ops": [
       {
         "type": "container/run",
-        "id": "invoke",
+        "id": "Invoke",
         "args": {
           "cmd": [
             "/bin/sh",

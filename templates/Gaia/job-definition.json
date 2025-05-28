@@ -7,7 +7,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "gaia",
+      "id": "Gaia",
       "args": {
         "cmd": [],
         "expose": 8080,

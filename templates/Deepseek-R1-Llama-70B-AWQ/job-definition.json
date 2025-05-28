@@ -1,27 +1,45 @@
 {
   "version": "0.1",
   "type": "container",
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Llama70b",
+      "args": {
+        "entrypoint": ["/bin/sh"],
+        "cmd": [
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model Valdemardi/$MODEL --served-model-name $MODEL --port 9000 --max-model-len 100000"
+        ],
+        "env": {
+          "MODEL": "DeepSeek-R1-Distill-Llama-70B-AWQ"
+        },
+        "gpu": true,
+        "image": "docker.io/vllm/vllm-openai:v0.7.2",
+        "expose": [
+          {
+            "port": 9000,
+            "health_checks": [
+              {
+                "body": "{\"model\":\"DeepSeek-R1-Distill-Llama-70B-AWQ\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}",
+                "path": "/v1/chat/completions",
+                "type": "http",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "expected_status": 200
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
       "required_vram": 40
     }
-  },
-  "ops": [
-    {
-      "type": "container/run",
-      "id": "llama70b",
-      "args": {
-        "entrypoint": [],
-        "cmd": [
-          "/bin/sh",
-          "-c",
-          "python3 -m vllm.entrypoints.openai.api_server --model Valdemardi/DeepSeek-R1-Distill-Llama-70B-AWQ --served-model-name R1-Llama-70B-AWQ --port 9000 --max-model-len 100000"
-        ],
-        "image": "docker.io/vllm/vllm-openai:v0.7.2",
-        "gpu": true,
-        "expose": 9000
-      }
-    }
-  ]
+  }
 } 

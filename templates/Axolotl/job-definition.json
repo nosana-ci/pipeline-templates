@@ -10,7 +10,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "axo",
+      "id": "Axo",
       "args": {
         "image": "docker.io/winglian/axolotl-cloud:main-20250221",
         "cmd": [
