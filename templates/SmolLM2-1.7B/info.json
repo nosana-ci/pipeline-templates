@@ -1,0 +1,9 @@
+{
+  "id": "smollm2-1.7b-instruct",
+  "name": "SmolLM2 1.7B Instruct",
+  "description": "OpenAI-compatible API for the 1.7B parameter SmolLM2-Instruct model from HuggingFace",
+  "category": ["API", "LLM"],
+  "icon": "https://cdn-avatars.huggingface.co/v1/production/uploads/651e96991b97c9f33d26bde6/e4VK7uW5sTeCYupD0s_ob.png",
+  "github_url": "https://github.com/huggingface/smollm"
+}
+  
