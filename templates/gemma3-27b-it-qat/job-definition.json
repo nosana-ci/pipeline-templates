@@ -29,7 +29,7 @@
                   "Content-Type": "application/json"
                 },
                 "expected_status": 200,
-                "continuous": true
+                "continuous": false
               }
             ]
           }
