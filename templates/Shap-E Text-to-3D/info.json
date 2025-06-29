@@ -1,0 +1,7 @@
+{
+    "id": "shap-e-text-to-3d",
+    "name": "Shap-E Text to 3D Generator",
+    "description": "Generate 3D models from text prompts using OpenAI's Shap-E model from Huggingface",
+    "category": ["AI", "3D Generation", "Huggingface"],
+    "icon": "https://gcdnb.pbrd.co/images/fVCxCflg7jxU.png"
+  }

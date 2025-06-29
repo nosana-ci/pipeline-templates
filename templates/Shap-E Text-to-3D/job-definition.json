@@ -1,0 +1,28 @@
+{
+  "ops": [
+    {
+      "id": "shap-E",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "apt-get update && apt-get install -y git && git clone https://github.com/eskayML/shap-E-Text-to-3D && cd shap-E-Text-to-3D && pip install -r requirements.txt && pip install huggingface-hub && mkdir openai && cd openai && huggingface-cli download openai/shap-e --local-dir . --local-dir-use-symlinks False && cd ../ && python app.py --host 0.0.0.0 --port 7860"
+        ],
+        "env": {},
+        "gpu": true,
+        "image": "pytorch/pytorch:2.0.0-cuda11.7-cudnn8-runtime",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 16
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+}
