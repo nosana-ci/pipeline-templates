@@ -3,7 +3,7 @@
 
 # Configuration
 REGISTRY := nosana
-TAG := latest
+TAG := 2.0.0
 SCRIPT := ./build-images.sh
 
 # Default target

@@ -4,6 +4,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@nosana/cli": "^1.0.59",
     "@nosana/sdk": "^0.4.4"
   }
 }

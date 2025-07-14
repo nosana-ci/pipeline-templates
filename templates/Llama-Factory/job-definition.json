@@ -12,7 +12,7 @@
       "type": "container/run",
       "id": "Factory",
       "args": {
-        "image": "docker.io/nosana/llama-factory:0.0.0",
+        "image": "docker.io/nosana/llama-factory:2.0.0",
         "cmd": [
           "/bin/sh",
           "-c",

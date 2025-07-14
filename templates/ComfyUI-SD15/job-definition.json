@@ -7,7 +7,7 @@
         "id": "SD15-comfy",
         "args": {
           "cmd": [],
-          "image": "docker.io/nosana/comfyui:0.0.0",
+          "image": "docker.io/nosana/comfyui:2.0.0",
           "gpu": true,
           "expose": 8188,
           "resources": [

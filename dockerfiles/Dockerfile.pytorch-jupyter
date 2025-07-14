@@ -1,23 +1,6 @@
 FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
-
-# ---------------------------------------------------------------------------
-# 1. Extra compatibility layer so the container starts even on slightly older
-#    drivers (down to 525) that some Nosana nodes may still run.
-# ---------------------------------------------------------------------------
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends cuda-compat-12-8 && \
-    rm -rf /var/lib/apt/lists/*
-
-# ---------------------------------------------------------------------------
-# 2. Common Python utilities your derived templates might expect.
-#    (Add or remove as needed.)
-# ---------------------------------------------------------------------------
 RUN pip install --no-cache-dir --upgrade pip \
     jupyterlab==4.* tensorboard
-
-# ---------------------------------------------------------------------------
-# 3. Default workspace + command
-# ---------------------------------------------------------------------------
 WORKDIR /workspace
 EXPOSE 8888
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--ServerApp.token=''", "--ServerApp.password=''"]

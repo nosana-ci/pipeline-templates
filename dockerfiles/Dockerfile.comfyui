@@ -1,36 +1,21 @@
-# Use the PyTorch image as the base
 FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
-
-# Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PIP_PREFER_BINARY=1
 ENV ROOT=/comfyui
 ENV NVIDIA_VISIBLE_DEVICES=all
-
-# Install system dependencies including compatibility layer
 RUN apt-get update && apt-get install -y \
-    cuda-compat-12-8 \
     git \
     ffmpeg \
     libgl1-mesa-dev \
     libglib2.0-0 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-# Set up ComfyUI
 WORKDIR /
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git ${ROOT} && \
     cd ${ROOT} && \
     git checkout master && \
     git reset --hard 276f8fce9f5a80b500947fb5745a4dde9e84622d && \
     pip install -r requirements.txt
-
-# Set working directory
 WORKDIR ${ROOT}
-
-# Expose port
 EXPOSE 8188
-
-# Default command to start ComfyUI
 CMD ["python", "main.py", "--listen", "0.0.0.0", "--port", "8188"]
-

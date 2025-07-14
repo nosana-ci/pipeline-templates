@@ -7,7 +7,7 @@ set -e  # Exit on any error
 
 # Configuration
 REGISTRY="nosana"
-TAG="latest"
+TAG="2.0.0"
 DOCKERFILES_DIR="./dockerfiles"
 
 # Colors for output
@@ -22,8 +22,6 @@ IMAGES=(
     "pytorch-jupyter:pytorch-jupyter:PyTorch Jupyter Notebook environment"
     "tensorflow-jupyter:tensorflow-jupyter:TensorFlow Jupyter Notebook environment"
     "comfyui:comfyui:ComfyUI node-based image generation"
-    "oobabooga:oobabooga:Oobabooga text generation web UI"
-    "invokeai:invokeai:InvokeAI Stable Diffusion image generation"
     "whisper-asr:whisper-asr:OpenAI Whisper speech recognition API"
     "llama-factory:llama-factory:LLaMA Factory LLM fine-tuning"
     "vscode-server:vscode-server:Browser-based VS Code environment"
@@ -75,7 +73,7 @@ show_usage() {
     echo "  -h, --help     Show this help message"
     echo "  -l, --list     List available images"
     echo "  -r, --registry Registry prefix (default: nosana)"
-    echo "  -t, --tag      Image tag (default: latest)"
+    echo "  -t, --tag      Image tag (default: 2.0.0)"
     echo "  --push         Push images to registry after building"
     echo "  --parallel     Build images in parallel (experimental)"
     echo ""

@@ -14,7 +14,7 @@
       "args": {
         "cmd": [
           "jupyter",
-          "notebook",
+          "lab",
           "--ip=0.0.0.0",
           "--port=8888",
           "--no-browser",
@@ -23,7 +23,7 @@
           "--ServerApp.password=''"
         ],
         "expose": 8888,
-        "image": "tensorflow/tensorflow:2.18.0-gpu-jupyter",
+        "image": "docker.io/nosana/tensorflow-jupyter:2.0.0",
         "gpu": true
       }
     }

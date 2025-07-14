@@ -1,37 +1,16 @@
 FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
-
-# ---------------------------------------------------------------------------
-# 1. Extra compatibility layer so the container starts even on slightly older
-#    drivers (down to 525) that some Nosana nodes may still run.
-# ---------------------------------------------------------------------------
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    cuda-compat-12-8 \
     curl \
     git \
     sudo \
     wget \
     && rm -rf /var/lib/apt/lists/*
-
-# ---------------------------------------------------------------------------
-# 2. Install code-server
-# ---------------------------------------------------------------------------
 RUN curl -fsSL https://code-server.dev/install.sh | sh
-
-# ---------------------------------------------------------------------------
-# 3. Common Python utilities your derived templates might expect.
-# ---------------------------------------------------------------------------
 RUN pip install --no-cache-dir --upgrade pip \
     jupyterlab==4.* tensorboard
-
-# ---------------------------------------------------------------------------
-# 4. Default workspace + command
-# ---------------------------------------------------------------------------
 WORKDIR /workspace
 EXPOSE 8080
-
-# Create a simple config
 RUN mkdir -p ~/.config/code-server && \
     echo "bind-addr: 0.0.0.0:8080\nauth: none\ncert: false" > ~/.config/code-server/config.yaml
-
 CMD ["code-server", "--bind-addr", "0.0.0.0:8080", "--auth", "none"]
