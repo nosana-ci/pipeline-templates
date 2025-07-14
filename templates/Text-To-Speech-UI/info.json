@@ -2,7 +2,7 @@
   "id": "tts-webui",
   "name": "Text-To-Speech UI",
   "description": "A web interface for generating speech from text using various TTS models",
-  "category": ["Web UI", "API"],
+  "category": ["Web UI", "API", "community"],
   "icon": "https://cdn-icons-png.flaticon.com/512/8984/8984813.png",
   "github_url": "https://github.com/coqui-ai/TTS"
 } 

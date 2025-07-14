@@ -1,0 +1,54 @@
+FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
+
+# ---------------------------------------------------------------------------
+# 1. Extra compatibility layer so the container starts even on slightly older
+#    drivers (down to 525) that some Nosana nodes may still run.
+# ---------------------------------------------------------------------------
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends cuda-compat-12-8 git ffmpeg && \
+    rm -rf /var/lib/apt/lists/*
+
+# ---------------------------------------------------------------------------
+# 2. Common Python utilities your derived templates might expect.
+#    (Add or remove as needed.)
+# ---------------------------------------------------------------------------
+RUN pip install --no-cache-dir --upgrade pip
+
+# ---------------------------------------------------------------------------
+# 3. Install Whisper ASR
+# ---------------------------------------------------------------------------
+RUN pip install --no-cache-dir openai-whisper==2025.5.* flask gunicorn
+
+# ---------------------------------------------------------------------------
+# 4. Create simple Flask API server
+# ---------------------------------------------------------------------------
+RUN mkdir -p /app
+WORKDIR /app
+
+# Create a simple Whisper API server
+RUN echo 'from flask import Flask, request, jsonify\n\
+import whisper\n\
+import tempfile\n\
+import os\n\
+\n\
+app = Flask(__name__)\n\
+model = whisper.load_model("base")\n\
+\n\
+@app.route("/transcribe", methods=["POST"])\n\
+def transcribe():\n\
+    if "audio" not in request.files:\n\
+        return jsonify({"error": "No audio file"}), 400\n\
+    \n\
+    audio_file = request.files["audio"]\n\
+    with tempfile.NamedTemporaryFile(delete=False) as tmp_file:\n\
+        audio_file.save(tmp_file.name)\n\
+        result = model.transcribe(tmp_file.name)\n\
+        os.unlink(tmp_file.name)\n\
+    \n\
+    return jsonify({"text": result["text"]})\n\
+\n\
+if __name__ == "__main__":\n\
+    app.run(host="0.0.0.0", port=9000)' > app.py
+
+EXPOSE 9000
+CMD ["python", "app.py"]

@@ -1,0 +1,41 @@
+FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
+
+# ---------------------------------------------------------------------------
+# 1. Extra compatibility layer so the container starts even on slightly older
+#    drivers (down to 525) that some Nosana nodes may still run.
+# ---------------------------------------------------------------------------
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    cuda-compat-12-8 \
+    gdebi-core \
+    wget \
+    r-base \
+    r-base-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# ---------------------------------------------------------------------------
+# 2. Install RStudio Server
+# ---------------------------------------------------------------------------
+RUN wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.12.1-402-amd64.deb && \
+    gdebi --non-interactive rstudio-server-2023.12.1-402-amd64.deb && \
+    rm rstudio-server-2023.12.1-402-amd64.deb
+
+# ---------------------------------------------------------------------------
+# 3. Create user for RStudio
+# ---------------------------------------------------------------------------
+RUN useradd -m -s /bin/bash rstudio && \
+    echo "rstudio:rstudio" | chpasswd
+
+# ---------------------------------------------------------------------------
+# 4. Configure RStudio Server
+# ---------------------------------------------------------------------------
+RUN echo "server-daemonize=0" >> /etc/rstudio/rserver.conf && \
+    echo "www-port=8787" >> /etc/rstudio/rserver.conf && \
+    echo "www-address=0.0.0.0" >> /etc/rstudio/rserver.conf
+
+# ---------------------------------------------------------------------------
+# 5. Default workspace + command
+# ---------------------------------------------------------------------------
+WORKDIR /home/rstudio
+EXPOSE 8787
+CMD ["/usr/lib/rstudio-server/bin/rserver", "--server-daemonize=0"]

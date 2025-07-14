@@ -2,7 +2,7 @@
   "id": "axolotl",
   "name": "Axolotl finetuning LLM's",
   "description": "A flexible framework for fine-tuning language models with multiple configurations",
-  "category": ["Web UI", "API", "LLM Fine-tuning"],
+  "category": ["Web UI", "API", "LLM Fine-tuning", "community"],
   "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Axolotl/axolotl-nobackground.png",
   "github_url": "https://github.com/OpenAccess-AI-Collective/axolotl"
 }

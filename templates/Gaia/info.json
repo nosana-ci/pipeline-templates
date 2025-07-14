@@ -3,7 +3,7 @@
   "name": "Gaia",
   "description": "Gaia is a decentralized, open-source AI infrastructure that empowers developers to seamlessly create and deploy AI agents across diverse knowledge bases. We are an inference layer for AI deployment.",
   "category": [
-    "LLM"
+    "LLM", "community"
   ],
   "icon": "https://www.gaianet.ai/images/logo-big.png",
   "github_url": "https://github.com/gaianet-ai"

@@ -1,0 +1,33 @@
+FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
+
+# ---------------------------------------------------------------------------
+# 1. Extra compatibility layer so the container starts even on slightly older
+#    drivers (down to 525) that some Nosana nodes may still run.
+# ---------------------------------------------------------------------------
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    cuda-compat-12-8 \
+    git \
+    wget \
+    libgl1 \
+    libglib2.0-0 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# ---------------------------------------------------------------------------
+# 2. Common Python utilities your derived templates might expect.
+# ---------------------------------------------------------------------------
+RUN pip install --no-cache-dir --upgrade pip
+
+# ---------------------------------------------------------------------------
+# 3. Install Oobabooga text-generation-webui
+# ---------------------------------------------------------------------------
+RUN git clone https://github.com/oobabooga/text-generation-webui.git /opt/text-generation-webui
+WORKDIR /opt/text-generation-webui
+RUN pip install --no-cache-dir -r requirements.txt
+
+# ---------------------------------------------------------------------------
+# 4. Default workspace + command
+# ---------------------------------------------------------------------------
+EXPOSE 7860
+CMD ["python", "server.py", "--listen", "--listen-host", "0.0.0.0", "--listen-port", "7860"]
