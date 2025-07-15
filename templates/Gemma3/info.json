@@ -1,0 +1,28 @@
+{
+  "id": "gemma3",
+  "name": "Gemma 3 Models",
+  "description": "Google's Gemma 3 instruction-tuned language models with quantization optimization",
+  "category": ["API", "LLM"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png",
+  "github_url": "https://github.com/google-deepmind/gemma",
+  "variants": [
+    {
+      "id": "4b",
+      "name": "4B IT QAT",
+      "description": "4B parameter model with instruction tuning and quantization",
+      "job_definition": "job-definition-4b.json"
+    },
+    {
+      "id": "12b",
+      "name": "12B IT QAT", 
+      "description": "12B parameter model with instruction tuning and quantization",
+      "job_definition": "job-definition-12b.json"
+    },
+    {
+      "id": "27b",
+      "name": "27B IT QAT",
+      "description": "27B parameter model with instruction tuning and quantization",
+      "job_definition": "job-definition-27b.json"
+    }
+  ]
+}

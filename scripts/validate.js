@@ -35,6 +35,32 @@ const MAX_FIELD_LENGTHS = {
   icon: 256
 };
 
+// Validate a single job definition file
+async function validateJobDefinitionFile(folder, jobDefPath) {
+  const template = fs.readFileSync(jobDefPath);
+  const jobDefinition = JSON.parse(template.toString());
+  
+  // Validate metadata structure if present
+  if (jobDefinition.meta) {
+    if (jobDefinition.meta.trigger && jobDefinition.meta.trigger !== META_FIELDS.trigger) {
+      throw new Error(`${folder}: If 'trigger' is specified in meta, it must be '${META_FIELDS.trigger}' in ${path.basename(jobDefPath)}`);
+    }
+  }
+
+  // Create a copy of job definition without meta for SDK validation
+  const jobDefForValidation = {
+    ...jobDefinition,
+    meta: undefined
+  };
+  delete jobDefForValidation.meta;
+  
+  const result = validateJobDefinition(jobDefForValidation);
+  if (!result.success) {
+    const error = result.errors[0];
+    throw new Error(`${folder}: ${error.path} - expected ${error.expected}, but found ${JSON.stringify(error.value)} in ${path.basename(jobDefPath)}`);
+  }
+}
+
 // Validate a single template directory
 async function validateTemplate(folder) {
   const templatePath = path.join('./templates', folder);
@@ -108,30 +134,6 @@ async function validateTemplate(folder) {
     }
   }
 
-  // Validate job definition
-  const template = fs.readFileSync(path.join(templatePath, 'job-definition.json'));
-  const jobDefinition = JSON.parse(template.toString());
-  
-  // Validate metadata structure if present
-  if (jobDefinition.meta) {
-    if (jobDefinition.meta.trigger && jobDefinition.meta.trigger !== META_FIELDS.trigger) {
-      throw new Error(`${folder}: If 'trigger' is specified in meta, it must be '${META_FIELDS.trigger}' in job-definition.json`);
-    }
-  }
-
-  // Create a copy of job definition without meta for SDK validation
-  const jobDefForValidation = {
-    ...jobDefinition,
-    meta: undefined
-  };
-  delete jobDefForValidation.meta;
-  
-  const result = validateJobDefinition(jobDefForValidation);
-  if (!result.success) {
-    const error = result.errors[0];
-    throw new Error(`${folder}: ${error.path} - expected ${error.expected}, but found ${JSON.stringify(error.value)}`);
-  }
-
   // Check field lengths
   for (const [field, maxLength] of Object.entries(MAX_FIELD_LENGTHS)) {
     if (info[field] && info[field].length > maxLength) {
@@ -139,6 +141,45 @@ async function validateTemplate(folder) {
         `${folder}: Field '${field}' exceeds maximum length of ${maxLength} characters in info.json`
       );
     }
+  }
+
+  // Validate job definitions - support both single and multiple variants
+  if (info.variants && Array.isArray(info.variants)) {
+    // Multiple variants mode
+    if (info.variants.length === 0) {
+      throw new Error(`${folder}: 'variants' array cannot be empty`);
+    }
+
+    const variantIds = new Set();
+    for (const variant of info.variants) {
+      // Validate required variant fields
+      if (!variant.id || !variant.name || !variant.job_definition) {
+        throw new Error(`${folder}: Each variant must have 'id', 'name', and 'job_definition' fields`);
+      }
+
+      // Check for unique variant IDs
+      if (variantIds.has(variant.id)) {
+        throw new Error(`${folder}: Duplicate variant ID '${variant.id}'`);
+      }
+      variantIds.add(variant.id);
+
+      // Validate job definition file exists
+      const jobDefPath = path.join(templatePath, variant.job_definition);
+      if (!fs.existsSync(jobDefPath)) {
+        throw new Error(`${folder}: Job definition file '${variant.job_definition}' not found for variant '${variant.id}'`);
+      }
+
+      // Validate the job definition file
+      await validateJobDefinitionFile(folder, jobDefPath);
+    }
+  } else {
+    // Single job definition mode (backward compatibility)
+    const jobDefPath = path.join(templatePath, 'job-definition.json');
+    if (!fs.existsSync(jobDefPath)) {
+      throw new Error(`${folder}: Missing job-definition.json file`);
+    }
+
+    await validateJobDefinitionFile(folder, jobDefPath);
   }
 
   console.log(`✓ ${folder} template is valid!`);

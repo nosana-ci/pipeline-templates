@@ -1,0 +1,22 @@
+{
+  "id": "deepseek-janus-pro",
+  "name": "DeepSeek Janus Pro Models",
+  "description": "Multimodal vision-language models for image understanding and generation",
+  "category": ["Web UI", "API", "Image Generation"],
+  "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
+  "github_url": "https://github.com/deepseek-ai/Janus",
+  "variants": [
+    {
+      "id": "1b",
+      "name": "1B Model",
+      "description": "Lightweight 1B parameter multimodal model",
+      "job_definition": "job-definition-1b.json"
+    },
+    {
+      "id": "7b",
+      "name": "7B Model",
+      "description": "Standard 7B parameter multimodal model with enhanced capabilities",
+      "job_definition": "job-definition-7b.json"
+    }
+  ]
+}

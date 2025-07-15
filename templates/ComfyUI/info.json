@@ -1,0 +1,28 @@
+{
+  "id": "comfyui",
+  "name": "ComfyUI Image Generation",
+  "description": "Powerful node-based interface for AI image generation with multiple model options",
+  "category": ["Web UI", "API", "Image Generation"],
+  "icon": "https://avatars.githubusercontent.com/u/121283862?s=48&v=4",
+  "github_url": "https://github.com/comfyanonymous/ComfyUI",
+  "variants": [
+    {
+      "id": "sd15",
+      "name": "Stable Diffusion 1.5",
+      "description": "Classic SD 1.5 model - fast and reliable",
+      "job_definition": "job-definition-sd15.json"
+    },
+    {
+      "id": "sdxl",
+      "name": "Stable Diffusion XL",
+      "description": "High-resolution SDXL model - better quality",
+      "job_definition": "job-definition-sdxl.json"
+    },
+    {
+      "id": "flux",
+      "name": "Flux Schnell FP8",
+      "description": "Latest Flux model - fastest generation",
+      "job_definition": "job-definition-flux.json"
+    }
+  ]
+}

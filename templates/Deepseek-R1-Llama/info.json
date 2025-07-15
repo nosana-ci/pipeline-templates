@@ -1,0 +1,22 @@
+{
+  "id": "deepseek-r1-llama",
+  "name": "DeepSeek R1 Llama Models",
+  "description": "High-performance inference API for DeepSeek R1 Llama language models with multiple size options",
+  "category": ["API", "LLM"],
+  "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
+  "github_url": "https://github.com/deepseek-ai/DeepSeek-R1",
+  "variants": [
+    {
+      "id": "8b",
+      "name": "8B Model",
+      "description": "Standard 8B parameter Llama model - balanced performance",
+      "job_definition": "job-definition-8b.json"
+    },
+    {
+      "id": "70b-awq",
+      "name": "70B AWQ Model",
+      "description": "Large 70B parameter Llama model with AWQ quantization",
+      "job_definition": "job-definition-70b-awq.json"
+    }
+  ]
+}

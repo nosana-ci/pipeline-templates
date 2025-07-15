@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "SD15-comfy",
+      "args": {
+        "cmd": [],
+        "image": "docker.io/nosana/comfyui:2.0.5",
+        "gpu": true,
+        "expose": 8188,
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/stable-diffusion/1.5",
+            "target": "/comfyui/models/checkpoints"
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 4
+    }
+  }
+}

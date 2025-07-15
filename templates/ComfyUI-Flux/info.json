@@ -1,8 +1,0 @@
-{
-  "id": "comfyui-flux",
-  "name": "ComfyUI with Flux Schnel FP8",
-  "description": "A powerful node-based interface for Flux Schnel FP8 optimized image generation",
-  "category": ["Web UI", "API", "Image Generation"],
-  "icon": "https://www.reddit.com/r/StableDiffusion/comments/1khb702/new_comfyui_logo_icon",
-  "github_url": "https://github.com/comfyanonymous/ComfyUI"
-} 
