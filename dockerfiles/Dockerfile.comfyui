@@ -11,11 +11,24 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /
-RUN git clone https://github.com/comfyanonymous/ComfyUI.git ${ROOT} && \
-    cd ${ROOT} && \
-    git checkout master && \
-    git reset --hard 276f8fce9f5a80b500947fb5745a4dde9e84622d && \
-    pip install -r requirements.txt
+RUN git clone https://github.com/comfyanonymous/ComfyUI.git ${ROOT}
 WORKDIR ${ROOT}
+RUN git checkout master
+RUN pip install --no-cache-dir --disable-pip-version-check \
+    transformers==4.44.0 \
+    tokenizers==0.19.1 \
+    safetensors==0.4.3 \
+    einops==0.8.0 \
+    scipy==1.13.1 \
+    aiohttp==3.9.5 \
+    Pillow \
+    PyYAML \
+    tqdm \
+    psutil
+RUN pip install --no-cache-dir torchsde sentencepiece kornia spandrel soundfile
+RUN pip install --no-cache-dir comfyui-frontend-package comfyui-workflow-templates comfyui-embedded-docs
+RUN pip install --no-cache-dir pydantic-settings alembic av
+RUN cd custom_nodes && \
+    git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 EXPOSE 8188
 CMD ["python", "main.py", "--listen", "0.0.0.0", "--port", "8188"]

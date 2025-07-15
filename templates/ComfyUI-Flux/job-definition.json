@@ -7,14 +7,14 @@
         "id": "Flux-comfy",
         "args": {
           "cmd": [],
-          "image": "docker.io/nosana/comfyui:2.0.0",
+          "image": "docker.io/nosana/comfyui:2.0.5",
           "gpu": true,
           "expose": 8188,
           "resources": [
             {
               "type": "S3",
               "url": "https://models.nosana.io/flux/schnell",
-              "target": "/root/ComfyUI/models/checkpoints"
+              "target": "/comfyui/models/checkpoints"
             }
           ]
         }

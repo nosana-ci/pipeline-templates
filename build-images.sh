@@ -23,7 +23,6 @@ IMAGES=(
     "tensorflow-jupyter:tensorflow-jupyter:TensorFlow Jupyter Notebook environment"
     "comfyui:comfyui:ComfyUI node-based image generation"
     "whisper-asr:whisper-asr:OpenAI Whisper speech recognition API"
-    "llama-factory:llama-factory:LLaMA Factory LLM fine-tuning"
     "vscode-server:vscode-server:Browser-based VS Code environment"
     "rstudio:rstudio:RStudio Server for R development"
 )
