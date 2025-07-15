@@ -2,7 +2,7 @@
   "id": "gemma3",
   "name": "Gemma 3 Models",
   "description": "Google's Gemma 3 instruction-tuned language models with quantization optimization",
-  "category": ["API", "LLM"],
+  "category": ["Official", "API", "LLM"],
   "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png",
   "github_url": "https://github.com/google-deepmind/gemma",
   "variants": [

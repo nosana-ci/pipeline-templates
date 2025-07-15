@@ -2,7 +2,7 @@
   "id": "pytorch-jupyter",
   "name": "Pytorch Jupyter Notebook",
   "description": "Jupyter Notebook Service",
-  "category": ["Web UI", "API"],
+  "category": ["Official", "Web UI", "API"],
   "icon": "https://static-00.iconduck.com/assets.00/pytorch-icon-1694x2048-jgwjy3ne.png",
   "github_url": "https://github.com/pytorch/pytorch"
 }

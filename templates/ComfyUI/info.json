@@ -2,7 +2,7 @@
   "id": "comfyui",
   "name": "ComfyUI Image Generation",
   "description": "Powerful node-based interface for AI image generation with multiple model options",
-  "category": ["Web UI", "API", "Image Generation"],
+  "category": ["Official", "Web UI", "API", "Image Generation"],
   "icon": "https://avatars.githubusercontent.com/u/121283862?s=48&v=4",
   "github_url": "https://github.com/comfyanonymous/ComfyUI",
   "variants": [

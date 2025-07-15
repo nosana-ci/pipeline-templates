@@ -2,7 +2,7 @@
   "id": "forge-sd",
   "name": "Forge Stable Diffusion",
   "description": "An enhanced web interface for Stable Diffusion with additional features",
-  "category": ["Web UI", "API", "Image Generation", "community"],
+  "category": ["Web UI", "API", "Image Generation"],
   "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Forge-stable-diffusion-1.5/forge.png",
   "github_url": "https://github.com/lllyasviel/stable-diffusion-webui-forge "
 }
