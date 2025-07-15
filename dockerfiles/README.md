@@ -14,7 +14,6 @@ FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
 - Pre-compiled kernels for SM 100 (Blackwell B100/B200) **and** SM 120 (RTX 50-series)
 - Supports all earlier architectures (sm_50 … sm_90)
 - Works on hosts with NVIDIA driver ≥ 525.x (R570+ recommended)
-- Includes `cuda-compat-12-8` for compatibility with slightly older drivers
 
 ## Supported Template Dockerfiles
 
