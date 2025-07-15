@@ -1,5 +1,5 @@
 {
-  "id": "deepseek-janus-pro",
+  "id": "deepseek-janus",
   "name": "DeepSeek Janus Pro Models",
   "description": "Multimodal vision-language models for image understanding and generation",
   "category": ["Official", "Web UI", "API", "Image Generation"],

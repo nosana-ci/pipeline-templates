@@ -1,5 +1,5 @@
 {
-  "id": "deepseek-r1-llama",
+  "id": "deepseek-llama",
   "name": "DeepSeek R1 Llama Models",
   "description": "High-performance inference API for DeepSeek R1 Llama language models with multiple size options",
   "category": ["Official", "API", "LLM"],
