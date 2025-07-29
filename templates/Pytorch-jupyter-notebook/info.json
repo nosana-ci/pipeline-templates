@@ -1,8 +1,6 @@
 {
   "id": "pytorch-jupyter",  
   "name": "Pytorch Jupyter Notebook",
-  "description": "Jupyter Notebook Service",
   "category": ["Official", "Web UI", "API"],
-  "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhyOAyEZ7rQuXiP6Kxx0B9y_aJ59fRniUVRw&s",
-  "github_url": "https://github.com/pytorch/pytorch"
+  "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhyOAyEZ7rQuXiP6Kxx0B9y_aJ59fRniUVRw&s"
 }

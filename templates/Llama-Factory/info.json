@@ -1,8 +1,6 @@
 {
   "id": "llama-factory",
   "name": "Llama Factory",
-  "description": "A comprehensive framework for fine-tuning large language models",
   "category": ["Web UI", "API", "LLM Fine-tuning"],
-  "icon": "https://devocean.sk.com/thumnail/2024/6/10/3922058082f048e98d3a63eaa4ab1053020d501b48a69ab8ba4c2fda8883086a.png",
-  "github_url": "https://github.com/hiyouga/LLaMA-Factory"
+  "icon": "https://devocean.sk.com/thumnail/2024/6/10/3922058082f048e98d3a63eaa4ab1053020d501b48a69ab8ba4c2fda8883086a.png"
 } 

@@ -1,10 +1,8 @@
 {
   "id": "comfyui",
   "name": "ComfyUI Image Generation",
-  "description": "Powerful node-based interface for AI image generation with multiple model options",
   "category": ["Official", "Web UI", "API", "Image Generation"],
   "icon": "https://framerusercontent.com/images/3cNQMWKzIhIrQ5KErBm7dSmbd2w.png",
-  "github_url": "https://github.com/comfyanonymous/ComfyUI",
   "variants": [
     {
       "id": "sd15",
