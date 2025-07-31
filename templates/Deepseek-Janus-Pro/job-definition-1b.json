@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Janus1b",
+      "args": {
+        "cmd": [],
+        "gpu": true,
+        "image": "docker.io/nosana/janus-pro:0.0.0",
+        "expose": 7860,
+        "resources": [
+          {
+            "url": "https://models.nosana.io/hugging-face/deepseek/janus/models-deepseek-ai-Janus-Pro-1B",
+            "type": "S3",
+            "target": "/Janus/models/models--deepseek-ai--Janus-Pro-1B",
+            "allowWrite": true
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 3
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "id": "llama8b",
-  "name": "DeepSeek R1 Llama 8B",
-  "description": "High-performance inference API for the 8B parameter Llama language model",
-  "category": ["API", "LLM"],
-  "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
-  "github_url": "https://github.com/deepseek-ai/DeepSeek-R1"
-} 

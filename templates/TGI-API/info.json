@@ -1,8 +1,6 @@
 {
   "id": "tgi-api",
   "name": "Text Generation Inference API",
-  "description": "Hugging Face's Text Generation Inference (TGI) service for optimized text generation",
   "category": ["API", "LLM"],
-  "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
-  "github_url": "https://github.com/huggingface/text-generation-inference"
+  "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
 } 

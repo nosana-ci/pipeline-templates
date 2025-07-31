@@ -1,8 +1,6 @@
 {
   "id": "kohya-ss",
   "name": "Kohya SS GUI",
-  "description": "A user-friendly interface for training and fine-tuning Stable Diffusion models",
   "category": ["Web UI", "API", "Image Generation Fine-tuning"],
-  "icon": "https://avatars.githubusercontent.com/u/7474674?v=4",
-  "github_url": "https://github.com/bmaltais/kohya_ss"
+  "icon": "https://avatars.githubusercontent.com/u/7474674?v=4"
 }

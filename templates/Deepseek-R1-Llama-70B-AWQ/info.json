@@ -1,8 +1,0 @@
-{
-  "id": "llama70b-awq",
-  "name": "DeepSeek R1 Llama 70B AWQ",
-  "description": "High-performance inference API for the quantized 70B parameter Llama model",
-  "category": ["API", "LLM"],
-  "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
-  "github_url": "https://github.com/deepseek-ai/DeepSeek-R1"
-} 

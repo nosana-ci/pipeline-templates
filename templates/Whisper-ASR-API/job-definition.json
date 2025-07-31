@@ -12,14 +12,11 @@
       "type": "container/run",
       "id": "Whisper",
       "args": {
-        "image": "docker.io/onerahmet/openai-whisper-asr-webservice:v1.8.2-gpu",
+        "image": "docker.io/nosana/whisper-asr:2.0.0",
         "cmd": [],
         "gpu": true,
         "expose": 9000,
-        "env": {
-          "ASR_MODEL": "base",
-          "ASR_ENGINE": "openai_whisper"
-        }
+        "env": {}
       }
     }
   ]

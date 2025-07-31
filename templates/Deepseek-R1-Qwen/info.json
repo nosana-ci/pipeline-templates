@@ -1,0 +1,32 @@
+{
+  "id": "deepseek-r1-qwen",
+  "name": "DeepSeek R1 Qwen Models",
+  "category": ["Official", "API", "LLM"],
+  "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
+  "variants": [
+    {
+      "id": "1.5b",
+      "name": "1.5B Model",
+      "description": "Lightweight 1.5B parameter model - lowest VRAM requirement",
+      "job_definition": "job-definition-1.5b.json"
+    },
+    {
+      "id": "7b",
+      "name": "7B Model",
+      "description": "Standard 7B parameter model - balanced performance",
+      "job_definition": "job-definition-7b.json"
+    },
+    {
+      "id": "14b",
+      "name": "14B Model",
+      "description": "Large 14B parameter model - high performance",
+      "job_definition": "job-definition-14b.json"
+    },
+    {
+      "id": "32b",
+      "name": "32B Model",
+      "description": "Extra large 32B parameter model - highest performance",
+      "job_definition": "job-definition-32b.json"
+    }
+  ]
+}

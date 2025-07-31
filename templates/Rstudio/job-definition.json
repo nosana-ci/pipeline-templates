@@ -9,15 +9,11 @@
       "type": "container/run",
       "id": "Rocker-rstudio",
       "args": {
-        "image": "rocker/rstudio:4.4",
+        "image": "docker.io/nosana/rstudio:2.0.0",
         "cmd": [],
         "gpu": true,
         "expose": 8787,
-        "env": {
-          "USER": "rstudio",
-          "PASSWORD": "password",
-          "RUNROOTLESS": "false"
-        }
+        "env": {}
       }
     }
   ]

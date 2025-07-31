@@ -1,8 +1,0 @@
-{
-  "id": "comfyui-sd15",
-  "name": "ComfyUI with Stable Diffusion 1.5",
-  "description": "A powerful node-based interface for Stable Diffusion 1.5 image generation",
-  "category": ["Web UI", "API", "Image Generation"],
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/ComfyUI_Logo.png/599px-ComfyUI_Logo.png?20240610081416",
-  "github_url": "https://github.com/comfyanonymous/ComfyUI"
-} 

@@ -1,7 +1,6 @@
 {
   "id": "nosana-rag",
   "name": "Nosana RAG Bot WebUI",
-  "description": "A web UI for Nosana's Retrieval-Augmented Generation (RAG) bot.",
   "category": ["Web UI", "API"],
   "icon": "https://nosana.io/img/Nosana_Logomark_color.png"
 }

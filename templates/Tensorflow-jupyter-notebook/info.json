@@ -1,8 +1,6 @@
 {
   "id": "tf-jupyter",
   "name": "Tensorflow Jupyter Notebook",
-  "description": "Interactive Python environment with TensorFlow for machine learning development",
-  "category": ["Web UI", "API"],
-  "icon": "https://user-images.githubusercontent.com/40668801/42043955-fbb838a2-7af7-11e8-9795-7f890e871d13.png",
-  "github_url": "https://github.com/tensorflow/tensorflow"
+  "category": ["Official", "Web UI", "API"],
+  "icon": "https://user-images.githubusercontent.com/40668801/42043955-fbb838a2-7af7-11e8-9795-7f890e871d13.png"
 }

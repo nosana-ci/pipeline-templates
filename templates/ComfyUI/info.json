@@ -1,0 +1,26 @@
+{
+  "id": "comfyui",
+  "name": "ComfyUI Image Generation",
+  "category": ["Official", "Web UI", "API", "Image Generation"],
+  "icon": "https://framerusercontent.com/images/3cNQMWKzIhIrQ5KErBm7dSmbd2w.png",
+  "variants": [
+    {
+      "id": "sd15",
+      "name": "Stable Diffusion 1.5",
+      "description": "Classic SD 1.5 model - fast and reliable",
+      "job_definition": "job-definition-sd15.json"
+    },
+    {
+      "id": "sdxl",
+      "name": "Stable Diffusion XL",
+      "description": "High-resolution SDXL model - better quality",
+      "job_definition": "job-definition-sdxl.json"
+    },
+    {
+      "id": "flux",
+      "name": "Flux Schnell FP8",
+      "description": "Latest Flux model - fastest generation",
+      "job_definition": "job-definition-flux.json"
+    }
+  ]
+}

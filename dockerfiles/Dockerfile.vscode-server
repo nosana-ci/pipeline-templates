@@ -1,0 +1,16 @@
+FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    curl \
+    git \
+    sudo \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+RUN pip install --no-cache-dir --upgrade pip \
+    jupyterlab==4.* tensorboard
+WORKDIR /workspace
+EXPOSE 8080
+RUN mkdir -p ~/.config/code-server && \
+    echo "bind-addr: 0.0.0.0:8080\nauth: none\ncert: false" > ~/.config/code-server/config.yaml
+CMD ["code-server", "--bind-addr", "0.0.0.0:8080", "--auth", "none"]

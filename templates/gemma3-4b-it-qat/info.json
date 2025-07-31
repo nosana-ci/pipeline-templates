@@ -1,7 +1,0 @@
-{
-  "id": "gemma3-4b-qat",
-  "name": "Gemma3 4B IT QAT",
-  "description": "Run Google's Gemma3 4B Instruct Quantized model via Ollama.",
-  "category": ["API", "LLM"],
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png"
-} 

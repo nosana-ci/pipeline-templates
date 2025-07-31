@@ -9,16 +9,11 @@
       "type": "container/run",
       "id": "Vscode",
       "args": {
-        "image": "lscr.io/linuxserver/code-server:4.97.2",
+        "image": "docker.io/nosana/vscode-server:2.0.0",
         "cmd": [],
         "gpu": true,
-        "expose": 8443,
-        "env": {
-          "PUID": "1000",
-          "PGID": "1000",
-          "TZ": "Etc/UTC",
-          "SUDO_PASSWORD": "password"
-        }
+        "expose": 8080,
+        "env": {}
       }
     }
   ]
