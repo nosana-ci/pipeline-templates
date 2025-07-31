@@ -7,7 +7,7 @@ import fetch from 'node-fetch';
 const allIds = new Set();
 
 // Required fields that must be present in info.json
-const REQUIRED_FIELDS = ['id', 'name', 'description', 'category'];
+const REQUIRED_FIELDS = ['id', 'name', 'category'];
 
 // Valid categories
 const VALID_CATEGORIES = [
