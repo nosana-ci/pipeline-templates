@@ -1,0 +1,20 @@
+{
+  "id": "gpt-oss",
+  "name": "GPT-OSS Models",
+  "category": ["Official", "API", "LLM"],
+  "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
+  "variants": [
+    {
+      "id": "20b",
+      "name": "20B Model",
+      "description": "GPT-OSS 20B parameter model - balanced performance and efficiency",
+      "job_definition": "job-definition-20b.json"
+    },
+    {
+      "id": "120b",
+      "name": "120B Model",
+      "description": "GPT-OSS 120B parameter model - maximum performance and capabilities",
+      "job_definition": "job-definition-120b.json"
+    }
+  ]
+}

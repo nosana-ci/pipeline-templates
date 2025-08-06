@@ -1,0 +1,48 @@
+{
+  "ops": [
+    {
+      "id": "gpt-oss:120b",
+      "args": {
+        "cmd": [
+          "-c",
+          "ollama serve & sleep 5 && ollama pull $MODEL && tail -f /dev/null"
+        ],
+        "env": {
+          "MODEL": "gpt-oss:120b"
+        },
+        "gpu": true,
+        "image": "docker.io/ollama/ollama:0.11.3",
+        "expose": [
+          {
+            "port": 11434,
+            "health_checks": [
+              {
+                "body": "{\"model\":\"gpt-oss:120b\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}",
+                "path": "/v1/chat/completions",
+                "type": "http",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "continuous": false,
+                "expected_status": 200
+              }
+            ]
+          }
+        ],
+        "entrypoint": [
+          "/bin/sh"
+        ]
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 65
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+}
