@@ -22,7 +22,7 @@
             "health_checks": [
               {
                 "body": "{\"model\":\"gemma3:27b-it-qat\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}",
-                "path": "/v1/chat/completions",
+                "path": "/api/chat",
                 "type": "http",
                 "method": "POST",
                 "headers": {
