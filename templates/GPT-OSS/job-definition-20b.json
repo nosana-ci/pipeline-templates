@@ -8,7 +8,9 @@
           "ollama serve & sleep 5 && ollama pull $MODEL && tail -f /dev/null"
         ],
         "env": {
-          "MODEL": "gpt-oss:20b"
+          "MODEL": "gpt-oss:20b",
+          "OLLAMA_ORIGINS": "*",
+          "OLLAMA_HOST": "0.0.0.0:11434"
         },
         "gpu": true,
         "image": "docker.io/ollama/ollama:0.11.3",
