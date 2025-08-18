@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 16
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "minicpm",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model openbmb/MiniCPM-2B-dpo-fp16 --served-model-name MiniCPM-2B --port 9000 --tensor-parallel-size 1 --trust-remote-code"
+        ],
+        "image": "docker.io/vllm/vllm-openai:v0.7.2",
+        "gpu": true,
+        "expose": 9000
+      }
+    }
+  ]
+} 
