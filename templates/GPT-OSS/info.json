@@ -1,7 +1,7 @@
 {
   "id": "gpt-oss",
   "name": "GPT-OSS Models",
-  "category": ["Official", "API", "LLM"],
+  "category": ["Official", "API", "LLM", "Benchmark"],
   "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
   "variants": [
     {
