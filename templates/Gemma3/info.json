@@ -1,7 +1,7 @@
 {
   "id": "gemma3",
   "name": "Gemma 3 Models",
-  "category": ["Official", "API", "LLM"],
+  "category": ["Official", "API", "LLM", "Benchmark"],
   "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png",
   "variants": [
     {
