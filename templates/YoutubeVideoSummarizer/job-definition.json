@@ -1,0 +1,25 @@
+{
+  "ops": [
+    {
+      "id": "yt-summarizer",
+      "args": {
+        "cmd": ["uvicorn",
+       		"app.main:app",
+       		"--host",
+        	"0.0.0.0",
+         	"--port",
+         	"7878"
+           ],
+        "gpu": true,
+        "image": "ersguteralbaner/youtubesummarizer:latest",
+        "expose": 7878
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard"
+  },
+  "type": "container",
+  "version": "0.1"
+}
