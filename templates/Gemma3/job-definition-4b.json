@@ -15,7 +15,7 @@
           "ollama serve & sleep 5 && ollama pull $MODEL && tail -f /dev/null"
         ],
         "env": {
-          "MODEL": "gemma3:4b-it-qat",
+          "MODEL": "gemma3:4b",
           "OLLAMA_ORIGINS": "*",
           "OLLAMA_HOST": "0.0.0.0:11434"
         },
