@@ -1,0 +1,8 @@
+{
+  "id": "mathworks-matlab",
+  "name": "MatLab Studio",
+  "description": "Run MATLAB in a cloud or local environment using a prebuilt Ubuntu-based Docker container. Provides both browser-based and VNC access.",
+  "category": ["Engineering", "Data Science", "Machine Learning", "Simulation", "Scientific Computing"],
+  "icon": "https://miro.medium.com/v2/resize:fit:1000/1*aPfdrf5Y14OzFUXgEwB9TA.jpeg"
+}
+ 
