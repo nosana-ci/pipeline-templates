@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "chattts",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "git clone https://github.com/2noise/ChatTTS.git && cd ChatTTS && pip install -r requirements.txt && python gradio_app.py --host 0.0.0.0 --port 7860"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 12
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 
