@@ -1,0 +1,8 @@
+{
+    "id":"stablelm2_12b",
+    "name": "stablelm2_12b-ollama",
+    "description": "Stable LM 2 is a state-of-the-art 1.6B and 12B parameter language model trained on multilingual data in English, Spanish, German, Italian, French, Portuguese, and Dutch.",
+    "tags": ["stablelm2","ollama", "nlp", "api", "gpu", "nosana"],
+    "repo":"https://ollama.com/library/stablelm2:12b",
+    "icon":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDDqZYfadD4yFSFE5PBzAEXaheeRxSL4UNLA&s"
+}
