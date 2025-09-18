@@ -1,0 +1,7 @@
+{
+  "id": "mobilenetv3-small",
+  "name": "MobileNetV3 Small",
+  "description": "Lightweight and efficient MobileNetV3 Small model for image classification and feature extraction",
+  "category": ["API", "Multimodel", "New"],
+  "icon": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/transformers/transformers-logo.png"
+} 
