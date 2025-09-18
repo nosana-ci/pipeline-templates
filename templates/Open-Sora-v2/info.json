@@ -1,0 +1,9 @@
+{
+  "id": "open-sora-v2",
+  "name": "Open-Sora v2",
+  "description": "Open-source text-to-video and image-to-video generation model",
+  "category": ["Text to Video", "Image to Video", "Multimodel"],
+  "icon": "https://huggingface.co/front/assets/huggingface_logo.svg",
+  "github_url": "https://github.com/hpcaitech/Open-Sora",
+  "version": "1.0.0"
+} 

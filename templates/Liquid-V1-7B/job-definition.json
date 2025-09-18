@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "liquid-v1-7b",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m transformers.pipelines --task any-to-any --model Junfeng5/Liquid_V1_7B --device 0 --port 9000 --host 0.0.0.0"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "huggingface/transformers-pytorch:latest",
+        "expose": 9000,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 16
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

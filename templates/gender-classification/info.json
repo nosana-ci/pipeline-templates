@@ -1,0 +1,9 @@
+{
+  "id": "gender-classification",
+  "name": "Gender Classification",
+  "description": "Binary gender classification model using Vision Transformer for male/female detection",
+  "category": ["API","New" , "Image Classification"],
+  "icon": "https://huggingface.co/front/assets/huggingface_logo.svg",
+  "github_url": "https://github.com/huggingface/transformers",
+  "version": "1.0.0"
+} 
