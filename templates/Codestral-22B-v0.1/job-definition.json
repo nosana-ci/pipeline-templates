@@ -1,0 +1,29 @@
+{
+  "ops": [
+    {
+      "id": "codestral-22B-v0.1",
+      "args": {
+        "cmd": [
+          "/bin/sh -c 'apt update && apt install -y git && pip install huggingface_hub[cli] mistral_inference && huggingface-cli login --token $HF_TOKEN --add-to-git-credential && huggingface-cli download mistralai/Codestral-22B-v0.1 params.json consolidated.safetensors tokenizer.model.v3 --local-dir $MODEL_PATH"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token",
+          "MODEL_PATH": "$HOME/mistral_models"
+        },
+        "gpu": true,
+        "image": "nvidia/cuda:12.1.0-base-ubuntu20.04",
+        "expose": 9000,
+        "entrypoint": ["mistral-chat $MODEL_PATH/mistralai/Codestral-22B-v0.1 --instruct --max_tokens 256"]
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 20
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+}
