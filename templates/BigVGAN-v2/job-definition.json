@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "bigvgan-v2",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "git clone https://github.com/NVIDIA/BigVGAN.git && cd BigVGAN && pip install -e . && pip install librosa soundfile gradio torch torchaudio && python -c \"import gradio as gr; import torch; import bigvgan; import librosa; import numpy as np; import soundfile as sf; from meldataset import get_mel_spectrogram; device = 'cuda'; def process_audio(audio_file): if audio_file is None: return None, 'Please upload an audio file.'; model = bigvgan.BigVGAN.from_pretrained('nvidia/bigvgan_v2_44khz_128band_512x', use_cuda_kernel=True); model.remove_weight_norm(); model = model.eval().to(device); try: wav, sr = librosa.load(audio_file, sr=model.h.sampling_rate, mono=True); wav = torch.FloatTensor(wav).unsqueeze(0); mel = get_mel_spectrogram(wav, model.h).to(device); with torch.inference_mode(): wav_gen = model(mel); wav_gen = wav_gen.squeeze().cpu().numpy(); out_path = 'output.wav'; sf.write(out_path, wav_gen, model.h.sampling_rate); return out_path, 'Processed successfully!'; except Exception as e: return None, f'Error processing audio: {str(e)}'; demo = gr.Interface(fn=process_audio, inputs=[gr.Audio(type='filepath', label='Upload Audio (will be converted to 44kHz)')], outputs=[gr.Audio(label='Reconstructed Audio (through BigVGAN vocoder)'), gr.Textbox(label='Status')], title='NVIDIA BigVGAN v2 Neural Vocoder', description='BigVGAN v2 is a universal neural vocoder that generates high-quality audio from mel spectrograms. This demo takes an input audio, converts it to mel spectrogram, and then reconstructs the audio using the BigVGAN vocoder.'); demo.launch(server_name='0.0.0.0', server_port=7860)\""
+        ],
+        "env": {
+          "PYTHONUNBUFFERED": "1"
+        },
+        "gpu": true,
+        "image": "pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 16
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

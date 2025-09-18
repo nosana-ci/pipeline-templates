@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "ast-audioset",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "git clone https://github.com/YuanGongND/ast.git && cd ast && pip install -r requirements.txt && pip install transformers torchaudio scipy librosa gradio && python -c \"import gradio as gr; import torch; import librosa; import numpy as np; from transformers import AutoFeatureExtractor, AutoModelForAudioClassification; def process_audio(audio_file): if audio_file is None: return {'Message': 'Please upload an audio file'}; try: feature_extractor = AutoFeatureExtractor.from_pretrained('MIT/ast-finetuned-audioset-10-10-0.4593'); model = AutoModelForAudioClassification.from_pretrained('MIT/ast-finetuned-audioset-10-10-0.4593'); waveform, sample_rate = librosa.load(audio_file, sr=16000, mono=True); waveform = torch.from_numpy(waveform).unsqueeze(0); inputs = feature_extractor(waveform, sampling_rate=sample_rate, return_tensors='pt'); with torch.no_grad(): logits = model(inputs.input_values).logits; predicted_class_ids = torch.topk(logits, k=5).indices[0].tolist(); predicted_scores = torch.softmax(logits, dim=1)[0, predicted_class_ids].tolist(); results = {}; for i, (class_id, score) in enumerate(zip(predicted_class_ids, predicted_scores)): if score > 0.03: class_name = model.config.id2label[class_id]; results[class_name] = float(score); return results; except Exception as e: return {'Error': str(e)}; demo = gr.Interface(fn=process_audio, inputs=[gr.Audio(type='filepath', label='Upload Audio (will be converted to 16kHz mono)')], outputs=gr.Label(num_top_classes=10, label='Sound Classifications'), title='MIT Audio Spectrogram Transformer', description='AST model fine-tuned on AudioSet for sound classification. Upload any audio file to identify the sounds present.'); demo.launch(server_name='0.0.0.0', server_port=7860)\""
+        ],
+        "env": {
+          "PYTHONUNBUFFERED": "1"
+        },
+        "gpu": true,
+        "image": "pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 8
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "ast-speech-commands",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m transformers.pipeline --model MIT/ast-finetuned-speech-commands-v2 --task audio-classification --port 9000"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "nosana/transformers:latest",
+        "expose": 9000,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 8
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 
