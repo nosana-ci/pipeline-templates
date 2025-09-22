@@ -12,7 +12,9 @@
           "--served-model-name",
           "DeepSeek-R1-Distill-Llama-8B",
           "--port",
-          "9000"
+          "9000",
+          "--max-model-len",
+          "30000"
         ],
         "gpu": true,
         "image": "docker.io/vllm/vllm-openai:v0.10.2",
