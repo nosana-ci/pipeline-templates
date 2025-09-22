@@ -13,8 +13,6 @@
         "id": "Invoke",
         "args": {
           "cmd": [
-            "/bin/sh",
-            "-c",
             "invokeai-web"
           ],
           "image": "docker.io/nosana/sd-invoke-bench:1.0.0",

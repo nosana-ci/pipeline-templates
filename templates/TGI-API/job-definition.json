@@ -12,11 +12,12 @@
       "type": "container/run",
       "id": "Tgi",
       "args": {
-        "entrypoint": [],
         "cmd": [
-          "/bin/bash",
-          "-c",
-          "text-generation-launcher --model-id Qwen/Qwen2.5-7B --port 8080"
+          "text-generation-launcher",
+          "--model-id",
+          "Qwen/Qwen2.5-7B",
+          "--port",
+          "8080"
         ],
         "image": "ghcr.io/huggingface/text-generation-inference:2.3.1",
         "gpu": true,

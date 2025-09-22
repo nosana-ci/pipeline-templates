@@ -14,6 +14,7 @@
       "args": {
         "image": "docker.io/nosana/nosana-chat-bot:0.1.1",
         "cmd": [
+          "sh",
           "-c",
           "lmdeploy serve api_server ./models/snapshots/2123003760781134cfc31124aa6560a45b491fdf --model-name llama3.1 --chat-template ./chat_template.json --model-format awq & npm start"
         ],
