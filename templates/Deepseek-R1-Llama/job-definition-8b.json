@@ -6,10 +6,13 @@
       "type": "container/run",
       "id": "Llama8b",
       "args": {
-        "entrypoint": ["/bin/sh"],
         "cmd": [
-          "-c",
-          "python3 -m vllm.entrypoints.openai.api_server --model deepseek-ai/$MODEL --served-model-name $MODEL --port 9000"
+          "--model",
+          "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+          "--served-model-name",
+          "DeepSeek-R1-Distill-Llama-8B",
+          "--port",
+          "9000"
         ],
         "env": {
           "MODEL": "DeepSeek-R1-Distill-Llama-8B"

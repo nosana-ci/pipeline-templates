@@ -6,10 +6,15 @@
       "type": "container/run",
       "id": "Qwen7b",
       "args": {
-        "entrypoint": ["/bin/sh"],
         "cmd": [
-          "-c",
-          "python3 -m vllm.entrypoints.openai.api_server --model deepseek-ai/$MODEL --served-model-name $MODEL --port 9000 --max-model-len 103000"
+          "--model",
+          "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+          "--served-model-name",
+          "DeepSeek-R1-Distill-Qwen-7B",
+          "--port",
+          "9000",
+          "--max-model-len",
+          "103000"
         ],
         "env": {
           "MODEL": "DeepSeek-R1-Distill-Qwen-7B"

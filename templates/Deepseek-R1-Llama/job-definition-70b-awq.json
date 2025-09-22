@@ -6,10 +6,15 @@
       "type": "container/run",
       "id": "Llama70b",
       "args": {
-        "entrypoint": ["/bin/sh"],
         "cmd": [
-          "-c",
-          "python3 -m vllm.entrypoints.openai.api_server --model Valdemardi/$MODEL --served-model-name $MODEL --port 9000 --max-model-len 100000"
+          "--model",
+          "Valdemardi/DeepSeek-R1-Distill-Llama-70B-AWQ",
+          "--served-model-name",
+          "DeepSeek-R1-Distill-Llama-70B-AWQ",
+          "--port",
+          "9000",
+          "--max-model-len",
+          "100000"
         ],
         "env": {
           "MODEL": "DeepSeek-R1-Distill-Llama-70B-AWQ"
