@@ -13,7 +13,6 @@
       "id": "Tgi",
       "args": {
         "cmd": [
-          "text-generation-launcher",
           "--model-id",
           "Qwen/Qwen2.5-7B",
           "--port",
