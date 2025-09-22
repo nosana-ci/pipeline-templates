@@ -6,7 +6,7 @@
       "type": "container/run",
       "id": "Gemma3-27b",
       "args": {
-        "image": "docker.io/ollama/ollama:0.9.6",
+        "image": "docker.io/ollama/ollama:0.12.0",
         "entrypoint": [
           "/bin/sh"
         ],

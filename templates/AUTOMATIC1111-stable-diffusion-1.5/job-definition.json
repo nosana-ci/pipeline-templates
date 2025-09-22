@@ -10,8 +10,13 @@
       "id": "SD15-auto",
       "args": {
         "cmd": [
-          "/bin/sh", "-c", 
-          "python -u launch.py --listen --port 7860 --enable-insecure-extension-access"
+          "python",
+          "-u",
+          "launch.py",
+          "--listen",
+          "--port",
+          "7860",
+          "--enable-insecure-extension-access"
         ],
         "image": "docker.io/nosana/automatic1111:0.0.1",
         "gpu": true,

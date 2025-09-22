@@ -17,7 +17,7 @@
           "34000"
         ],
         "gpu": true,
-        "image": "docker.io/vllm/vllm-openai:v0.9.2",
+        "image": "docker.io/vllm/vllm-openai:v0.10.2",
         "expose": [
           {
             "port": 9000,

@@ -13,8 +13,13 @@
       "id": "Forge",
       "args": {
         "cmd": [
-          "/bin/sh", "-c", 
-          "python -u launch.py --api --listen --port 7861"
+          "python",
+          "-u",
+          "launch.py",
+          "--api",
+          "--listen",
+          "--port",
+          "7861"
         ],
         "image": "docker.io/nosana/sd-forge-bench:1.0.0",
         "gpu": true,
