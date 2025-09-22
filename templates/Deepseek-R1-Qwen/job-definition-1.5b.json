@@ -14,7 +14,7 @@
           "--port",
           "9000",
           "--max-model-len",
-          "130000"
+          "30000"
         ],
         "gpu": true,
         "image": "docker.io/vllm/vllm-openai:v0.10.2",
