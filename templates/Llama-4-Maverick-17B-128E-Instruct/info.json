@@ -1,0 +1,12 @@
+{
+    "id": "llama-4-maverik",
+    "name": "Llama 4 Maverik",
+    "description": "Llama 4 Maverik is a high-performance multimodal model with 17 billion active parameters (400 billion total) configured with 128 experts. Built on a mixture-of-experts (MoE) architecture with early fusion, it supports a 1-million-token context window and delivers advanced text and image understanding. Optimized for deployment on multi-GPU systems such as Nvidia H100 DGX, it is designed to power sophisticated assistant and reasoning tasks.",
+    "category": [
+        "API",
+        "LLM",
+        "New"
+    ],
+    "icon": "https://cdn-avatars.huggingface.co/v1/production/uploads/646cf8084eefb026fb8fd8bc/LLAMA4_MAVERIK.png",
+    "github_repo": "https://github.com/meta-llama/llama-models"
+}
