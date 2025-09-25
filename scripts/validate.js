@@ -29,7 +29,8 @@ const VALID_CATEGORIES = [
 const META_FIELDS = {
   trigger: 'dashboard',
   system_requirements: {
-    required_vram: 'number'
+    required_vram: 'number',
+    required_cuda: 'array'
   }
 };
 

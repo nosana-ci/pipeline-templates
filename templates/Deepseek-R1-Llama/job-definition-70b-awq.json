@@ -42,7 +42,8 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_vram": 40
+      "required_vram": 40,
+      "required_cuda": ["12.8", "12.9"]
     }
   }
 }
