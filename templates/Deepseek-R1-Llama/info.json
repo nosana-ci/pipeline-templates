@@ -1,7 +1,7 @@
 {
   "id": "deepseek-llama",
   "name": "DeepSeek R1 Llama Models",
-  "category": ["Official", "API", "LLM", "Benchmark"],
+  "category": ["Official", "API", "LLM", "Benchmark", "vLLM"],
   "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
   "variants": [
     {
