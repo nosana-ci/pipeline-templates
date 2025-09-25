@@ -20,7 +20,9 @@ const VALID_CATEGORIES = [
   'Image Generation Fine-tuning',
   'LLM Fine-tuning',
   'Official',
-  'Benchmark'
+  'Benchmark',
+  'Ollama',
+  'vLLM'
 ];
 
 // Optional metadata fields in job-definition.json
