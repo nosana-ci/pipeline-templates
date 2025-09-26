@@ -1,33 +1,26 @@
 {
-    "ops": [
-      {
-        "id": "foldingathome",
-        "type": "container/run",
-        "args": {
-          "entrypoint": [
-            "/bin/sh",
-            "./config/entrypoint.sh"
-          ],
-          "env": {
-            "CUDA_VISIBLE_DEVICES": "0",
-            "ACCOUNT_TOKEN": "MPFG1MPF_0TMV_0SaYQpvaYQEcZsMEcaHFOgPHFOWE4",
-            "MACHINE_NAME": "NosanaWorker"
-          },
-          "gpu": true,
-          "image": "lscr.io/linuxserver/foldingathome:latest",
-          "expose": 7396,
-          "resources": [
-                    {
-                    "type": "S3",
-                    "url": "https://models.nosana.io/foldingAtHome",
-                    "target": "/config/",
-                    "allowWrite": true
-                    }
-                ],
-          "private": true
-        }
+  "ops": [
+    {
+      "id": "foldingathome",
+      "type": "container/run",
+      "args": {
+        "entrypoint": [
+          "/bin/sh",
+          "./config/entrypoint.sh"
+        ],
+        "gpu": true,
+        "image": "lscr.io/linuxserver/foldingathome:latest",
+        "resources": [
+                  {
+                  "type": "S3",
+                  "url": "https://models.nosana.io/foldingAtHome",
+                  "target": "/config/",
+                  "allowWrite": true
+                  }
+              ]
       }
-    ],
-    "type": "container",
-    "version": "0.1"
-  }
+    }
+  ],
+  "type": "container",
+  "version": "0.1"
+}
