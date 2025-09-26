@@ -1,0 +1,7 @@
+{
+    "id": "folding-at-home",
+    "name": "Folding@Home",
+    "description": "Folding@Home is a distributed computing project that uses the idle computing power to simulate protein folding for scientific research.",
+    "category": ["Official"], 
+    "icon": "https://foldingathome.org/wp-content/uploads/2016/09/folding-at-home-logo.png"
+  }

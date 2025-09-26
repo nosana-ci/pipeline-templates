@@ -1,0 +1,26 @@
+{
+  "ops": [
+    {
+      "id": "foldingathome",
+      "type": "container/run",
+      "args": {
+        "entrypoint": [
+          "/bin/sh",
+          "./config/entrypoint.sh"
+        ],
+        "gpu": true,
+        "image": "lscr.io/linuxserver/foldingathome:latest",
+        "resources": [
+                  {
+                  "type": "S3",
+                  "url": "https://models.nosana.io/foldingAtHome",
+                  "target": "/config/",
+                  "allowWrite": true
+                  }
+              ]
+      }
+    }
+  ],
+  "type": "container",
+  "version": "0.1"
+}
