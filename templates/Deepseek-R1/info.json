@@ -1,7 +1,7 @@
 {
   "id": "deepseek-r1-qwen",
   "name": "DeepSeek R1 Qwen Models",
-  "category": ["Official", "API", "LLM", "Benchmark", "vLLM"],
+  "category": ["Official", "API", "LLM", "vLLM"],
   "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
   "variants": [
     {
