@@ -1,7 +1,7 @@
 {
   "id": "deepseek-janus",
   "name": "DeepSeek Janus Pro Models",
-  "category": ["Official", "Web UI", "API", "Image Generation"],
+  "category": ["Web UI", "API", "Image Generation"],
   "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
   "variants": [
     {
