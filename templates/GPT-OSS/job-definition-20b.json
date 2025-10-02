@@ -34,6 +34,14 @@
         ],
         "entrypoint": [
           "/bin/sh"
+        ],
+        "resources": [
+          {
+            "url": "https://models.nosana.io/ollama/gpt-oss/20b",
+            "type": "S3",
+            "target": "/root/.ollama/models",
+            "allowWrite": true
+          }
         ]
       },
       "type": "container/run"
