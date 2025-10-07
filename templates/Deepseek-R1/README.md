@@ -4,32 +4,36 @@ High-performance inference API for DeepSeek R1 language models with multiple siz
 
 ## Available Models
 
-### 1.5B Model
+### Qwen-based Models
+
+#### Qwen 1.5B Model
 - **Parameters**: 1.5 billion
 - **VRAM Required**: 4 GB
 - **Use Case**: Lightweight applications, testing, development
 
-### 7B Model  
+#### Qwen 7B Model  
 - **Parameters**: 7 billion
 - **VRAM Required**: 14 GB
 - **Use Case**: Balanced performance for most applications
 
-### 8B Model
-- **Parameters**: 8 billion
-- **VRAM Required**: 16 GB
-- **Use Case**: Balanced performance for most applications
-
-### 14B Model
+#### Qwen 14B Model
 - **Parameters**: 14 billion  
 - **VRAM Required**: 28 GB
 - **Use Case**: High-performance applications requiring best quality
 
-### 32B Model
+#### Qwen 32B Model
 - **Parameters**: 32 billion
 - **VRAM Required**: 64 GB
 - **Use Case**: Extra large model for highest performance applications
 
-### 70B AWQ Model
+### Llama-based Models
+
+#### Llama 8B Model
+- **Parameters**: 8 billion
+- **VRAM Required**: 16 GB
+- **Use Case**: Balanced performance for most applications
+
+#### Llama 70B AWQ Model
 - **Parameters**: 70 billion (with AWQ quantization)
 - **VRAM Required**: 40 GB
 - **Use Case**: High-performance applications with reduced memory footprint

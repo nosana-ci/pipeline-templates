@@ -1,32 +1,44 @@
 {
-  "id": "deepseek-r1-qwen",
-  "name": "DeepSeek R1 Qwen Models",
+  "id": "deepseek-r1",
+  "name": "DeepSeek R1 Models",
   "category": ["Official", "API", "LLM", "vLLM"],
   "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
   "variants": [
     {
-      "id": "1.5b",
-      "name": "1.5B Model",
-      "description": "Lightweight 1.5B parameter model - lowest VRAM requirement",
+      "id": "qwen-1.5b",
+      "name": "Qwen 1.5B Model",
+      "description": "Lightweight Qwen-based 1.5B parameter model - lowest VRAM requirement",
       "job_definition": "job-definition-1.5b.json"
     },
     {
-      "id": "7b",
-      "name": "7B Model",
-      "description": "Standard 7B parameter model - balanced performance",
+      "id": "qwen-7b",
+      "name": "Qwen 7B Model",
+      "description": "Standard Qwen-based 7B parameter model - balanced performance",
       "job_definition": "job-definition-7b.json"
     },
     {
-      "id": "14b",
-      "name": "14B Model",
-      "description": "Large 14B parameter model - high performance",
+      "id": "qwen-14b",
+      "name": "Qwen 14B Model",
+      "description": "Large Qwen-based 14B parameter model - high performance",
       "job_definition": "job-definition-14b.json"
     },
     {
-      "id": "32b",
-      "name": "32B Model",
-      "description": "Extra large 32B parameter model - highest performance",
+      "id": "qwen-32b",
+      "name": "Qwen 32B Model",
+      "description": "Extra large Qwen-based 32B parameter model - highest performance",
       "job_definition": "job-definition-32b.json"
+    },
+    {
+      "id": "llama-8b",
+      "name": "Llama 8B Model",
+      "description": "Standard Llama-based 8B parameter model - balanced performance",
+      "job_definition": "job-definition-8b.json"
+    },
+    {
+      "id": "llama-70b-awq",
+      "name": "Llama 70B AWQ Model",
+      "description": "Large Llama-based 70B parameter model with AWQ quantization - reduced memory footprint",
+      "job_definition": "job-definition-70b-awq.json"
     }
   ]
 }
