@@ -50,7 +50,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_vram": 13
+      "required_vram": 16
     }
   }
 }
