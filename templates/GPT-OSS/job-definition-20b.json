@@ -1,17 +1,16 @@
 {
+  "version": "0.1",
+  "type": "container",
+  "global": {
+    "variables": {
+      "MODEL": "gpt-oss:20b"
+    }
+  },
   "ops": [
     {
       "id": "gpt-oss:20b",
+      "type": "container/run",
       "args": {
-        "cmd": [
-          "-c",
-          "ollama serve & sleep 5 && ollama pull $MODEL && tail -f /dev/null"
-        ],
-        "env": {
-          "MODEL": "gpt-oss:20b",
-          "OLLAMA_ORIGINS": "*",
-          "OLLAMA_HOST": "0.0.0.0:11434"
-        },
         "gpu": true,
         "image": "docker.io/ollama/ollama:0.12.0",
         "expose": [
@@ -19,7 +18,14 @@
             "port": 11434,
             "health_checks": [
               {
-                "body": "{\"model\":\"gpt-oss:20b\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}",
+                "type": "http",
+                "path": "/api/tags",
+                "method": "GET",
+                "expected_status": 200,
+                "continuous": false
+              },
+              {
+                "body": "{\"model\":\"%%global.variables.MODEL%%\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}",
                 "path": "/api/chat",
                 "type": "http",
                 "method": "POST",
@@ -32,11 +38,13 @@
             ]
           }
         ],
-        "entrypoint": [
-          "/bin/sh"
+        "resources": [
+          {
+            "type": "Ollama",
+            "model": "%%global.variables.MODEL%%"
+          }
         ]
-      },
-      "type": "container/run"
+      }
     }
   ],
   "meta": {
@@ -44,7 +52,5 @@
     "system_requirements": {
       "required_vram": 13
     }
-  },
-  "type": "container",
-  "version": "0.1"
+  }
 }
