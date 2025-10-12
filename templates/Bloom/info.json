@@ -1,0 +1,7 @@
+{
+  "id": "bloom-template",
+  "name": "BLOOM Language Model Template",
+  "description": "A template for deploying the BLOOM-560M language model with vLLM, providing multilingual text generation and understanding capabilities through an OpenAI-compatible API",
+  "category": ["AI", "language-model", "NLP"],
+  "icon": "https://cdn-uploads.huggingface.co/production/uploads/1657124309515-5f17f0a0925b9863e28ad517.png"
+}
