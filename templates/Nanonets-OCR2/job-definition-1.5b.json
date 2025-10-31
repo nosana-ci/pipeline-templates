@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "global": {
+    "variables": {
+      "MODEL": "nanonets/Nanonets-OCR2-1.5B-exp"
+    }
+  },
+  "ops": [
+    {
+      "id": "Nanonets-OCR2:1.5B",
+      "type": "container/run",
+      "args": {
+        "cmd": [
+          "--model",
+          "%%global.variables.MODEL%%",
+          "--served-model-name",
+          "%%global.variables.MODEL%%",
+          "--port",
+          "8000",
+          "--max-model-len",
+          "30000"
+        ],
+        "gpu": true,
+        "image": "docker.io/vllm/vllm-openai:v0.10.2",
+        "expose": 8000
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 6
+    }
+  }
+}

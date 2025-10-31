@@ -1,0 +1,26 @@
+{
+  "id": "Nanonets-OCR2",
+  "name": "Nanonets OCR 2 Models",
+  "category": [
+    "Official",
+    "API",
+    "LLM",
+    "Benchmark",
+    "Vllm"
+  ],
+  "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
+  "variants": [
+    {
+      "id": "3b",
+      "name": "3B Model",
+      "description": "Nanonets OCR 2 3B parameter model - balanced performance and efficiency",
+      "job_definition": "job-definition-3b.json"
+    },
+    {
+      "id": "1.5b",
+      "name": "1.5B Model",
+      "description": "Nanonets OCR 2 1.5B parameter model - optimized for lower resource usage",
+      "job_definition": "job-definition-1.5b.json"
+    }
+  ]
+}
