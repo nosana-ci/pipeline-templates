@@ -1,0 +1,7 @@
+{
+  "id": "ast-audioset",
+  "name": "MIT Audio Spectrogram Transformer",
+  "description": "State-of-the-art audio classification model using transformer architecture to classify sounds into AudioSet categories",
+  "category": ["Audio Classification", "API", "New"],
+  "icon": "https://huggingface.co/MIT/ast-finetuned-audioset-10-10-0.4593/resolve/main/mit_logo.png"
+} 
