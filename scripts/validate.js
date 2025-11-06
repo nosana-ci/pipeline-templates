@@ -128,13 +128,6 @@ async function validateTemplate(folder) {
     }
   }
 
-  // Validate category combinations
-  if (info.category.includes("Web UI") && !info.category.includes("API")) {
-    throw new Error(
-      `${folder}: Templates with 'Web UI' category must also include 'API' category`
-    );
-  }
-
   // Skip icon validation if github_url is provided
   if (!info.icon && !info.github_url) {
     throw new Error(
