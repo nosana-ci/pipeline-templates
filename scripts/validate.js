@@ -24,6 +24,7 @@ const VALID_CATEGORIES = [
   "Ollama",
   "vLLM",
   "OCR",
+  "Video Generation",
 ];
 
 // Optional metadata fields in job-definition.json
