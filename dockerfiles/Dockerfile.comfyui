@@ -28,6 +28,7 @@ RUN pip install --no-cache-dir --disable-pip-version-check \
 RUN pip install --no-cache-dir torchsde sentencepiece kornia spandrel soundfile
 RUN pip install --no-cache-dir comfyui-frontend-package comfyui-workflow-templates comfyui-embedded-docs
 RUN pip install --no-cache-dir pydantic-settings alembic av
+RUN pip install --no-cache-dir --no-deps "comfy-kitchen>=0.2.5"
 RUN cd custom_nodes && \
     git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 EXPOSE 8188
