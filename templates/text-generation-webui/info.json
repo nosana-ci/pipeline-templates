@@ -1,0 +1,11 @@
+{
+  "id": "text-generation-webui-nvidia-tensorrtllm",
+  "name": "text-generation-webui-nvidia-tensorrtllm",
+  "description": "Text generation web UI, a Gradio web UI for Large Language Models.",
+  "category": [
+    "API",
+    "LLM"
+  ],
+  "icon": "https://avatars.githubusercontent.com/u/136984999?v=4",
+  "github_url": "https://github.com/vllm-project/vllm"
+}
