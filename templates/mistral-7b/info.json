@@ -1,0 +1,6 @@
+{
+    "name": "Mistral 7B Inference",
+    "description": "Deploy Mistral 7B for text generation and summarization using Hugging Face's TGI.",
+    "category": "AI/ML",
+    "tags": ["LLM", "Mistral", "HuggingFace", "Text-Generation"]
+  }
