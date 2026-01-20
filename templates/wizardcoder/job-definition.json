@@ -1,0 +1,29 @@
+{
+    "ops": [
+      {
+        "id": "wizardcoder",
+        "args": {
+          "cmd": [
+            "/bin/sh",
+            "-c",
+            "curl -fsSL https://ollama.com/install.sh -o ollama-installer.sh && sh ollama-installer.sh && (ollama serve &) && sleep 10 && ollama pull wizardcoder && ollama run wizardcoder"
+          ],
+          "env": {},
+          "gpu": true,
+          "image": "nvidia/cuda:12.1.0-base-ubuntu20.04",
+          "expose": 11434,
+          "entrypoint": []
+        },
+        "type": "container/run"
+      }
+    ],
+    "meta": {
+      "trigger": "dashboard",
+      "system_requirements": {
+        "required_vram": 24
+      }
+    },
+    "type": "container",
+    "version": "0.1"
+  }
+  

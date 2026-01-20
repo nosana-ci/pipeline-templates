@@ -1,0 +1,8 @@
+{
+    "id": "genz-meme",
+    "name": "GenZ Meme",
+    "description": "An custom built API that generates memes based on text prompts using Stable Diffusion XL.0",
+    "tags": ["meme generation", "AI", "image generation","docker" ,"text-to-image", "FastAPI", "Stable Diffusion XL", "GPU"],
+    "icon": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/01.png",
+    "github": "https://github.com/users/1uwant/packages/container/package/genz-meme"
+}
