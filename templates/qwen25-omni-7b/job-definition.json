@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 24
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "qwen-omni-api",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model Qwen/Qwen2.5-Omni-7B --served-model-name Qwen2.5-Omni-7B --port 9000 --max-model-len 4096"
+        ],
+        "image": "docker.io/vllm/vllm-openai:v0.7.3",
+        "gpu": true,
+        "expose": 9000
+      }
+    }
+  ]
+}
