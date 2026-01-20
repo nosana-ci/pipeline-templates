@@ -1,0 +1,8 @@
+{
+  "id": "wan",
+  "name": "Wan image_to_video & text_to_video",
+  "description": "High-quality image_to_video & text_to_video generation model for creating animated videos from images and text prompts.",
+  "category": ["API", "Web UI", "New"],
+  "icon": "https://raw.githubusercontent.com/Wan-Video/Wan2.1/refs/heads/main/assets/logo.png",
+  "github_url": "https://github.com/Wan-Video/Wan2.1"
+}
