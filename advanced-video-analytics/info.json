@@ -1,0 +1,83 @@
+{
+  "name": "Advanced Video Analytics Research Pipeline",
+  "description": "A comprehensive video analytics platform designed for both research and production use cases. This template combines state-of-the-art computer vision models with advanced analytics capabilities, experiment tracking, and distributed processing support. Ideal for academic research, industrial R&D, and production deployments.",
+  "category": "AI/ML",
+  "tags": [
+    "computer-vision",
+    "object-detection",
+    "object-tracking",
+    "real-time",
+    "video-analytics",
+    "research",
+    "distributed-computing",
+    "edge-computing",
+    "experiment-tracking",
+    "metrics"
+  ],
+  "icon": "https://raw.githubusercontent.com/ultralytics/yolov8/master/docs/logo.png",
+  "author": "Nosana Research Community",
+  "version": "2.0.0",
+  "requirements": {
+    "gpu": true,
+    "min_memory": "32Gi",
+    "min_storage": "50Gi"
+  },
+  "features": [
+    "Multi-model ensemble support (YOLOv8, ByteTrack, custom models)",
+    "Advanced experiment tracking and metrics collection",
+    "Distributed processing capabilities",
+    "Edge computing support",
+    "Real-time analytics with configurable pipelines",
+    "Comprehensive logging and monitoring",
+    "Custom model integration",
+    "Batch processing optimization",
+    "Research mode with detailed metrics",
+    "Production mode with optimized performance"
+  ],
+  "research_capabilities": {
+    "experiment_tracking": {
+      "metrics": ["mAP", "FPS", "latency", "memory_usage", "GPU_utilization"],
+      "visualization": ["TensorBoard", "Weights & Biases", "MLflow"],
+      "data_collection": ["raw_frames", "detections", "tracking_data", "performance_metrics"]
+    },
+    "model_analysis": {
+      "tools": ["model_profiling", "latency_analysis", "memory_analysis"],
+      "comparison": ["A/B testing", "ensemble_evaluation", "model_fusion"]
+    },
+    "data_analysis": {
+      "capabilities": ["statistical_analysis", "trend_analysis", "anomaly_detection"],
+      "export_formats": ["CSV", "JSON", "Parquet", "TFRecord"]
+    }
+  },
+  "use_cases": [
+    "Academic research in computer vision",
+    "Industrial R&D for video analytics",
+    "Security and surveillance systems",
+    "Retail analytics and customer tracking",
+    "Traffic monitoring and vehicle counting",
+    "Sports analytics and player tracking",
+    "Industrial automation and quality control",
+    "Smart city applications",
+    "Edge computing deployments",
+    "Distributed video processing"
+  ],
+  "links": {
+    "documentation": "https://docs.nosana.io/research/video-analytics",
+    "research_paper": "https://arxiv.org/abs/2207.02696",
+    "github": "https://github.com/nosana-ai/advanced-video-analytics",
+    "tutorial": "https://docs.nosana.io/tutorials/research/video-analytics.html",
+    "benchmarks": "https://docs.nosana.io/benchmarks/video-analytics"
+  },
+  "configuration": {
+    "ANALYTICS_MODE": "Mode of operation (research/production/hybrid)",
+    "RTSP_INPUT": "RTSP URL of the input video stream",
+    "RTSP_OUTPUT": "RTSP URL for the output stream",
+    "CONFIDENCE_THRESHOLD": "Minimum confidence score for detection (0-1)",
+    "TRACKING_THRESHOLD": "Minimum confidence score for tracking (0-1)",
+    "ENABLE_METRICS": "Enable detailed metrics collection",
+    "ENABLE_EXPERIMENT_TRACKING": "Enable experiment tracking",
+    "BATCH_SIZE": "Number of frames to process in batch",
+    "ENABLE_DISTRIBUTED_PROCESSING": "Enable distributed processing",
+    "ENABLE_EDGE_COMPUTING": "Enable edge computing mode"
+  }
+} 

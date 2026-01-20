@@ -1,0 +1,97 @@
+{
+  "name": "advanced-video-analytics-pipeline",
+  "description": "Advanced real-time video analytics pipeline with multi-model support, custom analytics, and research capabilities",
+  "image": "ghcr.io/nosana/advanced-video-analytics:latest",
+  "resources": {
+    "gpu": 1,
+    "memory": "32Gi",
+    "storage": "50Gi"
+  },
+  "env": {
+    "MODEL_PATH": "/models",
+    "PORT": "8000",
+    "RTSP_INPUT": "",
+    "RTSP_OUTPUT": "",
+    "CONFIDENCE_THRESHOLD": "0.5",
+    "TRACKING_THRESHOLD": "0.3",
+    "ANALYTICS_MODE": "research",
+    "ENABLE_METRICS": "true",
+    "ENABLE_LOGGING": "true",
+    "ENABLE_EXPERIMENT_TRACKING": "true",
+    "CUSTOM_MODEL_PATH": "",
+    "ENABLE_DISTRIBUTED_PROCESSING": "false",
+    "BATCH_SIZE": "16",
+    "ENABLE_EDGE_COMPUTING": "false"
+  },
+  "ports": [
+    {
+      "containerPort": 8000,
+      "protocol": "TCP"
+    },
+    {
+      "containerPort": 8554,
+      "protocol": "TCP"
+    },
+    {
+      "containerPort": 6006,
+      "protocol": "TCP"
+    }
+  ],
+  "command": [
+    "python",
+    "main.py"
+  ],
+  "args": [
+    "--model",
+    "ensemble",
+    "--mode",
+    "${ANALYTICS_MODE}",
+    "--input",
+    "${RTSP_INPUT}",
+    "--output",
+    "${RTSP_OUTPUT}",
+    "--conf",
+    "${CONFIDENCE_THRESHOLD}",
+    "--track-thresh",
+    "${TRACKING_THRESHOLD}",
+    "--metrics",
+    "${ENABLE_METRICS}",
+    "--experiment-tracking",
+    "${ENABLE_EXPERIMENT_TRACKING}",
+    "--batch-size",
+    "${BATCH_SIZE}",
+    "--distributed",
+    "${ENABLE_DISTRIBUTED_PROCESSING}",
+    "--edge-computing",
+    "${ENABLE_EDGE_COMPUTING}"
+  ],
+  "volumes": [
+    {
+      "name": "model-storage",
+      "mountPath": "/models",
+      "size": "50Gi"
+    },
+    {
+      "name": "experiment-data",
+      "mountPath": "/experiments",
+      "size": "100Gi"
+    }
+  ],
+  "capabilities": {
+    "gpu": true,
+    "ffmpeg": true,
+    "rtsp": true,
+    "distributed": true,
+    "edge": true
+  },
+  "metrics": {
+    "enabled": true,
+    "endpoint": "/metrics",
+    "format": "prometheus"
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "json",
+    "output": "/logs"
+  }
+} 
