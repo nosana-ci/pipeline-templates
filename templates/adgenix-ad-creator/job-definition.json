@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "type": "container",
+  "name": "adgenix-ad-creator",
+  "description": "Generate ad visuals and copy with Flux.1 and DistilGPT2",
+  "container": {
+    "image": "pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime",
+    "gpu": true,
+    "entrypoint": ["/bin/bash", "-c"],
+    "command": [
+      "pip install transformers==4.44.2 diffusers==0.29.2 torch==2.3.0 torchvision==0.18.0 && echo 'from diffusers import FluxPipeline; from transformers import pipeline; import torch; img_pipe = FluxPipeline.from_pretrained(\"black-forest-labs/FLUX.1-dev\", torch_dtype=torch.bfloat16); img_pipe.to(\"cuda\"); image = img_pipe(\"A modern coffee shop with a vibrant vibe\").images[0]; image.save(\"ad_image.png\"); text_pipe = pipeline(\"text-generation\", model=\"distilbert/distilgpt2\", clean_up_tokenization_spaces=True); ad_text = text_pipe(\"Write a 10-word ad for coffee targeting young adults\", max_length=30, num_return_sequences=1, truncation=True)[0][\"generated_text\"]; with open(\"ad_text.txt\", \"w\") as f: f.write(ad_text)' > adgenix.py && python adgenix.py"
+    ]
+  }
+}
