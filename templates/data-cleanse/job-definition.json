@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "data-cleanse-web",
+      "args": {
+        "cmd": ["python", "app.py"],
+        "image": "docker.io/acalculus/data_cleanse_app:latest",
+        "expose": 5000,
+        "env": {
+          "PYTHONUNBUFFERED": "1"
+        }
+      }
+    }
+  ]
+}
