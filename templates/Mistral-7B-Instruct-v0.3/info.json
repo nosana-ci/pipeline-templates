@@ -1,0 +1,12 @@
+{
+    "id": "mistral-7b-instruct-v0.3",
+    "name": "Mistral-7B-Instruct-v0.3",
+    "description": "Mistral AI's 7B parameter model, fine-tuned for instruction-following tasks, supporting function calling and an extended vocabulary, served via vLLM with an OpenAI-compatible API.",
+    "category": [
+        "API",
+        "LLM",
+        "New"
+    ],
+    "icon": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
+    "github_url": "https://github.com/deepseek-ai/DeepSeek-R1"
+}

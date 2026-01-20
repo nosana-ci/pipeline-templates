@@ -1,0 +1,12 @@
+{
+    "id": "llama-4-scout",
+    "name": "Llama 4 Scout",
+    "description": "Llama 4 Scout, a 17 billion parameter model with 16 experts, that use a mixture-of-experts (MoE) architecture and incorporate early fusion for native multimodality. It features a 10-million-token context window and is designed to operate efficiently on a single Nvidia H100 GPU.",
+    "category": [
+        "API",
+        "LLM",
+        "New"
+    ],
+    "icon": "https://cdn-avatars.huggingface.co/v1/production/uploads/646cf8084eefb026fb8fd8bc/oCTqufkdTkjyGodsx1vo1.png",
+    "github_repo": "https://github.com/meta-llama/llama-models"
+}

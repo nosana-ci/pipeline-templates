@@ -1,0 +1,32 @@
+{
+    "ops": [
+        {
+            "id": "Mistral-7B-Instruct-v0.3",
+            "args": {
+                "cmd": [
+                    "bash -c 'apt update && apt install -y git && pip install transformers huggingface_hub && python3 -m vllm.entrypoints.openai.api_server --model mistralai/Mistral-7B-Instruct-v0.3 --port 9000'"
+                ],
+                "gpu": true,
+                "image": "vllm/vllm-openai:latest",
+                "expose": 9000,
+                "resources": [
+                    {
+                        "url": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3",
+                        "type": "S3",
+                        "target": "/models/mistral-7b-instruct-v0.3",
+                        "allowWrite": false
+                    }
+                ]
+            },
+            "type": "container/run"
+        }
+    ],
+    "meta": {
+        "trigger": "dashboard",
+        "system_requirements": {
+            "required_vram": 16
+        }
+    },
+    "type": "container",
+    "version": "0.1"
+}
