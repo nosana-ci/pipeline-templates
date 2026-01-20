@@ -1,0 +1,8 @@
+
+{
+  "id": "nnunet-segmentation",
+  "name": "nnU-Net Medical Image Segmentation",
+  "description": "Segment 3D MRI or CT scans using nnU-Net with pretrained models in a GPU-accelerated container.",
+  "category": ["AI", "Medical Imaging", "Segmentation", "nnU-Net"],
+  "icon": ""
+}

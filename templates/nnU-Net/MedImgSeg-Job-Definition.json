@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "run-nnunet",
+      "args": {
+        "cmd": [
+          "nnUNet_predict",
+          "-i", "/data/imagesTs",
+          "-o", "/data/output",
+          "-t", "Task001_MRI",
+          "--model", "3d_fullres",
+          "--trainer", "nnUNetTrainerV2"
+        ],
+        "image": "docker.io/nbutter/nnunet:latest",
+        "gpu": true
+      }
+    }
+  ]
+}
