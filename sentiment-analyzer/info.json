@@ -1,0 +1,7 @@
+{
+  "id": "sentiment-analysis",
+  "name": "Sentiment Analysis",
+  "description": "Analyzes text to determine sentiment (positive, negative, or neutral) with multiple output formats.",
+  "category": ["AI", "Text Processing"],
+  "icon": "https://github.com/MachoDrone/pipeline-templates/blob/main/sentiment-analyzer/hf-logo.png?raw=true"
+}
