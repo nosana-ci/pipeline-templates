@@ -1,0 +1,46 @@
+{
+    "version": "0.1",
+    "type": "container",
+    "meta": {
+      "trigger": "dashboard"
+    },
+    "ops": [
+      {
+        "type": "container/run",
+        "id": "vector-database",
+        "args": {
+          "cmd": ["/bin/sh", "-c", "chroma-server --port 8000"],
+          "image": "chroma/chroma:latest",
+          "expose": 8000
+        }
+      },
+      {
+        "type": "container/run",
+        "id": "embedding-service",
+        "args": {
+          "cmd": ["/bin/sh", "-c", "python3 embedding_api.py"],
+          "image": "nosana/embedding-service:all-minilm-l6-v2",
+          "expose": 5000,
+          "env": {
+            "MODEL_NAME": "all-MiniLM-L6-v2"
+          }
+        }
+      },
+      
+      {
+        "type": "container/run",
+        "id": "llm-service",
+        "args": {
+          "cmd": ["/bin/sh", "-c", "python3 llm_api.py"],
+          "image": "mistralai/Mistral-7B-Instruct-v0.2",
+          "gpu": true,
+
+          "expose": 9000,
+          "env": {
+            "MODEL_CONFIG": "default"
+          }
+        }
+      }
+    ]
+  }
+  
