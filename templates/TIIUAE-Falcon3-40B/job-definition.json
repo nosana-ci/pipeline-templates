@@ -1,0 +1,27 @@
+{
+  "ops": [
+    {
+      "id": "falcon3-40B",
+      "args": {
+        "cmd": [
+          "/bin/bash",
+          "-c",
+          "text-generation-launcher --model-id tiiuae/falcon-40b-instruct"
+        ],
+        "gpu": true,
+        "image": "ghcr.io/huggingface/text-generation-inference:latest",
+        "expose": 8080,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 80
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+}
