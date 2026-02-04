@@ -1,0 +1,14 @@
+{
+  "id": "glm-4.7-flash",
+  "name": "GLM-4.7-Flash",
+  "category": ["Official", "API", "LLM", "Benchmark", "Ollama"],
+  "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
+  "variants": [
+    {
+      "id": "20b",
+      "name": "20B Model",
+      "description": "GLM-4.7-Flash 20B parameter model - balanced performance and efficiency",
+      "job_definition": "job-definition.json"
+    }
+  ]
+}
