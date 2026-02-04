@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "global": {
+    "variables": {
+      "MODEL": "glm-4.7-flash:latest"
+    }
+  },
+  "ops": [
+    {
+      "id": "glm-4.7-flash",
+      "type": "container/run",
+      "args": {
+        "gpu": true,
+        "image": "docker.io/ollama/ollama:0.12.0",
+        "expose": [
+          {
+            "port": 11434,
+            "health_checks": [
+              {
+                "type": "http",
+                "path": "/api/tags",
+                "method": "GET",
+                "expected_status": 200,
+                "continuous": false
+              }
+            ]
+          }
+        ],
+        "resources": [
+          {
+            "type": "Ollama",
+            "model": "%%global.variables.MODEL%%"
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 16
+    }
+  }
+}
