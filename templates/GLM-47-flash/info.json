@@ -5,9 +5,9 @@
   "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
   "variants": [
     {
-      "id": "20b",
-      "name": "20B Model",
-      "description": "GLM-4.7-Flash 20B parameter model - balanced performance and efficiency",
+      "id": "30b",
+      "name": "30B Model",
+      "description": "GLM-4.7-Flash 30B parameter model - balanced performance and efficiency",
       "job_definition": "job-definition.json"
     }
   ]
