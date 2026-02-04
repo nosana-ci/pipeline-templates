@@ -4,7 +4,7 @@ High-performance inference API for GLM-4.7-Flash language models via Ollama with
 
 ## Available Models
 
-### 20B Model
+### 30B Model
 - **Parameters**: 30 billion MoE
 - **VRAM Required**: 19 GB
 - **Use Case**: Balanced performance for most applications with efficient resource usage, strongest in the 30B class.
