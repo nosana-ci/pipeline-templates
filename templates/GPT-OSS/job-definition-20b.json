@@ -23,17 +23,6 @@
                 "method": "GET",
                 "expected_status": 200,
                 "continuous": false
-              },
-              {
-                "body": "{\"model\":\"%%global.variables.MODEL%%\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}",
-                "path": "/api/chat",
-                "type": "http",
-                "method": "POST",
-                "headers": {
-                  "Content-Type": "application/json"
-                },
-                "continuous": false,
-                "expected_status": 200
               }
             ]
           }

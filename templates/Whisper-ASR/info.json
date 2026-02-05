@@ -1,6 +1,9 @@
 {
   "id": "whisper-asr",
-  "name": "Whisper ASR Webservice",
-  "category": ["Official", "API"],
+  "name": "Whisper ASR UI",
+  "category": [
+    "Official",
+    "Web UI"
+  ],
   "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png"
 }

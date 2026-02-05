@@ -12,11 +12,13 @@
       "type": "container/run",
       "id": "Whisper",
       "args": {
-        "image": "docker.io/nosana/whisper-asr:2.0.0",
-        "cmd": [],
+        "cmd": [
+          "python",
+          "app.py"
+        ],
         "gpu": true,
-        "expose": 9000,
-        "env": {}
+        "image": "registry.hf.space/openai-whisper:latest",
+        "expose": 7860
       }
     }
   ]
