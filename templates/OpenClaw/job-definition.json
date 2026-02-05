@@ -1,0 +1,53 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard"
+  },
+  "global": {
+      "variables": {
+        "OPENCLAW_MODEL": "glm-4.7-flash:latest",
+        "OPENCLAW_GATEWAY_TOKEN": "MY_SECRET_TOKEN"
+    }
+  },
+  "ops": [
+    {
+      "id": "ollama",
+      "type": "container/run",
+      "args": {
+        "image": "docker.io/ollama/ollama:0.15.4",
+        "gpu": true,
+        "resources": [
+          {
+            "type": "Ollama",
+            "model": "%%global.variables.OPENCLAW_MODEL%%"
+          }
+        ]
+      },
+      "execution": {
+        "group": "main"
+      }
+    },
+    {
+      "id": "openclaw-gateway",
+      "type": "container/run",
+      "args": {
+        "image": "docker.io/alpine/openclaw:2026.2.1",
+        "entrypoint": ["/bin/sh"],
+        "cmd": [
+          "-c",
+          "mkdir -p \"${HOME:-/home/node}/.openclaw/config\"; cd \"${HOME:-/home/node}/.openclaw/config\"; printf '%b' \"{\\n  gateway: {\\n    mode: 'local',\\n    auth: { mode: 'token' },\\n    controlUi: { dangerouslyDisableDeviceAuth: true },\\n  },\\n}\\n\" > base.json5; printf '%b' \"{\\n  $include: './base.json5',\\n  models: {\\n    providers: {\\n      ollama: {\\n        baseUrl: '$(printf %s ${OLLAMA_BASE_URL-} | sed 's:/*$::')/v1',\\n        api: 'openai-completions',\\n        models: [\\n          {\\n            id: '${OPENCLAW_MODEL-}',\\n            name: '${OPENCLAW_MODEL-}',\\n            reasoning: false,\\n            input: ['text'],\\n            cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },\\n            contextWindow: 128000,\\n            maxTokens: 8192,\\n          },\\n        ],\\n      },\\n    },\\n  },\\n  agents: { defaults: { model: { primary: 'ollama/${OPENCLAW_MODEL-}' } } },\\n}\\n\" > openclaw.json5; OPENCLAW_CONFIG_PATH=\"${HOME:-/home/node}/.openclaw/config/openclaw.json5\" node dist/index.js gateway --bind lan --port 18789 --verbose --ws-log full"
+        ],
+        "expose": 18789,
+        "env": {
+          "OPENCLAW_MODEL": "%%global.variables.OPENCLAW_MODEL%%",
+          "OPENCLAW_GATEWAY_TOKEN": "%%global.variables.OPENCLAW_GATEWAY_TOKEN%%",
+          "OLLAMA_BASE_URL": "http://%%ops.ollama.host%%:11434"
+        }
+      },
+      "execution": {
+        "group": "main"
+      }
+    }
+  ]
+}
