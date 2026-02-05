@@ -3,7 +3,7 @@
   "type": "container",
   "global": {
     "variables": {
-      "OPENCLAW_MODEL": "glm-4.7-flash:latest",
+      "OPENCLAW_MODEL": "glm-4.7-flash:q4_K_M",
       "OPENCLAW_GATEWAY_TOKEN": "MY_SECRET_TOKEN"
     }
   },
