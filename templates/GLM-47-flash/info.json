@@ -5,10 +5,16 @@
   "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
   "variants": [
     {
-      "id": "20b",
-      "name": "20B Model",
-      "description": "GLM-4.7-Flash 20B parameter model - balanced performance and efficiency",
-      "job_definition": "job-definition.json"
+      "id": "16fp",
+      "name": "GLM-4.7-Flash BF16",
+      "description": "GLM-4.7-Flash BF16 parameter model",
+      "job_definition": "job-definition-GLM-16fp.json"
+    },
+    {
+      "id": "q4",
+      "name": "GLM-4.7-Flash Q4_K_M",
+      "description": "GLM-4.7-Flash Q4_K_M parameter model",
+      "job_definition": "job-definition-GLM-q4.json"
     }
   ]
 }

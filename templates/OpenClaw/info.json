@@ -5,10 +5,28 @@
   "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYIA6aP7c8oWKOF_BUwlZMdKHLi8HiyhDHqA&s",
   "variants": [
     {
-      "id": "default",
-      "name": "Default OpenClaw Application",
-      "description": "A default template for the OpenClaw application.",
-      "job_definition": "job-definition.json"
+      "id": "gpt-120b",
+      "name": "GPT-OSS 120B",
+      "description": "OpenClaw with GPT-OSS 120B parameter model",
+      "job_definition": "job-definition-gpt-120b.json"
+    },
+    {
+      "id": "gpt-20b",
+      "name": "GPT-OSS 20B",
+      "description": "OpenClaw with GPT-OSS 20B parameter model",
+      "job_definition": "job-definition-gpt-20b.json"
+    },
+    {
+      "id": "glm-q4",
+      "name": "GLM-4.7-Flash Q4_K_M",
+      "description": "OpenClaw with GLM-4.7-Flash Q4_K_M parameter model",
+      "job_definition": "job-definition-GLM-q4.json"
+    },
+    {
+      "id": "glm-16fp",
+      "name": "GLM-4.7-Flash BF16",
+      "description": "OpenClaw with GLM-4.7-Flash BF16 parameter model",
+      "job_definition": "job-definition-GLM-16fp.json"
     }
   ]
 }
