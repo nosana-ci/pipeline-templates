@@ -1,0 +1,48 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "global": {
+    "variables": {
+      "OPENCLAW_MODEL": "glm-4.7-flash:latest",
+      "OPENCLAW_GATEWAY_TOKEN": "MY_SECRET_TOKEN"
+    }
+  },
+  "ops": [
+    {
+      "id": "openclaw",
+      "type": "container/run",
+      "args": {
+        "gpu": true,
+        "image": "ollama/ollama:0.15.4",
+        "entrypoint": [
+          "/bin/sh",
+          "/root/entrypoint/entrypoint.sh"
+        ],
+        "cmd": [
+          "--auth-choice",
+          "skip",
+          "--gateway-bind",
+          "lan",
+          "--token",
+          "%%global.variables.OPENCLAW_GATEWAY_TOKEN%%"
+        ],
+        "expose": 18789,
+        "env": {
+          "OPENCLAW_MODEL": "%%global.variables.OPENCLAW_MODEL%%",
+          "OPENCLAW_GATEWAY_TOKEN": "%%global.variables.OPENCLAW_GATEWAY_TOKEN%%"
+        },
+        "resources": [
+          {
+            "type": "S3",
+            "url": "https://models.nosana.io/OpenClaw",
+            "target": "/root/entrypoint"
+          },
+          {
+            "type": "Ollama",
+            "model": "%%global.variables.OPENCLAW_MODEL%%"
+          }
+        ]
+      }
+    }
+  ]
+}
