@@ -3,7 +3,7 @@
   "type": "container",
   "global": {
     "variables": {
-      "MODEL": "glm-4.7-flash:latest"
+      "MODEL": "glm-4.7-flash:q4_K_M"
     }
   },
   "ops": [
