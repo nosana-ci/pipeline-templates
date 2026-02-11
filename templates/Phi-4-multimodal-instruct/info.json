@@ -1,0 +1,7 @@
+{
+  "id": "phi-4-multimodal",
+  "name": "Microsoft Phi-4 Multimodal",
+  "description": "Lightweight open multimodal foundation model supporting text, image, and audio inputs with 128K token context",
+  "category": ["LLM", "Multimodal", "Speech Recognition", "API", "New"],
+  "icon": "https://huggingface.co/microsoft/Phi-4-multimodal-instruct/resolve/main/ms_logo.png"
+} 

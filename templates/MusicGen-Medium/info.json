@@ -1,0 +1,7 @@
+{
+  "id": "musicgen-medium",
+  "name": "Meta MusicGen Medium",
+  "description": "Text-to-music generation model capable of creating high-quality music samples from text descriptions",
+  "category": ["API", "Audio Generation", "AI Music", "New"],
+  "icon": "https://huggingface.co/facebook/musicgen-medium/resolve/main/meta_logo.png"
+} 

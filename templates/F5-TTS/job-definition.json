@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "f5-tts",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "git clone https://github.com/SWivid/F5-TTS.git && cd F5-TTS && mkdir -p ckpts/F5TTS_v1_Base && pip install -r requirements.txt && wget -P ckpts/F5TTS_v1_Base https://huggingface.co/SWivid/F5-TTS/resolve/main/model_1250000.safetensors && python app.py --host 0.0.0.0 --port 7860"
+        ],
+        "env": {
+          "PYTHONUNBUFFERED": "1"
+        },
+        "gpu": true,
+        "image": "pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime",
+        "expose": 7860,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 8
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 
