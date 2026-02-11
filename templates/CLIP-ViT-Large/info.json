@@ -1,0 +1,9 @@
+{
+  "id": "clip-vit-large",
+  "name": "CLIP ViT-Large/14",
+  "description": "OpenAI's Vision-Language model for zero-shot image classification and embedding",
+  "category": ["Image classification", "New", "Multimodal"],
+  "icon": "https://storage.googleapis.com/sf-blog-images/2020/10/openAI_logo.png",
+  "github_url": "https://github.com/openai/CLIP",
+  "version": "1.0.0"
+} 

@@ -1,0 +1,30 @@
+{
+  "ops": [
+    {
+      "id": "playground-v2.5",
+      "args": {
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m diffusers.pipelines.stable_diffusion_xl --model playgroundai/playground-v2.5-1024px-aesthetic --device 0 --port 9000 --host 0.0.0.0 --dtype float16"
+        ],
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        },
+        "gpu": true,
+        "image": "huggingface/diffusers:latest",
+        "expose": 9000,
+        "entrypoint": []
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 12
+    }
+  },
+  "type": "container",
+  "version": "0.1"
+} 

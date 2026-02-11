@@ -1,0 +1,9 @@
+{
+  "id": "playground-v2.5",
+  "name": "Playground v2.5 1024px Aesthetic",
+  "description": "State-of-the-art text-to-image diffusion model for high-quality aesthetic images",
+  "category": ["Text to Image", "Multimodel", "API"],
+  "icon": "https://huggingface.co/front/assets/huggingface_logo.svg",
+  "github_url": "https://github.com/playgroundai/playground-v2.5",
+  "version": "1.0.0"
+} 
