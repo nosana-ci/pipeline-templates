@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 48
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "mixtral-8x7b-instruct",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model mistralai/Mixtral-8x7B-Instruct-v0.1 --served-model-name mixtral-8x7b-instruct --dtype bfloat16 --max-model-len 32768 --port 8000 --tensor-parallel-size 1"
+        ],
+        "image": "docker.io/vllm/vllm-openai:v0.7.2",
+        "gpu": true,
+        "expose": 8000,
+        "env": {
+          "HF_TOKEN": "fill_in_your_huggingface_token"
+        }
+      }
+    }
+  ]
+} 
