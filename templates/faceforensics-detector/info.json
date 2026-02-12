@@ -1,0 +1,19 @@
+{
+    "name": "FaceForensics Detector",
+    "description": "Run deepfake detection using FaceForensics with EfficientNet on Nosana GPUs. Upload a video and receive a JSON with detection results.",
+    "icon": "🎭",
+    "tags": ["deepfake", "video", "forensics", "ai", "detection"],
+    "category": "AI Inference",
+    "version": "1.0.0",
+    "visibility": "public",
+    "input": {
+      "path": "/data/input.mp4",
+      "description": "Upload a video file for deepfake analysis"
+    },
+    "output": {
+      "path": "/data/results.json",
+      "description": "JSON file containing frame-wise detection results"
+    },
+    "url": "https://github.com/harpal88/pipeline-templates.git/faceForensics-detector"
+  }
+  
