@@ -1,0 +1,7 @@
+{
+  "id": "tabtransformer",
+  "name": "TabTransformer",
+  "description": "Transformer-based model for structured tabular data classification with both numerical and categorical features",
+  "category": ["New", "LLM","API"],
+  "icon": "https://huggingface.co/keras-io/tab_transformer/resolve/main/keras_logo.png"
+} 
