@@ -1,0 +1,6 @@
+// info.json
+{
+  "name": "Language Translation API",
+  "description": "Deploys a neural machine translation model as a RESTful API for translating text between multiple languages using Hugging Face's MarianMT.",
+  "tags": ["translation", "API", "NLP", "HuggingFace"]
+}
