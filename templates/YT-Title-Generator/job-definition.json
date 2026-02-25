@@ -1,0 +1,54 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "youtube-title-desc-generator",
+      "args": {
+        "image": "your-dockerhub-username/youtube-title-gen:latest",
+        "cmd": [],
+        "gpu": false,
+        "expose": 8080
+      }
+    }
+  ],
+  "resources": {
+    "cpu": 1,
+    "memory": 512,
+    "disk": 1024
+  },
+  "environment": {
+    "GEMINI_API_KEY": "$SECRET(GEMINI_API_KEY)",
+    "VIDEO_TOPIC": "$VARIABLE(VIDEO_TOPIC)"
+  },
+  "storage": {
+    "input": [],
+    "output": {
+      "path": "/app/output",
+      "volume": "output"
+    }
+  },
+  "secrets": [
+    {
+      "key": "GEMINI_API_KEY",
+      "description": "Your Google Gemini API Key"
+    }
+  ],
+  "variables": [
+    {
+      "key": "VIDEO_TOPIC",
+      "description": "The topic for the YouTube video (e.g., 'How to bake sourdough bread')",
+      "default": "How to improve Python code performance"
+    }
+  ],
+  "runtime": {
+    "maxExecutionTime": 60
+  },
+  "results": {
+    "format": "stdout"
+  }
+}
