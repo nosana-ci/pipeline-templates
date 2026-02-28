@@ -1,0 +1,8 @@
+{
+  "id": "facefusion",
+  "name": "FaceFusion",
+  "description": "Industry leading face manipulation platform.",
+  "category": ["Web UI", "API", "Image Generation", Video Generation],
+  "icon": "https://cdn.buymeacoffee.com/uploads/profile_pictures/2025/02/97e2dd3e460e2873bcaa448add938276.png@300w_0e.webp",
+  "github_url": "https://github.com/facefusion/facefusion"
+}
