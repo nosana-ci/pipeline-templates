@@ -5,7 +5,7 @@
   "icon": "https://avatars.githubusercontent.com/u/148330874?s=48&v=4",
   "variants": [
     {
-      "id": "1.5b",
+      "id": "1-5b",
       "name": "1.5B Model",
       "description": "Lightweight 1.5B parameter model - lowest VRAM requirement",
       "job_definition": "job-definition-1.5b.json"

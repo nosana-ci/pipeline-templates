@@ -8,7 +8,7 @@
   },
   "ops": [
     {
-      "id": "Nanonets-OCR2:1.5B",
+      "id": "Nanonets-OCR2:1-5B",
       "type": "container/run",
       "args": {
         "cmd": [

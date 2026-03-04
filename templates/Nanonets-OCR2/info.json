@@ -16,7 +16,7 @@
       "job_definition": "job-definition-3b.json"
     },
     {
-      "id": "1.5b",
+      "id": "1-5b",
       "name": "1.5B Model",
       "description": "Nanonets OCR 2 1.5B parameter model - optimized for lower resource usage",
       "job_definition": "job-definition-1.5b.json"

@@ -4,7 +4,7 @@
   "ops": [
     {
       "type": "container/run",
-      "id": "Qwen1.5b",
+      "id": "Qwen1-5b",
       "args": {
         "cmd": [
           "--model",
