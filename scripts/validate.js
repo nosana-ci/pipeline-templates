@@ -61,6 +61,17 @@ async function validateJobDefinitionFile(folder, jobDefPath) {
     }
   }
 
+  // Validate op IDs do not contain dots (dots break literal interpolation path resolution)
+  if (Array.isArray(jobDefinition.ops)) {
+    for (const op of jobDefinition.ops) {
+      if (op.id && op.id.includes(".")) {
+        throw new Error(
+          `${folder}: Op ID '${op.id}' in ${path.basename(jobDefPath)} must not contain dots. Replace dots with dashes.`
+        );
+      }
+    }
+  }
+
   // Create a copy of job definition without meta for SDK validation
   const jobDefForValidation = {
     ...jobDefinition,
@@ -136,6 +147,13 @@ async function validateTemplate(folder) {
     );
   }
 
+  // Validate ID does not contain dots
+  if (info.id.includes(".")) {
+    throw new Error(
+      `${folder}: ID '${info.id}' in info.json must not contain dots. Replace dots with dashes.`
+    );
+  }
+
   // Check for unique IDs
   if (allIds.has(info.id)) {
     throw new Error(`${folder}: Duplicate ID '${info.id}' found in info.json`);
@@ -183,6 +201,13 @@ async function validateTemplate(folder) {
       if (!variant.id || !variant.name || !variant.job_definition) {
         throw new Error(
           `${folder}: Each variant must have 'id', 'name', and 'job_definition' fields`
+        );
+      }
+
+      // Validate variant ID does not contain dots
+      if (variant.id.includes(".")) {
+        throw new Error(
+          `${folder}: Variant ID '${variant.id}' must not contain dots. Replace dots with dashes.`
         );
       }
 

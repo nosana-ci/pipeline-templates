@@ -8,7 +8,7 @@
   },
   "ops": [
     {
-      "id": "glm-4.7-flash",
+      "id": "glm-4-7-flash",
       "type": "container/run",
       "args": {
         "gpu": true,
