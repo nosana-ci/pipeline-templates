@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 4
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "smollm2-135m-instruct",
+      "args": {
+        "entrypoint": [],
+        "cmd": [
+          "/bin/sh",
+          "-c",
+          "python3 -m vllm.entrypoints.openai.api_server --model HuggingFaceTB/SmolLM2-135M-Instruct --served-model-name smollm2-instruct --port 9000"
+        ],
+        "image": "docker.io/vllm/vllm-openai:v0.7.2",
+        "gpu": true,
+        "expose": 9000
+      }
+    }
+  ]
+}
+  
