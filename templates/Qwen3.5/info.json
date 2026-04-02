@@ -22,8 +22,8 @@
     },
     {
       "id": "9b",
-      "name": "9B Model",
-      "description": "9B parameter model - strong general performance",
+      "name": "9B FP8 Model",
+      "description": "9B parameter model with FP8 quantization - strong performance, reduced VRAM",
       "job_definition": "job-definition-9b.json"
     },
     {

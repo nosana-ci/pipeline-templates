@@ -6,7 +6,7 @@
       "type": "container/run",
       "id": "Qwen35-27B-AWQ-4bit",
       "args": {
-        "image": "docker.io/vllm/vllm-openai:nightly",
+        "image": "docker.io/vllm/vllm-openai:v0.17.0",
         "cmd": [
           "cyankiwi/Qwen3.5-27B-AWQ-4bit",
           "--served-model-name",

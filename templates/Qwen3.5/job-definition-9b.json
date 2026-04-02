@@ -6,11 +6,11 @@
       "type": "container/run",
       "id": "Qwen35-9B",
       "args": {
-        "image": "docker.io/vllm/vllm-openai:nightly",
+        "image": "docker.io/vllm/vllm-openai:v0.17.0",
         "cmd": [
-          "Qwen/Qwen3.5-9B",
+          "lovedheart/Qwen3.5-9B-FP8",
           "--served-model-name",
-          "Qwen/Qwen3.5-9B",
+          "Qwen3.5-9B-FP8",
           "--port",
           "9000",
           "--max-model-len",
@@ -38,7 +38,7 @@
                 "headers": {
                   "Content-Type": "application/json"
                 },
-                "body": "{\"model\":\"Qwen/Qwen3.5-9B\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}"
+                "body": "{\"model\":\"Qwen3.5-9B-FP8\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}"
               }
             ]
           }
@@ -50,7 +50,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_vram": 22
+      "required_vram": 14
     }
   }
 }
