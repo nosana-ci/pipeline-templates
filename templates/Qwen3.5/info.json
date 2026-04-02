@@ -1,0 +1,42 @@
+{
+  "id": "qwen35",
+  "name": "Qwen 3.5 Models",
+  "category": [
+    "API",
+    "LLM",
+    "vLLM"
+  ],
+  "icon": "https://avatars.githubusercontent.com/u/128872885?s=48&v=4",
+  "variants": [
+    {
+      "id": "0-8b",
+      "name": "0.8B Model",
+      "description": "Lightweight 0.8B parameter model - lowest VRAM requirement",
+      "job_definition": "job-definition-0-8b.json"
+    },
+    {
+      "id": "4b",
+      "name": "4B Model",
+      "description": "4B parameter model - good balance of speed and quality",
+      "job_definition": "job-definition-4b.json"
+    },
+    {
+      "id": "9b",
+      "name": "9B Model",
+      "description": "9B parameter model - strong general performance",
+      "job_definition": "job-definition-9b.json"
+    },
+    {
+      "id": "27b",
+      "name": "27B Model",
+      "description": "27B parameter model - highest quality dense model",
+      "job_definition": "job-definition-27b.json"
+    },
+    {
+      "id": "27b-awq",
+      "name": "27B AWQ 4-bit Model",
+      "description": "27B parameter model with AWQ 4-bit quantization - reduced VRAM",
+      "job_definition": "job-definition-27b-awq.json"
+    }
+  ]
+}

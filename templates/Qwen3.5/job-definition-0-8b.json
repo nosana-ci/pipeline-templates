@@ -1,0 +1,56 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Qwen35-0-8B",
+      "args": {
+        "image": "docker.io/vllm/vllm-openai:nightly",
+        "cmd": [
+          "Qwen/Qwen3.5-0.8B",
+          "--served-model-name",
+          "Qwen/Qwen3.5-0.8B",
+          "--port",
+          "9000",
+          "--max-model-len",
+          "50000",
+          "--gpu-memory-utilization",
+          "0.90",
+          "--enable-auto-tool-choice",
+          "--tool-call-parser",
+          "qwen3_coder",
+          "--reasoning-parser",
+          "qwen3",
+          "--language-model-only",
+          "--enforce-eager"
+        ],
+        "expose": [
+          {
+            "port": 9000,
+            "health_checks": [
+              {
+                "type": "http",
+                "path": "/v1/chat/completions",
+                "method": "POST",
+                "expected_status": 200,
+                "continuous": false,
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "body": "{\"model\":\"Qwen/Qwen3.5-0.8B\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}"
+              }
+            ]
+          }
+        ],
+        "gpu": true
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 4
+    }
+  }
+}
