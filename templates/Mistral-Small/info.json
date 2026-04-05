@@ -1,0 +1,20 @@
+{
+  "id": "mistral-small",
+  "name": "Mistral Small Models",
+  "category": ["API", "LLM", "Ollama"],
+  "icon": "https://avatars.githubusercontent.com/u/132372032?s=200&v=4",
+  "variants": [
+    {
+      "id": "22b",
+      "name": "22B Model",
+      "description": "22B parameter model with 128K context - optimized efficiency",
+      "job_definition": "job-definition-22b.json"
+    },
+    {
+      "id": "24b",
+      "name": "24B Model",
+      "description": "24B parameter model - latest Mistral Small with improved capabilities",
+      "job_definition": "job-definition-24b.json"
+    }
+  ]
+}
