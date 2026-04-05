@@ -1,0 +1,26 @@
+{
+  "id": "gemma2",
+  "name": "Gemma 2 Models",
+  "category": ["API", "LLM", "Ollama"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png",
+  "variants": [
+    {
+      "id": "2b",
+      "name": "2B Model",
+      "description": "2B parameter model - lightweight and fast",
+      "job_definition": "job-definition-2b.json"
+    },
+    {
+      "id": "9b",
+      "name": "9B Model",
+      "description": "9B parameter model - balanced performance",
+      "job_definition": "job-definition-9b.json"
+    },
+    {
+      "id": "27b",
+      "name": "27B Model",
+      "description": "27B parameter model - highest quality in the Gemma 2 family",
+      "job_definition": "job-definition-27b.json"
+    }
+  ]
+}
