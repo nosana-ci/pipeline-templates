@@ -1,0 +1,6 @@
+{
+  "id": "llama4",
+  "name": "Llama 4 Scout",
+  "category": ["API", "LLM", "Ollama"],
+  "icon": "https://avatars.githubusercontent.com/u/69631?s=200&v=4"
+}
