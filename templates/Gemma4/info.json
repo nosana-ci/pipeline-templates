@@ -1,0 +1,32 @@
+{
+  "id": "gemma4",
+  "name": "Gemma 4 Models",
+  "category": ["API", "LLM", "Ollama"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png",
+  "variants": [
+    {
+      "id": "e2b",
+      "name": "E2B Model",
+      "description": "Efficient 2B parameter model - optimized for on-device deployment",
+      "job_definition": "job-definition-e2b.json"
+    },
+    {
+      "id": "e4b",
+      "name": "E4B Model",
+      "description": "Efficient 4B parameter model - strong performance with low resource usage",
+      "job_definition": "job-definition-e4b.json"
+    },
+    {
+      "id": "26b",
+      "name": "26B Model",
+      "description": "26B parameter model with multimodal capabilities",
+      "job_definition": "job-definition-26b.json"
+    },
+    {
+      "id": "31b",
+      "name": "31B Model",
+      "description": "31B parameter model - frontier-level performance",
+      "job_definition": "job-definition-31b.json"
+    }
+  ]
+}
