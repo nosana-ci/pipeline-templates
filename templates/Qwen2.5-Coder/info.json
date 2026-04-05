@@ -1,0 +1,32 @@
+{
+  "id": "qwen25-coder",
+  "name": "Qwen 2.5 Coder Models",
+  "category": ["API", "LLM", "Ollama"],
+  "icon": "https://avatars.githubusercontent.com/u/128872885?s=48&v=4",
+  "variants": [
+    {
+      "id": "3b",
+      "name": "3B Model",
+      "description": "3B parameter code model - lightweight coding assistant",
+      "job_definition": "job-definition-3b.json"
+    },
+    {
+      "id": "7b",
+      "name": "7B Model",
+      "description": "7B parameter code model - strong code generation",
+      "job_definition": "job-definition-7b.json"
+    },
+    {
+      "id": "14b",
+      "name": "14B Model",
+      "description": "14B parameter code model - enhanced code reasoning",
+      "job_definition": "job-definition-14b.json"
+    },
+    {
+      "id": "32b",
+      "name": "32B Model",
+      "description": "32B flagship code model - competitive with GPT-4o on coding tasks",
+      "job_definition": "job-definition-32b.json"
+    }
+  ]
+}
