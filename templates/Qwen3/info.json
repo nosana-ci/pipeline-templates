@@ -1,0 +1,50 @@
+{
+  "id": "qwen3",
+  "name": "Qwen 3 Models",
+  "category": ["API", "LLM", "Ollama"],
+  "icon": "https://avatars.githubusercontent.com/u/128872885?s=48&v=4",
+  "variants": [
+    {
+      "id": "0-6b",
+      "name": "0.6B Model",
+      "description": "0.6B parameter model - ultra-lightweight",
+      "job_definition": "job-definition-0-6b.json"
+    },
+    {
+      "id": "1-7b",
+      "name": "1.7B Model",
+      "description": "1.7B parameter model - compact and fast",
+      "job_definition": "job-definition-1-7b.json"
+    },
+    {
+      "id": "4b",
+      "name": "4B Model",
+      "description": "4B parameter model - good balance of speed and quality",
+      "job_definition": "job-definition-4b.json"
+    },
+    {
+      "id": "8b",
+      "name": "8B Model",
+      "description": "8B parameter model - strong general performance",
+      "job_definition": "job-definition-8b.json"
+    },
+    {
+      "id": "14b",
+      "name": "14B Model",
+      "description": "14B parameter model - enhanced reasoning",
+      "job_definition": "job-definition-14b.json"
+    },
+    {
+      "id": "30b",
+      "name": "30B MoE Model",
+      "description": "30B MoE parameter model - efficient expert routing",
+      "job_definition": "job-definition-30b.json"
+    },
+    {
+      "id": "32b",
+      "name": "32B Model",
+      "description": "32B dense parameter model - high quality reasoning",
+      "job_definition": "job-definition-32b.json"
+    }
+  ]
+}
