@@ -27,12 +27,6 @@
       "job_definition": "job-definition-9b.json"
     },
     {
-      "id": "27b",
-      "name": "27B Model",
-      "description": "27B parameter model - highest quality dense model",
-      "job_definition": "job-definition-27b.json"
-    },
-    {
       "id": "27b-awq",
       "name": "27B AWQ 4-bit Model",
       "description": "27B parameter model with AWQ 4-bit quantization - reduced VRAM",
