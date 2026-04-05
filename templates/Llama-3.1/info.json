@@ -1,0 +1,20 @@
+{
+  "id": "llama31",
+  "name": "Llama 3.1 Models",
+  "category": ["API", "LLM", "Ollama"],
+  "icon": "https://avatars.githubusercontent.com/u/69631?s=200&v=4",
+  "variants": [
+    {
+      "id": "8b",
+      "name": "8B Model",
+      "description": "8B parameter model - fast and efficient for most tasks",
+      "job_definition": "job-definition-8b.json"
+    },
+    {
+      "id": "70b",
+      "name": "70B Model",
+      "description": "70B parameter model - high performance with strong reasoning",
+      "job_definition": "job-definition-70b.json"
+    }
+  ]
+}
