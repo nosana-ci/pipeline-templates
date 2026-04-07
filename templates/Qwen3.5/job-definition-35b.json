@@ -3,12 +3,12 @@
   "type": "container",
   "global": {
     "variables": {
-      "MODEL": "gemma3:4b-it-qat"
+      "MODEL": "qwen3.5:35b"
     }
   },
   "ops": [
     {
-      "id": "Gemma3-4b",
+      "id": "Qwen3-5-35b",
       "type": "container/run",
       "args": {
         "gpu": true,
@@ -39,7 +39,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_vram": 5
+      "required_vram": 26
     }
   }
 }

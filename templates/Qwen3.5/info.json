@@ -1,36 +1,26 @@
 {
-  "id": "qwen35",
+  "id": "qwen3-5",
   "name": "Qwen 3.5 Models",
-  "category": [
-    "API",
-    "LLM",
-    "vLLM"
-  ],
-  "icon": "https://avatars.githubusercontent.com/u/128872885?s=48&v=4",
+  "category": ["Official", "API", "LLM", "Ollama"],
+  "icon": "https://img.alicdn.com/imgextra/i1/O1CN01asLYeX1WhbsyEHYfR_!!6000000002820-55-tps-56-56.svg",
   "variants": [
     {
-      "id": "0-8b",
-      "name": "0.8B Model",
-      "description": "Lightweight 0.8B parameter model - lowest VRAM requirement",
-      "job_definition": "job-definition-0-8b.json"
-    },
-    {
-      "id": "4b",
-      "name": "4B Model",
-      "description": "4B parameter model - good balance of speed and quality",
-      "job_definition": "job-definition-4b.json"
-    },
-    {
       "id": "9b",
-      "name": "9B FP8 Model",
-      "description": "9B parameter model with FP8 quantization - strong performance, reduced VRAM",
+      "name": "9B Model",
+      "description": "Qwen 3.5 9B multimodal model (6.6 GB, 256K context, Text + Image)",
       "job_definition": "job-definition-9b.json"
     },
     {
-      "id": "27b-awq",
-      "name": "27B AWQ 4-bit Model",
-      "description": "27B parameter model with AWQ 4-bit quantization - reduced VRAM",
-      "job_definition": "job-definition-27b-awq.json"
+      "id": "27b",
+      "name": "27B Model",
+      "description": "Qwen 3.5 27B multimodal model (17 GB, 256K context, Text + Image)",
+      "job_definition": "job-definition-27b.json"
+    },
+    {
+      "id": "35b",
+      "name": "35B Model",
+      "description": "Qwen 3.5 35B multimodal model (24 GB, 256K context, Text + Image)",
+      "job_definition": "job-definition-35b.json"
     }
   ]
 }

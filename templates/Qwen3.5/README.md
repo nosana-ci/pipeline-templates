@@ -1,51 +1,67 @@
 # Qwen 3.5 Models
 
-High-performance inference API for Qwen 3.5 language models served via vLLM with OpenAI-compatible endpoints.
+Qwen 3.5 is a family of open-source multimodal models from Alibaba that delivers exceptional utility and performance. Served via Ollama, it handles text and image input with text output. Qwen 3.5 features unified vision-language understanding, configurable thinking modes, native function-calling support, and coverage of 201 languages.
 
 ## Available Models
 
-### 0.8B Model
-- **Parameters**: 0.8 billion
-- **VRAM Required**: ~4 GB
-- **Use Case**: Lightweight applications, testing, development
+### 9B
+- **Model Size**: 6.6 GB
+- **Context Length**: 256K tokens
+- **Modalities**: Text, Image
+- **VRAM Required**: ~10 GB
+- **Use Case**: Balanced default model with strong reasoning and multimodal capabilities
 
-### 4B Model
-- **Parameters**: 4 billion
-- **VRAM Required**: ~12 GB
-- **Use Case**: Good balance of speed and quality for general tasks
-
-### 9B Model
-- **Parameters**: 9 billion
-- **VRAM Required**: ~22 GB
-- **Use Case**: Strong general performance for most applications
-
-### 27B Model
-- **Parameters**: 27 billion
-- **VRAM Required**: ~58 GB
-- **Use Case**: Highest quality dense model, requires high-end GPU
-
-### 27B AWQ 4-bit Model
-- **Parameters**: 27 billion (AWQ 4-bit quantized)
+### 27B
+- **Model Size**: 17 GB
+- **Context Length**: 256K tokens
+- **Modalities**: Text, Image
 - **VRAM Required**: ~20 GB
-- **Use Case**: Near full-model quality with significantly reduced VRAM footprint
+- **Use Case**: High-quality inference for complex reasoning, coding, and agent tasks
+
+### 35B
+- **Model Size**: 24 GB
+- **Context Length**: 256K tokens
+- **Modalities**: Text, Image
+- **VRAM Required**: ~28 GB
+- **Use Case**: Maximum performance for demanding workloads and frontier benchmarks
 
 ## Features
 
-- OpenAI-compatible API endpoints
-- Automatic model serving via vLLM
-- Health checks for reliability
-- Support for streaming and non-streaming responses
-- Tool calling support via `qwen3_coder` parser
-- Reasoning/thinking mode via `qwen3` parser
-- AWQ quantization option for efficient 27B serving
+- **Multimodal**: Processes text and images with unified vision-language foundation
+- **Configurable Thinking**: Enable/disable reasoning mode for step-by-step problem solving
+- **Native Function Calling**: Built-in support for tool use and autonomous agent workflows
+- **201 Language Support**: Inclusive worldwide deployment with nuanced cultural understanding
+- **Efficient Hybrid Architecture**: Gated Delta Networks with sparse MoE for high-throughput inference
+- **OpenAI-compatible API**: Served via Ollama with standard endpoints
+- **Automatic Model Download**: Models pulled automatically on startup
 
 ## Usage
 
-The models are served on port 9000 with OpenAI-compatible endpoints:
+The models are served on port 11434 with OpenAI-compatible endpoints:
 
 - **Chat Completions**: `POST /v1/chat/completions`
-- **Model Info**: `GET /v1/models`
+- **Generate**: `POST /api/generate`
+- **Model Info**: `GET /api/tags`
 
-## Model Details
+### Example Request
 
-Qwen 3.5 is the latest generation of Qwen models from Alibaba, featuring dense models from 0.8B to 27B parameters. All models support 256K context length (limited by VRAM in practice) and 201 languages. The `--language-model-only` flag is used to run text-only inference, as the base models are multimodal.
+```bash
+curl http://your-deployment-url:11434/api/chat \
+  -d '{
+    "model": "qwen3.5:9b",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+```
+
+## Benchmarks (Qwen3.5-397B-A17B flagship reference)
+
+| Benchmark | Score |
+|-----------|-------|
+| MMLU-Pro | 87.8% |
+| GPQA | 88.4% |
+| LiveCodeBench v6 | 83.6% |
+| AIME 2026 | 91.3% |
+| IFEval | 92.6% |
+| SWE-bench Verified | 76.2% |
+| MMMU (Vision) | 85.0% |
+| MathVision | 88.6% |

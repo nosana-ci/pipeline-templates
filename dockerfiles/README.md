@@ -49,7 +49,7 @@ docker build -f Dockerfile.comfyui -t nosana/comfyui:latest .
 The following supported templates use public images and don't require custom Dockerfiles:
 
 - **DeepSeek R1 models** (6 templates) - Use `vllm/vllm-openai:v0.9.2`
-- **Gemma models** (3 templates) - Use `ollama/ollama:0.9.6`
+- **Gemma models** (3 templates) - Use `ollama/ollama:0.20.0`
 - **Open WebUI** - Uses `ghcr.io/open-webui/open-webui:ollama`
 
 ## GPU Compatibility

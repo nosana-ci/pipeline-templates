@@ -8,11 +8,11 @@
   },
   "ops": [
     {
-      "id": "gemma4-e4b",
+      "id": "Gemma4-e4b",
       "type": "container/run",
       "args": {
         "gpu": true,
-        "image": "docker.io/ollama/ollama:0.15.4",
+        "image": "docker.io/ollama/ollama:0.20.0",
         "expose": [
           {
             "port": 11434,

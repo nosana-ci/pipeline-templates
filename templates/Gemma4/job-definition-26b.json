@@ -8,11 +8,11 @@
   },
   "ops": [
     {
-      "id": "gemma4-26b",
+      "id": "Gemma4-26b",
       "type": "container/run",
       "args": {
         "gpu": true,
-        "image": "docker.io/ollama/ollama:0.15.4",
+        "image": "docker.io/ollama/ollama:0.20.0",
         "expose": [
           {
             "port": 11434,
@@ -39,7 +39,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_vram": 22
+      "required_vram": 21
     }
   }
 }

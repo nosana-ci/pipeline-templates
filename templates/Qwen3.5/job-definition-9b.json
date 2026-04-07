@@ -1,56 +1,45 @@
 {
   "version": "0.1",
   "type": "container",
+  "global": {
+    "variables": {
+      "MODEL": "qwen3.5:9b"
+    }
+  },
   "ops": [
     {
+      "id": "Qwen3-5-9b",
       "type": "container/run",
-      "id": "Qwen35-9B",
       "args": {
-        "image": "docker.io/vllm/vllm-openai:v0.17.0",
-        "cmd": [
-          "lovedheart/Qwen3.5-9B-FP8",
-          "--served-model-name",
-          "Qwen3.5-9B-FP8",
-          "--port",
-          "9000",
-          "--max-model-len",
-          "30000",
-          "--gpu-memory-utilization",
-          "0.90",
-          "--enable-auto-tool-choice",
-          "--tool-call-parser",
-          "qwen3_coder",
-          "--reasoning-parser",
-          "qwen3",
-          "--language-model-only",
-          "--enforce-eager"
-        ],
+        "gpu": true,
+        "image": "docker.io/ollama/ollama:0.20.0",
         "expose": [
           {
-            "port": 9000,
+            "port": 11434,
             "health_checks": [
               {
                 "type": "http",
-                "path": "/v1/chat/completions",
-                "method": "POST",
+                "path": "/api/tags",
+                "method": "GET",
                 "expected_status": 200,
-                "continuous": false,
-                "headers": {
-                  "Content-Type": "application/json"
-                },
-                "body": "{\"model\":\"Qwen3.5-9B-FP8\",\"messages\":[{\"role\":\"user\",\"content\":\"Respond with a single word: Ready\"}],\"stream\":false}"
+                "continuous": false
               }
             ]
           }
         ],
-        "gpu": true
+        "resources": [
+          {
+            "type": "Ollama",
+            "model": "%%global.variables.MODEL%%"
+          }
+        ]
       }
     }
   ],
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_vram": 14
+      "required_vram": 9
     }
   }
 }
