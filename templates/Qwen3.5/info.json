@@ -2,7 +2,7 @@
   "id": "qwen3-5",
   "name": "Qwen 3.5 Models",
   "category": ["Official", "API", "LLM", "Ollama"],
-  "icon": "https://img.alicdn.com/imgextra/i1/O1CN01asLYeX1WhbsyEHYfR_!!6000000002820-55-tps-56-56.svg",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qwen_logo.svg/3840px-Qwen_logo.svg.png",
   "variants": [
     {
       "id": "9b",

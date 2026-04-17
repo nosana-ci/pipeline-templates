@@ -2,7 +2,7 @@
   "id": "gemma4",
   "name": "Gemma 4 Models",
   "category": ["Official", "API", "LLM", "Benchmark", "Ollama"],
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png",
+  "icon": "https://img.favpng.com/15/17/21/google-logo-google-logo-design-EQmvpNvp_t.jpg",
   "variants": [
     {
       "id": "e2b",
