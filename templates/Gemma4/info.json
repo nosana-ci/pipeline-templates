@@ -17,25 +17,28 @@
       "job_definition": "job-definition-e2b.json",
       "metrics_schema": [
         {
-          "key": "tokens_per_second",
+          "key": "gemma4-e2b.tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_wattage_avg",
+          "key": "gemma4-e2b.gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_temperature_avg",
+          "key": "gemma4-e2b.gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         }
       ],
       "operation_definition": "operation-definitions/e2b.json"
@@ -47,25 +50,28 @@
       "job_definition": "job-definition-e4b.json",
       "metrics_schema": [
         {
-          "key": "tokens_per_second",
+          "key": "gemma4-e4b.tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_wattage_avg",
+          "key": "gemma4-e4b.gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_temperature_avg",
+          "key": "gemma4-e4b.gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         }
       ],
       "operation_definition": "operation-definitions/e4b.json"
@@ -77,25 +83,28 @@
       "job_definition": "job-definition-26b.json",
       "metrics_schema": [
         {
-          "key": "tokens_per_second",
+          "key": "gemma4-26b.tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_wattage_avg",
+          "key": "gemma4-26b.gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_temperature_avg",
+          "key": "gemma4-26b.gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         }
       ],
       "operation_definition": "operation-definitions/26b.json"
@@ -107,25 +116,28 @@
       "job_definition": "job-definition-31b.json",
       "metrics_schema": [
         {
-          "key": "tokens_per_second",
+          "key": "gemma4-31b.tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_wattage_avg",
+          "key": "gemma4-31b.gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_temperature_avg",
+          "key": "gemma4-31b.gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         }
       ],
       "operation_definition": "operation-definitions/31b.json"
