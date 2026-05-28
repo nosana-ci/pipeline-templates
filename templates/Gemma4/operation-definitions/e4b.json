@@ -1,0 +1,53 @@
+[
+  {
+    "id": "Gemma4-e4b",
+    "type": "container/run",
+    "args": {
+      "gpu": true,
+      "image": "docker.io/ollama/ollama:0.20.0",
+      "expose": [
+        {
+          "port": 11434,
+          "health_checks": [
+            {
+              "type": "http",
+              "path": "/api/tags",
+              "method": "GET",
+              "expected_status": 200,
+              "continuous": false
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "Ollama",
+          "model": "gemma4:e4b"
+        }
+      ]
+    },
+    "execution": {
+      "group": "llm-pair",
+      "depends_on": [
+        "benchmark"
+      ],
+      "stop_if_dependent_stops": true
+    }
+  },
+  {
+    "id": "benchmark",
+    "type": "container/run",
+    "args": {
+      "image": "nosana/llm-benchmark:0.0.2",
+      "gpu": true,
+      "env": {
+        "BASE_URL": "http://%%ops.Gemma4-e4b.host%%:11434",
+        "DURATION": "100",
+        "CONCURRENT_USERS": "1"
+      }
+    },
+    "execution": {
+      "group": "llm-pair"
+    }
+  }
+]
