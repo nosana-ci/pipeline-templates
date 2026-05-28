@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "validate": "node scripts/validate.js"
+    "sync-benchmarks": "node scripts/sync-benchmark-templates.js",
+    "validate": "node scripts/sync-benchmark-templates.js --check && node scripts/validate.js"
   },
   "type": "module",
   "dependencies": {

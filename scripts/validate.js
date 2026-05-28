@@ -42,6 +42,27 @@ const MAX_FIELD_LENGTHS = {
   icon: 256,
 };
 
+function validateOperationDefinitionFile(folder, operationDefPath) {
+  const operationDefinition = JSON.parse(fs.readFileSync(operationDefPath, "utf8"));
+
+  if (!Array.isArray(operationDefinition)) {
+    throw new Error(
+      `${folder}: ${path.basename(operationDefPath)} must contain an array of operations`
+    );
+  }
+
+  for (const op of operationDefinition) {
+    if (!op || typeof op !== "object") {
+      throw new Error(`${folder}: ${path.basename(operationDefPath)} contains an invalid operation`);
+    }
+    if (op.id && op.id.includes(".")) {
+      throw new Error(
+        `${folder}: Op ID '${op.id}' in ${path.basename(operationDefPath)} must not contain dots. Replace dots with dashes.`
+      );
+    }
+  }
+}
+
 // Validate a single job definition file
 async function validateJobDefinitionFile(folder, jobDefPath) {
   const template = fs.readFileSync(jobDefPath);
@@ -227,6 +248,17 @@ async function validateTemplate(folder) {
 
       // Validate the job definition file
       await validateJobDefinitionFile(folder, jobDefPath);
+
+      if (variant.operation_definition) {
+        const operationDefPath = path.join(templatePath, variant.operation_definition);
+        if (!fs.existsSync(operationDefPath)) {
+          throw new Error(
+            `${folder}: Operation definition file '${variant.operation_definition}' not found for variant '${variant.id}'`
+          );
+        }
+
+        validateOperationDefinitionFile(folder, operationDefPath);
+      }
     }
   } else {
     // Single job definition mode (backward compatibility)
@@ -236,6 +268,17 @@ async function validateTemplate(folder) {
     }
 
     await validateJobDefinitionFile(folder, jobDefPath);
+
+    if (info.operation_definition) {
+      const operationDefPath = path.join(templatePath, info.operation_definition);
+      if (!fs.existsSync(operationDefPath)) {
+        throw new Error(
+          `${folder}: Operation definition file '${info.operation_definition}' not found`
+        );
+      }
+
+      validateOperationDefinitionFile(folder, operationDefPath);
+    }
   }
 
   console.log(`✓ ${folder} template is valid!`);
