@@ -17,7 +17,7 @@
       "job_definition": "job-definition-e2b.json",
       "metrics_schema": [
         {
-          "key": "gemma4-e2b.tokens_per_second",
+          "key": "gemma4-e2b__tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -25,7 +25,7 @@
           "defaultValue": null
         },
         {
-          "key": "gemma4-e2b.gpu_wattage_avg",
+          "key": "gemma4-e2b__gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -33,7 +33,7 @@
           "defaultValue": null
         },
         {
-          "key": "gemma4-e2b.gpu_temperature_avg",
+          "key": "gemma4-e2b__gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -50,7 +50,7 @@
       "job_definition": "job-definition-e4b.json",
       "metrics_schema": [
         {
-          "key": "gemma4-e4b.tokens_per_second",
+          "key": "gemma4-e4b__tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -58,7 +58,7 @@
           "defaultValue": null
         },
         {
-          "key": "gemma4-e4b.gpu_wattage_avg",
+          "key": "gemma4-e4b__gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -66,7 +66,7 @@
           "defaultValue": null
         },
         {
-          "key": "gemma4-e4b.gpu_temperature_avg",
+          "key": "gemma4-e4b__gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -83,7 +83,7 @@
       "job_definition": "job-definition-26b.json",
       "metrics_schema": [
         {
-          "key": "gemma4-26b.tokens_per_second",
+          "key": "gemma4-26b__tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -91,7 +91,7 @@
           "defaultValue": null
         },
         {
-          "key": "gemma4-26b.gpu_wattage_avg",
+          "key": "gemma4-26b__gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -99,7 +99,7 @@
           "defaultValue": null
         },
         {
-          "key": "gemma4-26b.gpu_temperature_avg",
+          "key": "gemma4-26b__gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -116,7 +116,7 @@
       "job_definition": "job-definition-31b.json",
       "metrics_schema": [
         {
-          "key": "gemma4-31b.tokens_per_second",
+          "key": "gemma4-31b__tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -124,7 +124,7 @@
           "defaultValue": null
         },
         {
-          "key": "gemma4-31b.gpu_wattage_avg",
+          "key": "gemma4-31b__gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
@@ -132,7 +132,7 @@
           "defaultValue": null
         },
         {
-          "key": "gemma4-31b.gpu_temperature_avg",
+          "key": "gemma4-31b__gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",

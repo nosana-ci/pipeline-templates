@@ -36,13 +36,16 @@ const DEFAULT_BENCHMARK_METRICS_SCHEMA = [
   },
 ];
 
+const TEMPLATE_METRIC_KEY_SEPARATOR = "__";
+
 function buildMetricPrefix(templateInfo, variant) {
   return variant ? `${templateInfo.id}-${variant.id}` : templateInfo.id;
 }
 
 function stripMetricPrefix(key, prefix) {
-  const expectedPrefix = `${prefix}.`;
-  return key.startsWith(expectedPrefix) ? key.slice(expectedPrefix.length) : key;
+  const supportedPrefixes = [`${prefix}${TEMPLATE_METRIC_KEY_SEPARATOR}`, `${prefix}_`, `${prefix}.`];
+  const matchingPrefix = supportedPrefixes.find((candidate) => key.startsWith(candidate));
+  return matchingPrefix ? key.slice(matchingPrefix.length) : key;
 }
 
 function readJson(filePath) {
@@ -262,7 +265,7 @@ function mergeMetricsSchema(existingSchema, metricPrefix) {
   }
   return [...merged.values()].map((entry) => ({
     ...entry,
-    key: `${metricPrefix}.${entry.key}`,
+    key: `${metricPrefix}${TEMPLATE_METRIC_KEY_SEPARATOR}${entry.key}`,
     defaultValue: entry.defaultValue ?? null,
   }));
 }
