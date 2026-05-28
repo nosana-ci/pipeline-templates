@@ -36,6 +36,18 @@ const DEFAULT_BENCHMARK_METRICS_SCHEMA = [
   },
 ];
 
+const TEMPLATE_METRIC_KEY_SEPARATOR = "__";
+
+function buildMetricPrefix(templateInfo, variant) {
+  return variant ? `${templateInfo.id}-${variant.id}` : templateInfo.id;
+}
+
+function stripMetricPrefix(key, prefix) {
+  const supportedPrefixes = [`${prefix}${TEMPLATE_METRIC_KEY_SEPARATOR}`, `${prefix}_`, `${prefix}.`];
+  const matchingPrefix = supportedPrefixes.find((candidate) => key.startsWith(candidate));
+  return matchingPrefix ? key.slice(matchingPrefix.length) : key;
+}
+
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
@@ -240,12 +252,22 @@ function buildOperationDefinition(jobDefinition) {
   return nextOps;
 }
 
-function mergeMetricsSchema(existingSchema) {
-  const merged = new Map(DEFAULT_BENCHMARK_METRICS_SCHEMA.map((entry) => [entry.key, entry]));
+function mergeMetricsSchema(existingSchema, metricPrefix) {
+  const merged = new Map(
+    DEFAULT_BENCHMARK_METRICS_SCHEMA.map((entry) => [entry.key, { ...entry }])
+  );
   for (const entry of existingSchema ?? []) {
-    merged.set(entry.key, entry);
+    const normalizedKey = stripMetricPrefix(entry.key, metricPrefix);
+    merged.set(normalizedKey, {
+      ...entry,
+      key: normalizedKey,
+    });
   }
-  return [...merged.values()];
+  return [...merged.values()].map((entry) => ({
+    ...entry,
+    key: `${metricPrefix}${TEMPLATE_METRIC_KEY_SEPARATOR}${entry.key}`,
+    defaultValue: entry.defaultValue ?? null,
+  }));
 }
 
 function normalizeOperationDefinitionPath(existingPath, fallbackPath) {
@@ -268,6 +290,7 @@ function syncTemplate(templateDir) {
   const nextInfo = structuredClone(info);
 
   const syncVariant = (variant, index) => {
+    const metricPrefix = buildMetricPrefix(info, variant);
     const jobDefinitionPath = path.join(templateDir, variant.job_definition);
     const jobDefinition = readJson(jobDefinitionPath);
     const sourceJobDefinition = stripGeneratedBenchmarkArtifacts(jobDefinition);
@@ -316,7 +339,10 @@ function syncTemplate(templateDir) {
     };
 
     if (findTemplateServerOp(operationDefinition)) {
-      nextVariant.metrics_schema = mergeMetricsSchema(variant.metrics_schema ?? info.metrics_schema);
+      nextVariant.metrics_schema = mergeMetricsSchema(
+        variant.metrics_schema ?? info.metrics_schema,
+        metricPrefix
+      );
     }
 
     if (!deepEqual(variant, nextVariant)) {
@@ -329,6 +355,7 @@ function syncTemplate(templateDir) {
     nextInfo.variants = [...info.variants];
     info.variants.forEach(syncVariant);
   } else {
+    const metricPrefix = buildMetricPrefix(info);
     const jobDefinitionPath = path.join(templateDir, "job-definition.json");
     const jobDefinition = readJson(jobDefinitionPath);
     const sourceJobDefinition = stripGeneratedBenchmarkArtifacts(jobDefinition);
@@ -374,7 +401,7 @@ function syncTemplate(templateDir) {
     nextInfo.operation_definition = operationDefinitionFile;
 
     if (findTemplateServerOp(operationDefinition)) {
-      const finalMetricsSchema = mergeMetricsSchema(info.metrics_schema);
+      const finalMetricsSchema = mergeMetricsSchema(info.metrics_schema, metricPrefix);
       if (!deepEqual(info.metrics_schema ?? null, finalMetricsSchema)) {
         nextInfo.metrics_schema = finalMetricsSchema;
         touchedFiles.push(path.relative(repoRoot, infoPath));

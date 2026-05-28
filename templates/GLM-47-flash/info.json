@@ -17,25 +17,28 @@
       "job_definition": "job-definition-GLM-q4.json",
       "metrics_schema": [
         {
-          "key": "tokens_per_second",
+          "key": "glm-4-7-flash-glm-47-flash-q4__tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_wattage_avg",
+          "key": "glm-4-7-flash-glm-47-flash-q4__gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_temperature_avg",
+          "key": "glm-4-7-flash-glm-47-flash-q4__gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         }
       ],
       "operation_definition": "operation-definitions/glm-47-flash-q4.json"
@@ -47,25 +50,28 @@
       "job_definition": "job-definition-GLM-16fp.json",
       "metrics_schema": [
         {
-          "key": "tokens_per_second",
+          "key": "glm-4-7-flash-glm-47-flash-bf16__tokens_per_second",
           "input": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_wattage_avg",
+          "key": "glm-4-7-flash-glm-47-flash-bf16__gpu_wattage_avg",
           "input": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         },
         {
-          "key": "gpu_temperature_avg",
+          "key": "glm-4-7-flash-glm-47-flash-bf16__gpu_temperature_avg",
           "input": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)",
           "type": "float",
           "expiry": "5d",
-          "processor": "regex_parser"
+          "processor": "regex_parser",
+          "defaultValue": null
         }
       ],
       "operation_definition": "operation-definitions/glm-47-flash-bf16.json"
