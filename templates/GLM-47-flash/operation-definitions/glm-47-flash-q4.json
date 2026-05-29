@@ -43,11 +43,17 @@
       "env": {
         "BASE_URL": "http://%%ops.glm-4-7-flash.host%%:11434",
         "DURATION": "100",
-        "CONCURRENT_USERS": "1"
+        "CONCURRENT_USERS": "1",
+        "WARMUP_REQUEST_TIMEOUT": "300"
       }
     },
     "execution": {
       "group": "llm-pair"
+    },
+    "results": {
+      "glm-4-7-flash-glm-47-flash-q4__tokens_per_second": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
+      "glm-4-7-flash-glm-47-flash-q4__gpu_wattage_avg": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
+      "glm-4-7-flash-glm-47-flash-q4__gpu_temperature_avg": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)"
     }
   }
 ]

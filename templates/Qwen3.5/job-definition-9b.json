@@ -39,7 +39,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_vram": 9
+      "vram_total_mb": 9216
     }
   }
 }
