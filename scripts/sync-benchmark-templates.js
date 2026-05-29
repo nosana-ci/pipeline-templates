@@ -18,21 +18,21 @@ const DEFAULT_BENCHMARK_METRICS_SCHEMA = [
     input: '"users_1_tokens_per_second_mean":(-?[\\d.]+)',
     type: "float",
     expiry: "5d",
-    processor: "regex_parser",
+    processor: "results_selector",
   },
   {
     key: "gpu_wattage_avg",
     input: '"users_1_gpu_wattage_avg":(-?[\\d.]+)',
     type: "float",
     expiry: "5d",
-    processor: "regex_parser",
+    processor: "results_selector",
   },
   {
     key: "gpu_temperature_avg",
     input: '"users_1_gpu_temperature_avg":(-?[\\d.]+)',
     type: "float",
     expiry: "5d",
-    processor: "regex_parser",
+    processor: "results_selector",
   },
 ];
 
@@ -139,10 +139,25 @@ function renderJsonTemplate(value, replacements) {
   return value;
 }
 
-function createBenchmarkOp(serverOpId, port) {
-  return renderJsonTemplate(readJson(benchmarkOperationTemplatePath), [
+function createBenchmarkResults(metricsSchema) {
+  return Object.fromEntries(
+    (metricsSchema ?? [])
+      .filter((entry) => typeof entry.input === "string" && entry.input.length > 0)
+      .map((entry) => [entry.key, entry.input])
+  );
+}
+
+function createBenchmarkOp(serverOpId, port, metricsSchema) {
+  const op = renderJsonTemplate(readJson(benchmarkOperationTemplatePath), [
     ["__BASE_URL__", `http://%%ops.${serverOpId}.host%%:${port}`],
   ]);
+
+  const results = createBenchmarkResults(metricsSchema);
+  if (Object.keys(results).length > 0) {
+    op.results = results;
+  }
+
+  return op;
 }
 
 function flattenGlobalVariables(jobDefinition) {
@@ -232,14 +247,14 @@ function stripGeneratedBenchmarkArtifacts(jobDefinition) {
   };
 }
 
-function buildOperationDefinition(jobDefinition) {
+function buildOperationDefinition(jobDefinition, metricsSchema) {
   const flattenedOps = flattenGlobalVariables(stripGeneratedBenchmarkArtifacts(jobDefinition));
   const serverOp = findTemplateServerOp(flattenedOps);
   if (!serverOp) return flattenedOps;
 
   const serverOpId = typeof serverOp.id === "string" && serverOp.id.length > 0 ? serverOp.id : "server";
   const port = resolveServerPort(serverOp);
-  const benchmarkOp = createBenchmarkOp(serverOpId, port);
+  const benchmarkOp = createBenchmarkOp(serverOpId, port, metricsSchema);
 
   const nextOps = [];
   for (const op of flattenedOps) {
@@ -252,22 +267,43 @@ function buildOperationDefinition(jobDefinition) {
   return nextOps;
 }
 
-function mergeMetricsSchema(existingSchema, metricPrefix) {
+function mergeMetricsSchema(existingSchema, metricPrefix, { preserveInput = false } = {}) {
   const merged = new Map(
     DEFAULT_BENCHMARK_METRICS_SCHEMA.map((entry) => [entry.key, { ...entry }])
   );
   for (const entry of existingSchema ?? []) {
     const normalizedKey = stripMetricPrefix(entry.key, metricPrefix);
+    const currentEntry = merged.get(normalizedKey) ?? {};
     merged.set(normalizedKey, {
+      ...currentEntry,
       ...entry,
       key: normalizedKey,
     });
   }
-  return [...merged.values()].map((entry) => ({
-    ...entry,
-    key: `${metricPrefix}${TEMPLATE_METRIC_KEY_SEPARATOR}${entry.key}`,
-    defaultValue: entry.defaultValue ?? null,
-  }));
+  return [...merged.values()].map((entry) => {
+    const normalized = {
+      ...entry,
+      key: `${metricPrefix}${TEMPLATE_METRIC_KEY_SEPARATOR}${entry.key}`,
+      defaultValue: entry.defaultValue ?? null,
+    };
+
+    if (typeof normalized.input === "string" && normalized.input.length > 0) {
+      if (preserveInput) {
+        return {
+          ...normalized,
+          processor: "results_selector",
+        };
+      }
+
+      return {
+        ...normalized,
+        processor: "results_selector",
+        input: undefined,
+      };
+    }
+
+    return normalized;
+  });
 }
 
 function normalizeOperationDefinitionPath(existingPath, fallbackPath) {
@@ -294,7 +330,16 @@ function syncTemplate(templateDir) {
     const jobDefinitionPath = path.join(templateDir, variant.job_definition);
     const jobDefinition = readJson(jobDefinitionPath);
     const sourceJobDefinition = stripGeneratedBenchmarkArtifacts(jobDefinition);
-    const operationDefinition = buildOperationDefinition(sourceJobDefinition);
+    const benchmarkMetricsSchema = mergeMetricsSchema(
+      variant.metrics_schema ?? info.metrics_schema,
+      metricPrefix,
+      { preserveInput: true }
+    );
+    const finalMetricsSchema = mergeMetricsSchema(
+      variant.metrics_schema ?? info.metrics_schema,
+      metricPrefix
+    );
+    const operationDefinition = buildOperationDefinition(sourceJobDefinition, benchmarkMetricsSchema);
     const operationDefinitionFile = normalizeOperationDefinitionPath(
       variant.operation_definition,
       `operation-definitions/${variant.id}.json`
@@ -339,10 +384,7 @@ function syncTemplate(templateDir) {
     };
 
     if (findTemplateServerOp(operationDefinition)) {
-      nextVariant.metrics_schema = mergeMetricsSchema(
-        variant.metrics_schema ?? info.metrics_schema,
-        metricPrefix
-      );
+      nextVariant.metrics_schema = finalMetricsSchema;
     }
 
     if (!deepEqual(variant, nextVariant)) {
@@ -359,6 +401,10 @@ function syncTemplate(templateDir) {
     const jobDefinitionPath = path.join(templateDir, "job-definition.json");
     const jobDefinition = readJson(jobDefinitionPath);
     const sourceJobDefinition = stripGeneratedBenchmarkArtifacts(jobDefinition);
+    const benchmarkMetricsSchema = mergeMetricsSchema(info.metrics_schema, metricPrefix, {
+      preserveInput: true,
+    });
+    const finalMetricsSchema = mergeMetricsSchema(info.metrics_schema, metricPrefix);
     const operationDefinitionFile = normalizeOperationDefinitionPath(
       info.operation_definition,
       "operation-definitions/default.json"
@@ -367,7 +413,7 @@ function syncTemplate(templateDir) {
     const previousOperationDefinitionPath = info.operation_definition
       ? path.join(templateDir, info.operation_definition)
       : null;
-    const operationDefinition = buildOperationDefinition(sourceJobDefinition);
+    const operationDefinition = buildOperationDefinition(sourceJobDefinition, benchmarkMetricsSchema);
 
     if (!deepEqual(jobDefinition, sourceJobDefinition)) {
       if (checkMode) {
@@ -401,7 +447,6 @@ function syncTemplate(templateDir) {
     nextInfo.operation_definition = operationDefinitionFile;
 
     if (findTemplateServerOp(operationDefinition)) {
-      const finalMetricsSchema = mergeMetricsSchema(info.metrics_schema, metricPrefix);
       if (!deepEqual(info.metrics_schema ?? null, finalMetricsSchema)) {
         nextInfo.metrics_schema = finalMetricsSchema;
         touchedFiles.push(path.relative(repoRoot, infoPath));
