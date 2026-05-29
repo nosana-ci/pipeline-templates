@@ -1,24 +1,24 @@
 {
-    "version": "0.1",
-    "type": "container",
-    "meta": {
-      "trigger": "dashboard",
-      "system_requirements": {
-        "required_vram": 8
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "vram_total_mb": 8192
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "Invoke",
+      "args": {
+        "cmd": [
+          "invokeai-web"
+        ],
+        "image": "docker.io/nosana/sd-invoke-bench:1.0.0",
+        "gpu": true,
+        "expose": 9090
       }
-    },
-    "ops": [
-      {
-        "type": "container/run",
-        "id": "Invoke",
-        "args": {
-          "cmd": [
-            "invokeai-web"
-          ],
-          "image": "docker.io/nosana/sd-invoke-bench:1.0.0",
-          "gpu": true,
-          "expose": 9090
-        }
-      }
-    ]
-  }
+    }
+  ]
+}
