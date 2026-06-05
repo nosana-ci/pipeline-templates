@@ -62,14 +62,14 @@ const validBench = [
   {
     variants: ["e2b", "e4b"],
     metrics: [
-      { key: "tokens_per_second", type: "float", expiry: "5d", processor: "results_selector", defaultValue: null },
+      { key: "tokens_per_second", type: "float", expiry: "5d", processor: "results_selector", defaultValue: null, input: "tokens_per_second" },
     ],
     support_ops: [
       {
         id: "benchmark",
         type: "container/run",
         args: { image: "nosana/llm-benchmark:0.0.2", gpu: true },
-        results: { "%%global.variables.MODEL%%__tokens_per_second": "\"x\":(-?[\\d.]+)" },
+        results: { "tokens_per_second": "\"x\":(-?[\\d.]+)" },
       },
     ],
     ops_overrides: { execution: { group: "llm-pair", depends_on: ["benchmark"], stop_if_dependent_stops: true } },
@@ -96,10 +96,16 @@ test("BenchmarksSchema rejects a variant benchmarked in more than one group", ()
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
-test("BenchmarksSchema rejects a results key with no matching metric", () => {
+test("BenchmarksSchema rejects a metric whose input has no matching results key", () => {
   const bad = structuredClone(validBench);
-  bad[0].support_ops[0].results = { "%%global.variables.MODEL%%__unknown_metric": "x" };
+  bad[0].metrics[0].input = "nope";
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
+});
+
+test("BenchmarksSchema accepts a metric without an input", () => {
+  const ok = structuredClone(validBench);
+  delete ok[0].metrics[0].input;
+  assert.equal(BenchmarksSchema.safeParse(ok).success, true);
 });
 
 test("BenchmarksSchema rejects an empty metrics array", () => {

@@ -13,11 +13,12 @@ import { Info } from "../schemas/schema.js";
 // across templates; widen if a new type/processor is introduced.
 const Metric = z
   .object({
-    key: z.string().min(1),
+    key: z.string().min(1), // catalog name; the host stores it as `${info.id}-${variantId}__${key}`
     type: z.enum(["float", "int", "string", "bool"]),
     expiry: z.string().min(1),
     processor: z.string().min(1),
     defaultValue: z.union([z.number(), z.string(), z.boolean(), z.null()]).optional(),
+    input: z.string().min(1).optional(), // which support_ops results key feeds this metric
   })
   .strict();
 
@@ -37,9 +38,6 @@ const OpsOverrides = z
     execution: Execution.optional(),
   })
   .passthrough();
-
-// Strip a "%%...%%__" interpolation prefix from a results key to get the bare metric name.
-const stripMetricPrefix = (key) => key.replace(/^%%[^%]+%%__/, "");
 
 // One benchmark group: a recipe applied to a set of variants. The host manager
 // picks the group whose `variants` contains the variant being benchmarked, then
@@ -67,22 +65,23 @@ const BenchmarkGroup = z
       seen.add(id);
     });
 
-    // Every support_ops results key (prefix stripped) must have a matching metrics[] entry.
-    const metricKeys = new Set(group.metrics.map((m) => m.key));
+    // Each metric's `input` (when set) must reference a support_ops results key in the group.
+    const resultKeys = new Set();
     for (const op of group.support_ops) {
       const results = op?.results;
-      if (!results || typeof results !== "object") continue;
-      for (const rawKey of Object.keys(results)) {
-        const metric = stripMetricPrefix(rawKey);
-        if (!metricKeys.has(metric)) {
-          ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            path: ["support_ops"],
-            message: `results key '${rawKey}' (metric '${metric}') has no matching metrics[] entry`,
-          });
-        }
+      if (results && typeof results === "object") {
+        for (const key of Object.keys(results)) resultKeys.add(key);
       }
     }
+    group.metrics.forEach((metric, index) => {
+      if (metric.input !== undefined && !resultKeys.has(metric.input)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["metrics", index, "input"],
+          message: `metric input '${metric.input}' has no matching support_ops results key`,
+        });
+      }
+    });
   });
 
 // info.json validator: public shape + unique variant ids within a template.

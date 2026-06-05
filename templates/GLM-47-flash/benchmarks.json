@@ -1,10 +1,34 @@
 [
   {
-    "variants": ["glm-47-flash-q4", "glm-47-flash-bf16"],
+    "variants": [
+      "glm-47-flash-q4",
+      "glm-47-flash-bf16"
+    ],
     "metrics": [
-      { "key": "tokens_per_second", "type": "float", "expiry": "5d", "processor": "results_selector", "defaultValue": null },
-      { "key": "gpu_wattage_avg", "type": "float", "expiry": "5d", "processor": "results_selector", "defaultValue": null },
-      { "key": "gpu_temperature_avg", "type": "float", "expiry": "5d", "processor": "results_selector", "defaultValue": null }
+      {
+        "key": "tokens_per_second",
+        "type": "float",
+        "expiry": "5d",
+        "processor": "results_selector",
+        "defaultValue": null,
+        "input": "tokens_per_second"
+      },
+      {
+        "key": "gpu_wattage_avg",
+        "type": "float",
+        "expiry": "5d",
+        "processor": "results_selector",
+        "defaultValue": null,
+        "input": "gpu_wattage_avg"
+      },
+      {
+        "key": "gpu_temperature_avg",
+        "type": "float",
+        "expiry": "5d",
+        "processor": "results_selector",
+        "defaultValue": null,
+        "input": "gpu_temperature_avg"
+      }
     ],
     "support_ops": [
       {
@@ -20,16 +44,24 @@
             "WARMUP_REQUEST_TIMEOUT": "300"
           }
         },
-        "execution": { "group": "llm-pair" },
+        "execution": {
+          "group": "llm-pair"
+        },
         "results": {
-          "%%global.variables.MODEL%%__tokens_per_second": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
-          "%%global.variables.MODEL%%__gpu_wattage_avg": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
-          "%%global.variables.MODEL%%__gpu_temperature_avg": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)"
+          "tokens_per_second": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
+          "gpu_wattage_avg": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
+          "gpu_temperature_avg": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)"
         }
       }
     ],
     "ops_overrides": {
-      "execution": { "group": "llm-pair", "depends_on": ["benchmark"], "stop_if_dependent_stops": true }
+      "execution": {
+        "group": "llm-pair",
+        "depends_on": [
+          "benchmark"
+        ],
+        "stop_if_dependent_stops": true
+      }
     }
   }
 ]
