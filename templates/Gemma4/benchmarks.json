@@ -1,0 +1,59 @@
+{
+  "variants": ["e2b", "e4b", "26b", "31b"],
+  "metrics": [
+    {
+      "key": "tokens_per_second",
+      "type": "float",
+      "expiry": "5d",
+      "processor": "results_selector",
+      "defaultValue": null
+    },
+    {
+      "key": "gpu_wattage_avg",
+      "type": "float",
+      "expiry": "5d",
+      "processor": "results_selector",
+      "defaultValue": null
+    },
+    {
+      "key": "gpu_temperature_avg",
+      "type": "float",
+      "expiry": "5d",
+      "processor": "results_selector",
+      "defaultValue": null
+    }
+  ],
+  "support_ops": [
+    {
+      "id": "benchmark",
+      "type": "container/run",
+      "args": {
+        "image": "nosana/llm-benchmark:0.0.2",
+        "gpu": true,
+        "env": {
+          "BASE_URL": "http://%%ops.server.host%%:11434",
+          "DURATION": "100",
+          "CONCURRENT_USERS": "1",
+          "WARMUP_REQUEST_TIMEOUT": "300"
+        }
+      },
+      "execution": {
+        "group": "llm-pair"
+      },
+      "results": {
+        "%%global.variables.MODEL%%__tokens_per_second": "\"users_1_tokens_per_second_mean\":(-?[\\d.]+)",
+        "%%global.variables.MODEL%%__gpu_wattage_avg": "\"users_1_gpu_wattage_avg\":(-?[\\d.]+)",
+        "%%global.variables.MODEL%%__gpu_temperature_avg": "\"users_1_gpu_temperature_avg\":(-?[\\d.]+)"
+      }
+    }
+  ],
+  "ops_overrides": {
+    "execution": {
+      "group": "llm-pair",
+      "depends_on": [
+        "benchmark"
+      ],
+      "stop_if_dependent_stops": true
+    }
+  }
+}

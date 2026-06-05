@@ -1,134 +1,32 @@
 {
   "id": "gemma4",
   "name": "Gemma 4 Models",
-  "category": [
-    "Official",
-    "API",
-    "LLM",
-    "Benchmark",
-    "Ollama"
-  ],
+  "category": ["Official", "API", "LLM", "Ollama"],
   "icon": "https://img.favpng.com/15/17/21/google-logo-google-logo-design-EQmvpNvp_t.jpg",
   "variants": [
     {
       "id": "e2b",
       "name": "E2B Model",
       "description": "Gemma 4 E2B edge model (2.3B effective parameters, 128K context, Text + Image)",
-      "job_definition": "job-definition-e2b.json",
-      "metrics_schema": [
-        {
-          "key": "gemma4-e2b__tokens_per_second",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "gemma4-e2b__gpu_wattage_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "gemma4-e2b__gpu_temperature_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        }
-      ],
-      "operation_definition": "operation-definitions/e2b.json"
+      "job_definition": "job-definition-e2b.json"
     },
     {
       "id": "e4b",
       "name": "E4B Model",
       "description": "Gemma 4 E4B edge model (4.5B effective parameters, 128K context, Text + Image)",
-      "job_definition": "job-definition-e4b.json",
-      "metrics_schema": [
-        {
-          "key": "gemma4-e4b__tokens_per_second",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "gemma4-e4b__gpu_wattage_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "gemma4-e4b__gpu_temperature_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        }
-      ],
-      "operation_definition": "operation-definitions/e4b.json"
+      "job_definition": "job-definition-e4b.json"
     },
     {
       "id": "26b",
       "name": "26B MoE Model",
       "description": "Gemma 4 26B Mixture-of-Experts model (4B active parameters, 256K context, Text + Image)",
-      "job_definition": "job-definition-26b.json",
-      "metrics_schema": [
-        {
-          "key": "gemma4-26b__tokens_per_second",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "gemma4-26b__gpu_wattage_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "gemma4-26b__gpu_temperature_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        }
-      ],
-      "operation_definition": "operation-definitions/26b.json"
+      "job_definition": "job-definition-26b.json"
     },
     {
       "id": "31b",
       "name": "31B Dense Model",
       "description": "Gemma 4 31B Dense model (30.7B parameters, 256K context, Text + Image)",
-      "job_definition": "job-definition-31b.json",
-      "metrics_schema": [
-        {
-          "key": "gemma4-31b__tokens_per_second",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "gemma4-31b__gpu_wattage_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "gemma4-31b__gpu_temperature_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        }
-      ],
-      "operation_definition": "operation-definitions/31b.json"
+      "job_definition": "job-definition-31b.json"
     }
   ]
 }

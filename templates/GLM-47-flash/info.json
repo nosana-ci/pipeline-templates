@@ -5,7 +5,6 @@
     "Official",
     "API",
     "LLM",
-    "Benchmark",
     "Ollama"
   ],
   "icon": "https://www.datocms-assets.com/96965/1685731715-open-ai-stars-2x.png",
@@ -14,61 +13,13 @@
       "id": "glm-47-flash-q4",
       "name": "Q4_K_M",
       "description": "GLM-4.7-Flash Q4_K_M parameter model",
-      "job_definition": "job-definition-GLM-q4.json",
-      "metrics_schema": [
-        {
-          "key": "glm-4-7-flash-glm-47-flash-q4__tokens_per_second",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "glm-4-7-flash-glm-47-flash-q4__gpu_wattage_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "glm-4-7-flash-glm-47-flash-q4__gpu_temperature_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        }
-      ],
-      "operation_definition": "operation-definitions/glm-47-flash-q4.json"
+      "job_definition": "job-definition-GLM-q4.json"
     },
     {
       "id": "glm-47-flash-bf16",
       "name": "FP16",
       "description": "GLM-4.7-Flash BF16 parameter model",
-      "job_definition": "job-definition-GLM-16fp.json",
-      "metrics_schema": [
-        {
-          "key": "glm-4-7-flash-glm-47-flash-bf16__tokens_per_second",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "glm-4-7-flash-glm-47-flash-bf16__gpu_wattage_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        },
-        {
-          "key": "glm-4-7-flash-glm-47-flash-bf16__gpu_temperature_avg",
-          "type": "float",
-          "expiry": "5d",
-          "processor": "results_selector",
-          "defaultValue": null
-        }
-      ],
-      "operation_definition": "operation-definitions/glm-47-flash-bf16.json"
+      "job_definition": "job-definition-GLM-16fp.json"
     }
   ]
 }
