@@ -1,11 +1,11 @@
 {
   "scripts": {
-    "sync-benchmarks": "node scripts/sync-benchmark-templates.js",
-    "validate": "node scripts/sync-benchmark-templates.js --check && node scripts/validate.js"
+    "validate": "node validation/validation.js",
+    "test": "node --test"
   },
   "type": "module",
   "dependencies": {
-    "@nosana/cli": "^1.0.59",
-    "@nosana/sdk": "^0.4.38"
+    "@nosana/types": "^2.2.20",
+    "zod": "^3.25.76"
   }
 }
