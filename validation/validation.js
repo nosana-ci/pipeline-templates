@@ -39,9 +39,11 @@ function validateBenchmarksFile(folder, benchmarksPath, variantIds) {
   const parsed = BenchmarksSchema.safeParse(benchmarks);
   if (!parsed.success) fail(folder, `${formatZodError(parsed.error)} in ${fileName}`);
 
-  // Cross-file: every benchmark variant id must be an info.json variant id.
+  // Cross-file: every benchmarked variant id (across all groups) must be an info.json variant id.
   const knownVariants = new Set(variantIds);
-  const unknown = benchmarks.variants.filter((id) => !knownVariants.has(id));
+  const unknown = [...new Set(benchmarks.flatMap((group) => group.variants))].filter(
+    (id) => !knownVariants.has(id)
+  );
   if (unknown.length > 0) {
     fail(
       folder,
@@ -50,7 +52,9 @@ function validateBenchmarksFile(folder, benchmarksPath, variantIds) {
     );
   }
 
-  failOnKitError(folder, validateOps(benchmarks.support_ops), fileName);
+  for (const group of benchmarks) {
+    failOnKitError(folder, validateOps(group.support_ops), fileName);
+  }
 }
 
 function validateTemplate(folder) {

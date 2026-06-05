@@ -57,80 +57,101 @@ test("InfoSchema rejects an empty name", () => {
   assert.equal(InfoSchema.safeParse({ ...validInfo, name: "" }).success, false);
 });
 
-const validBench = {
-  variants: ["e2b", "e4b"],
-  metrics: [
-    { key: "tokens_per_second", type: "float", expiry: "5d", processor: "results_selector", defaultValue: null },
-  ],
-  support_ops: [
-    {
-      id: "benchmark",
-      type: "container/run",
-      args: { image: "nosana/llm-benchmark:0.0.2", gpu: true },
-      results: { "%%global.variables.MODEL%%__tokens_per_second": "\"x\":(-?[\\d.]+)" },
-    },
-  ],
-  ops_overrides: { execution: { group: "llm-pair", depends_on: ["benchmark"], stop_if_dependent_stops: true } },
-};
+// benchmarks.json is an array of benchmark groups.
+const validBench = [
+  {
+    variants: ["e2b", "e4b"],
+    metrics: [
+      { key: "tokens_per_second", type: "float", expiry: "5d", processor: "results_selector", defaultValue: null },
+    ],
+    support_ops: [
+      {
+        id: "benchmark",
+        type: "container/run",
+        args: { image: "nosana/llm-benchmark:0.0.2", gpu: true },
+        results: { "%%global.variables.MODEL%%__tokens_per_second": "\"x\":(-?[\\d.]+)" },
+      },
+    ],
+    ops_overrides: { execution: { group: "llm-pair", depends_on: ["benchmark"], stop_if_dependent_stops: true } },
+  },
+];
 
 test("BenchmarksSchema accepts a valid benchmarks file", () => {
   assert.equal(BenchmarksSchema.safeParse(validBench).success, true);
 });
 
+test("BenchmarksSchema accepts multiple groups over disjoint variants", () => {
+  const ok = structuredClone(validBench);
+  ok.push({ ...structuredClone(validBench[0]), variants: ["31b"] });
+  assert.equal(BenchmarksSchema.safeParse(ok).success, true);
+});
+
+test("BenchmarksSchema rejects an empty array", () => {
+  assert.equal(BenchmarksSchema.safeParse([]).success, false);
+});
+
+test("BenchmarksSchema rejects a variant benchmarked in more than one group", () => {
+  const bad = structuredClone(validBench);
+  bad.push({ ...structuredClone(validBench[0]), variants: ["e2b"] });
+  assert.equal(BenchmarksSchema.safeParse(bad).success, false);
+});
+
 test("BenchmarksSchema rejects a results key with no matching metric", () => {
   const bad = structuredClone(validBench);
-  bad.support_ops[0].results = { "%%global.variables.MODEL%%__unknown_metric": "x" };
+  bad[0].support_ops[0].results = { "%%global.variables.MODEL%%__unknown_metric": "x" };
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
 test("BenchmarksSchema rejects an empty metrics array", () => {
   const bad = structuredClone(validBench);
-  bad.metrics = [];
+  bad[0].metrics = [];
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
-test("BenchmarksSchema rejects unknown top-level keys (strict)", () => {
-  const bad = { ...structuredClone(validBench), extra: 1 };
+test("BenchmarksSchema rejects unknown keys in a group (strict)", () => {
+  const bad = structuredClone(validBench);
+  bad[0].extra = 1;
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
 test("BenchmarksSchema rejects a missing variants selector", () => {
-  const { variants, ...bad } = structuredClone(validBench);
+  const bad = structuredClone(validBench);
+  delete bad[0].variants;
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
 test("BenchmarksSchema rejects an empty variants array", () => {
   const bad = structuredClone(validBench);
-  bad.variants = [];
+  bad[0].variants = [];
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
-test("BenchmarksSchema rejects duplicate variant ids in the selector", () => {
+test("BenchmarksSchema rejects duplicate variant ids within a group", () => {
   const bad = structuredClone(validBench);
-  bad.variants = ["e2b", "e2b"];
+  bad[0].variants = ["e2b", "e2b"];
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
 test("BenchmarksSchema rejects an invalid metric type", () => {
   const bad = structuredClone(validBench);
-  bad.metrics[0].type = "json";
+  bad[0].metrics[0].type = "json";
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
 test("BenchmarksSchema rejects a metric missing a required field", () => {
   const bad = structuredClone(validBench);
-  delete bad.metrics[0].processor;
+  delete bad[0].metrics[0].processor;
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
 test("BenchmarksSchema rejects unknown keys in ops_overrides.execution (strict)", () => {
   const bad = structuredClone(validBench);
-  bad.ops_overrides.execution.unexpected = true;
+  bad[0].ops_overrides.execution.unexpected = true;
   assert.equal(BenchmarksSchema.safeParse(bad).success, false);
 });
 
 test("BenchmarksSchema accepts ops_overrides with extra op fields (passthrough)", () => {
   const ok = structuredClone(validBench);
-  ok.ops_overrides.args = { gpu: true };
+  ok[0].ops_overrides.args = { gpu: true };
   assert.equal(BenchmarksSchema.safeParse(ok).success, true);
 });
