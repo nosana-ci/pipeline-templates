@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "cosmos3-nano-vllm-omni",
+      "args": {
+        "image": "docker.io/vllm/vllm-omni:cosmos3",
+        "cmd": [
+          "vllm",
+          "serve",
+          "nvidia/Cosmos3-Nano",
+          "--omni",
+          "--host",
+          "0.0.0.0",
+          "--port",
+          "8000",
+          "--init-timeout",
+          "1800"
+        ],
+        "expose": [
+          {
+            "port": 8000,
+            "health_checks": [
+              {
+                "type": "http",
+                "path": "/v1/models",
+                "method": "GET",
+                "expected_status": 200,
+                "continuous": true
+              }
+            ]
+          }
+        ],
+        "gpu": true,
+        "env": {
+          "HF_TOKEN": "<your-hf-token>",
+          "VLLM_OMNI_STORAGE_PATH": "/tmp/vllm-omni-videos",
+          "VLLM_OMNI_STORAGE_MAX_CONCURRENCY": "1"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "required_vram": 96
+    }
+  }
+}
