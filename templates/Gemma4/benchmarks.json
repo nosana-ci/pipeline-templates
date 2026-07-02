@@ -6,6 +6,7 @@
       "26b",
       "31b"
     ],
+    "timeoutSeconds": 1200,
     "metrics": [
       {
         "key": "tokens_per_second",
