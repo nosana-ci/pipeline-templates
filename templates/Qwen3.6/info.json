@@ -2,5 +2,19 @@
   "id": "qwen3-6",
   "name": "Qwen 3.6",
   "category": ["Official", "API", "LLM", "Ollama"],
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qwen_logo.svg/3840px-Qwen_logo.svg.png"
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qwen_logo.svg/3840px-Qwen_logo.svg.png",
+  "variants": [
+    {
+      "id": "27b",
+      "name": "27B Model",
+      "description": "Qwen 3.6 27B model (17 GB, 256K context, Text + Image)",
+      "job_definition": "job-definition-27b.json"
+    },
+    {
+      "id": "35b-a3b",
+      "name": "35B-A3B Model",
+      "description": "Qwen 3.6 35B-A3B MoE model, bf16 (71 GB, 256K context, Text + Image)",
+      "job_definition": "job-definition.json"
+    }
+  ]
 }

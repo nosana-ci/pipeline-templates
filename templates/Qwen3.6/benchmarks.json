@@ -1,10 +1,8 @@
 [
   {
     "variants": [
-      "e2b",
-      "e4b",
-      "26b",
-      "31b"
+      "27b",
+      "35b-a3b"
     ],
     "timeoutSeconds": 1200,
     "metrics": [
