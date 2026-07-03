@@ -45,6 +45,9 @@ const OpsOverrides = z
 const BenchmarkGroup = z
   .object({
     variants: z.array(z.string().min(1)).min(1),
+    // Max run time (seconds) for the benchmark ops; the node kills the op past
+    // this. Optional — the host manager falls back to its default when omitted.
+    timeoutSeconds: z.number().int().positive().optional(),
     metrics: z.array(Metric).min(1),
     // Op structure is validated by the kit's validateOps; here we only require objects.
     support_ops: z.array(z.object({}).passthrough()).min(1),
