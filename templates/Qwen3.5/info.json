@@ -21,6 +21,12 @@
       "name": "35B Model",
       "description": "Qwen 3.5 35B multimodal model (24 GB, 256K context, Text + Image)",
       "job_definition": "job-definition-35b.json"
+    },
+    {
+      "id": "122b",
+      "name": "122B-A10B Model",
+      "description": "Qwen 3.5 122B-A10B MoE model (81 GB, 256K context, Text + Image)",
+      "job_definition": "job-definition-122b.json"
     }
   ]
 }
