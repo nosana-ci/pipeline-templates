@@ -1,8 +1,7 @@
 [
   {
     "variants": [
-      "glm-47-flash-q4",
-      "glm-47-flash-bf16"
+      "9b"
     ],
     "timeoutSeconds": 1200,
     "metrics": [
