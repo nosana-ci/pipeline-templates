@@ -4,7 +4,7 @@
       "27b",
       "35b-a3b"
     ],
-    "timeoutSeconds": 1200,
+    "timeoutSeconds": 1800,
     "metrics": [
       {
         "key": "tokens_per_second",
@@ -42,7 +42,7 @@
             "BASE_URL": "http://%%ops.server.host%%:11434",
             "DURATION": "100",
             "CONCURRENT_USERS": "1",
-            "WARMUP_REQUEST_TIMEOUT": "300"
+            "WARMUP_REQUEST_TIMEOUT": "1200"
           }
         },
         "execution": {
