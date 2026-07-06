@@ -8,7 +8,7 @@
   },
   "ops": [
     {
-      "id": "Qwen3-5-9b",
+      "id": "server",
       "type": "container/run",
       "args": {
         "gpu": true,
