@@ -13,7 +13,7 @@
     {
       "id": "35b-a3b",
       "name": "35B-A3B Model",
-      "description": "Qwen 3.6 35B-A3B MoE model, bf16 (71 GB, 256K context, Text + Image)",
+      "description": "Qwen 3.6 35B-A3B MoE model, q8_0 (39 GB, 256K context, Text + Image)",
       "job_definition": "job-definition.json"
     }
   ]

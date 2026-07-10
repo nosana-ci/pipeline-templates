@@ -13,7 +13,7 @@
       "type": "container/run",
       "args": {
         "gpu": true,
-        "image": "ollama/ollama:0.20.0",
+        "image": "ollama/ollama:0.31.2",
         "entrypoint": [
           "/bin/sh",
           "/root/entrypoint/entrypoint.sh"
