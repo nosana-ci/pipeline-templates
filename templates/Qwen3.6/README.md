@@ -1,15 +1,15 @@
 # Qwen 3.6
 
-Qwen 3.6 delivers substantial upgrades in agentic coding and thinking preservation over previous Qwen models. Served through Ollama, this template deploys the default open-weight `qwen3.6:35b-a3b` model with support for text and image input.
+Qwen 3.6 delivers substantial upgrades in agentic coding and thinking preservation over previous Qwen models. Served through Ollama, this template deploys the open-weight `qwen3.6:35b-a3b-q8_0` model with support for text and image input.
 
 ## Included Model
 
 ### 35B A3B
-- **Model Tag**: `qwen3.6:35b-a3b`
-- **Model Size**: 24 GB
+- **Model Tag**: `qwen3.6:35b-a3b-q8_0`
+- **Model Size**: 39 GB
 - **Context Length**: 256K tokens
 - **Modalities**: Text, Image
-- **VRAM Required**: ~26 GB
+- **VRAM Required**: ~45 GB
 - **Use Case**: Advanced coding, repository-level reasoning, and multimodal assistant workflows
 
 ## Highlights
@@ -34,7 +34,7 @@ The model is served on port 11434 with OpenAI-compatible endpoints:
 ```bash
 curl http://your-deployment-url:11434/api/chat \
   -d '{
-    "model": "qwen3.6:35b-a3b",
+    "model": "qwen3.6:35b-a3b-q8_0",
     "messages": [{"role": "user", "content": "Help me review this repository."}]
   }'
 ```

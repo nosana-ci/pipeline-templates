@@ -3,7 +3,7 @@
   "type": "container",
   "global": {
     "variables": {
-      "MODEL": "qwen3.6:35b-a3b-bf16"
+      "MODEL": "qwen3.6:35b-a3b-q8_0"
     }
   },
   "ops": [
@@ -12,7 +12,7 @@
       "type": "container/run",
       "args": {
         "gpu": true,
-        "image": "docker.io/ollama/ollama:0.20.0",
+        "image": "docker.io/ollama/ollama:0.31.2",
         "expose": [
           {
             "port": 11434,
@@ -39,7 +39,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "vram_total_mb": 76800
+      "vram_total_mb": 46080
     }
   }
 }
