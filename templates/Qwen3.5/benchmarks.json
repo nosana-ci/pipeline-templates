@@ -3,7 +3,7 @@
     "variants": [
       "9b"
     ],
-    "timeoutSeconds": 1200,
+    "timeoutSeconds": 600,
     "metrics": [
       {
         "key": "tokens_per_second",
