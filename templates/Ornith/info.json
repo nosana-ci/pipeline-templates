@@ -1,0 +1,14 @@
+{
+  "id": "ornith",
+  "name": "Ornith",
+  "category": ["Official", "API", "LLM", "Ollama"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/pipeline-templates/refs/heads/main/templates/Ornith/ornith.png",
+  "variants": [
+    {
+      "id": "9b",
+      "name": "9B Model",
+      "description": "Ornith 9B agentic-coding model (5.6 GB, 256K context, Text)",
+      "job_definition": "job-definition-9b.json"
+    }
+  ]
+}

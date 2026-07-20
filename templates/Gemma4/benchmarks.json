@@ -1,8 +1,7 @@
 [
   {
     "variants": [
-      "27b",
-      "35b-a3b"
+      "26b"
     ],
     "timeoutSeconds": 1800,
     "metrics": [
@@ -43,7 +42,7 @@
             "DURATION": "100",
             "CONCURRENT_USERS": "1",
             "WARMUP_REQUEST_TIMEOUT": "300",
-            "MAX_WAIT_TIME": "1200"
+            "MAX_WAIT_TIME": "900"
           }
         },
         "execution": {
