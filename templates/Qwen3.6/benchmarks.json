@@ -42,7 +42,8 @@
             "BASE_URL": "http://%%ops.server.host%%:11434",
             "DURATION": "100",
             "CONCURRENT_USERS": "1",
-            "WARMUP_REQUEST_TIMEOUT": "1200"
+            "WARMUP_REQUEST_TIMEOUT": "300",
+            "MAX_WAIT_TIME": "1200"
           }
         },
         "execution": {
