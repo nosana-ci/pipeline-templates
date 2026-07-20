@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "global": {
+    "variables": {
+      "MODEL": "laguna-xs-2.1:bf16"
+    }
+  },
+  "ops": [
+    {
+      "id": "server",
+      "type": "container/run",
+      "args": {
+        "gpu": true,
+        "image": "docker.io/ollama/ollama:0.31.2",
+        "expose": [
+          {
+            "port": 11434,
+            "health_checks": [
+              {
+                "type": "http",
+                "path": "/api/tags",
+                "method": "GET",
+                "expected_status": 200,
+                "continuous": false
+              }
+            ]
+          }
+        ],
+        "resources": [
+          {
+            "type": "Ollama",
+            "model": "%%global.variables.MODEL%%"
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "vram_total_mb": 73728
+    }
+  }
+}
