@@ -3,7 +3,7 @@
     "variants": [
       "26b"
     ],
-    "timeoutSeconds": 1800,
+    "timeoutSeconds": 2400,
     "metrics": [
       {
         "key": "tokens_per_second",
@@ -39,10 +39,10 @@
           "gpu": true,
           "env": {
             "BASE_URL": "http://%%ops.server.host%%:11434",
-            "DURATION": "100",
+            "DURATION": "150",
             "CONCURRENT_USERS": "1",
-            "WARMUP_REQUEST_TIMEOUT": "300",
-            "MAX_WAIT_TIME": "900"
+            "WARMUP_REQUEST_TIMEOUT": "420",
+            "MAX_WAIT_TIME": "1500"
           }
         },
         "execution": {
