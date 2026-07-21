@@ -3,7 +3,7 @@
     "variants": [
       "bf16"
     ],
-    "timeoutSeconds": 2400,
+    "timeoutSeconds": 4800,
     "metrics": [
       {
         "key": "tokens_per_second",
@@ -39,10 +39,10 @@
           "gpu": true,
           "env": {
             "BASE_URL": "http://%%ops.server.host%%:11434",
-            "DURATION": "100",
+            "DURATION": "200",
             "CONCURRENT_USERS": "1",
-            "WARMUP_REQUEST_TIMEOUT": "300",
-            "MAX_WAIT_TIME": "1500"
+            "WARMUP_REQUEST_TIMEOUT": "600",
+            "MAX_WAIT_TIME": "3600"
           }
         },
         "execution": {
