@@ -1,7 +1,7 @@
 [
   {
     "variants": [
-      "bf16"
+      "q4_k_m"
     ],
     "timeoutSeconds": 4800,
     "metrics": [
