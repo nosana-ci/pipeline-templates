@@ -35,7 +35,7 @@
         "id": "benchmark",
         "type": "container/run",
         "args": {
-          "image": "nosana/llm-benchmark:0.0.2",
+          "image": "nosana/llm-benchmark:0.0.3",
           "gpu": true,
           "env": {
             "BASE_URL": "http://%%ops.server.host%%:11434",
