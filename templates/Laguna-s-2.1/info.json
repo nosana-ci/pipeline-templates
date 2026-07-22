@@ -1,0 +1,14 @@
+{
+  "id": "laguna-s",
+  "name": "Laguna S 2.1",
+  "category": ["Official", "API", "LLM", "Ollama"],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/pipeline-templates/refs/heads/main/templates/Laguna-s-2.1/icon.webp",
+  "variants": [
+    {
+      "id": "q4_k_m",
+      "name": "S 2.1 q4_k_m",
+      "description": "Laguna S 2.1, q4_k_m quantization (75 GB, 256K context, Text)",
+      "job_definition": "job-definition-q4_k_m.json"
+    }
+  ]
+}
