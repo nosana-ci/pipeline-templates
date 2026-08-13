@@ -7,7 +7,7 @@
     {
       "id": "30b",
       "name": "30B Model",
-      "description": "Muse Glimmer 30B agentic model (Text + Image)",
+      "description": "Muse Glimmer 30B agentic model, q4_K_M (18 GB, 128K context, Text + Image)",
       "job_definition": "job-definition-30b.json"
     }
   ]
