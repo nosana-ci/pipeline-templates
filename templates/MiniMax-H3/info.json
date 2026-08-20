@@ -1,0 +1,37 @@
+{
+  "id": "minimax-h3",
+  "name": "MiniMax H3 Video",
+  "category": [
+    "Official",
+    "Web UI",
+    "API",
+    "Video Generation"
+  ],
+  "icon": "https://framerusercontent.com/images/3cNQMWKzIhIrQ5KErBm7dSmbd2w.png",
+  "variants": [
+    {
+      "id": "i2v-32gb",
+      "name": "Image to Video (32 GB)",
+      "description": "Keyframe or text to video with audio, fp8 model + nvfp4 encoder (Blackwell, no turbo LoRA)",
+      "job_definition": "job-definition-i2v-32gb.json"
+    },
+    {
+      "id": "i2v-80gb",
+      "name": "Image to Video (80 GB)",
+      "description": "Keyframe or text to video with audio, fp8 model + int8 encoder, 4-step turbo LoRA",
+      "job_definition": "job-definition-i2v-80gb.json"
+    },
+    {
+      "id": "ref2v-32gb",
+      "name": "Reference to Video (32 GB)",
+      "description": "Reference images drive identity, fp8 model + nvfp4 encoder (Blackwell, no turbo LoRA)",
+      "job_definition": "job-definition-ref2v-32gb.json"
+    },
+    {
+      "id": "ref2v-80gb",
+      "name": "Reference to Video (80 GB)",
+      "description": "Reference images drive identity, fp8 model + int8 encoder, 4-step turbo LoRA",
+      "job_definition": "job-definition-ref2v-80gb.json"
+    }
+  ]
+}
