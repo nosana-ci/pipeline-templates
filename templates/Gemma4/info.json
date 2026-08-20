@@ -1,8 +1,13 @@
 {
   "id": "gemma4",
   "name": "Gemma 4 Models",
-  "category": ["Official", "API", "LLM", "Ollama"],
-  "icon": "https://img.favpng.com/15/17/21/google-logo-google-logo-design-EQmvpNvp_t.jpg",
+  "category": [
+    "Official",
+    "API",
+    "LLM",
+    "Ollama"
+  ],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/pipeline-templates/refs/heads/main/templates/Gemma4/google.png",
   "variants": [
     {
       "id": "e2b",

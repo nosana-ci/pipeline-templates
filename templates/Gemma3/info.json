@@ -1,8 +1,13 @@
 {
   "id": "gemma3",
   "name": "Gemma 3 Models",
-  "category": ["Official", "API", "LLM", "Ollama"],
-  "icon": "https://img.favpng.com/15/17/21/google-logo-google-logo-design-EQmvpNvp_t.jpg",
+  "category": [
+    "Official",
+    "API",
+    "LLM",
+    "Ollama"
+  ],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/pipeline-templates/refs/heads/main/templates/Gemma3/google.png",
   "variants": [
     {
       "id": "4b",
@@ -12,7 +17,7 @@
     },
     {
       "id": "12b",
-      "name": "12B Model", 
+      "name": "12B Model",
       "description": "12B parameter model with instruction tuning and quantization",
       "job_definition": "job-definition-12b.json"
     },
