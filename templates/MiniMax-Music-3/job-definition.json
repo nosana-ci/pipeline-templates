@@ -1,0 +1,47 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "MiniMaxMusic3-comfy",
+      "args": {
+        "image": "docker.io/nosana/comfyui:2.0.9",
+        "expose": 8188,
+        "gpu": true,
+        "resources": [
+          {
+            "type": "HF",
+            "target": "/comfyui/models/diffusion_models/",
+            "repo": "Comfy-Org/MiniMax-Music-3",
+            "files": [
+              "diffusion_models/minimax_music3_dit_fp16.safetensors"
+            ]
+          },
+          {
+            "type": "HF",
+            "target": "/comfyui/models/text_encoders/",
+            "repo": "Comfy-Org/MiniMax-Music-3",
+            "files": [
+              "text_encoders/minimax_music3_text_encoder_pruned_int8_convrot.safetensors"
+            ]
+          },
+          {
+            "type": "HF",
+            "target": "/comfyui/models/vae/",
+            "repo": "Comfy-Org/MiniMax-Music-3",
+            "files": [
+              "vae/minimax_music3_dav.safetensors"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "vram_total_mb": 23552
+    }
+  }
+}
