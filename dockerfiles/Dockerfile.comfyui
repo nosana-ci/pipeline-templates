@@ -3,33 +3,28 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV PIP_PREFER_BINARY=1
 ENV ROOT=/comfyui
 ENV NVIDIA_VISIBLE_DEVICES=all
+
+# Pinned so an image tag always maps to one ComfyUI release; model support is
+# tied to the release, e.g. MiniMax Music 3 needs >= 0.33.0.
+ARG COMFYUI_VERSION=v0.33.2
+
+# build-essential: triton (via comfy-kitchen) JIT-compiles CUDA driver shims at
+# runtime and fails at import without a C compiler.
 RUN apt-get update && apt-get install -y \
     git \
+    build-essential \
     ffmpeg \
     libgl1-mesa-dev \
     libglib2.0-0 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /
-RUN git clone https://github.com/comfyanonymous/ComfyUI.git ${ROOT}
+RUN git clone --depth 1 --branch ${COMFYUI_VERSION} https://github.com/comfyanonymous/ComfyUI.git ${ROOT}
 WORKDIR ${ROOT}
-RUN git checkout master
-RUN pip install --no-cache-dir --disable-pip-version-check \
-    transformers==4.44.0 \
-    tokenizers==0.19.1 \
-    safetensors==0.4.3 \
-    einops==0.8.0 \
-    scipy==1.13.1 \
-    aiohttp==3.9.5 \
-    Pillow \
-    PyYAML \
-    tqdm \
-    psutil
-RUN pip install --no-cache-dir torchsde sentencepiece kornia spandrel soundfile
-RUN pip install --no-cache-dir comfyui-frontend-package comfyui-workflow-templates comfyui-embedded-docs
-RUN pip install --no-cache-dir pydantic-settings alembic av
-RUN pip install --no-cache-dir --no-deps "comfy-kitchen>=0.2.5"
+# torch/torchvision/torchaudio come from the base image; the requirements list
+# them unpinned, so they stay as installed.
+RUN pip install --no-cache-dir --disable-pip-version-check -r requirements.txt
 RUN cd custom_nodes && \
-    git clone https://github.com/ltdrdata/ComfyUI-Manager.git
+    git clone --depth 1 https://github.com/ltdrdata/ComfyUI-Manager.git
 EXPOSE 8188
 CMD ["python", "main.py", "--listen", "0.0.0.0", "--port", "8188"]
