@@ -43,19 +43,23 @@ Both decoders read the same sampled latent — `VAEDecode` takes the video half,
 `VAEDecodeAudio` the audio half. Feed both into `CreateVideo` for a file with
 sound.
 
+All variants ship the matching 4-step turbo LoRA — chain
+`UNETLoader → LoraLoaderModelOnly → ModelSamplingMiniMaxH3`:
+
 | Setup | steps | cfg |
 |---|---|---|
-| 32 GB variants (no LoRA) | 8 for a quick look, 30 for quality | 1.0 at 8 steps, ~4.0 at 30 |
-| 80 GB variants with turbo LoRA | 4 | 1.0 |
+| Turbo LoRA | 4 | 1.0 |
+| Without the LoRA | 8 for a quick look, 30 for quality | 1.0 at 8 steps, ~4.0 at 30 |
 
 cfg above 1.0 evaluates the model twice per step, so steps and cfg together
 drive the run time.
 
 ## Notes
 
-- **The 32 GB variants ship no turbo LoRA.** Applying a LoRA to fp8 weights
-  makes ComfyUI materialise a dequantized copy of the model, which runs out of
-  memory during load on a 32 GB card at any resolution.
+- Applying a LoRA to fp8 weights makes ComfyUI materialise a dequantized copy
+  of the model. This fits a 32 GB card only because the CUDA 13 image enables
+  ComfyUI's DynamicVRAM; on a cu128 image the same graph OOMs during load at
+  any resolution.
 - Keep `UNETLoader` on `weight_dtype: default`; forcing `fp8_e4m3fn` makes the
   quantized kernels reject the weights.
 - `ModelSamplingMiniMaxH3` sets the video and audio flow shifts together
@@ -79,4 +83,4 @@ From [Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-Org/MiniMax-H3):
 | `qwen3vl_32b_minimax_h3_int8_convrot.safetensors` (80 GB) | `models/text_encoders/` | 27 GB |
 | `minimax_h3_video_vae_fp16.safetensors` | `models/vae/` | 5.2 GB |
 | `minimax_h3_audio_vae_fp32.safetensors` | `models/vae/` | 0.6 GB |
-| 4-step turbo LoRA (80 GB variants only) | `models/loras/` | 2.0 GB |
+| 4-step turbo LoRA for the matching task | `models/loras/` | 2.0 GB |
