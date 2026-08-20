@@ -12,7 +12,7 @@
     {
       "id": "i2v-32gb",
       "name": "Image to Video (32 GB)",
-      "description": "Keyframe or text to video with audio, fp8 model + nvfp4 encoder (Blackwell, no turbo LoRA)",
+      "description": "Keyframe or text to video with audio, fp8 model + nvfp4 encoder (Blackwell), 4-step turbo LoRA",
       "job_definition": "job-definition-i2v-32gb.json"
     },
     {
@@ -24,7 +24,7 @@
     {
       "id": "ref2v-32gb",
       "name": "Reference to Video (32 GB)",
-      "description": "Reference images drive identity, fp8 model + nvfp4 encoder (Blackwell, no turbo LoRA)",
+      "description": "Reference images drive identity, fp8 model + nvfp4 encoder (Blackwell), 4-step turbo LoRA",
       "job_definition": "job-definition-ref2v-32gb.json"
     },
     {
