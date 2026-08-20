@@ -32,49 +32,13 @@ optimized CUDA backend and ComfyUI's DynamicVRAM both require — on cu128 they
 disable themselves and every quantized model runs the eager path. **A node
 needs an r580+ driver to run this image.**
 
-## Measured on an RTX 5090 (32 GB)
-
-Image-to-video variant, fp8 diffusion model + nvfp4 encoder. These numbers were
-taken on the cu128 image (`2.0.9`); the cu130 image the template now points at
-enables the optimized backend and DynamicVRAM, so treat them as an upper bound
-on time rather than a target:
-
-| Run | Peak VRAM | Time |
-|---|---|---|
-| 832×480, 124 frames, 8 steps, cfg 1.0 | 27.0 GB | ~1 min |
-| 1344×768, 124 frames, 8 steps, cfg 1.0 | 27.2 GB | ~3.5 min |
-| 1344×768, 124 frames, first_frame supplied | 27.3 GB | ~3.5 min |
-| 1344×768, 124 frames, 30 steps, cfg 4.0 | 27.3 GB | ~20 min |
-
-VRAM is dominated by the 21 GB diffusion model, so resolution, length and step
-count move the peak far less than you would expect — every run above lands
-within 300 MB of the others. What they change is time: cfg above 1.0 evaluates
-the model twice per step, so 30 steps at cfg 4.0 costs roughly six times an
-8-step run at cfg 1.0.
-
-Reference-to-video, one reference image, same node and settings:
-
-| Run | Peak VRAM | Time |
-|---|---|---|
-| 1344×768, 124 frames, 8 steps, 1 ref image | 26.7 GB | ~3.5 min |
-
-And on an RTX Pro 6000 (96 GB), the 80 GB variant with the 4-step turbo LoRA:
-
-| Run | Peak VRAM | Time |
-|---|---|---|
-| 1344×768, 124 frames, 4 steps, turbo LoRA | 52.6 GB | ~2 min |
-
 ## The turbo LoRA needs the 80 GB variants
 
 MiniMax publishes 4-step turbo LoRAs, and they are a large speed win — but
 applying a LoRA to fp8 weights makes ComfyUI materialise a dequantized copy of
-the model, peaking at 52.6 GB where it fits. On a 32 GB card it runs out of
-memory during model load at *any* resolution, including 512×288, so the 32 GB
-variants do not ship the LoRA at all; use plain sampling settings there.
-
-That verdict was measured on cu128. DynamicVRAM, which the cu130 image enables,
-manages exactly this kind of oversized load, so the LoRA may become usable on
-32 GB — it is not shipped there until someone measures it.
+the model, which needs far more memory than the quantized weights suggest. On a
+32 GB card it runs out of memory during model load at *any* resolution, so the
+32 GB variants do not ship the LoRA at all; use plain sampling settings there.
 
 ## Usage
 
@@ -110,8 +74,12 @@ the quantized kernels reject the weights (`No backend can handle
 | 32 GB variants (no LoRA) | 8 for a quick look, 30 for quality | 1.0 at 8 steps, ~4.0 at 30 |
 | 80 GB variants with turbo LoRA | 4 | 1.0 |
 
-The 4-step turbo path on an 80 GB card is both the fastest and the cheapest
-route to a finished clip — ~2 min against ~20 min for 30 steps on a 5090.
+The 4-step turbo path on an 80 GB card is the quickest route to a finished
+clip. Note that cfg above 1.0 evaluates the model twice per step, so raising
+both steps and cfg multiplies the cost.
+
+VRAM is dominated by the 21 GB diffusion model, so resolution and length move
+the peak much less than step count and cfg move the time.
 
 `ModelSamplingMiniMaxH3` sets the video and audio flow shifts together
 (defaults 12.0 / 3.0). The DiT derives the audio schedule from the video one,
