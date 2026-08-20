@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
+FROM pytorch/pytorch:2.13.0-cuda13.0-cudnn9-runtime
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PIP_PREFER_BINARY=1
 ENV ROOT=/comfyui
@@ -22,8 +22,13 @@ WORKDIR /
 RUN git clone --depth 1 --branch ${COMFYUI_VERSION} https://github.com/comfyanonymous/ComfyUI.git ${ROOT}
 WORKDIR ${ROOT}
 # torch/torchvision/torchaudio come from the base image; the requirements list
-# them unpinned, so they stay as installed.
-RUN pip install --no-cache-dir --disable-pip-version-check -r requirements.txt
+# them unpinned, so they stay as installed. CUDA 13 is required for
+# comfy-kitchen's optimized CUDA/triton backends and for DynamicVRAM, both of
+# which disable themselves on cu128 or torch below 2.8 — the node then runs
+# every model on the eager path. CUDA 13 needs an r580+ driver.
+# The base image's Python is PEP 668 "externally managed"; in a single-purpose
+# container the system interpreter is the only one, so install into it.
+RUN pip install --no-cache-dir --disable-pip-version-check --break-system-packages -r requirements.txt
 RUN cd custom_nodes && \
     git clone --depth 1 https://github.com/ltdrdata/ComfyUI-Manager.git
 EXPOSE 8188

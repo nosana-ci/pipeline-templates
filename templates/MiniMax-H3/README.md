@@ -25,9 +25,19 @@ bigger card to sit beside the diffusion model.
 
 With no keyframe and no reference image, both tasks are plain text-to-video.
 
+## Requirements
+
+The image is built on CUDA 13 (torch 2.13 + cu130), which comfy-kitchen's
+optimized CUDA backend and ComfyUI's DynamicVRAM both require — on cu128 they
+disable themselves and every quantized model runs the eager path. **A node
+needs an r580+ driver to run this image.**
+
 ## Measured on an RTX 5090 (32 GB)
 
-Image-to-video variant, fp8 diffusion model + nvfp4 encoder:
+Image-to-video variant, fp8 diffusion model + nvfp4 encoder. These numbers were
+taken on the cu128 image (`2.0.9`); the cu130 image the template now points at
+enables the optimized backend and DynamicVRAM, so treat them as an upper bound
+on time rather than a target:
 
 | Run | Peak VRAM | Time |
 |---|---|---|
@@ -58,9 +68,13 @@ And on an RTX Pro 6000 (96 GB), the 80 GB variant with the 4-step turbo LoRA:
 
 MiniMax publishes 4-step turbo LoRAs, and they are a large speed win — but
 applying a LoRA to fp8 weights makes ComfyUI materialise a dequantized copy of
-the model. On a 32 GB card that runs out of memory during model load, at *any*
-resolution, including 512×288. The 32 GB variants therefore do not ship the
-LoRA at all; use plain sampling settings there.
+the model, peaking at 52.6 GB where it fits. On a 32 GB card it runs out of
+memory during model load at *any* resolution, including 512×288, so the 32 GB
+variants do not ship the LoRA at all; use plain sampling settings there.
+
+That verdict was measured on cu128. DynamicVRAM, which the cu130 image enables,
+manages exactly this kind of oversized load, so the LoRA may become usable on
+32 GB — it is not shipped there until someone measures it.
 
 ## Usage
 
