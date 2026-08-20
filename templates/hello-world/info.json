@@ -1,6 +1,8 @@
 {
   "id": "hello-world",
   "name": "Hello World",
-  "category": ["Featured"],
-  "icon": "https://miro.medium.com/v2/resize:fit:1000/1*aPfdrf5Y14OzFUXgEwB9TA.jpeg"
-} 
+  "category": [
+    "Featured"
+  ],
+  "icon": "https://raw.githubusercontent.com/nosana-ci/pipeline-templates/refs/heads/main/templates/hello-world/nosana.png"
+}

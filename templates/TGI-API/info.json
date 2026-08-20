@@ -1,6 +1,0 @@
-{
-  "id": "tgi-api",
-  "name": "Text Generation Inference API",
-  "category": ["API", "LLM"],
-  "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
-} 
