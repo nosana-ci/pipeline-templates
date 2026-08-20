@@ -2,9 +2,10 @@
 
 This directory contains Dockerfiles for building custom images used by the supported Nosana pipeline templates.
 
-## ✅ Universal PyTorch Base Image
+## ✅ PyTorch Base Images
 
-All custom Dockerfiles use the **universal PyTorch base image** that supports every modern NVIDIA GPU:
+Most custom Dockerfiles use the PyTorch base image that supports every modern
+NVIDIA GPU:
 
 ```dockerfile
 FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
@@ -14,6 +15,17 @@ FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
 - Pre-compiled kernels for SM 100 (Blackwell B100/B200) **and** SM 120 (RTX 50-series)
 - Supports all earlier architectures (sm_50 … sm_90)
 - Works on hosts with NVIDIA driver ≥ 525.x (R570+ recommended)
+
+`Dockerfile.comfyui` is the exception and uses a CUDA 13 base:
+
+```dockerfile
+FROM pytorch/pytorch:2.13.0-cuda13.0-cudnn9-runtime
+```
+
+comfy-kitchen's optimized CUDA and triton backends, and ComfyUI's DynamicVRAM,
+disable themselves on cu128 or on torch below 2.8 — quantized models then run
+the eager path throughout. **This base requires an r580+ driver**, so it is a
+narrower host requirement than the cu128 image above.
 
 ## Supported Template Dockerfiles
 

@@ -7,7 +7,7 @@
     "API",
     "Video Generation"
   ],
-  "icon": "https://framerusercontent.com/images/3cNQMWKzIhIrQ5KErBm7dSmbd2w.png",
+  "icon": "https://raw.githubusercontent.com/nosana-ci/pipeline-templates/refs/heads/main/templates/MiniMax-H3/minimax.png",
   "variants": [
     {
       "id": "i2v-32gb",

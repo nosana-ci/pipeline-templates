@@ -6,7 +6,7 @@
       "type": "container/run",
       "id": "MiniMaxH3-ref2v-comfy",
       "args": {
-        "image": "docker.io/nosana/comfyui:2.0.9",
+        "image": "docker.io/nosana/comfyui:2.0.10",
         "expose": 8188,
         "gpu": true,
         "resources": [
