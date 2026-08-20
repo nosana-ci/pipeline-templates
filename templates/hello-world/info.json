@@ -2,6 +2,7 @@
   "id": "hello-world",
   "name": "Hello World",
   "category": [
+    "Official",
     "Featured"
   ],
   "icon": "https://raw.githubusercontent.com/nosana-ci/pipeline-templates/refs/heads/main/templates/hello-world/nosana.png"
