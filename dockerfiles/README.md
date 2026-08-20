@@ -37,12 +37,7 @@ narrower host requirement than the cu128 image above.
 
 ### AI/ML Inference & Generation
 - `Dockerfile.comfyui` - ComfyUI for node-based image generation
-- `Dockerfile.oobabooga` - Oobabooga text-generation-webui
-- `Dockerfile.invokeai` - InvokeAI for Stable Diffusion image generation
 - `Dockerfile.whisper-asr` - OpenAI Whisper speech recognition API
-
-### Training & Fine-tuning
-- `Dockerfile.llama-factory` - LLaMA Factory for LLM fine-tuning
 
 ## Building Images
 

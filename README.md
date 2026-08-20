@@ -32,10 +32,30 @@ Read more about the [Nosana Builder Challenge](https://nosana.com/blog/nos_chall
 
 ## Templates
 
+- [ComfyUI Image Generation](/templates/ComfyUI/)
+- [Cosmos 3 Nano](/templates/Cosmos3-Nano/)
+- [DeepSeek R1 Qwen Models](/templates/Deepseek-R1/)
+- [Folding@Home](/templates/FoldingAtHome/)
+- [Gemma 3 Models](/templates/Gemma3/)
+- [Gemma 4 Models](/templates/Gemma4/)
+- [GLM-4.7-Flash](/templates/GLM-47-flash/)
+- [GPT-OSS Models](/templates/GPT-OSS/)
 - [Hello World](/templates/hello-world/)
-- [Jupyter Notebook](/templates/jupyter-notebook/)
-- [Open WebUI](/templates/open-webui/)
-- [Stable Diffusion](/templates/stable-diffusion/)
+- [Laguna S 2.1](/templates/Laguna-s-2.1/)
+- [MiniMax H3 Video](/templates/MiniMax-H3/)
+- [MiniMax Music 3](/templates/MiniMax-Music-3/)
+- [Muse Glimmer](/templates/Muse-Glimmer/)
+- [Nanonets OCR 2 Models](/templates/Nanonets-OCR2/)
+- [Open WebUI using Ollama](/templates/open-webui-ollama/)
+- [OpenClaw](/templates/OpenClaw/)
+- [Ornith](/templates/Ornith/)
+- [Pytorch Jupyter Notebook](/templates/Pytorch-jupyter-notebook/)
+- [Qwen 3.5 Models](/templates/Qwen3.5/)
+- [Qwen 3.6](/templates/Qwen3.6/)
+- [RStudio Server](/templates/Rstudio/)
+- [Tensorflow Jupyter Notebook](/templates/Tensorflow-jupyter-notebook/)
+- [VSCode Server](/templates/VScode-server/)
+- [Whisper ASR UI](/templates/Whisper-ASR/)
 
 # Contribution Guide
 

@@ -1,6 +1,0 @@
-{
-  "id": "oobabooga",
-  "name": "Oobabooga web UI",
-  "category": ["Web UI", "API", "LLM"],
-  "icon": "https://raw.githubusercontent.com/nosana-ci/templates/refs/heads/main/templates/Oobabooga/oobabooga.png"
-}
