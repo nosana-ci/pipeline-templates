@@ -42,6 +42,12 @@ within 300 MB of the others. What they change is time: cfg above 1.0 evaluates
 the model twice per step, so 30 steps at cfg 4.0 costs roughly six times an
 8-step run at cfg 1.0.
 
+Reference-to-video, one reference image, same node and settings:
+
+| Run | Peak VRAM | Time |
+|---|---|---|
+| 1344×768, 124 frames, 8 steps, 1 ref image | 26.7 GB | ~3.5 min |
+
 And on an RTX Pro 6000 (96 GB), the 80 GB variant with the 4-step turbo LoRA:
 
 | Run | Peak VRAM | Time |
@@ -104,6 +110,17 @@ and the prompt refers to them the same way: `<Picture 1>`, `<Video 1>`,
 `<Audio 1>`, numbered per type from 1. `ref_image_size: max` gives the best
 identity fidelity at a 2048 px short edge, but reference tokens ride through
 every sampling step, so it is markedly slower than `match`.
+
+Driving this node over the API: the reference inputs are autogrow groups, so
+they are nested under the group name rather than passed flat. `ref_image_1` as
+a top-level input is rejected with `unexpected keyword argument`; it belongs
+inside `ref_images`:
+
+```json
+"ref_images": { "ref_image_1": ["14", 0] }
+```
+
+The same holds for `ref_videos`, `ref_video_audios` and `ref_audios`.
 
 ## Weights
 
