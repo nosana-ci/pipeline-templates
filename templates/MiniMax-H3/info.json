@@ -12,25 +12,25 @@
     {
       "id": "i2v-32gb",
       "name": "Image to Video (32 GB)",
-      "description": "Keyframe or text to video with audio, fp8 model + nvfp4 encoder (Blackwell), 4-step turbo LoRA",
+      "description": "Official ComfyUI keyframe or text-to-video workflow with audio and 8-step turbo LoRA (Blackwell)",
       "job_definition": "job-definition-i2v-32gb.json"
     },
     {
       "id": "i2v-80gb",
       "name": "Image to Video (80 GB)",
-      "description": "Keyframe or text to video with audio, fp8 model + int8 encoder, 4-step turbo LoRA",
+      "description": "Official ComfyUI keyframe or text-to-video workflow with audio and 8-step turbo LoRA (Blackwell)",
       "job_definition": "job-definition-i2v-80gb.json"
     },
     {
       "id": "ref2v-32gb",
       "name": "Reference to Video (32 GB)",
-      "description": "Reference images drive identity, fp8 model + nvfp4 encoder (Blackwell), 4-step turbo LoRA",
+      "description": "Official ComfyUI reference-to-video workflow with audio and 4-step turbo LoRA (Blackwell)",
       "job_definition": "job-definition-ref2v-32gb.json"
     },
     {
       "id": "ref2v-80gb",
       "name": "Reference to Video (80 GB)",
-      "description": "Reference images drive identity, fp8 model + int8 encoder, 4-step turbo LoRA",
+      "description": "Official ComfyUI reference-to-video workflow with audio and 4-step turbo LoRA (Blackwell)",
       "job_definition": "job-definition-ref2v-80gb.json"
     }
   ]

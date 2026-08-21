@@ -15,7 +15,7 @@
             "target": "/comfyui/models/diffusion_models/",
             "repo": "Comfy-Org/MiniMax-H3",
             "files": [
-              "diffusion_models/minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
+              "diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors"
             ]
           },
           {
@@ -23,7 +23,7 @@
             "target": "/comfyui/models/text_encoders/",
             "repo": "Comfy-Org/MiniMax-H3",
             "files": [
-              "text_encoders/qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
+              "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
             ]
           },
           {
@@ -38,9 +38,9 @@
           {
             "type": "HF",
             "target": "/comfyui/models/loras/",
-            "repo": "Comfy-Org/MiniMax-H3",
+            "repo": "lightx2v/Minimax-h3-Turbo",
             "files": [
-              "loras/minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16.safetensors"
+              "minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors"
             ]
           }
         ]
