@@ -15,7 +15,7 @@
             "target": "/comfyui/models/diffusion_models/",
             "repo": "Comfy-Org/MiniMax-H3",
             "files": [
-              "diffusion_models/minimax_h3_ref2va_pruned_fp8_scaled.safetensors"
+              "diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors"
             ]
           },
           {

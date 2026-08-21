@@ -10,10 +10,10 @@ the trained range is ~124–362 frames.
 
 | Variant | Task | Text encoder | Requires |
 |---|---|---|---|
-| Image to Video (32 GB) | prompt + optional first/last keyframe | Qwen3-VL 32B nvfp4 | 32 GB, Blackwell |
-| Image to Video (80 GB) | prompt + optional first/last keyframe | Qwen3-VL 32B int8 | 80 GB |
-| Reference to Video (32 GB) | reference images drive identity | Qwen3-VL 32B nvfp4 | 32 GB, Blackwell |
-| Reference to Video (80 GB) | reference images drive identity | Qwen3-VL 32B int8 | 80 GB |
+| Image to Video (32 GB) | prompt + optional first/last keyframe | Official ComfyUI I2V weights | 32 GB, Blackwell |
+| Image to Video (80 GB) | prompt + optional first/last keyframe | Official ComfyUI I2V weights | 80 GB, Blackwell |
+| Reference to Video (32 GB) | reference images drive identity | Official ComfyUI R2V weights | 32 GB, Blackwell |
+| Reference to Video (80 GB) | reference images drive identity | Official ComfyUI R2V weights | 80 GB, Blackwell |
 
 **Image to Video** pins your image as a real frame of the output — first frame,
 optionally last frame, with the model filling in the motion between.
@@ -43,23 +43,19 @@ Both decoders read the same sampled latent — `VAEDecode` takes the video half,
 `VAEDecodeAudio` the audio half. Feed both into `CreateVideo` for a file with
 sound.
 
-All variants ship the matching 4-step turbo LoRA — chain
+All variants ship the task-specific turbo LoRA — chain
 `UNETLoader → LoraLoaderModelOnly → ModelSamplingMiniMaxH3`:
 
 | Setup | steps | cfg |
 |---|---|---|
-| Turbo LoRA | 4 | 1.0 |
-| Without the LoRA | 8 for a quick look, 30 for quality | 1.0 at 8 steps, ~4.0 at 30 |
+| Image-to-video variants with turbo LoRA | 8 | 1.0 |
+| Reference-to-video variants with turbo LoRA | 4 | 1.0 |
 
 cfg above 1.0 evaluates the model twice per step, so steps and cfg together
 drive the run time.
 
 ## Notes
 
-- Applying a LoRA to fp8 weights makes ComfyUI materialise a dequantized copy
-  of the model. This fits a 32 GB card only because the CUDA 13 image enables
-  ComfyUI's DynamicVRAM; on a cu128 image the same graph OOMs during load at
-  any resolution.
 - Keep `UNETLoader` on `weight_dtype: default`; forcing `fp8_e4m3fn` makes the
   quantized kernels reject the weights.
 - `ModelSamplingMiniMaxH3` sets the video and audio flow shifts together
@@ -77,10 +73,9 @@ From [Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-Org/MiniMax-H3):
 
 | File | Location | Size |
 |---|---|---|
-| `minimax_h3_fl2va_pruned_fp8_scaled.safetensors` (i2v) | `models/diffusion_models/` | 21 GB |
-| `minimax_h3_ref2va_pruned_fp8_scaled.safetensors` (ref2v) | `models/diffusion_models/` | 21 GB |
-| `qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors` (32 GB) | `models/text_encoders/` | 16 GB |
-| `qwen3vl_32b_minimax_h3_int8_convrot.safetensors` (80 GB) | `models/text_encoders/` | 27 GB |
+| `minimax_h3_fl2va_pruned_int8_convrot.safetensors` (i2v) | `models/diffusion_models/` | 21 GB |
+| `minimax_h3_ref2va_pruned_int8_convrot.safetensors` (ref2v) | `models/diffusion_models/` | 21 GB |
+| `qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors` | `models/text_encoders/` | 16 GB |
 | `minimax_h3_video_vae_fp16.safetensors` | `models/vae/` | 5.2 GB |
 | `minimax_h3_audio_vae_fp32.safetensors` | `models/vae/` | 0.6 GB |
-| 4-step turbo LoRA for the matching task | `models/loras/` | 2.0 GB |
+| 8-step I2V / 4-step R2V turbo LoRA | `models/loras/` | 2.0 GB |
