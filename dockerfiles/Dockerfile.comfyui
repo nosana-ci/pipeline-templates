@@ -6,7 +6,7 @@ ENV NVIDIA_VISIBLE_DEVICES=all
 
 # Pinned so an image tag always maps to one ComfyUI release; model support is
 # tied to the release, e.g. MiniMax Music 3 needs >= 0.33.0.
-ARG COMFYUI_VERSION=v0.33.2
+ARG COMFYUI_VERSION=v0.33.3
 
 # build-essential: triton (via comfy-kitchen) JIT-compiles CUDA driver shims at
 # runtime and fails at import without a C compiler.
@@ -32,4 +32,9 @@ RUN pip install --no-cache-dir --disable-pip-version-check --break-system-packag
 RUN cd custom_nodes && \
     git clone --depth 1 https://github.com/ltdrdata/ComfyUI-Manager.git
 EXPOSE 8188
-CMD ["python", "main.py", "--listen", "0.0.0.0", "--port", "8188"]
+# --enable-cors-header swaps ComfyUI's origin-only middleware for the CORS one.
+# That middleware 403s any request carrying "Sec-Fetch-Site: cross-site"; it
+# guards a loopback ComfyUI against drive-by requests, but this server is
+# reached over a public tunnel, where it only breaks links followed from
+# another site.
+CMD ["python", "main.py", "--listen", "0.0.0.0", "--port", "8188", "--enable-cors-header"]

@@ -7,7 +7,7 @@
       "id": "Flux-comfy",
       "args": {
         "cmd": [],
-        "image": "docker.io/nosana/comfyui:2.0.5",
+        "image": "docker.io/nosana/comfyui:2.0.11",
         "gpu": true,
         "expose": 8188,
         "resources": [
