@@ -161,3 +161,11 @@ test("BenchmarksSchema accepts ops_overrides with extra op fields (passthrough)"
   ok[0].ops_overrides.args = { gpu: true };
   assert.equal(BenchmarksSchema.safeParse(ok).success, true);
 });
+
+test("gateway metadata is confined to the reserved category and fits the context", () => {
+  const inference = { model: "qwen/test", context_length: 1024, max_output_tokens: 128, op: "server", port: 8000 };
+  assert.equal(InfoSchema.safeParse({ ...validInfo, inference }).success, false);
+  assert.equal(InfoSchema.safeParse({ ...validInfo, category: ["LLM Gateway"] }).success, false);
+  assert.equal(InfoSchema.safeParse({ ...validInfo, category: ["LLM Gateway"], inference }).success, true);
+  assert.equal(InfoSchema.safeParse({ ...validInfo, category: ["LLM Gateway"], inference: { ...inference, max_output_tokens: 2048 } }).success, false);
+});
