@@ -83,6 +83,7 @@ function validateTemplate(folder) {
   // benchmarks.json is optional; present only for templates with a benchmark.
   const benchmarksPath = path.join(dir, "benchmarks.json");
   if (fs.existsSync(benchmarksPath)) {
+    if (info.category.includes("LLM Gateway")) fail(folder, "LLM Gateway templates cannot contain benchmarks.json");
     validateBenchmarksFile(folder, benchmarksPath, variants.map((variant) => variant.id));
   }
 

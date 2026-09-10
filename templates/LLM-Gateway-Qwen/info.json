@@ -1,0 +1,24 @@
+{
+  "id": "gateway-qwen",
+  "name": "Managed Qwen inference",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qwen_logo.svg/3840px-Qwen_logo.svg.png",
+  "category": [
+    "LLM Gateway",
+    "vLLM",
+    "LLM"
+  ],
+  "variants": [
+    {
+      "id": "9b",
+      "name": "Qwen3.5 9B",
+      "job_definition": "9b.json",
+      "inference": {
+        "model": "qwen/qwen3.5-9b",
+        "context_length": 32768,
+        "max_output_tokens": 8192,
+        "op": "server",
+        "port": 8000
+      }
+    }
+  ]
+}
