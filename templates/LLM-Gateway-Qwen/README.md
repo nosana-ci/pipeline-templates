@@ -11,3 +11,9 @@ setting leaves room for whatever else holds memory on the node. Within that
 budget the 8.7 GiB of weights and the 2 GiB of KV cache for 16,384 tokens fit
 with headroom. Raising the context or the utilization needs a node with the card
 to itself.
+
+The chat template opens the assistant turn with `<think>`, so the model's reply
+begins inside a reasoning block and closes it before the answer. Without a
+reasoning parser that whole block arrives as ordinary message content. `qwen3`
+splits it into `reasoning_content`, and it handles the missing opening tag
+because the template supplies it rather than the model.
