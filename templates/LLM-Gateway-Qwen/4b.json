@@ -3,9 +3,9 @@
   "type": "container",
   "global": {
     "variables": {
-      "MAX_MODEL_LEN": "32768",
-      "GPU_MEM_UTIL": "0.90",
-      "MAX_NUM_SEQS": "1024"
+      "MAX_MODEL_LEN": "16384",
+      "GPU_MEM_UTIL": "0.75",
+      "MAX_NUM_SEQS": "32"
     }
   },
   "ops": [
@@ -20,9 +20,9 @@
           "serve"
         ],
         "cmd": [
-          "/models/qwen3.5-9b",
+          "/models/qwen3.5-4b",
           "--served-model-name",
-          "qwen/qwen3.5-9b",
+          "qwen/qwen3.5-4b",
           "--host",
           "0.0.0.0",
           "--port",
@@ -60,16 +60,14 @@
         "resources": [
           {
             "type": "HF",
-            "target": "/models/qwen3.5-9b",
-            "repo": "Qwen/Qwen3.5-9B",
+            "target": "/models/qwen3.5-4b",
+            "repo": "Qwen/Qwen3.5-4B",
             "files": [
               "chat_template.jinja",
               "config.json",
               "merges.txt",
-              "model.safetensors-00001-of-00004.safetensors",
-              "model.safetensors-00002-of-00004.safetensors",
-              "model.safetensors-00003-of-00004.safetensors",
-              "model.safetensors-00004-of-00004.safetensors",
+              "model.safetensors-00001-of-00002.safetensors",
+              "model.safetensors-00002-of-00002.safetensors",
               "model.safetensors.index.json",
               "preprocessor_config.json",
               "tokenizer.json",
@@ -85,7 +83,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "vram_total_mb": 92160
+      "vram_total_mb": 24576
     }
   }
 }

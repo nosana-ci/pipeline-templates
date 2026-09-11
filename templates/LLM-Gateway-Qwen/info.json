@@ -9,13 +9,13 @@
   ],
   "variants": [
     {
-      "id": "9b",
-      "name": "Qwen3.5 9B",
-      "job_definition": "9b.json",
+      "id": "4b",
+      "name": "Qwen3.5 4B",
+      "job_definition": "4b.json",
       "inference": {
-        "model": "qwen/qwen3.5-9b",
-        "context_length": 32768,
-        "max_output_tokens": 8192,
+        "model": "qwen/qwen3.5-4b",
+        "context_length": 16384,
+        "max_output_tokens": 4096,
         "op": "server",
         "port": 8000
       }
