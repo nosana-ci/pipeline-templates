@@ -32,7 +32,9 @@
           "--gpu-memory-utilization",
           "%%global.variables.GPU_MEM_UTIL%%",
           "--max-num-seqs",
-          "%%global.variables.MAX_NUM_SEQS%%"
+          "%%global.variables.MAX_NUM_SEQS%%",
+          "--reasoning-parser",
+          "qwen3"
         ],
         "env": {
           "VLLM_LOGGING_LEVEL": "INFO",
