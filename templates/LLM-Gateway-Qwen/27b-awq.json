@@ -5,7 +5,7 @@
     "variables": {
       "MAX_MODEL_LEN": "32768",
       "GPU_MEM_UTIL": "0.90",
-      "MAX_NUM_SEQS": "1024"
+      "MAX_NUM_SEQS": "16"
     }
   },
   "ops": [
@@ -13,16 +13,16 @@
       "type": "container/run",
       "id": "server",
       "args": {
-        "image": "docker.io/vllm/vllm-openai:v0.26.0",
+        "image": "docker.io/vllm/vllm-openai:v0.27.1-cu129-ubuntu2404",
         "gpu": true,
         "entrypoint": [
           "vllm",
           "serve"
         ],
         "cmd": [
-          "/models/gemma-4-26b-a4b",
+          "/models/qwen3.8-27b-awq",
           "--served-model-name",
-          "google/gemma-4-26b-a4b-it",
+          "qwen/qwen3.8-27b",
           "--host",
           "0.0.0.0",
           "--port",
@@ -33,8 +33,15 @@
           "%%global.variables.GPU_MEM_UTIL%%",
           "--max-num-seqs",
           "%%global.variables.MAX_NUM_SEQS%%",
+          "--kv-cache-dtype",
+          "fp8",
+          "--mm-encoder-attn-backend",
+          "TORCH_SDPA",
+          "--enable-auto-tool-choice",
+          "--tool-call-parser",
+          "qwen3_xml",
           "--reasoning-parser",
-          "gemma4"
+          "qwen3"
         ],
         "env": {
           "VLLM_LOGGING_LEVEL": "INFO",
@@ -62,16 +69,24 @@
         "resources": [
           {
             "type": "HF",
-            "target": "/models/gemma-4-26b-a4b",
-            "repo": "RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic",
+            "target": "/models/qwen3.8-27b-awq",
+            "repo": "cyankiwi/Qwen3.8-27B-AWQ-INT4",
             "files": [
               "chat_template.jinja",
               "config.json",
               "generation_config.json",
-              "model.safetensors",
-              "processor_config.json",
+              "merges.txt",
+              "model-00001-of-00005.safetensors",
+              "model-00002-of-00005.safetensors",
+              "model-00003-of-00005.safetensors",
+              "model-00004-of-00005.safetensors",
+              "model-00005-of-00005.safetensors",
+              "model.safetensors.index.json",
+              "preprocessor_config.json",
               "tokenizer.json",
-              "tokenizer_config.json"
+              "tokenizer_config.json",
+              "video_preprocessor_config.json",
+              "vocab.json"
             ]
           }
         ]
@@ -81,7 +96,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "vram_total_mb": 92160
+      "vram_total_mb": 32000
     }
   }
 }

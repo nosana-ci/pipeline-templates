@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "vram_total_mb": 4096
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "qwen-embedding",
+      "args": {
+        "image": "docker.io/ollama/ollama:0.20.0",
+        "gpu": true,
+        "env": {
+          "OLLAMA_HOST": "http://0.0.0.0:11435",
+          "OLLAMA_MAX_LOADED_MODELS": "1",
+          "OLLAMA_KEEP_ALIVE": "24h"
+        },
+        "expose": [
+          {
+            "port": 11435,
+            "type": "api",
+            "health_checks": [
+              {
+                "type": "http",
+                "path": "/api/tags",
+                "method": "GET",
+                "expected_status": 200,
+                "continuous": true
+              }
+            ]
+          }
+        ],
+        "resources": [
+          {
+            "type": "Ollama",
+            "model": "qwen3-embedding:0.6b"
+          }
+        ]
+      }
+    }
+  ]
+}

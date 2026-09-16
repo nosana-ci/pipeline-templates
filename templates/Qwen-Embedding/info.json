@@ -1,0 +1,11 @@
+{
+  "id": "qwen-embedding",
+  "name": "Qwen3 Embedding",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qwen_logo.svg/3840px-Qwen_logo.svg.png",
+  "category": [
+    "Ollama",
+    "API",
+    "LLM"
+  ],
+  "description": "Qwen3-Embedding-0.6B served by Ollama, for turning text into vectors."
+}
