@@ -39,3 +39,19 @@ card it is meant to match.
 
 The image is newer than the `vllm-openai` build the 5090 markets pre-pull, so the first
 start on a node includes the image download.
+
+## Qwen3 Embedding 0.6B
+
+Vectors for retrieval and semantic search, 1024 dimensions, L2 normalised. It generates
+nothing, so `max_output_tokens` is 1 only because the catalog requires a positive number.
+
+The weights declare `Qwen3ForCausalLM`, which vLLM resolves to a text generator unless
+told otherwise, so `--runner pooling` is required: without it this serves chat and exposes
+no embeddings endpoint at all. `--convert embed` is implied by the runner and passed
+explicitly.
+
+The resource lists its files rather than leaving them out. An HF resource without `files`
+is sent to the fetcher with an empty revision instead of `main`, and the job then fails
+with no operation state to explain it. `1_Pooling/config.json` and `modules.json` are part
+of that list because they are what selects last-token pooling and normalisation; without
+them the vectors are wrong rather than absent.

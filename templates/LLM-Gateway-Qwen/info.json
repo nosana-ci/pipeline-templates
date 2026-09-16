@@ -19,6 +19,18 @@
         "op": "server",
         "port": 8000
       }
+    },
+    {
+      "id": "embedding-0.6b",
+      "name": "Qwen3 Embedding 0.6B",
+      "job_definition": "embedding-0.6b.json",
+      "inference": {
+        "model": "qwen/qwen3-embedding-0.6b",
+        "context_length": 8192,
+        "max_output_tokens": 1,
+        "op": "server",
+        "port": 8000
+      }
     }
   ]
 }

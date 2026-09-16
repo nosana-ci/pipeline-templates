@@ -1,0 +1,93 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "global": {
+    "variables": {
+      "MAX_MODEL_LEN": "8192",
+      "GPU_MEM_UTIL": "0.60",
+      "MAX_NUM_SEQS": "32"
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "server",
+      "args": {
+        "image": "docker.io/vllm/vllm-openai:v0.26.0",
+        "gpu": true,
+        "entrypoint": [
+          "vllm",
+          "serve"
+        ],
+        "cmd": [
+          "/models/qwen3-embedding-0.6b",
+          "--served-model-name",
+          "qwen/qwen3-embedding-0.6b",
+          "--host",
+          "0.0.0.0",
+          "--port",
+          "8000",
+          "--runner",
+          "pooling",
+          "--convert",
+          "embed",
+          "--max-model-len",
+          "%%global.variables.MAX_MODEL_LEN%%",
+          "--gpu-memory-utilization",
+          "%%global.variables.GPU_MEM_UTIL%%",
+          "--max-num-seqs",
+          "%%global.variables.MAX_NUM_SEQS%%"
+        ],
+        "env": {
+          "VLLM_LOGGING_LEVEL": "INFO",
+          "HF_HUB_OFFLINE": "1"
+        },
+        "restart_policy": {
+          "policy": "on-failure",
+          "restart_tries": 3
+        },
+        "expose": [
+          {
+            "port": 8000,
+            "type": "api",
+            "health_checks": [
+              {
+                "type": "http",
+                "path": "/health",
+                "method": "GET",
+                "expected_status": 200,
+                "continuous": true
+              }
+            ]
+          }
+        ],
+        "resources": [
+          {
+            "type": "HF",
+            "target": "/models/qwen3-embedding-0.6b",
+            "repo": "Qwen/Qwen3-Embedding-0.6B",
+            "revision": "main",
+            "files": [
+              "1_Pooling/config.json",
+              "config.json",
+              "config_sentence_transformers.json",
+              "generation_config.json",
+              "merges.txt",
+              "model.safetensors",
+              "modules.json",
+              "tokenizer.json",
+              "tokenizer_config.json",
+              "vocab.json"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "vram_total_mb": 12288
+    }
+  }
+}
