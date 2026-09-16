@@ -20,9 +20,9 @@
           "serve"
         ],
         "cmd": [
-          "/models/qwen3-embedding-0.6b",
+          "/models/nemotron-3-embed-1b",
           "--served-model-name",
-          "qwen/qwen3-embedding-0.6b",
+          "nvidia/nemotron-3-embed-1b",
           "--host",
           "0.0.0.0",
           "--port",
@@ -64,20 +64,27 @@
         "resources": [
           {
             "type": "HF",
-            "target": "/models/qwen3-embedding-0.6b",
-            "repo": "Qwen/Qwen3-Embedding-0.6B",
+            "target": "/models/nemotron-3-embed-1b",
+            "repo": "nvidia/Nemotron-3-Embed-1B-BF16",
             "revision": "main",
             "files": [
-              "1_Pooling/config.json",
               "config.json",
               "config_sentence_transformers.json",
-              "generation_config.json",
-              "merges.txt",
               "model.safetensors",
+              "model.safetensors.index.json",
               "modules.json",
+              "sentence_bert_config.json",
               "tokenizer.json",
-              "tokenizer_config.json",
-              "vocab.json"
+              "tokenizer_config.json"
+            ]
+          },
+          {
+            "type": "HF",
+            "target": "/models/nemotron-3-embed-1b/1_Pooling",
+            "repo": "nvidia/Nemotron-3-Embed-1B-BF16",
+            "revision": "main",
+            "files": [
+              "1_Pooling/config.json"
             ]
           }
         ]
