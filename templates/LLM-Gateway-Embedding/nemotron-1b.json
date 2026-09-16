@@ -3,8 +3,8 @@
   "type": "container",
   "global": {
     "variables": {
-      "MAX_MODEL_LEN": "16384",
-      "GPU_MEM_UTIL": "0.75",
+      "MAX_MODEL_LEN": "8192",
+      "GPU_MEM_UTIL": "0.60",
       "MAX_NUM_SEQS": "32"
     }
   },
@@ -20,21 +20,23 @@
           "serve"
         ],
         "cmd": [
-          "/models/qwen3.5-4b",
+          "/models/nemotron-3-embed-1b",
           "--served-model-name",
-          "qwen/qwen3.5-4b",
+          "nvidia/nemotron-3-embed-1b",
           "--host",
           "0.0.0.0",
           "--port",
           "8000",
+          "--runner",
+          "pooling",
+          "--convert",
+          "embed",
           "--max-model-len",
           "%%global.variables.MAX_MODEL_LEN%%",
           "--gpu-memory-utilization",
           "%%global.variables.GPU_MEM_UTIL%%",
           "--max-num-seqs",
-          "%%global.variables.MAX_NUM_SEQS%%",
-          "--reasoning-parser",
-          "qwen3"
+          "%%global.variables.MAX_NUM_SEQS%%"
         ],
         "env": {
           "VLLM_LOGGING_LEVEL": "INFO",
@@ -62,20 +64,27 @@
         "resources": [
           {
             "type": "HF",
-            "target": "/models/qwen3.5-4b",
-            "repo": "Qwen/Qwen3.5-4B",
+            "target": "/models/nemotron-3-embed-1b",
+            "repo": "nvidia/Nemotron-3-Embed-1B-BF16",
+            "revision": "main",
             "files": [
-              "chat_template.jinja",
               "config.json",
-              "merges.txt",
-              "model.safetensors-00001-of-00002.safetensors",
-              "model.safetensors-00002-of-00002.safetensors",
+              "config_sentence_transformers.json",
+              "model.safetensors",
               "model.safetensors.index.json",
-              "preprocessor_config.json",
+              "modules.json",
+              "sentence_bert_config.json",
               "tokenizer.json",
-              "tokenizer_config.json",
-              "video_preprocessor_config.json",
-              "vocab.json"
+              "tokenizer_config.json"
+            ]
+          },
+          {
+            "type": "HF",
+            "target": "/models/nemotron-3-embed-1b/1_Pooling",
+            "repo": "nvidia/Nemotron-3-Embed-1B-BF16",
+            "revision": "main",
+            "files": [
+              "1_Pooling/config.json"
             ]
           }
         ]
@@ -85,7 +94,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "vram_total_mb": 24576
+      "vram_total_mb": 12288
     }
   }
 }

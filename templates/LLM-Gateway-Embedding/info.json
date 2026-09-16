@@ -1,0 +1,24 @@
+{
+  "id": "gateway-embed",
+  "name": "Managed embedding inference",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg",
+  "category": [
+    "LLM Gateway",
+    "vLLM",
+    "LLM"
+  ],
+  "variants": [
+    {
+      "id": "nemotron-1b",
+      "name": "Nemotron 3 Embed 1B",
+      "job_definition": "nemotron-1b.json",
+      "inference": {
+        "model": "nvidia/nemotron-3-embed-1b",
+        "context_length": 8192,
+        "max_output_tokens": 1,
+        "op": "server",
+        "port": 8000
+      }
+    }
+  ]
+}
