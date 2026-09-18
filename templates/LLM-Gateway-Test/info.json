@@ -1,0 +1,24 @@
+{
+  "id": "gateway-test",
+  "name": "Managed test inference",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qwen_logo.svg/3840px-Qwen_logo.svg.png",
+  "category": [
+    "LLM Gateway",
+    "vLLM",
+    "LLM"
+  ],
+  "variants": [
+    {
+      "id": "qwen3-5-0-8b",
+      "name": "Qwen3.5 0.8B",
+      "job_definition": "qwen3-5-0-8b.json",
+      "inference": {
+        "model": "qwen/qwen3.5-0.8b",
+        "context_length": 8192,
+        "max_output_tokens": 2048,
+        "op": "server",
+        "port": 8000
+      }
+    }
+  ]
+}

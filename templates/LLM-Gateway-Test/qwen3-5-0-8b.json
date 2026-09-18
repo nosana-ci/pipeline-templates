@@ -1,0 +1,90 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "global": {
+    "variables": {
+      "MAX_MODEL_LEN": "8192",
+      "GPU_MEM_UTIL": "0.60",
+      "MAX_NUM_SEQS": "8"
+    }
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "server",
+      "args": {
+        "image": "docker.io/vllm/vllm-openai:v0.27.1-cu129-ubuntu2404",
+        "gpu": true,
+        "entrypoint": [
+          "vllm",
+          "serve"
+        ],
+        "cmd": [
+          "/models/qwen3.5-0.8b",
+          "--served-model-name",
+          "qwen/qwen3.5-0.8b",
+          "--host",
+          "0.0.0.0",
+          "--port",
+          "8000",
+          "--max-model-len",
+          "%%global.variables.MAX_MODEL_LEN%%",
+          "--gpu-memory-utilization",
+          "%%global.variables.GPU_MEM_UTIL%%",
+          "--max-num-seqs",
+          "%%global.variables.MAX_NUM_SEQS%%",
+          "--language-model-only"
+        ],
+        "env": {
+          "VLLM_LOGGING_LEVEL": "INFO",
+          "HF_HUB_OFFLINE": "1"
+        },
+        "restart_policy": {
+          "policy": "on-failure",
+          "restart_tries": 3
+        },
+        "expose": [
+          {
+            "port": 8000,
+            "type": "api",
+            "health_checks": [
+              {
+                "type": "http",
+                "path": "/health",
+                "method": "GET",
+                "expected_status": 200,
+                "continuous": true
+              }
+            ]
+          }
+        ],
+        "resources": [
+          {
+            "type": "HF",
+            "target": "/models/qwen3.5-0.8b",
+            "repo": "Qwen/Qwen3.5-0.8B",
+            "revision": "main",
+            "files": [
+              "chat_template.jinja",
+              "config.json",
+              "merges.txt",
+              "model.safetensors-00001-of-00001.safetensors",
+              "model.safetensors.index.json",
+              "preprocessor_config.json",
+              "tokenizer.json",
+              "tokenizer_config.json",
+              "video_preprocessor_config.json",
+              "vocab.json"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "trigger": "dashboard",
+    "system_requirements": {
+      "vram_total_mb": 8192
+    }
+  }
+}
