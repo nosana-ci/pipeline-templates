@@ -1,0 +1,14 @@
+{
+  "id": "qwen3",
+  "name": "Qwen 3 Models",
+  "category": ["Official", "API", "LLM", "Ollama"],
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Qwen_logo.svg/3840px-Qwen_logo.svg.png",
+  "variants": [
+    {
+      "id": "30b-coder",
+      "name": "30B Coder Model",
+      "description": "Qwen 3 30B coder model (19GB, up to 256K context, Text)",
+      "job_definition": "job-definition-30b-coder.json"
+    }
+  ]
+}
