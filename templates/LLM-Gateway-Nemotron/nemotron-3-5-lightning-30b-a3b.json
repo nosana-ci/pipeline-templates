@@ -3,7 +3,7 @@
   "type": "container",
   "global": {
     "variables": {
-      "MAX_MODEL_LEN": "65536",
+      "MAX_MODEL_LEN": "262144",
       "GPU_MEM_UTIL": "0.85",
       "MAX_NUM_SEQS": "128",
       "SPEC_TOKENS": "3"
@@ -34,8 +34,10 @@
           "%%global.variables.GPU_MEM_UTIL%%",
           "--max-num-seqs",
           "%%global.variables.MAX_NUM_SEQS%%",
-          "--speculative-config",
-          "{\"model\": \"/models/nemotron-dspark\", \"num_speculative_tokens\": %%global.variables.SPEC_TOKENS%%}",
+          "--speculative_config.model",
+          "/models/nemotron-dspark",
+          "--speculative_config.num_speculative_tokens",
+          "%%global.variables.SPEC_TOKENS%%",
           "--moe-backend",
           "marlin",
           "--mamba-backend",

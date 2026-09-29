@@ -14,7 +14,7 @@
       "job_definition": "nemotron-3-5-lightning-30b-a3b.json",
       "inference": {
         "model": "nvidia/nemotron-3.5-lightning",
-        "context_length": 65536,
+        "context_length": 262144,
         "max_output_tokens": 16384,
         "op": "server",
         "port": 8000
