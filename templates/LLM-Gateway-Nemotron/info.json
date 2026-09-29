@@ -1,0 +1,24 @@
+{
+  "id": "gateway-nemo",
+  "name": "Managed Nemotron inference",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg",
+  "category": [
+    "LLM Gateway",
+    "vLLM",
+    "LLM"
+  ],
+  "variants": [
+    {
+      "id": "3-5-lightning-30b-a3b",
+      "name": "Nemotron 3.5 Lightning 30B A3B",
+      "job_definition": "nemotron-3-5-lightning-30b-a3b.json",
+      "inference": {
+        "model": "nvidia/nemotron-3.5-lightning",
+        "context_length": 65536,
+        "max_output_tokens": 16384,
+        "op": "server",
+        "port": 8000
+      }
+    }
+  ]
+}

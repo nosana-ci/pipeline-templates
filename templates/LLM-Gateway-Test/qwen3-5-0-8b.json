@@ -4,8 +4,9 @@
   "global": {
     "variables": {
       "MAX_MODEL_LEN": "8192",
-      "GPU_MEM_UTIL": "0.60",
-      "MAX_NUM_SEQS": "8"
+      "GPU_MEM_UTIL": "0.30",
+      "MAX_NUM_SEQS": "8",
+      "KV_CACHE_BYTES": "2GiB"
     }
   },
   "ops": [
@@ -33,7 +34,9 @@
           "%%global.variables.GPU_MEM_UTIL%%",
           "--max-num-seqs",
           "%%global.variables.MAX_NUM_SEQS%%",
-          "--language-model-only"
+          "--language-model-only",
+          "--kv-cache-memory-bytes",
+          "%%global.variables.KV_CACHE_BYTES%%"
         ],
         "env": {
           "VLLM_LOGGING_LEVEL": "INFO",
@@ -84,7 +87,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "vram_total_mb": 8192
+      "vram_total_mb": 16384
     }
   }
 }

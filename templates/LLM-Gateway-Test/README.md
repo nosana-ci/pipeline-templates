@@ -11,24 +11,34 @@ request reaches a node, bills correctly and comes back.
 
 ## Sizing
 
-The bf16 weights are 1.63 GiB, so this fits the 8 GB tier with room to spare. The text
-stack is 24 layers with 2 KV heads of 256 dimensions, which at bf16 is 48 KiB of KV cache
-per token — a quarter of what a model with eight KV heads costs — so a full 8,192-token
-sequence is only 384 MiB:
+The bf16 weights are 1.63 GiB. The text stack is 24 layers with 2 KV heads of 256
+dimensions, which at bf16 is 48 KiB of KV cache per token, so a full 8,192-token sequence
+costs 384 MiB. `--kv-cache-memory-bytes 2GiB` buys five of those, or far more of the short
+exchanges this model actually sees, and `--max-num-seqs 8` caps the scheduler above that.
 
-    0.60 x 8 GiB - 1.63 GiB weights - activations  ~= 2.8 GiB of cache
+The cache is set in **bytes rather than as a fraction**, because
+`--gpu-memory-utilization` is a share of the card's *total* memory and therefore scales with
+whatever the job lands on. This model needs the same ~4 GiB everywhere; expressed as a
+fraction sized for a small card it asks for 14 GiB on a 24 GB one, which both wastes the
+card and fails to start whenever anything else is resident — vLLM compares its budget
+against *free* memory, not total. `--kv-cache-memory-bytes` overrides the utilization for
+cache sizing, so consumption is now fixed at roughly:
 
-That is around seven full-length sequences, so `--max-num-seqs 8` is close to what the
-cache actually holds rather than a cap that queues early.
+    1.63 GiB weights + 2 GiB cache + activations  ~= 4 GiB
 
-`--language-model-only` skips the vision encoder and its multimodal profiling. The model
-is multimodal, but nothing here sends images, and the flag returns that memory to the KV
-cache. It also removes the encoder as a way for startup to fail on a small card.
+`--gpu-memory-utilization 0.30` remains only as a headroom ceiling, and the declared
+`vram_total_mb` is 16384 so that 30% is comfortably above what the model needs on any card
+it can be scheduled to. Lowering the floor back to the 8 GB tier means raising that fraction
+again, which reintroduces the scaling problem on large cards.
+
+`--language-model-only` skips the vision encoder and its multimodal profiling. The model is
+multimodal, but nothing here sends images, and the flag returns that memory to the cache. It
+also removes the encoder as a way for startup to fail on a small card.
 
 The context is deliberately 8,192 rather than the 262,144 the model supports natively. The
-gateway reserves `context_length x prompt_price` before every request, so a large context
-on a cheap model makes each hold far larger than the call it is testing — which is itself
-worth exercising, but not as the default.
+gateway reserves `context_length x prompt_price` before every request, so a large context on
+a cheap model makes each hold far larger than the call it is testing — which is itself worth
+exercising, but not as the default.
 
 ## Parsers
 
