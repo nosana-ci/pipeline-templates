@@ -31,8 +31,11 @@ points at for this card, and it is the only build the DSpark draft is published 
 
 ## Speculative decoding
 
-`--speculative-config` takes JSON, so the draft is passed as one argument rather than as
-dotted keys. The draft is a 0.76B DSpark head that reads hidden states from target layers
+The draft is passed as individual `--speculative_config.*` keys, never as one JSON value.
+The node parses any argument that begins with `{` or `[` into an object before handing the
+command to podman, which then refuses the job with `cannot unmarshal object into Go struct
+field SpecGenerator.command of type string`. The same applies to any flag here that takes
+JSON. The draft is a 0.76B DSpark head that reads hidden states from target layers
 `[1, 5, 19, 29, 41, 51]`; it is fetched as a second HF resource because vLLM loads it as a
 model in its own right.
 
@@ -49,10 +52,25 @@ on an attention-only model; 128 is the card's own figure.
 
 ## Context
 
-Validated to 1M tokens, set here to 65,536. The gateway reserves
-`context_length x prompt_price` before every request, so the advertised context is a floor
-under every hold — a megatoken context would make a one-line prompt reserve more credit than
-most callers hold. Raise it when a caller needs it, and reprice if so.
+262,144, which is what every endpoint in this model's field advertises — matching them keeps
+the listing comparable on a specification buyers read directly. The model itself is validated
+to 1M.
+
+The cache makes this cheap. With six attention layers and an fp8 KV cache the model spends
+**3 KiB per token**, against 47 MiB of Mamba state per *sequence* that does not grow with
+context at all. A full-length sequence is therefore about 815 MiB, and the roughly 57 GiB left
+after weights holds, by vLLM's own count, about 55 of them: it reports 14.4M tokens of KV
+capacity. Hybrid block alignment under `--mamba-cache-mode align` and the draft's own
+overhead take a share that a per-layer estimate misses.
+
+`--max-num-seqs` stays at 128 even though only ~55 full-length sequences fit: it caps the
+scheduler, not the cache, and real prompts are far shorter than the advertised maximum. It is
+meant to be set from a measured sweep rather than from this arithmetic.
+
+What the number really costs is credit, not memory. The gateway reserves
+`context_length x prompt_price` before every request, so quadrupling the context quadruples
+what a one-line prompt holds. That is the reason to revisit it, and the reason the figure is
+worth re-deciding alongside the price rather than on its own.
 
 `--enable-prefix-caching` matters more than the context number for agent traffic, which
 resends a long identical prefix every turn.
