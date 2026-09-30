@@ -13,8 +13,11 @@ request reaches a node, bills correctly and comes back.
 
 The bf16 weights are 1.63 GiB. The text stack is 24 layers with 2 KV heads of 256
 dimensions, which at bf16 is 48 KiB of KV cache per token, so a full 8,192-token sequence
-costs 384 MiB. `--kv-cache-memory-bytes 2GiB` buys five of those, or far more of the short
+costs 384 MiB. `--kv-cache-memory-bytes 2G` buys five of those, or far more of the short
 exchanges this model actually sees, and `--max-num-seqs 8` caps the scheduler above that.
+
+vLLM reads the size with a single-letter suffix whose case sets the unit: `2G` is 2 GiB and
+`2g` is 2 GB. `2GiB` and `2Gi` are rejected, and the server exits before it starts.
 
 The cache is set in **bytes rather than as a fraction**, because
 `--gpu-memory-utilization` is a share of the card's *total* memory and therefore scales with
