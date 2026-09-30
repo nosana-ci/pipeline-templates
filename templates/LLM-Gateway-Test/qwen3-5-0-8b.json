@@ -6,7 +6,7 @@
       "MAX_MODEL_LEN": "8192",
       "GPU_MEM_UTIL": "0.30",
       "MAX_NUM_SEQS": "8",
-      "KV_CACHE_BYTES": "2GiB"
+      "KV_CACHE_BYTES": "2G"
     }
   },
   "ops": [
