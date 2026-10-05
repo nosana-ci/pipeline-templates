@@ -40,6 +40,7 @@ Read more about the [Nosana Builder Challenge](https://nosana.com/blog/nos_chall
 
 ## Templates
 
+- [Clef](/templates/Clef/)
 - [ComfyUI Image Generation](/templates/ComfyUI/)
 - [Cosmos 3 Nano](/templates/Cosmos3-Nano/)
 - [DeepSeek R1 Qwen Models](/templates/Deepseek-R1/)

@@ -1,0 +1,20 @@
+{
+  "id": "clef",
+  "name": "Clef",
+  "category": ["Official", "API", "LLM", "Ollama", "New"],
+  "icon": "https://avatars.githubusercontent.com/u/314135?s=200&v=4",
+  "variants": [
+    {
+      "id": "27b",
+      "name": "Clef 27B",
+      "description": "Clef 27B decision model (18 GB, 256K context, Text + Image)",
+      "job_definition": "job-definition-27b.json"
+    },
+    {
+      "id": "flash-9b",
+      "name": "Clef Flash 9B",
+      "description": "Clef Flash 9B low-latency decision model (11 GB, 256K context, Text + Image)",
+      "job_definition": "job-definition-flash-9b.json"
+    }
+  ]
+}
