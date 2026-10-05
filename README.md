@@ -1,10 +1,18 @@
+<p align="center">
+  <a href="https://nosana.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/nosana-logo-white.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="./assets/nosana-logo.svg" />
+      <img alt="Nosana" src="./assets/nosana-logo.svg" width="440" />
+    </picture>
+  </a>
+</p>
+
 # Nosana Jobs Templates
 
 This repository contains job definition file templates that can be used to post jobs to the Nosana Network.
 
 ## Nosana Builder Challenge
-
-![nosana_builders_challenge](https://github.com/user-attachments/assets/d239f83c-59db-4203-8f5d-7ff9eebf2203)
 
 We’re thrilled to launch the **Nosana Builder Challenge**, a developer-focused contest designed to push the boundaries of AI model deployment on the **Nosana Network**. This is your chance to showcase your skills, gain visibility, learn new tools — and compete for over **$3,000 USDC in prizes**!
 
