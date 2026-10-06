@@ -1,7 +1,7 @@
 {
   "id": "clef",
   "name": "Clef",
-  "category": ["Official", "API", "LLM", "Ollama", "New"],
+  "category": ["Official", "API", "LLM", "Ollama", "New", "Featured"],
   "icon": "https://avatars.githubusercontent.com/u/314135?s=200&v=4",
   "variants": [
     {
