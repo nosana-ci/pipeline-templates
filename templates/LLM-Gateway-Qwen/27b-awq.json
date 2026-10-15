@@ -3,7 +3,7 @@
   "type": "container",
   "global": {
     "variables": {
-      "MAX_MODEL_LEN": "32768",
+      "MAX_MODEL_LEN": "131072",
       "GPU_MEM_UTIL": "0.90",
       "MAX_NUM_SEQS": "16"
     }
@@ -96,7 +96,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "vram_total_mb": 32000
+      "vram_total_mb": 96000
     }
   }
 }

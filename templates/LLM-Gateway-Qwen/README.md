@@ -7,18 +7,21 @@ deployment.
 
 ## Sizing
 
-The AWQ INT4 weights are 19.6 GiB, so the card must have 32 GB: an RTX 5090 fits, a 24 GB
-card does not hold the weights at any utilization.
+The template runs on a 96 GB card, the RTX Pro 6000, to serve a 131,072-token context:
+assistants that use tools send their tool definitions and every tool result on each step,
+so their prompts pass 32K tokens after a few steps.
 
-`--gpu-memory-utilization` is what is left for the KV cache after the weights, and vLLM
-refuses to start when the cache cannot hold a single sequence of `--max-model-len`. At
-fp8 this model spends 128 KiB per token, so 32,768 tokens is 4 GiB for one sequence:
+The AWQ INT4 weights are 19.6 GiB. `--gpu-memory-utilization` is what is left for the KV
+cache after the weights, and vLLM refuses to start when the cache cannot hold a single
+sequence of `--max-model-len`. At fp8 this model spends 128 KiB per token, so 131,072
+tokens is 16 GiB for one sequence:
 
-    0.90 x 32 GiB - 19.6 GiB weights - activations  ~= 7 GiB of cache
+    0.90 x ~95.6 GiB - 19.6 GiB weights - activations  ~= 62 GiB of cache
 
-That is the reason for 0.90 rather than the 0.80 the model card suggests — 0.80 leaves
-under 4 GiB and the server exits during startup. It also means the node must have the card
-to itself, because vLLM compares the utilization against *free* VRAM, not total.
+That holds about four full-length conversations at once, and many more short ones. The
+model's own limit is 262,144 tokens, which also fits, at two full-length conversations. The
+node must have the card to itself, because vLLM compares the utilization against *free*
+VRAM, not total.
 
 Cache is paged, so `--max-num-seqs 16` is a scheduler cap rather than a reservation:
 sixteen short conversations fit comfortably, while sixteen full-length ones do not and are
@@ -33,11 +36,11 @@ and `--enable-auto-tool-choice` is required for the model to emit them.
 The model is multimodal. `--mm-encoder-attn-backend TORCH_SDPA` selects the encoder
 attention backend that its own model card specifies.
 
-The declared `vram_total_mb` is 32000 rather than 32768: a 32 GB card reports about
-32607 MiB once the firmware reserve is taken off, so the nominal figure is above every
-card it is meant to match.
+The declared `vram_total_mb` is 96000 rather than 98304: a card reports less than its
+nominal size once the firmware reserve is taken off, so the declared figure has to sit
+below every 96 GB card it is meant to match.
 
-The image is newer than the `vllm-openai` build the 5090 markets pre-pull, so the first
+The image may be newer than the `vllm-openai` build a market pre-pulls, so the first
 start on a node includes the image download.
 
 ## Qwen3 Embedding 0.6B
