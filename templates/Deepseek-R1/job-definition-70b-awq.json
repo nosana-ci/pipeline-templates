@@ -17,7 +17,7 @@
           "30000"
         ],
         "gpu": true,
-        "image": "docker.io/vllm/vllm-openai:v0.10.2",
+        "image": "docker.io/vllm/vllm-openai:v0.32.0",
         "expose": [
           {
             "port": 9000,
@@ -42,10 +42,6 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "required_cuda": [
-        "12.8",
-        "12.9"
-      ],
       "vram_total_mb": 43008
     }
   }
