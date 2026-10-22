@@ -61,6 +61,7 @@ Read more about the [Nosana Builder Challenge](https://nosana.com/blog/nos_chall
 - [Pytorch Jupyter Notebook](/templates/Pytorch-jupyter-notebook/)
 - [Qwen 3.5 Models](/templates/Qwen3.5/)
 - [Qwen 3.6](/templates/Qwen3.6/)
+- [Qwen 3.8](/templates/Qwen3.8/)
 - [RStudio Server](/templates/Rstudio/)
 - [Tensorflow Jupyter Notebook](/templates/Tensorflow-jupyter-notebook/)
 - [VSCode Server](/templates/VScode-server/)

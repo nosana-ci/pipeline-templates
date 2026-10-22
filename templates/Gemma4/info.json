@@ -22,6 +22,12 @@
       "job_definition": "job-definition-e4b.json"
     },
     {
+      "id": "12b",
+      "name": "12B Model",
+      "description": "Gemma 4 12B dense model (12B parameters, 256K context, Text + Image)",
+      "job_definition": "job-definition-12b.json"
+    },
+    {
       "id": "26b",
       "name": "26B MoE Model",
       "description": "Gemma 4 26B Mixture-of-Experts model (4B active parameters, 256K context, Text + Image)",
