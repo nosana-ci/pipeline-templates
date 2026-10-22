@@ -12,7 +12,7 @@
       "type": "container/run",
       "args": {
         "gpu": true,
-        "image": "docker.io/ollama/ollama:0.32.6",
+        "image": "docker.io/ollama/ollama:0.40.8",
         "expose": [
           {
             "port": 11434,

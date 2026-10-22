@@ -13,7 +13,7 @@
       "type": "container/run",
       "id": "server",
       "args": {
-        "image": "docker.io/vllm/vllm-openai:v0.27.1-cu129-ubuntu2404",
+        "image": "docker.io/vllm/vllm-openai:v0.32.0-cu129-ubuntu2404",
         "gpu": true,
         "entrypoint": [
           "vllm",
