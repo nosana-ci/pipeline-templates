@@ -3,16 +3,16 @@
   "type": "container",
   "global": {
     "variables": {
-      "MODEL": "gemma3:4b-it-qat"
+      "MODEL": "gemma4:12b"
     }
   },
   "ops": [
     {
-      "id": "Gemma3-4b",
+      "id": "server",
       "type": "container/run",
       "args": {
         "gpu": true,
-        "image": "docker.io/ollama/ollama:0.32.6",
+        "image": "docker.io/ollama/ollama:0.35.1",
         "expose": [
           {
             "port": 11434,
@@ -39,7 +39,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "vram_total_mb": 5120
+      "vram_total_mb": 12288
     }
   }
 }
