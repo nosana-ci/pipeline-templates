@@ -3,7 +3,7 @@
   "type": "container",
   "global": {
     "variables": {
-      "MODEL": "qwen3.6:27b"
+      "MODEL": "qwen3.8:27b"
     }
   },
   "ops": [
@@ -12,7 +12,7 @@
       "type": "container/run",
       "args": {
         "gpu": true,
-        "image": "docker.io/ollama/ollama:0.32.6",
+        "image": "docker.io/ollama/ollama:0.35.1",
         "expose": [
           {
             "port": 11434,

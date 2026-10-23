@@ -20,6 +20,14 @@ Google's Gemma 4 multimodal models via Ollama — handling text and image input 
 - **VRAM Required**: ~12 GB
 - **Use Case**: Balanced edge deployment with strong reasoning capabilities
 
+### 12B (Dense)
+- **Parameters**: 12B
+- **Model Size**: 8 GB
+- **Context Length**: 256K tokens
+- **Modalities**: Text, Image
+- **VRAM Required**: ~12 GB
+- **Use Case**: The strongest Gemma 4 for 12 and 16 GB GPUs
+
 ### 26B (Mixture of Experts)
 - **Parameters**: 25.2B total (3.8B active, 8 active / 128 total experts + 1 shared)
 - **Model Size**: 18 GB
