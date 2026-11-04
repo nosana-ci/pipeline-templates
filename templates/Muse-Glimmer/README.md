@@ -12,7 +12,7 @@ Muse Glimmer is a 30-billion-parameter causal language model with a dedicated pe
 - **VRAM Required**: ~18 GB at 32K context (24 GB-class GPUs and up)
 - **Use Case**: Agentic workflows, tool calling, coding assistants, screenshot and document understanding
 
-NVIDIA support for this architecture landed in Ollama 0.32.8, so the image is pinned above the 0.32.6 used by the other templates; 0.32.9 also carries a fix in the function-calling parser. The `30b-mlx` tag is an Apple Silicon build and is not applicable to Nosana GPU nodes.
+NVIDIA support for this architecture landed in Ollama 0.32.8, so the template needs at least that version. The `30b-mlx` tag is an Apple Silicon build and is not applicable to Nosana GPU nodes.
 
 ## Highlights
 
