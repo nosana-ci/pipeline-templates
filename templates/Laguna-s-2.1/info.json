@@ -7,7 +7,7 @@
     {
       "id": "q4_k_m",
       "name": "S 2.1 q4_k_m",
-      "description": "Laguna S 2.1, q4_k_m quantization (75 GB, 256K context, Text)",
+      "description": "Laguna S 2.1, q4_k_m quantization (96 GB, 32K context, Text). For 96 GB GPUs and up.",
       "job_definition": "job-definition-q4_k_m.json"
     }
   ]
