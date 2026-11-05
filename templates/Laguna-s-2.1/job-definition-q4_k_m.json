@@ -3,7 +3,8 @@
   "type": "container",
   "global": {
     "variables": {
-      "MODEL": "laguna-s-2.1:q4_k_m"
+      "MODEL": "laguna-s-2.1:q4_k_m",
+      "CONTEXT_LENGTH": "32768"
     }
   },
   "ops": [
@@ -13,6 +14,9 @@
       "args": {
         "gpu": true,
         "image": "docker.io/ollama/ollama:0.35.1",
+        "env": {
+          "OLLAMA_CONTEXT_LENGTH": "%%global.variables.CONTEXT_LENGTH%%"
+        },
         "expose": [
           {
             "port": 11434,
@@ -39,7 +43,7 @@
   "meta": {
     "trigger": "dashboard",
     "system_requirements": {
-      "vram_total_mb": 81920
+      "vram_total_mb": 96000
     }
   }
 }
